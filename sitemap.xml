@@ -800,6 +800,13 @@
   </url>
   
   <url>
+    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.qcqx.cn/tags/JAVA/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -808,13 +815,6 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/JavaSE/</loc>
-    <lastmod>2023-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

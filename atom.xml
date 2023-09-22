@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>轻笑Chuckle</title>
-  <icon>https://www.qcqx.cn/img/head.webp</icon>
+  <icon>https://www.qcqx.cn/head.webp</icon>
   
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   

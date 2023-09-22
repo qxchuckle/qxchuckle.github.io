@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/stars/index.html</loc>
+    <loc>https://www.qcqx.cn/rgb/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/rgb/index.html</loc>
+    <loc>https://www.qcqx.cn/stars/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -770,13 +770,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2023-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/tags/Butterfly/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -785,6 +778,13 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/Hexo/</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -926,13 +926,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/categories/Chuckle/</loc>
-    <lastmod>2023-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -940,7 +933,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://www.qcqx.cn/categories/Chuckle/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -948,6 +941,13 @@
   
   <url>
     <loc>https://www.qcqx.cn/categories/Hexo/</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/rgb/index.html</loc>
+    <loc>https://www.qcqx.cn/stars/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/stars/index.html</loc>
+    <loc>https://www.qcqx.cn/rgb/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -461,15 +461,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/noie.html</loc>
-    
-    <lastmod>2022-11-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/article/b827db53.html</loc>
     
     <lastmod>2022-11-14</lastmod>
@@ -800,6 +791,13 @@
   </url>
   
   <url>
+    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.qcqx.cn/tags/JAVA/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -808,13 +806,6 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/JavaSE/</loc>
-    <lastmod>2023-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
     <lastmod>2023-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

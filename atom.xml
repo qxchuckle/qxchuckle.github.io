@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2023-07-26T17:44:58.000Z</updated>
+  <updated>2023-09-23T09:57:31.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>泡茶-年轻人的第一次养生</title>
+    <link href="https://www.qcqx.cn/article/e60c11dd.html"/>
+    <id>https://www.qcqx.cn/article/e60c11dd.html</id>
+    <published>2023-09-23T09:57:31.000Z</published>
+    <updated>2023-09-23T09:57:31.000Z</updated>
+    
+    
+    <summary type="html">精神不振，决定养生，泡个茶先</summary>
+    
+    
+    
+    <category term="Chuckle" scheme="https://www.qcqx.cn/categories/Chuckle/"/>
+    
+    
+    <category term="茶" scheme="https://www.qcqx.cn/tags/%E8%8C%B6/"/>
+    
+    <category term="养生" scheme="https://www.qcqx.cn/tags/%E5%85%BB%E7%94%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>Banner随机文章展示</title>
@@ -412,27 +433,6 @@
     <category term="瞎折腾" scheme="https://www.qcqx.cn/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
     
     <category term="ChatGPT" scheme="https://www.qcqx.cn/tags/ChatGPT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript—DOM案例</title>
-    <link href="https://www.qcqx.cn/article/b0cb9f85.html"/>
-    <id>https://www.qcqx.cn/article/b0cb9f85.html</id>
-    <published>2023-04-12T03:36:18.000Z</published>
-    <updated>2023-04-16T03:36:18.000Z</updated>
-    
-    
-    <summary type="html">DOM操作的一些案例，轮播图、数据表、常见组件等</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
     
   </entry>
   

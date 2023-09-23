@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/stars/index.html</loc>
+    <loc>https://www.qcqx.cn/rgb/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/rgb/index.html</loc>
+    <loc>https://www.qcqx.cn/stars/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -765,14 +765,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://www.qcqx.cn/tags/Chuckle/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/Chuckle/</loc>
+    <loc>https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -800,13 +800,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
-    <lastmod>2023-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/tags/JAVA/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -815,6 +808,13 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/JavaSE/</loc>
+    <lastmod>2023-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -835,20 +835,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/JS/</loc>
-    <lastmod>2023-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qcqx.cn/tags/CSS/</loc>
-    <lastmod>2023-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/tags/VScode/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -857,6 +843,20 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/</loc>
+    <lastmod>2023-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/tags/JS/</loc>
+    <lastmod>2023-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/tags/CSS/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -949,14 +949,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://www.qcqx.cn/categories/Chuckle/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/categories/Chuckle/</loc>
+    <loc>https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

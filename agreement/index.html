@@ -13,24 +13,24 @@
       }
     })
 }
-function setQXCookies(obj, limitTime, customDomain) {
-    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
-    for (let i in obj) {
-      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
-    }
-}
-function getQXCookie(name) {
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
-        return decodeURIComponent(arr[2]);
-    else
-        return null;
-}
-if(getQXCookie('qcqx')!=="chuckle"){
-  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
-}else{
-  console.log("qcqx");
-}</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>用户协议及隐私政策 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="协议最后更新时间：2023-03-17 一、用户协议&amp;emsp;&amp;emsp;1.本站的所有原创文章均采用cc协议中比较严格的署名-非商业性使用-禁止演绎 4.0 国际标准，原创内容的非商用转载必须为完整转载且标注出处的带有超链接功能的完整url链接（需能点击）或访问原文之类字样的超链接。 &amp;emsp;&amp;emsp;2.本站无广告嵌入和商业行为。本站内容免费向互联网所有用户提供，分享本站文章时禁止商业">
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>用户协议及隐私政策 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="协议最后更新时间：2023-03-17 一、用户协议&amp;emsp;&amp;emsp;1.本站的所有原创文章均采用cc协议中比较严格的署名-非商业性使用-禁止演绎 4.0 国际标准，原创内容的非商用转载必须为完整转载且标注出处的带有超链接功能的完整url链接（需能点击）或访问原文之类字样的超链接。 &amp;emsp;&amp;emsp;2.本站无广告嵌入和商业行为。本站内容免费向互联网所有用户提供，分享本站文章时禁止商业">
 <meta property="og:type" content="website">
 <meta property="og:title" content="用户协议及隐私政策">
 <meta property="og:url" content="https://www.qcqx.cn/agreement/index.html">

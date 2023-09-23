@@ -13,24 +13,24 @@
       }
     })
 }
-function setQXCookies(obj, limitTime, customDomain) {
-    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
-    for (let i in obj) {
-      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
-    }
-}
-function getQXCookie(name) {
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
-        return decodeURIComponent(arr[2]);
-    else
-        return null;
-}
-if(getQXCookie('qcqx')!=="chuckle"){
-  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
-}else{
-  console.log("qcqx");
-}</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>友链朋友圈 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="Chuckle的友链朋友圈,点击日志刷新朋友圈  友链朋友圈加载中……     #cf-footer{   margin: 15px 1% 10px 0!important; }      var fdataUser &#x3D; {     apiurl: &#39;https:&#x2F;&#x2F;friends.qcqx.cn&#x2F;&#39;,     initnumber: 30,      stepnumber: 20,  &#x2F;&#x2F;更多">
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>友链朋友圈 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="Chuckle的友链朋友圈,点击日志刷新朋友圈  友链朋友圈加载中……     #cf-footer{   margin: 15px 1% 10px 0!important; }      var fdataUser &#x3D; {     apiurl: &#39;https:&#x2F;&#x2F;friends.qcqx.cn&#x2F;&#39;,     initnumber: 30,      stepnumber: 20,  &#x2F;&#x2F;更多">
 <meta property="og:type" content="website">
 <meta property="og:title" content="友链朋友圈">
 <meta property="og:url" content="https://www.qcqx.cn/fcircle/index.html">

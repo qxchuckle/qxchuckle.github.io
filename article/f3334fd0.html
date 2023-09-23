@@ -13,24 +13,24 @@
       }
     })
 }
-function setQXCookies(obj, limitTime, customDomain) {
-    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
-    for (let i in obj) {
-      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
-    }
-}
-function getQXCookie(name) {
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
-        return decodeURIComponent(arr[2]);
-    else
-        return null;
-}
-if(getQXCookie('qcqx')!=="chuckle"){
-  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
-}else{
-  console.log("qcqx");
-}</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>AJAX请求相关 | 轻笑Chuckle</title><meta name="keywords" content="前端,AJAX"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="ajax原生实现、JQ、axios、fetch、跨域、jsonp">
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>AJAX请求相关 | 轻笑Chuckle</title><meta name="keywords" content="前端,AJAX"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="ajax原生实现、JQ、axios、fetch、跨域、jsonp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AJAX请求相关">
 <meta property="og:url" content="https://www.qcqx.cn/article/f3334fd0.html">

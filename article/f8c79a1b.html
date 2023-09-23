@@ -13,24 +13,24 @@
       }
     })
 }
-function setQXCookies(obj, limitTime, customDomain) {
-    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
-    for (let i in obj) {
-      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
-    }
-}
-function getQXCookie(name) {
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
-        return decodeURIComponent(arr[2]);
-    else
-        return null;
-}
-if(getQXCookie('qcqx')!=="chuckle"){
-  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
-}else{
-  console.log("qcqx");
-}</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>博客搜索挂了解决方法 | 轻笑Chuckle</title><meta name="keywords" content="Butterfly,Hexo"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="省流助手：删除所有local-search.js中下面这行代码window.pjax &amp;&amp; window.pjax.refresh($resultContent)  遇到的问题我使用的是本地搜索，local-search，装好后一直正常使用，也没去动过配置前天捣鼓着博客，突然发现博客部署到github上后搜索挂了一直卡在数据库加载中 但是，部署在本地，搜索却一切正常尝试过重装插件">
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>博客搜索挂了解决方法 | 轻笑Chuckle</title><meta name="keywords" content="Butterfly,Hexo"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="省流助手：删除所有local-search.js中下面这行代码window.pjax &amp;&amp; window.pjax.refresh($resultContent)  遇到的问题我使用的是本地搜索，local-search，装好后一直正常使用，也没去动过配置前天捣鼓着博客，突然发现博客部署到github上后搜索挂了一直卡在数据库加载中 但是，部署在本地，搜索却一切正常尝试过重装插件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客搜索挂了解决方法">
 <meta property="og:url" content="https://www.qcqx.cn/article/f8c79a1b.html">

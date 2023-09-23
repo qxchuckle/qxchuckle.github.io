@@ -826,6 +826,13 @@
   </url>
   
   <url>
+    <loc>https://www.qcqx.cn/tags/VScode/</loc>
+    <lastmod>2023-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.qcqx.cn/tags/JS/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -834,13 +841,6 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/CSS/</loc>
-    <lastmod>2023-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qcqx.cn/tags/VScode/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -889,14 +889,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/AJAX/</loc>
+    <loc>https://www.qcqx.cn/tags/Vue/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/Vue/</loc>
+    <loc>https://www.qcqx.cn/tags/AJAX/</loc>
     <lastmod>2023-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

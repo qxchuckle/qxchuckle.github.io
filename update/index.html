@@ -13,24 +13,24 @@
       }
     })
 }
-function setQXCookies(obj, limitTime, customDomain) {
-    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
-    for (let i in obj) {
-      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
-    }
-}
-function getQXCookie(name) {
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
-        return decodeURIComponent(arr[2]);
-    else
-        return null;
-}
-if(getQXCookie('qcqx')!=="chuckle"){
-  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
-}else{
-  console.log("qcqx");
-}</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>网站更新日志 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="施工中····· 更新日志 2023-07-25 1.优化ai摘要业务2.修改部分样式细节3.扫一扫卡片背面换为爱发电 2023-05-13 1.优化文章内图片显示 2023-03-18 1.去除冗余页面，藏宝阁、音乐等。2.增加想做清单，ToDoList页面。 2023-03-15 累积更新 1.文章页新增点赞功能，喜欢就点个赞👍吧！2.重磅！博客已平稳运行一年，去除了对F12的所有限制！ 2">
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>网站更新日志 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="施工中····· 更新日志 2023-07-25 1.优化ai摘要业务2.修改部分样式细节3.扫一扫卡片背面换为爱发电 2023-05-13 1.优化文章内图片显示 2023-03-18 1.去除冗余页面，藏宝阁、音乐等。2.增加想做清单，ToDoList页面。 2023-03-15 累积更新 1.文章页新增点赞功能，喜欢就点个赞👍吧！2.重磅！博客已平稳运行一年，去除了对F12的所有限制！ 2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="网站更新日志">
 <meta property="og:url" content="https://www.qcqx.cn/update/index.html">

@@ -12,6 +12,24 @@
         }, 150)
       }
     })
+}
+function setQXCookies(obj, limitTime, customDomain) {
+    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+    for (let i in obj) {
+      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+    }
+}
+function getQXCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+        return decodeURIComponent(arr[2]);
+    else
+        return null;
+}
+if(getQXCookie('qcqx')!=="chuckle"){
+  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+}else{
+  console.log("qcqx");
 }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>藏宝阁 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="收藏     藏宝阁              包含 影视&#x2F;动漫&#x2F;小说&#x2F;游戏&#x2F;音乐 等                    .stars_box {     display: flex;     flex-wrap: wrap;     justify-content: space-between; } .stars_box .card_box {     margin: 8px !i">
 <meta property="og:type" content="website">
 <meta property="og:title" content="藏宝阁">

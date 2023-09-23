@@ -12,6 +12,24 @@
         }, 150)
       }
     })
+}
+function setQXCookies(obj, limitTime, customDomain) {
+    let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+    for (let i in obj) {
+      document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+    }
+}
+function getQXCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+        return decodeURIComponent(arr[2]);
+    else
+        return null;
+}
+if(getQXCookie('qcqx')!=="chuckle"){
+  setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+}else{
+  console.log("qcqx");
 }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>&#x5F52;&#x6863; | &#x8F7B;&#x7B11;Chuckle</title><meta name="author" content="&#x300E;&#x8F7B;&#x7B11;Chuckle&#x300F;"><meta name="copyright" content="&#x300E;&#x8F7B;&#x7B11;Chuckle&#x300F;"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta property="og:type" content="website">
 <meta property="og:title" content="&#x8F7B;&#x7B11;Chuckle">
 <meta property="og:url" content="https://www.qcqx.cn/archives/2022/04/index.html">
@@ -69,7 +87,7 @@ f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/per
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-09-22 20:52:25'
+  postUpdate: '2023-09-23 14:58:54'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1

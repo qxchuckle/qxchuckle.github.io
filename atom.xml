@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2023-11-05T05:24:00.000Z</updated>
+  <updated>2023-11-15T11:37:04.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rollup</title>
+    <link href="https://www.qcqx.cn/article/d9966eb3.html"/>
+    <id>https://www.qcqx.cn/article/d9966eb3.html</id>
+    <published>2023-11-15T11:37:04.000Z</published>
+    <updated>2023-11-15T11:37:04.000Z</updated>
+    
+    
+    <summary type="html">一个小巧强大的ESM打包器</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Webpack</title>
@@ -399,27 +418,6 @@
     
     
     <summary type="html">MongoDB使用，mongoose连接、增删改查、模块化，图形化软件</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="NodeJS" scheme="https://www.qcqx.cn/tags/NodeJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Express框架</title>
-    <link href="https://www.qcqx.cn/article/8ddaf637.html"/>
-    <id>https://www.qcqx.cn/article/8ddaf637.html</id>
-    <published>2023-04-20T14:05:14.000Z</published>
-    <updated>2023-04-20T14:05:14.000Z</updated>
-    
-    
-    <summary type="html">express、中间件、router、ejs、记账本案例</summary>
     
     
     

@@ -1,1 +1,48 @@
-new MiniSandbox({el:"#get-example",files:{"index.js":{title:"JS",defaultValue:"const btn = document.querySelector('button')\nconst p = document.querySelector('p')\nbtn.addEventListener('click', () => {  \n    fetch('https://api.uixsj.cn/hitokoto/get?type=hitokoto&code=json', {\n        method: \"GET\",\n    })\n    .then(response => {\n        if (response.ok) {\n            return response.json();\n        } else {\n            return Promise.reject('QAQ出错啦');\n        }\n    })\n    .then(data => {\n        p.innerHTML = data.content;\n    });\n})\n        "},"index.html":{title:"HTML",defaultValue:"<button>点击获取一言</button>\n<p>一言测试</p>\n            ",cssLibs:["index.css"],jsLibs:["index.js"]},"index.css":{title:"CSS",defaultValue:"button {\n    width: 100%;\n    color: red;\n}\n        "}},defaultConfig:{height:"400px",autoRun:!0,autoRunInterval:1e3,editorRange:"60%",draggable:!0,direction:"row"}});
+new MiniSandbox({
+    el: '#get-example',
+    files: {
+        'index.js': {
+            title: 'JS',
+            defaultValue: `const btn = document.querySelector('button')
+const p = document.querySelector('p')
+btn.addEventListener('click', () => {  
+    fetch('https://api.uixsj.cn/hitokoto/get?type=hitokoto&code=json', {
+        method: "GET",
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return Promise.reject('QAQ出错啦');
+        }
+    })
+    .then(data => {
+        p.innerHTML = data.content;
+    });
+})
+        `},
+        'index.html': {
+            title: 'HTML',
+            defaultValue: `<button>点击获取一言</button>
+<p>一言测试</p>
+            `,
+            cssLibs: ['index.css'],
+            jsLibs: ['index.js'],
+        },
+        'index.css': {
+            title: 'CSS',
+            defaultValue: `button {
+    width: 100%;
+    color: red;
+}
+        `}
+    },
+    defaultConfig: {
+        height: '400px',
+        autoRun: true,
+        autoRunInterval: 1000,
+        editorRange: '60%',
+        draggable: true,
+        direction: 'row',
+      }
+})

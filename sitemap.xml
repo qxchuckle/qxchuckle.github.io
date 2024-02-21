@@ -840,6 +840,13 @@
   </url>
   
   <url>
+    <loc>https://www.qcqx.cn/tags/Butterfly/</loc>
+    <lastmod>2024-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -847,7 +854,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/Butterfly/</loc>
+    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -862,13 +869,6 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/JavaSE/</loc>
-    <lastmod>2024-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qcqx.cn/tags/JavaWeb/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -903,13 +903,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/VScode/</loc>
-    <lastmod>2024-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/tags/%E6%96%B0%E5%86%A0/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -918,6 +911,13 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/%E7%96%AB%E6%83%85/</loc>
+    <lastmod>2024-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/tags/VScode/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -945,14 +945,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/Vue/</loc>
+    <loc>https://www.qcqx.cn/tags/AJAX/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/AJAX/</loc>
+    <loc>https://www.qcqx.cn/tags/Vue/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

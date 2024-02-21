@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-01-16T05:35:52.000Z</updated>
+  <updated>2024-02-19T03:33:52.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,111 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NestJS[四]-数据库</title>
+    <link href="https://www.qcqx.cn/article/e18aeaaa.html"/>
+    <id>https://www.qcqx.cn/article/e18aeaaa.html</id>
+    <published>2024-02-19T03:33:52.000Z</published>
+    <updated>2024-02-19T03:33:52.000Z</updated>
+    
+    
+    <summary type="html">swagger</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NestJS[三]-进阶</title>
+    <link href="https://www.qcqx.cn/article/73b2ab6d.html"/>
+    <id>https://www.qcqx.cn/article/73b2ab6d.html</id>
+    <published>2024-02-16T16:47:16.000Z</published>
+    <updated>2024-02-16T16:47:16.000Z</updated>
+    
+    
+    <summary type="html">Logger、ModuleRef、生命周期、Swagger、JWT、config</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NestJS[二]-核心</title>
+    <link href="https://www.qcqx.cn/article/c81f9b65.html"/>
+    <id>https://www.qcqx.cn/article/c81f9b65.html</id>
+    <published>2024-02-04T14:00:23.000Z</published>
+    <updated>2024-02-04T14:00:23.000Z</updated>
+    
+    
+    <summary type="html">上传/下载文件、RxJS、拦截器、过滤器、管道、守卫</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RxJS</title>
+    <link href="https://www.qcqx.cn/article/c79e1541.html"/>
+    <id>https://www.qcqx.cn/article/c79e1541.html</id>
+    <published>2024-02-03T09:34:51.000Z</published>
+    <updated>2024-02-03T09:34:51.000Z</updated>
+    
+    
+    <summary type="html">Nest中大量使用了RxJS，这下不得不学了。</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NestJS[一]-基础</title>
+    <link href="https://www.qcqx.cn/article/7c45abd.html"/>
+    <id>https://www.qcqx.cn/article/7c45abd.html</id>
+    <published>2024-01-22T07:26:49.000Z</published>
+    <updated>2024-01-22T07:26:49.000Z</updated>
+    
+    
+    <summary type="html">IOC/DI、cli、RESTful、控制器、提供者、作用域、模块、中间件</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+  </entry>
   
   <entry>
     <title>Node-回眸[三]</title>
@@ -322,111 +427,6 @@
     <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue笔记[四]-动画、Vuex</title>
-    <link href="https://www.qcqx.cn/article/4c286eee.html"/>
-    <id>https://www.qcqx.cn/article/4c286eee.html</id>
-    <published>2023-05-12T00:18:24.000Z</published>
-    <updated>2023-05-12T00:18:24.000Z</updated>
-    
-    
-    <summary type="html">动画、Axios发请求、插槽、Vuex状态管理</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue笔记[三]-ToDoList</title>
-    <link href="https://www.qcqx.cn/article/f82307c5.html"/>
-    <id>https://www.qcqx.cn/article/f82307c5.html</id>
-    <published>2023-05-10T03:55:10.000Z</published>
-    <updated>2023-05-10T03:55:10.000Z</updated>
-    
-    
-    <summary type="html">组件化编码、组件间通信（总线、消息）、增删改功能</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue笔记[二]-组件化</title>
-    <link href="https://www.qcqx.cn/article/331af2cc.html"/>
-    <id>https://www.qcqx.cn/article/331af2cc.html</id>
-    <published>2023-05-08T06:39:48.000Z</published>
-    <updated>2023-05-08T06:39:48.000Z</updated>
-    
-    
-    <summary type="html">生命周期、组件、脚手架vue-cli、props、mixins、插件</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue笔记[一]-初识</title>
-    <link href="https://www.qcqx.cn/article/adf5c49.html"/>
-    <id>https://www.qcqx.cn/article/adf5c49.html</id>
-    <published>2023-05-02T05:40:19.000Z</published>
-    <updated>2023-05-02T05:40:19.000Z</updated>
-    
-    
-    <summary type="html">简介、数据绑定、常用指令、事件处理、配置对象常用属性</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Promise异步编程</title>
-    <link href="https://www.qcqx.cn/article/7a1fbbc5.html"/>
-    <id>https://www.qcqx.cn/article/7a1fbbc5.html</id>
-    <published>2023-04-26T00:40:44.000Z</published>
-    <updated>2023-04-26T00:40:44.000Z</updated>
-    
-    
-    <summary type="html">同步与异步、事件循环、Promise、async-await、promisify</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
     
   </entry>
   

@@ -24,16 +24,16 @@
     <updated>2024-02-19T03:33:52.000Z</updated>
     
     
-    <summary type="html">swagger</summary>
+    <summary type="html">TypeORM、实体、CURD、关系、事务</summary>
     
     
     
     <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
     <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -52,9 +52,9 @@
     <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
     <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -73,9 +73,9 @@
     <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
     <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -115,9 +115,9 @@
     <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
     <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   

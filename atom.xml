@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-03-20T07:44:50.000Z</updated>
+  <updated>2024-04-05T05:46:19.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决System占CPU过高</title>
+    <link href="https://www.qcqx.cn/article/11072a12.html"/>
+    <id>https://www.qcqx.cn/article/11072a12.html</id>
+    <published>2024-04-05T05:46:19.000Z</published>
+    <updated>2024-04-05T05:46:19.000Z</updated>
+    
+    
+    <summary type="html">鹅子的ACE又在开机扫内存了</summary>
+    
+    
+    
+    <category term="其它" scheme="https://www.qcqx.cn/categories/%E5%85%B6%E5%AE%83/"/>
+    
+    
+    <category term="其它" scheme="https://www.qcqx.cn/tags/%E5%85%B6%E5%AE%83/"/>
+    
+  </entry>
   
   <entry>
     <title>浏览器HTTP缓存</title>
@@ -74,6 +93,25 @@
     
     
     <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一点点网络知识</title>
+    <link href="https://www.qcqx.cn/article/1e4e2709.html"/>
+    <id>https://www.qcqx.cn/article/1e4e2709.html</id>
+    <published>2024-03-11T15:20:29.000Z</published>
+    <updated>2024-03-11T15:20:29.000Z</updated>
+    
+    
+    <summary type="html">当计算机网络与前端相遇</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="网络" scheme="https://www.qcqx.cn/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -381,48 +419,6 @@
     <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文本、代码粘贴分享平台项目</title>
-    <link href="https://www.qcqx.cn/article/544ba770.html"/>
-    <id>https://www.qcqx.cn/article/544ba770.html</id>
-    <published>2023-07-09T05:53:20.000Z</published>
-    <updated>2023-10-12T05:53:20.000Z</updated>
-    
-    
-    <summary type="html">一个快捷的文本、代码粘贴分享平台，基于Vue3、Express</summary>
-    
-    
-    
-    <category term="项目" scheme="https://www.qcqx.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="NodeJS" scheme="https://www.qcqx.cn/tags/NodeJS/"/>
-    
-    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Express+Vue3前后端分离博客</title>
-    <link href="https://www.qcqx.cn/article/ebf9360.html"/>
-    <id>https://www.qcqx.cn/article/ebf9360.html</id>
-    <published>2023-05-22T06:37:16.000Z</published>
-    <updated>2023-05-22T06:37:16.000Z</updated>
-    
-    
-    <summary type="html">练手写个前后端分离的博客，刚好复习下NodeJS的知识</summary>
-    
-    
-    
-    <category term="项目" scheme="https://www.qcqx.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="NodeJS" scheme="https://www.qcqx.cn/tags/NodeJS/"/>
-    
-    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
     
   </entry>
   

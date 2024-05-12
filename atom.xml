@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-04-05T05:46:19.000Z</updated>
+  <updated>2024-05-07T13:07:32.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git 熟知熟用</title>
+    <link href="https://www.qcqx.cn/article/120u7a12.html"/>
+    <id>https://www.qcqx.cn/article/120u7a12.html</id>
+    <published>2024-05-07T13:07:32.000Z</published>
+    <updated>2024-05-07T13:07:32.000Z</updated>
+    
+    
+    <summary type="html">详细学习下Git的各种操作</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Git" scheme="https://www.qcqx.cn/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>解决System占CPU过高</title>
@@ -398,27 +417,6 @@
     <category term="Hexo" scheme="https://www.qcqx.cn/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="https://www.qcqx.cn/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6查缺补漏</title>
-    <link href="https://www.qcqx.cn/article/383b041f.html"/>
-    <id>https://www.qcqx.cn/article/383b041f.html</id>
-    <published>2023-07-16T06:17:14.000Z</published>
-    <updated>2023-07-16T06:17:14.000Z</updated>
-    
-    
-    <summary type="html">以前只是会用一些新特性，现在系统地将ES6学习一遍</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
     
   </entry>
   

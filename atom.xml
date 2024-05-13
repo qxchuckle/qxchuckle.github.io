@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-05-07T13:07:32.000Z</updated>
+  <updated>2024-05-12T07:13:33.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Git 规范与实践</title>
+    <link href="https://www.qcqx.cn/article/7f942cef.html"/>
+    <id>https://www.qcqx.cn/article/7f942cef.html</id>
+    <published>2024-05-12T07:13:33.000Z</published>
+    <updated>2024-05-12T07:13:33.000Z</updated>
+    
+    
+    <summary type="html">Git 的规范、工作流、常见场景与实践。</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Git" scheme="https://www.qcqx.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git 熟知熟用</title>
     <link href="https://www.qcqx.cn/article/120u7a12.html"/>
     <id>https://www.qcqx.cn/article/120u7a12.html</id>
     <published>2024-05-07T13:07:32.000Z</published>
-    <updated>2024-05-07T13:07:32.000Z</updated>
+    <updated>2024-05-13T13:07:32.000Z</updated>
     
     
     <summary type="html">详细学习下Git的各种操作</summary>
@@ -396,27 +415,6 @@
     <category term="茶" scheme="https://www.qcqx.cn/tags/%E8%8C%B6/"/>
     
     <category term="养生" scheme="https://www.qcqx.cn/tags/%E5%85%BB%E7%94%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Banner随机文章展示</title>
-    <link href="https://www.qcqx.cn/article/a1bf85bf.html"/>
-    <id>https://www.qcqx.cn/article/a1bf85bf.html</id>
-    <published>2023-07-26T17:44:58.000Z</published>
-    <updated>2023-07-26T17:44:58.000Z</updated>
-    
-    
-    <summary type="html">将原本固定的文章推荐改为随机展示若干文章</summary>
-    
-    
-    
-    <category term="Hexo" scheme="https://www.qcqx.cn/categories/Hexo/"/>
-    
-    
-    <category term="Hexo" scheme="https://www.qcqx.cn/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://www.qcqx.cn/tags/Butterfly/"/>
     
   </entry>
   

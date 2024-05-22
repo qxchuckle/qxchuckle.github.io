@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-05-12T07:13:33.000Z</updated>
+  <updated>2024-05-22T02:27:05.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Canvas 2D 贝塞尔曲线</title>
+    <link href="https://www.qcqx.cn/article/ba04fd32.html"/>
+    <id>https://www.qcqx.cn/article/ba04fd32.html</id>
+    <published>2024-05-22T02:27:05.000Z</published>
+    <updated>2024-05-22T02:27:05.000Z</updated>
+    
+    
+    <summary type="html">从公式到手写贝塞尔曲线</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 事件</title>
+    <link href="https://www.qcqx.cn/article/5b168750.html"/>
+    <id>https://www.qcqx.cn/article/5b168750.html</id>
+    <published>2024-05-21T13:52:54.000Z</published>
+    <updated>2024-05-21T13:52:54.000Z</updated>
+    
+    
+    <summary type="html">想要实现 canvas 交互，事件必不可少</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 进阶</title>
+    <link href="https://www.qcqx.cn/article/995d74ec.html"/>
+    <id>https://www.qcqx.cn/article/995d74ec.html</id>
+    <published>2024-05-19T06:52:35.000Z</published>
+    <updated>2024-05-19T06:52:35.000Z</updated>
+    
+    
+    <summary type="html">变形、合成、填充规则、控制像素、动画、优化</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 基础</title>
+    <link href="https://www.qcqx.cn/article/8c1c45d8.html"/>
+    <id>https://www.qcqx.cn/article/8c1c45d8.html</id>
+    <published>2024-05-18T12:53:00.000Z</published>
+    <updated>2024-05-18T12:53:00.000Z</updated>
+    
+    
+    <summary type="html">一直很想玩玩 Canvas 这种随意画图的 API</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
   
   <entry>
     <title>Git 规范与实践</title>
@@ -337,84 +421,6 @@
     <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="NodeJS" scheme="https://www.qcqx.cn/tags/NodeJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Rollup</title>
-    <link href="https://www.qcqx.cn/article/d9966eb3.html"/>
-    <id>https://www.qcqx.cn/article/d9966eb3.html</id>
-    <published>2023-11-15T11:37:04.000Z</published>
-    <updated>2023-11-15T11:37:04.000Z</updated>
-    
-    
-    <summary type="html">一个小巧强大的ESM打包器</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Webpack</title>
-    <link href="https://www.qcqx.cn/article/764f33bc.html"/>
-    <id>https://www.qcqx.cn/article/764f33bc.html</id>
-    <published>2023-11-05T05:24:00.000Z</published>
-    <updated>2023-11-05T05:24:00.000Z</updated>
-    
-    
-    <summary type="html">从Webpack开始的前端工程化探索</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编码备忘录</title>
-    <link href="https://www.qcqx.cn/article/f12f59c3.html"/>
-    <id>https://www.qcqx.cn/article/f12f59c3.html</id>
-    <published>2023-10-18T03:30:34.000Z</published>
-    <updated>2023-10-18T03:30:34.000Z</updated>
-    
-    
-    <summary type="html">记录各个方面、各种编码相关的零碎操作</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="备忘录" scheme="https://www.qcqx.cn/tags/%E5%A4%87%E5%BF%98%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>泡茶-年轻人的第一次养生</title>
-    <link href="https://www.qcqx.cn/article/e60c11dd.html"/>
-    <id>https://www.qcqx.cn/article/e60c11dd.html</id>
-    <published>2023-09-23T09:57:31.000Z</published>
-    <updated>2023-09-23T09:57:31.000Z</updated>
-    
-    
-    <summary type="html">精神不振，决定养生，泡个茶先</summary>
-    
-    
-    
-    <category term="Chuckle" scheme="https://www.qcqx.cn/categories/Chuckle/"/>
-    
-    
-    <category term="茶" scheme="https://www.qcqx.cn/tags/%E8%8C%B6/"/>
-    
-    <category term="养生" scheme="https://www.qcqx.cn/tags/%E5%85%BB%E7%94%9F/"/>
     
   </entry>
   

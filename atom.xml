@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-07-04T06:41:03.000Z</updated>
+  <updated>2024-09-10T02:09:48.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git lint 相关</title>
+    <link href="https://www.qcqx.cn/article/93c63660.html"/>
+    <id>https://www.qcqx.cn/article/93c63660.html</id>
+    <published>2024-09-10T02:09:48.000Z</published>
+    <updated>2024-09-10T02:09:48.000Z</updated>
+    
+    
+    <summary type="html">对 Git 也作一些限制，并集成一些辅助工具</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Git" scheme="https://www.qcqx.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>集成 lint 代码规范工具</title>
+    <link href="https://www.qcqx.cn/article/b2086eb9.html"/>
+    <id>https://www.qcqx.cn/article/b2086eb9.html</id>
+    <published>2024-09-08T01:45:51.000Z</published>
+    <updated>2024-09-08T01:45:51.000Z</updated>
+    
+    
+    <summary type="html">lint 代码规范工具配置好后非常方便</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Monorepo 单仓库多应用</title>
+    <link href="https://www.qcqx.cn/article/65df4aa6.html"/>
+    <id>https://www.qcqx.cn/article/65df4aa6.html</id>
+    <published>2024-08-05T11:32:42.000Z</published>
+    <updated>2024-08-05T11:32:42.000Z</updated>
+    
+    
+    <summary type="html">学习这种先进的管理代码的策略模式</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue+TS 实现虚拟列表</title>
@@ -362,67 +421,6 @@
     <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NestJS[一]-基础</title>
-    <link href="https://www.qcqx.cn/article/7c45abd.html"/>
-    <id>https://www.qcqx.cn/article/7c45abd.html</id>
-    <published>2024-01-22T07:26:49.000Z</published>
-    <updated>2024-01-22T07:26:49.000Z</updated>
-    
-    
-    <summary type="html">IOC/DI、cli、RESTful、控制器、提供者、作用域、模块、中间件</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
-    
-    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>qx-tracker</title>
-    <link href="https://www.qcqx.cn/article/31416cf6.html"/>
-    <id>https://www.qcqx.cn/article/31416cf6.html</id>
-    <published>2024-01-18T13:54:59.000Z</published>
-    <updated>2024-01-18T13:54:59.000Z</updated>
-    
-    
-    <summary type="html">一个前端监控和埋点SDK</summary>
-    
-    
-    
-    <category term="项目" scheme="https://www.qcqx.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="TS" scheme="https://www.qcqx.cn/tags/TS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node-回眸[三]</title>
-    <link href="https://www.qcqx.cn/article/9b01fd71.html"/>
-    <id>https://www.qcqx.cn/article/9b01fd71.html</id>
-    <published>2024-01-16T05:35:52.000Z</published>
-    <updated>2024-01-16T05:35:52.000Z</updated>
-    
-    
-    <summary type="html">http、express、log4js、HTTP标头、SSE</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="NodeJS" scheme="https://www.qcqx.cn/tags/NodeJS/"/>
     
   </entry>
   

@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/stars/index.html</loc>
+    <loc>https://www.qcqx.cn/rgb/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/rgb/index.html</loc>
+    <loc>https://www.qcqx.cn/stars/index.html</loc>
     
     <lastmod>2023-09-22</lastmod>
     
@@ -945,13 +945,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/tags/Hexo/</loc>
-    <lastmod>2024-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qcqx.cn/tags/JAVA/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -960,6 +953,13 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/JavaSE/</loc>
+    <lastmod>2024-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qcqx.cn/tags/Hexo/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1092,6 +1092,13 @@
   </url>
   
   <url>
+    <loc>https://www.qcqx.cn/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2024-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.qcqx.cn/tags/%E8%8C%B6/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -1100,13 +1107,6 @@
   
   <url>
     <loc>https://www.qcqx.cn/tags/%E5%85%BB%E7%94%9F/</loc>
-    <lastmod>2024-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qcqx.cn/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1171,14 +1171,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/categories/Hexo/</loc>
+    <loc>https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://www.qcqx.cn/categories/Hexo/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

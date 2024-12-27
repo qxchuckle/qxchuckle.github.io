@@ -6,7 +6,7 @@
   <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
   
   <link href="https://www.qcqx.cn/"/>
-  <updated>2024-10-12T17:26:31.000Z</updated>
+  <updated>2024-12-09T07:10:08.000Z</updated>
   <id>https://www.qcqx.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NestJS实践杂记</title>
+    <link href="https://www.qcqx.cn/article/1be64a8d.html"/>
+    <id>https://www.qcqx.cn/article/1be64a8d.html</id>
+    <published>2024-12-09T07:10:08.000Z</published>
+    <updated>2024-12-09T07:10:08.000Z</updated>
+    
+    
+    <summary type="html">毕设后端用的NestJS，记录下实践中的问题、技巧</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>React-记-3</title>
@@ -404,25 +425,6 @@
     <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="浏览器" scheme="https://www.qcqx.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据类型与拷贝</title>
-    <link href="https://www.qcqx.cn/article/6e8f8c6c.html"/>
-    <id>https://www.qcqx.cn/article/6e8f8c6c.html</id>
-    <published>2024-03-12T05:20:17.000Z</published>
-    <updated>2024-03-12T05:20:17.000Z</updated>
-    
-    
-    <summary type="html">JS八种数据类型与引用类型的拷贝</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
     
   </entry>
   

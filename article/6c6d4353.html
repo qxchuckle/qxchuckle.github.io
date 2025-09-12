@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
+  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+    (async()=>{window.stop()})()
+    window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  }
+  navigator.serviceWorker.register('/giggles.js')
+    .then(async () => {
+      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+        window.localStorage.setItem('ChenBlogHelper_Set', 2)
+        setTimeout(() => {
+          window.location.reload()
+        }, 150)
+      }
+    })
+}
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JavaScript笔记DOM操作 | 轻笑Chuckle</title><meta name="keywords" content="前端,JS"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="DOM操作、JS操控网页、事件、BOM、JQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript笔记DOM操作">
+<meta property="og:url" content="https://www.qcqx.cn/article/6c6d4353.html">
+<meta property="og:site_name" content="轻笑Chuckle">
+<meta property="og:description" content="DOM操作、JS操控网页、事件、BOM、JQ">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/44-1.webp">
+<meta property="article:published_time" content="2023-04-06T10:19:15.000Z">
+<meta property="article:modified_time" content="2023-04-06T10:19:15.000Z">
+<meta property="article:author" content="『轻笑Chuckle』">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/44-1.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"><link rel="canonical" href="https://www.qcqx.cn/article/6c6d4353"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/index.css?285"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/fontawesome.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":160},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaScript笔记DOM操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-06 18:19:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/tag_plugins.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="轻笑Chuckle" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"/></div></div><div id="web_bg"></div><div id="svg_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center" id="sidebar-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="menu-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><div id="chuckle_home"><div class="back-home-button"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">传送门</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" loading="lazy"/><span class="back-menu-item-text">博客主页</span></a><a class="back-menu-item" href="https://waline.qcqx.cn/ui" rel="external nofollow" title="前往评论后端" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c4.webp" loading="lazy"/><span class="back-menu-item-text">评论管理</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客线路</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qcqx.cn/" title="前往博客主站" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/h4.webp" loading="lazy"/><span class="back-menu-item-text">主域名线路</span></a><a class="back-menu-item" href="https://qxchuckle.github.io" title="前往博客Github线路" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c6.webp" loading="lazy"/><span class="back-menu-item-text">Github线路</span></a></div></div></div></div></div><span id="blog_name"><a id="site-name" href="/">轻笑Chuckle</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div><div id="buttons"><div id="switch-bg"><a class="site-page social-icon search" href="javascript:;" rel="noopener external nofollow" onclick="toggleWinbox()" title="切换背景-换一种感觉。"><i class="fas fa-images fa-fw"></i></a></div><div id="switch-darkmode"><a class="site-page social-icon" onclick="kk.switchDarkMode()" title="切换模式"><i class="fas fa-adjust fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info" style="background-image: url('https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/44-1.webp')"><div id="post-meta-top"><span class="post-categories"><i class="iconfont icon-fenlei fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="post-tags"><a class="post-meta-tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta-tags" href="/tags/JS/">JS</a></span></div><h1 class="post-title">JavaScript笔记DOM操作<a class="post-share" id="share-post" href="javascript:;" rel="noopener external nofollow" onclick="kk.postURL()"><i class="fa fa-share-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="iconfont icon-shalou fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-06T10:19:15.000Z" title="发表于 2023-04-06 18:19:15">2023-04-06</time></span><span class="post-meta-date"><i class="iconfont icon-gengxin fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-06T10:19:15.000Z" title="更新于 2023-04-06 18:19:15">2023-04-06</time></span></div><div class="meta-secondline"><span class="post-meta-wordcount"><i class="iconfont icon-tongji1 fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span></span><span class="post-meta-wordcount"><i class="iconfont icon-tubiaozhizuomoban- fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="leancloud_visitors" id="/article/6c6d4353.html" data-flag-title="JavaScript笔记DOM操作"><i class="iconfont icon-yanjing fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"></span></span><span class="post-meta-commentcount"><i class="iconfont icon-pinglun fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/article/6c6d4353.html#post-comment"><span class="waline-comment-count" id="/article/6c6d4353.html"></span></a></span></div></div></div><article class="post-content" id="article-container"><div class="Copyright-Notice" id="Copyright-Notice"><div id="post-Copyright-bar"></div><div id="Copyright-box"><span>本站博文未在任何平台</span><span class="copyright-phone-none">以任何形式</span><span>售卖，详情:</span><a href="/agreement/">协议</a></div></div><div class="post-series"><div class="post-series-title"> <span class="arrowhead">▸</span><span>JavaScript笔记-系列</span></div><div class="post-series-box"><script>if(1){
+let series_title=document.querySelector('.post-series-title')
+let arrowhead=document.querySelector('.arrowhead')
+var arrowhead_n = 1;
+series_title.addEventListener('click',function(){
+    let content=document.querySelector('.post-series-box')
+    content.classList.toggle("show")
+    if(arrowhead_n){
+      arrowhead.innerHTML = "▾"
+      arrowhead_n = 0
+    }else{
+      arrowhead.innerHTML = "▸"
+      arrowhead_n = 1
+    }
+})
+}</script><div class="post-series-item"><a class="title" href="/article/3f7cd15d.html" title="JavaScript基础笔记(1)">JavaScript基础笔记(1)</a></div><div class="post-series-item"><a class="title" href="/article/c32976c2.html" title="JavaScript基础笔记(2)">JavaScript基础笔记(2)</a></div><div class="post-series-item"><a class="title" href="/article/7d8b8b34.html" title="JavaScript基础笔记(3)">JavaScript基础笔记(3)</a></div><div class="post-series-item"><a class="title" href="/article/6c6d4353.html" title="JavaScript笔记DOM操作">JavaScript笔记DOM操作</a></div><div class="post-series-item"><a class="title" href="/article/b0cb9f85.html" title="JavaScript—DOM案例">JavaScript—DOM案例</a></div></div></div><div class="post-ai" id="qx-post-ai"><div class="ai-title"><i class="fa-brands fa-airbnb"></i><div class="ai-title-text">QX-AI</div><div class="ai-tag">GPT-4</div></div><div class="ai-explanation">QX-AI初始化中...</div><div class="ai-explanation-none">本文介绍了JavaScript中操作DOM的方法和属性，包括获取DOM元素、操作元素内容和属性、操纵元素样式、处理表单元素、定时器和事件等。文章讲解了DOM树、节点类型和获取DOM元素的方法，并介绍了在JavaScript中获取页面滚动高度的属性和移动端的触摸事件。此外，本文深入探讨了事件流中的捕获阶段和冒泡阶段，并列举了一些获取元素尺寸、位置和节点操作的常用属性和方法。</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己</div><div class="ai-btn-item">生成预设简介</div><div class="ai-btn-item">推荐相关文章</div><div class="ai-btn-item">生成AI简介</div></div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/post-ai.js?22" defer="true" data-pjax></script></div><h1 id="DOM简介"><a href="#DOM简介" class="headerlink" title="DOM简介"></a>DOM简介</h1><p>HTML是一种纯文本格式的文件，也就是文档，<a href="/article/1475187a.html">HTML基础笔记</a></p>
+<p><strong>DOM：</strong>Document Object Model 文档对象模型，将 HTML 文档结构化表示</p>
+<p>DOM 让网页 HTML 中的元素以树的方式呈现，并提供了访问、操控 DOM 树中各个节点的API，是为了让 JS 操作 HTML 元素而制定的一个规范，如今可看作是 JS 的一部分</p>
+<p>每个载入浏览器的 HTML 文档都会成为 Document 对象，Document 对象是 Window 对象的一部分，可通过 window.document 或 document 对其进行访问</p>
+<figure class="highlight html"><figcaption><span>获取DOM对象</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html;charset=UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>);</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">document</span>);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>控制台输出：获取到了网页所有元素，整个html文档</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src=https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/44-2.webp width="70%"></p>
+<p><strong>DOM树：</strong><br>网页中的一切元素都是 DOM 树中的节点</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src=https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/44-3.webp width="80%"></p>
+<p><strong>节点类型：</strong></p>
+<ol>
+<li><strong>文档节点：</strong>文档本身，整个 document 文档</li>
+<li><strong>元素节点：</strong>所有 HTML 标签元素，<head> <body> <div> <span></li>
+<li><strong>属性节点：</strong>所有标签元素内的属性，id、class、href、name</li>
+<li><strong>文本节点：</strong>标签元素内的文本</li>
+<li><strong>注释节点：</strong>HTML中的注释，&lt;!— 注释 —></li>
+</ol>
+<h1 id="获取DOM元素"><a href="#获取DOM元素" class="headerlink" title="获取DOM元素"></a>获取DOM元素</h1><p><strong>获取dom节点对象的方法：</strong></p>
+<ol>
+<li><code>getElementById(&#39;id名&#39;)</code> 根据id获取<strong>第一个dom对象</strong>（通常id唯一）</li>
+<li><code>getElementsByClassName(&#39;class类名&#39;)</code> 根据class名获取<strong>dom对象数组 NodeList</strong></li>
+<li><code>getElementsByTagName(&#39;标签名&#39;)</code> 根据标签名获取<strong>dom对象数组</strong></li>
+<li><code>getElementsByName(&#39;name名&#39;)</code> 根据name属性值获取<strong>dom对象数组</strong>，一般不用</li>
+<li><code>querySelector(&#39;CSS选择器&#39;)</code> 查找匹配指定CSS选择器的<strong>第一个dom对象</strong></li>
+<li><code>querySelectorAll(&#39;CSS选择器&#39;)</code> 查找匹配指定CSS选择器的所有元素，返回<strong>dom对象数组</strong></li>
+</ol>
+<p>获取到的dom对象数组都是伪数组</p>
+<p>JS获取的都是对象，使用<code>console.dir()</code>能更直观地看一个对象。</p>
+<h2 id="操作元素的内容"><a href="#操作元素的内容" class="headerlink" title="操作元素的内容"></a>操作元素的内容</h2><p>获取到dom对象后，通过两个<strong>属性</strong>就能获取、修改元素中的内容</p>
+<ol>
+<li><code>innerText</code> <strong>不解析</strong>标签</li>
+<li><code>innerHTML</code> <strong>解析</strong>标签，通常用这个</li>
+</ol>
+<p>使用 += 保留元素中原有内容，并在元素中末尾添加新内容</p>
+<h2 id="操作元素的属性"><a href="#操作元素的属性" class="headerlink" title="操作元素的属性"></a>操作元素的属性</h2><p>获取到dom对象后，直接访问<strong>属性</strong>（如src、href、id、class）就能进行修改或赋值。</p>
+<p>也可以使用 <code>getAttribute()</code> 和 <code>setAttribute()</code> 方法来获取和设置属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;1.webp&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;一张图片&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> img = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;img&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  img.<span class="property">src</span> = <span class="string">&quot;2.webp&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="操控元素样式"><a href="#操控元素样式" class="headerlink" title="操控元素样式"></a>操控元素样式</h2><p><strong>1、通过 style 属性控制元素样式：</strong>css带有 - 连接符的属性，在js中采用小驼峰命名法获取</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.box&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">box.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&#x27;blue&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">box.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;green&#x27;</span>;<span class="comment">//background-color</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2、通过类名控制元素样式：</strong>直接修改style属性过于麻烦，可以先把样式写给一个类，再将类名赋给 <strong>className</strong> 属性，+= 保留原有类名</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box1</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box2</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(<span class="number">88</span>, <span class="number">164</span>, <span class="number">192</span>);</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.box1&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  box.<span class="property">className</span> += <span class="string">&#x27; box2&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用 += 号来保留原有class还是不够规范</p>
+<p>可以使用 <strong>classList</strong> 属性来添加、删除、切换(有就删除，没有就加上)类名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加一个类名</span></span><br><span class="line">元素.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;类名&#x27;</span>);</span><br><span class="line"><span class="comment">// 删除一个类名</span></span><br><span class="line">元素.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;类名&#x27;</span>);</span><br><span class="line"><span class="comment">// 切换一个类名</span></span><br><span class="line">元素.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&#x27;类名&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="操作表单元素"><a href="#操作表单元素" class="headerlink" title="操作表单元素"></a>操作表单元素</h2><p>input 标签框内的文本存放在其value属性中，获取即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipt = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(ipt.<span class="property">value</span>);</span><br></pre></td></tr></table></figure>
+<p>操作 input 的 type 属性，来控制输入框样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipt = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">ipt.<span class="property">type</span> = <span class="string">&#x27;password&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>一些布尔值的属性(赋任意值都代表true)，disabled、checked、selected，添加上就有效果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipt = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">ipt.<span class="property">checked</span> = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2><p><strong>标准属性：</strong>标签自带的属性，class、id、title等</p>
+<p><strong>自定义属性：</strong>H5的新东西,以 data- 开头，格式 <strong>data-自定义后缀</strong> ，<code>对象.dataset.自定义后缀</code> 获取</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;123456&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.box&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(box.<span class="property">dataset</span>.<span class="property">id</span>);<span class="comment">//123456</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><p><strong>1、间歇函数</strong> <code>setInterval()</code> 每隔一段时间自动执行一段代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">setInterval</span>(fun,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>清除间歇函数定时器 <code>clearInterval()</code> ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> itv = <span class="built_in">setInterval</span>(fun,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">clearInterval</span>(itv);</span><br></pre></td></tr></table></figure>
+<p><strong>2、延时函数</strong> <code>setTimeout()</code> 延时一段时间后执行代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>清除延时函数定时器 <code>clearTimeout()</code></p>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>DOM事件：</strong>在文档或浏览器窗口中产生的一系列交互，如拖动元素、点击按钮、提交表单等。</p>
+<p>JavaScript 以<strong>事件驱动</strong>为核心，通过监听事件或给事件绑定JS，可以在事件发生时执行特定 JS 以完成交互。</p>
+<details class="folding-tag" ><summary> 常见事件 </summary>
+              <div class='content'>
+              <p><p>这里都是事件名，属性名一般在事件名前加 on</p></p><p><p><strong>鼠标事件：</strong></p></p><ol><li><strong>click</strong> 鼠标左键/键盘回车</li><li><strong>dbclick</strong> 双击鼠标左键</li><li><strong>mouseenter</strong> 光标移入元素，不冒泡</li><li><strong>mouseleave</strong> 光标移出元素，不冒泡</li><li><strong>mouseover</strong> 光标移入元素，冒泡</li><li><strong>mouseout</strong> 光标移出元素，冒泡</li><li><strong>mousedown</strong> 按下任意鼠标键</li><li><strong>mouseup</strong> 释放任意鼠标键</li><li><strong>mousewheel</strong> 鼠标滚轮滚动</li><li><strong>mousemove</strong> 光标在元素上移动</li></ol><p><strong>用户界面事件：</strong></p><ol><li><strong>load</strong> 页面或资源加载完成</li><li><strong>unload</strong> 卸载完成</li><li><strong>error</strong> JS出错或资源加载失败</li><li><strong>select</strong> 选中文字</li><li><strong>resize</strong> 调整窗口大小</li><li><strong>scroll</strong> 包含滚动条的元素</li></ol><p><strong>焦点事件：</strong></p><ol><li><strong>blur</strong> 失去焦点，不冒泡</li><li><strong>focus</strong> 获得焦点，不冒泡</li><li><strong>focusout</strong> 失去焦点，冒泡</li><li><strong>focusin</strong> 获得焦点，冒泡</li></ol><p><strong>键盘和输入事件：</strong></p><ol><li><strong>keydown</strong> 按下键盘某个键</li><li><strong>keyup</strong> 释放键盘某个键</li><li><strong>input</strong> 当输入框文本改变时立即触发</li><li><strong>change</strong> 当输入框内容发生改变,失去焦点时触发</li><li><strong>textInput</strong> 文本输入</li></ol><p><strong>HTML5事件：</strong></p><ol><li><strong>contextmenu</strong> 右键菜单</li><li><strong>beforeunload</strong> 页面卸载之前</li><li><strong>DOMContentLoaded</strong> DOM树构建完成</li><li><strong>readystatechange</strong> 加载状态变化</li><li><strong>hashchange</strong> URL散列值变化</li></ol>
+              </div>
+            </details>
+<p><strong>事件的三要素：</strong>事件源、事件、事件驱动程序</p>
+<p><strong>事件源：</strong>触发事件的元素，获取事件源，即获取DOM节点<br><strong>事件：</strong>JS定义的各种事件<br><strong>事件驱动程序：</strong>触发事件后进行的操作</p>
+<h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p>使用 <code>addEventListener</code> 监听事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素对象.<span class="title function_">addEventListener</span>(<span class="string">&#x27;事件类型&#x27;</span>, 执行的函数)</span><br></pre></td></tr></table></figure>
+<p>可以重复绑定。</p>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>事件对象存放了事件触发时的相关信息，如鼠标点击的位置坐标、键盘按下了哪个键</p>
+<p>事件绑定的回调函数的第一个参数就是事件对象event、e</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">元素.<span class="title function_">addEventListener</span>(<span class="string">&#x27;事件&#x27;</span>,<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">lig</span>(e);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>事件对象常见属性：</strong></p>
+<ol>
+<li><strong>type</strong> 当前事件类型</li>
+<li><strong>clientX 、 clientY</strong> 获取光标相对于浏览器可见窗口左上角的位置</li>
+<li><strong>offsetX 、 offsetY</strong> 获取光标相对于当前DOM元素左上角的位置</li>
+<li><strong>key</strong> 当前按下的键盘键的值</li>
+</ol>
+<figure class="highlight js"><figcaption><span>监听是否按下回车</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipt = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">ipt.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keyup&#x27;</span>, <span class="function">(<span class="params">e</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(e.<span class="property">key</span> == <span class="string">&#x27;Enter&#x27;</span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;回车&#x27;</span>); &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h2><p><strong>1、焦点事件 focus blur</strong> 见案例-搜索框下拉栏</p>
+<p><strong>2、键盘事件 keydown keyup input</strong> 见案例-评论发布、字数统计</p>
+<p><strong>3、mouseover 与 mouseenter</strong><br>mouseover/mouseout 有冒泡效果，mouseenter/mouseleave 没有冒泡效果</p>
+<p>使用mouseover，有冒泡效果，所以鼠标从监听的元素到其子元素，虽然子元素没用绑定鼠标进入事件，但该事件会冒泡到父元素的同名事件，所以也会触发进入</p>
+<p>通常用 mouseenter/mouseleave</p>
+<p><strong>4、加载事件 load、DOMContentLoaded</strong><br><strong>load</strong> 监听某个元素内的所有资源（dom、css、img）加载完毕</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//等待页面所有资源加载完毕，再执行回调函数</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;load&#x27;</span>, <span class="function">()=&gt;</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//等待图片加载完毕</span></span><br><span class="line">img.<span class="title function_">addEventListener</span>(<span class="string">&#x27;load&#x27;</span>, <span class="function">()=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>DOMContentLoaded</strong> 监听HTML文档加载完毕该事件就被触发，不等待css等其它资源</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">()=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>5、滚动事件 scroll</strong><br>当某个元素的滚动条滚动时，触发该事件，不冒泡</p>
+<p>通常配合元素的 <strong>scrollTop</strong> 和 <strong>scrollLeft</strong> 两个属性，获取的是<strong>数字型</strong>，不带单位，但意思是像素px，可读写，可让js去控制滚动</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//整个页面卷去的高度，document.documentElement获取html标签</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br><span class="line"><span class="comment">//元素被卷去的高度</span></span><br><span class="line">div.<span class="property">scrollTop</span></span><br></pre></td></tr></table></figure>
+<p>这两个属性都用来获取被卷去的大小，即元素随着滚动超出可视窗口的大小（单位px）<br><strong>scrollTop</strong> 滚动条往下，元素向上移动，即获取该元素向上移动超出可视区域的高度<br><strong>scrollLeft</strong> 滚动条往右，元素向左移动，即获取该元素向左移动超出可视区域的宽度</p>
+<p>获取页面滚动高度的时候优先考虑使用 window.pageYOffset 然后在使用scrollTop</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _scrollLeft = <span class="variable language_">window</span>.<span class="property">scrollX</span> || <span class="variable language_">window</span>.<span class="property">pageXOffset</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollLeft</span></span><br><span class="line"><span class="keyword">var</span> _scrollTop = <span class="variable language_">window</span>.<span class="property">scrollY</span> || <span class="variable language_">window</span>.<span class="property">pageYOffset</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br></pre></td></tr></table></figure>
+<p><strong>一些小案例：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> n = <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br><span class="line">    <span class="keyword">if</span> (n &gt;= <span class="number">100</span>) &#123; <span class="comment">// 页面滚动高度超过100px进行一些操作</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 页面滚动高度小于100px进行恢复操作</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>回到顶部</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> backTop = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#backTop&#x27;</span>)</span><br><span class="line">backTop.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// document.documentElement.scrollTop = 0</span></span><br><span class="line">  <span class="comment">// window.scrollTo(x, y)</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>5、窗口尺寸变化事件 resize</strong><br>浏览器窗口大小发生变化的时候触发的事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;resize&#x27;</span>, <span class="function">()=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>6、移动端触摸事件 touchstart touchend touchmove</strong></p>
+<p><strong>touchstart</strong> 手指触摸到元素时触发<br><strong>touchend</strong> 手指从元素离开时触发<br><strong>touchmove</strong> 手指在元素上滑动时触发</p>
+<h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><p><strong>事件流：</strong>事件完整执行过程中的流动路径</p>
+<p>两个阶段：<strong>捕获</strong>阶段、<strong>冒泡</strong>阶段</p>
+<p>捕获阶段从父节点到子，冒泡阶段从子到父</p>
+<p>处理函数默认在冒泡阶段执行，从子节点到父节点，依次向上调用所有父级元素的<strong>同名事件</strong>。</p>
+<p><strong>让处理函数在捕获阶段触发：</strong>冒泡阶段不再触发</p>
+<figure class="highlight js"><figcaption><span>传入第三个参数true</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.<span class="title function_">addEventListener</span>(事件类型, 处理函数, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>阻止冒泡：</strong><br>默认存在冒泡模式，子元素触发事件也会触发父级同名事件，阻止冒泡能把事件限制在当前元素内。</p>
+<p><code>stopPropagation()</code> <strong>阻止事件流动</strong>传播(包括冒泡和捕获)，但不影响当前元素上其他已经注册的事件监听器执行。<br><code>stopImmediatePropagation()</code> <strong>阻止事件流动</strong>传播，且阻止当前元素上其他已经注册的事件监听器执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件对象.<span class="title function_">stopPropagation</span>();</span><br></pre></td></tr></table></figure>
+<h2 id="解绑事件"><a href="#解绑事件" class="headerlink" title="解绑事件"></a>解绑事件</h2><p><code>removeEventListener()</code> 对某个元素解绑某个处理函数，匿名、箭头函数无法被解绑</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">元素.<span class="title function_">removeEventListener</span>(事件类型, 处理函数);</span><br><span class="line">btn.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;click&#x27;</span>, fn);</span><br></pre></td></tr></table></figure>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><p><strong>事件委托：</strong>一种技巧，减少事件注册次数，提高程序性能。</p>
+<p>事件冒泡可以用来实现事件委托，给父元素注册事件，当触发子元素的时候，会冒泡到父元素身上，从而触发父元素的事件。</p>
+<p><strong>案例：</strong>当多个子元素需要注册点击事件时，可以将点击事件注册到父元素上，再由父元素的事件对象e去找被点击的子元素，<code>e.target</code> 就能找到实际触发事件的子元素，再用其className、id、tagName 来确定业务上应该要触发事件的子元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>);</span><br><span class="line">ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;LI&#x27;</span>) &#123;</span><br><span class="line">        e.<span class="property">target</span>.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="阻止元素默认行为"><a href="#阻止元素默认行为" class="headerlink" title="阻止元素默认行为"></a>阻止元素默认行为</h2><p>使用 <code>e.preventDefault()</code> 阻止元素默认行为</p>
+<figure class="highlight js"><figcaption><span>让a标签点击不跳转链接</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="元素的属性、方法"><a href="#元素的属性、方法" class="headerlink" title="元素的属性、方法"></a>元素的属性、方法</h1><p>获取到元素后常用的属性和方法</p>
+<h2 id="元素的尺寸与位置"><a href="#元素的尺寸与位置" class="headerlink" title="元素的尺寸与位置"></a>元素的尺寸与位置</h2><p>获取元素的宽高：<strong>clientWidth</strong>、<strong>clientHeight</strong>两个属性，不包含padding、border，<strong>offsetWidth</strong>、<strong>offsetHeight</strong>包含padding、border</p>
+<p>获取窗口的宽高：<code>document.documentElement.clientWidth</code></p>
+<p><strong>offsetTop</strong>、<strong>offsetLeft</strong>获取元素距离自己最近一位带有定位的祖先元素的左、上位置</p>
+<p><code>getBoundingClientRect()</code> 获取元素的大小和相对于<strong>可视窗口</strong>的位置，返回一个对象里面有width、height、top等属性</p>
+<h2 id="元素节点操作"><a href="#元素节点操作" class="headerlink" title="元素节点操作"></a>元素节点操作</h2><p><strong>1、关系查找元素节点</strong>，以元素节点之间的关系进行查找，父找子、子找父、找兄弟</p>
+<p>查找最近一级的<strong>父节点</strong>：<code>子元素.parentNode</code></p>
+<p>查找最近一级的所有<strong>子节点</strong>，返回伪数组：<code>父元素.children</code><br><code>firstElementChild</code> 第一个子节点<br><code>lastElementChild</code> 最后一个子节点</p>
+<p><strong>上一个</strong>兄弟节点：<code>previousElementSibling</code><br><strong>下一个</strong>兄弟节点：<code>nextElementSibling</code></p>
+<p><strong>2、创建节点</strong></p>
+<p><code>document.createElement(&#39;标签名&#39;)</code></p>
+<p><strong>3、增加节点：</strong></p>
+<p><code>appendChild(插入的元素)</code> 在指定节点的子节点列表<strong>末尾</strong>添加新的子节点</p>
+<p><code>insertBefore(插入的元素,[放到哪个元素的前面])</code> 在节点的子节点列表<strong>任意位置前</strong>插入新的节点，默认在子节点列表的<strong>末尾</strong>插入</p>
+<p><strong>4、克隆节点</strong></p>
+<p><code>元素.cloneNode(布尔)</code> 参数为true，后代节点也会被克隆，false克隆时不包含后代节点(即只克隆标签)，默认false</p>
+<p><strong>5、删除节点</strong></p>
+<p><code>父元素.removeChild(子元素)</code> 通过父节点删除子节点</p>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p><strong>BOM</strong> (Browser Object Model ) 是浏览器对象模型，提供了一些属性与方法</p>
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><p>window对象是一个全局对象，是BOM的顶层对象，也是js中最顶级的对象，document、alert()、console、定时器等都是其属性和方法</p>
+<p>所有通过var定义在全局作用域中的变量、函数都会变成window对象的属性和方法</p>
+<p>window对象下的属性和方法调用的时候可以省略window</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>location拆分并保存了URL地址的各个组成部分</p>
+<p>常见属性和方法</p>
+<ol>
+<li><strong>href</strong> 获取完整的URL地址，也可以赋值进行地址跳转</li>
+<li><strong>search</strong> 获取地址中携带的参数，?后面的部分</li>
+<li><strong>hash</strong> 获取地址中的哈希值，#后面的部分</li>
+<li><code>reload()</code> 刷新当前页面，传入参数true表示强制刷新</li>
+</ol>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator保存了浏览器的相关信息</p>
+<p>常见属性和方法</p>
+<ol>
+<li><strong>userAgent</strong> 获取浏览器的类型、版本</li>
+</ol>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>history管理历史记录，如前进、后退、历史记录等</p>
+<p>常见属性和方法</p>
+<ol>
+<li><code>back()</code> 浏览器后退功能</li>
+<li><code>forward()</code> 浏览器前进功能</li>
+<li><code>go()</code> 参数1前进一个页面，-1后退一个页面，0刷新当前页面</li>
+</ol>
+<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><p>将数据存储这浏览器中，刷新页面不丢失数据，sessionStorage 和 localStorage，现在主要用<strong>localStorage</strong></p>
+<p>本地存储只能存字符串或数值型</p>
+<p>localStorage 以<strong>键值对</strong>的形式存储，可以多页面共享<br>sessionStorage 以<strong>键值对</strong>的形式存储，生命周期为关闭浏览器就消失，数据同一个页面共享</p>
+<p>新增/修改：<code>setItem</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(key, value);</span><br></pre></td></tr></table></figure>
+<p>读取：<code>getItem</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(key);</span><br></pre></td></tr></table></figure>
+<p>删除：<code>removeItem</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(key);</span><br></pre></td></tr></table></figure>
+<p><strong>存储复杂数据类型：</strong>存一个对象</p>
+<p>由于本地存储只能存字符串，所以需要将对象先转为JSON字符串再存储，使用时再把JSON转为对象</p>
+<p><code>JSON.parse()</code> 将数据转换为 JavaScript 对象<br><code>JSON.stringify()</code> 将 JavaScript 对象转换为 JSON 字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;chuckle&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="string">&#x27;19&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;obj&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj));</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;obj&#x27;</span>));</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>JavaScript笔记DOM操作</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://www.qcqx.cn/article/6c6d4353.html">https://www.qcqx.cn/article/6c6d4353.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>轻笑Chuckle</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2023-04-06</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2023-04-06</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/JS/">JS</a></div><div class="post_share"></div></div><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">投 喂</span><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/weixin.webp" alt="微信" loading="lazy"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/alipay.webp" alt="支付宝" loading="lazy"/></a><div class="post-qr-code-desc">支付宝</div></li><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">一个博客 一叶孤舟 一方世界</div></a></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/article/b0cb9f85.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/45-1.webp" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">⇦上一篇</div><div class="prev_info">JavaScript—DOM案例</div></div></a></div><div class="next-post pull-right"><a href="/article/7d8b8b34.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/43-1.webp" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇⇨</div><div class="next_info">JavaScript基础笔记(3)</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-no-lazy="data-no-lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div></div><a class="card-widget" id="card-tuijian" href="https://afdian.net/a/chuckle" target="_blank" style="display:block"><div id="tj-box"><div id="tj-box1"><div id="tj-left"><p>扫一扫</p>
+<span>快速打开移动端➤</span></div><div id="tj-right"><div id="tj-img-box"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACEElEQVR42u3cQXLDIAwF0Nz/0ukBOnW/QAbiPFaejCfhsUAaSe3r/ej1wsPDw8PDw8PDw8PDw8PDw8PDw/ti3ite+Tf8s5VfbzbsAQ8PD285L9lQdEEXt9W1Bzw8PLxdvL+2lTxX8TN7wMPDw/tE3vWbSXjIvx8PDw/vSby8GJEcCh4eHt4n8vIjSGC9qTkeHh7eaby8+XTf8xH9PTw8PLyAV13XZYWkaHvHwsPDw1vJGyvC5oWJsbGt6tHg4eHhreQll3tXcSFvm7UVI/Dw8PBu43Xh84u+N+HGw8PDW89L2ld5syr5reoYFh4eHt6ZvOqaCQljR4CHh4d3Di8vPVxvdKYMkafveHh4eHt5eWvq+uofu9bzPydo6O/h4eHh3TY6MNYSu+PzhmIEHh4e3hLeWJo7VrzIE3o8PDy8M3l5WlwdmZoJGLcUI/Dw8PDenf/QpFp4HbvWZ4rCeHh4eOfwuppY+UHMvI+Hh4d3Aq/a2h9Lu5PiRTlZx8PDw1vIq64kUc7DSRJ+8PDw8E7jVcf6qxd9HiSqwQAPDw9vLy8PBvMjU3kiXghXeHh4eJt41Ws9CRt5oWFprQUPDw9vE28qCY6HD/Dw8PCewbt+ro4aVEsheHh4eOfwepte1aMcG/HHw8PD28XLr+b8OPJBgbE0Gg8PD28X7xkLDw8PDw8PDw8PDw8PDw8PDw8P7wt4P1bbJA4y854GAAAAAElFTkSuQmCC"/></div></div></div><div id="tj-box2"><div id="tj-left"><p>爱发电</p>
+<span>扫码或<span class="tj-light">点击跳转</span>➤</span></div><div id="tj-right"><div id="tj-img-box"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACEElEQVR42u3bQXKDMAwFUO5/6fYAmbRfEhiTPK8YhiR+XtiKJI6fjx4HHh4eHh4eHh4eHh4eHh4eHh4e3hfzjnj88wMvz7x+9t33zOeAh4eHt56XT/31OrmTX/fmiYeHh3cX791GnPCSY+DdFl+dAx4eHt4TeclWXiXh4eHhfSqvGgRXkxR4eHh4z+JNUrTl9MGeuRY8PDy8Cwpg111vUd/Dw8PDC3jVkS9BHlKfMCs8PDy8hbxe60C+cfeSwuWWLzw8PLybeHm6tpfwrR4YeHh4eDvz8ibUKiAJu+ehNh4eHt5KXh7CzstU+fPl78HDw8NbzpuAJ4mG/Eg4uQCGh4eHN+ZNylr5ElxXMMPDw8O7i5ds7tV2qPwI6ZW+8PDw8NbzquWrfMvu3U+WAA8PD28fXu+oOOtIqIbReHh4ePvwJlPptZ/2khR4eHh49/KqbVVRmNsqjCWLjoeHh7cDL5/iJNQ+N3WLh4eHtxuvWhLLExB/H0iX/2PAw8PDG/PKW3ALk0+3dzzg4eHhreQd8chD7XlJ7OQCGB4eHt5l/ZyThMVZjftLcy14eHh4Y97fSYFeeF09fi4JqfHw8PA24FVfmuotXOEVLDw8PLxH8arg5Ek8PDy8p/DmRa9ei391UfDw8PB24OVbc34/b+fqvUiAh4eHdxfvMwYeHh4eHh4eHh4eHh4eHh4eHh7eF/B+Acr1Qv2GlsE8AAAAAElFTkSuQmCC"/></div></div></div></div></a><div class="card-widget card-announcement"><div class="item-headline"><i class="iconfont icon-gonggao"></i><span>公告</span></div><div class="announcement_content">欢迎来到『轻笑Chuckle』的小站<br>(￣▽￣)～■干杯□～(￣▽￣)<br>如果有什么加载不出来或者其它滴小bug,「刷新网页/Ctrl+F5」应该、也许能解决</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">DOM简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">获取DOM元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">2.1.</span> <span class="toc-text">操作元素的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">操作元素的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E6%8E%A7%E5%85%83%E7%B4%A0%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">操控元素样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0"><span class="toc-number">2.4.</span> <span class="toc-text">操作表单元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">2.5.</span> <span class="toc-text">自定义属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC"><span class="toc-number">4.1.</span> <span class="toc-text">事件监听</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.2.</span> <span class="toc-text">事件对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text">常用事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%B5%81"><span class="toc-number">4.4.</span> <span class="toc-text">事件流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E7%BB%91%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.5.</span> <span class="toc-text">解绑事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">4.6.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E5%85%83%E7%B4%A0%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-number">4.7.</span> <span class="toc-text">阻止元素默认行为</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E3%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">元素的属性、方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%B0%BA%E5%AF%B8%E4%B8%8E%E4%BD%8D%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">元素的尺寸与位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">5.2.</span> <span class="toc-text">元素节点操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BOM"><span class="toc-number">6.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.1.</span> <span class="toc-text">window对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.2.</span> <span class="toc-text">location对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#navigator%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.3.</span> <span class="toc-text">navigator对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.4.</span> <span class="toc-text">history对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8"><span class="toc-number">6.5.</span> <span class="toc-text">本地存储</span></a></li></ol></li></ol></div></div><div class="card-widget card-recommend-post"><div class="item-headline"><i class="fas fa-dharmachakra"></i><span>相关推荐</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/d186ebdd.html" title="闭包与内存泄漏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/103-4.webp" alt="闭包与内存泄漏"></a><div class="content"><a class="title" href="/article/d186ebdd.html" title="闭包与内存泄漏">闭包与内存泄漏</a><time datetime="2024-09-12" title="发表于 2024-09-12">2024-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/383b041f.html" title="ES6查缺补漏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/64-1.webp" alt="ES6查缺补漏"></a><div class="content"><a class="title" href="/article/383b041f.html" title="ES6查缺补漏">ES6查缺补漏</a><time datetime="2023-07-16" title="发表于 2023-07-16">2023-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/7a1fbbc5.html" title="Promise异步编程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/52-1.webp" alt="Promise异步编程"></a><div class="content"><a class="title" href="/article/7a1fbbc5.html" title="Promise异步编程">Promise异步编程</a><time datetime="2023-04-26" title="发表于 2023-04-26">2023-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/b0cb9f85.html" title="JavaScript—DOM案例"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/45-1.webp" alt="JavaScript—DOM案例"></a><div class="content"><a class="title" href="/article/b0cb9f85.html" title="JavaScript—DOM案例">JavaScript—DOM案例</a><time datetime="2023-04-12" title="发表于 2023-04-12">2023-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/7d8b8b34.html" title="JavaScript基础笔记(3)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/43-1.webp" alt="JavaScript基础笔记(3)"></a><div class="content"><a class="title" href="/article/7d8b8b34.html" title="JavaScript基础笔记(3)">JavaScript基础笔记(3)</a><time datetime="2023-04-02" title="发表于 2023-04-02">2023-04-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/c32976c2.html" title="JavaScript基础笔记(2)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/42-1.webp" alt="JavaScript基础笔记(2)"></a><div class="content"><a class="title" href="/article/c32976c2.html" title="JavaScript基础笔记(2)">JavaScript基础笔记(2)</a><time datetime="2023-03-28" title="发表于 2023-03-28">2023-03-28</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最近更新</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/1be64a8d.html" title="NestJS实践杂记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/77-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="NestJS实践杂记"/></a><div class="content"><a class="title" href="/article/1be64a8d.html" title="NestJS实践杂记">NestJS实践杂记</a><time datetime="2024-12-09T07:10:08.000Z" title="更新于 2024-12-09 15:10:08">2024-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/55cefeb1.html" title="React-记-3"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-3"/></a><div class="content"><a class="title" href="/article/55cefeb1.html" title="React-记-3">React-记-3</a><time datetime="2024-10-12T17:26:31.000Z" title="更新于 2024-10-13 01:26:31">2024-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/f17dfea3.html" title="React-记-2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-2"/></a><div class="content"><a class="title" href="/article/f17dfea3.html" title="React-记-2">React-记-2</a><time datetime="2024-09-26T11:26:24.000Z" title="更新于 2024-09-26 19:26:24">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/cb488cbf.html" title="React-记-1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-1"/></a><div class="content"><a class="title" href="/article/cb488cbf.html" title="React-记-1">React-记-1</a><time datetime="2024-09-23T13:15:26.000Z" title="更新于 2024-09-23 21:15:26">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/d186ebdd.html" title="闭包与内存泄漏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/103-4.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="闭包与内存泄漏"/></a><div class="content"><a class="title" href="/article/d186ebdd.html" title="闭包与内存泄漏">闭包与内存泄漏</a><time datetime="2024-09-12T12:04:03.000Z" title="更新于 2024-09-12 20:04:03">2024-09-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2025 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+function createtime() {
+var now = new Date();
+var grt= new Date("03/10/2022 00:00:00");
+now.setTime(now.getTime()+1000);
+days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
+document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
+}
+createtime();
+if(typeof footer_time == "undefined"){
+  var footer_time = setInterval("createtime()",1000*60);
+}else{
+  clearInterval(footer_time);
+  footer_time = setInterval("createtime()",1000*60);
+}
+}
+</script></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/hexo.svg"/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/butterfly.svg"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/github.svg"/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20220160" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/20220160.svg"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/2022076449.svg"/></a><a class="github-badge" target="_blank" href="https://cloud.tencent.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tx.svg"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/vercel.svg"/></a><a class="github-badge" target="_blank" href="https://tianli-blog.club/jsd/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tianlicdn.svg"/></a><a class="github-badge" target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ypy.svg"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/cc.svg"/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="refresh-cache" type="button" title="刷新缓存" onclick="refreshCache()"><i class="fas fa-refresh fa-spin"></i></button><button id="enlargePage-btn" type="button" title="放大页面" onclick="enlargePage()"><i class="fa fa-plus"></i></button><button id="narrowPage-btn" type="button" title="缩小页面" onclick="narrowPage()"><i class="fa fa-minus"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fa fa-images"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="to_comment" type="button" title="直达评论" onclick="FixedCommentBtn();"><i class="fas fa-comments"></i></button><button id="share-link" type="button" title="分享链接"><i class="fa fa-share-alt"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-top"><i class="fa fa-angles-up"></i></div></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:kk.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-magnifying-glass"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-read"><a class="rightMenu-item" href="javascript:kk.pasteText();"><i class="fa fa-paste"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" id="menu-radompage" href="/"><i class="fa-solid fa-shoe-prints"></i><span>博客主页</span></a><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-adjust"></i><span>昼夜切换</span></div><div class="rightMenu-item" id="share-chuckle"><i class="fa fa-share-alt"></i><span>分享本页</span></div><a class="rightMenu-item" id="menu-radompage" href="/categories/"><i class="fa fa-archive"></i><span>分类</span></a><a class="rightMenu-item" id="menu-radompage" href="/tags/"><i class="fa fa-tags"></i><span>标签</span></a></div></div><div id="rightmenu-mask" onclick="RemoveRightMenu()"></div><div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/main.js?6"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/search/local-search.js?2"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 2500);</script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.qcqx.cn',
+      path: location.pathname,
+      visitor: true,
+      dark: 'html[data-theme="dark"]'
+    }, {"requiredMeta":["nick","mail"],"wordLimit":400,"placeholder":"来评论交流吧，通过邮件通知（表情点不出来请刷新页面）"}))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/waline.min.js?7').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/qx-tracker.min.js?1"></script><script>const tracker = new Tracker({requestUrl:'https://tracker-api.qcqx.cn/api/tracker',historyTracker:true,realTime:true});</script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/random.min.js?14"></script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle.js?15"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle-post-ai.js?11"></script><script defer>new ChucklePostAI({el:'#post>#article-container',key:'tN2jLmG7fX9zHk5dVbQr',title_el:'.post-title',rec_method:'web',whitelist:['article/17d3383a.html'],pjax:true})</script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#fixedcard-dashboard","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="fixedcard-dashboard"><button class="fixedcard-activebtn" type="button" title="用户信息" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-info&quot;,&quot;0&quot;)"><i class="fas fa-address-book"></i></button><button class="fixedcard-activebtn" type="button" title="公告" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-announcement&quot;,&quot;0&quot;)"><i class="fa fa-bullhorn"></i></button><button class="fixedcard-activebtn" type="button" title="相关推荐" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-recommend-post&quot;,&quot;0&quot;)"><i class="fas fa-dharmachakra"></i></button><button class="fixedcard-activebtn" type="button" title="最近更新" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-recent-post&quot;,&quot;0&quot;)"><i class="fas fa-history"></i></button><div class="fixedcard-user-avatar fixedcard-activebtn" onclick="RemoveFixedCardWidget()"><img class="fixedcard-user-avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/head.webp" title="『轻笑Chuckle』"></div></div></div><!-- hexo injector body_end start --><script data-pjax>function hope_light_loader_injector_config(){
+                var parent_div_git = document.getElementById('body-wrap');
+                var item_html = '<div id="loading-bar-wrapper">';
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementById('body-wrap') && (location.pathname ==='all'|| 'all' ==='all')){
+            hope_light_loader_injector_config()
+        } </script>
+    <script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/nprogress.min.js"></script>
+    <script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script data-pjax>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+      document.addEventListener('pjax:send', window.ShowLoading)
+      document.addEventListener('pjax:success', window.HideLoading)
+      document.addEventListener('pjax:error', window.HideLoading)
+    </script>
+<!-- hexo injector body_end end --></body></html>

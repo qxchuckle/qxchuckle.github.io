@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
+  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+    (async()=>{window.stop()})()
+    window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  }
+  navigator.serviceWorker.register('/giggles.js')
+    .then(async () => {
+      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+        window.localStorage.setItem('ChenBlogHelper_Set', 2)
+        setTimeout(() => {
+          window.location.reload()
+        }, 150)
+      }
+    })
+}
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>浏览器渲染流程 | 轻笑Chuckle</title><meta name="keywords" content="前端,浏览器"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="它埋下了种子，于是参天大树屹立于这片空间。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器渲染流程">
+<meta property="og:url" content="https://www.qcqx.cn/article/4aea0348.html">
+<meta property="og:site_name" content="轻笑Chuckle">
+<meta property="og:description" content="它埋下了种子，于是参天大树屹立于这片空间。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp">
+<meta property="article:published_time" content="2024-03-15T08:46:17.000Z">
+<meta property="article:modified_time" content="2024-03-15T08:46:17.000Z">
+<meta property="article:author" content="『轻笑Chuckle』">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="浏览器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"><link rel="canonical" href="https://www.qcqx.cn/article/4aea0348"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/index.css?285"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/fontawesome.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":160},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '浏览器渲染流程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-15 16:46:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/tag_plugins.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="轻笑Chuckle" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"/></div></div><div id="web_bg"></div><div id="svg_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center" id="sidebar-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="menu-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><div id="chuckle_home"><div class="back-home-button"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">传送门</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" loading="lazy"/><span class="back-menu-item-text">博客主页</span></a><a class="back-menu-item" href="https://waline.qcqx.cn/ui" rel="external nofollow" title="前往评论后端" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c4.webp" loading="lazy"/><span class="back-menu-item-text">评论管理</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客线路</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qcqx.cn/" title="前往博客主站" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/h4.webp" loading="lazy"/><span class="back-menu-item-text">主域名线路</span></a><a class="back-menu-item" href="https://qxchuckle.github.io" title="前往博客Github线路" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c6.webp" loading="lazy"/><span class="back-menu-item-text">Github线路</span></a></div></div></div></div></div><span id="blog_name"><a id="site-name" href="/">轻笑Chuckle</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div><div id="buttons"><div id="switch-bg"><a class="site-page social-icon search" href="javascript:;" rel="noopener external nofollow" onclick="toggleWinbox()" title="切换背景-换一种感觉。"><i class="fas fa-images fa-fw"></i></a></div><div id="switch-darkmode"><a class="site-page social-icon" onclick="kk.switchDarkMode()" title="切换模式"><i class="fas fa-adjust fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info" style="background-image: url('https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp')"><div id="post-meta-top"><span class="post-categories"><i class="iconfont icon-fenlei fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="post-tags"><a class="post-meta-tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta-tags" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a></span></div><h1 class="post-title">浏览器渲染流程<a class="post-share" id="share-post" href="javascript:;" rel="noopener external nofollow" onclick="kk.postURL()"><i class="fa fa-share-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="iconfont icon-shalou fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-15T08:46:17.000Z" title="发表于 2024-03-15 16:46:17">2024-03-15</time></span><span class="post-meta-date"><i class="iconfont icon-gengxin fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-15T08:46:17.000Z" title="更新于 2024-03-15 16:46:17">2024-03-15</time></span></div><div class="meta-secondline"><span class="post-meta-wordcount"><i class="iconfont icon-tongji1 fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.8k</span></span><span class="post-meta-wordcount"><i class="iconfont icon-tubiaozhizuomoban- fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="leancloud_visitors" id="/article/4aea0348.html" data-flag-title="浏览器渲染流程"><i class="iconfont icon-yanjing fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"></span></span><span class="post-meta-commentcount"><i class="iconfont icon-pinglun fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/article/4aea0348.html#post-comment"><span class="waline-comment-count" id="/article/4aea0348.html"></span></a></span></div></div></div><article class="post-content" id="article-container"><div class="Copyright-Notice" id="Copyright-Notice"><div id="post-Copyright-bar"></div><div id="Copyright-box"><span>本站博文未在任何平台</span><span class="copyright-phone-none">以任何形式</span><span>售卖，详情:</span><a href="/agreement/">协议</a></div></div><div class="post-series"><div class="post-series-title"> <span class="arrowhead">▸</span><span>浏览器-系列</span></div><div class="post-series-box"><script>if(1){
+let series_title=document.querySelector('.post-series-title')
+let arrowhead=document.querySelector('.arrowhead')
+var arrowhead_n = 1;
+series_title.addEventListener('click',function(){
+    let content=document.querySelector('.post-series-box')
+    content.classList.toggle("show")
+    if(arrowhead_n){
+      arrowhead.innerHTML = "▾"
+      arrowhead_n = 0
+    }else{
+      arrowhead.innerHTML = "▸"
+      arrowhead_n = 1
+    }
+})
+}</script><div class="post-series-item"><a class="title" href="/article/4aea0348.html" title="浏览器渲染流程">浏览器渲染流程</a></div><div class="post-series-item"><a class="title" href="/article/7343d222.html" title="浏览器HTTP缓存">浏览器HTTP缓存</a></div></div></div><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>动动手写个网页非常简单，因为浏览器帮我们做了很多复杂的工作。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work">MDN-渲染页面：浏览器的工作原理</a> 告诉我们，<strong>导航</strong>是加载 web 页面的第一步，经过<strong>响应</strong>、<strong>解析</strong>、<strong>渲染</strong>，最终得到一个可<strong>交互</strong>的页面。</p>
+<p>现在我们聚焦于<strong>解析</strong>与<strong>渲染</strong>，即浏览器通过网络请求开始获取或已经拿到了 HTML 等静态资源。</p>
+<p>所谓渲染，就是将<strong>静态资源</strong>转为<strong>可视</strong>、<strong>可交互</strong>的页面（像素信息）。</p>
+<h1 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h1><p>进程是 CPU 分配资源的最小单位(能够拥有资源和独立运行的最小单位)<br>线程是 CPU 调度的最小单位(运行在进程上的一次程序运行单位)</p>
+<p>以Chrome为例，现代化的浏览器是<strong>多进程</strong>的</p>
+<ol>
+<li><strong>浏览器进程</strong> 负责用户界面、子进程管理、提供存储等功能。</li>
+<li><strong>GPU 进程</strong> 负责 3D CSS 渲染、页面绘制、解码等。</li>
+<li><strong>网络进程</strong> 负责发起和接受网络请求。</li>
+<li><strong>渲染进程</strong> 负责控制显示tab标签页内的所有内容，核心任务是将HTML、CSS、JS转为用户可以与之交互的网页，排版引擎<strong>Blink</strong>和JS引擎<strong>V8</strong>都是运行在该进程中，默认情况下Chrome会为每个Tab标签页创建一个渲染进程，这是受<strong>进程模型</strong>控制的。</li>
+</ol>
+<p>常说的<strong>浏览器内核</strong>也就是浏览器的渲染引擎，即渲染进程，主要包括<strong>排版引擎</strong>和<strong>JS引擎</strong>，如 Chromium、Webkit。Chromium刚开始也是基于Webkit构建的，后面因为架构的需要换成Blink+V8了。</p>
+<p><strong>渲染进程</strong>包含多个<strong>线程</strong></p>
+<ol>
+<li><strong>JS 引擎线程</strong> 负责解释执行 JavaScript 脚本。</li>
+<li><strong>GUI 渲染线程</strong> 负责渲染浏览器界面，解析 HTML、CSS，构建 DOM 树和 Render 树，布局和绘制。</li>
+<li><strong>合成线程</strong> 将图层分为图块，并使用GPU进程，在栅格化线程池中将图块转化为位图。</li>
+<li><strong>事件触发线程</strong> 负责事件的处理，如鼠标点击、滚动等，将事件放入事件队列中。</li>
+<li><strong>定时器触发线程</strong> 负责处理定时器，计算是否到达定时时间，若到达时间则将定时器事件放入事件队列中。</li>
+<li><strong>异步 HTTP 请求线程</strong>(网络线程) 处理异步请求及其回调函数。</li>
+<li><strong>IO 线程</strong> 与其它进程通信。</li>
+</ol>
+<p><strong>注意：</strong>GUI<strong>渲染线程</strong>与<strong>JS引擎线程</strong>是<strong>互斥</strong>的，当JS引擎执行时GUI线程会被挂起，GUI更新会被保存在一个队列中等到JS引擎空闲时立即被执行。</p>
+<h2 id="进程模型"><a href="#进程模型" class="headerlink" title="进程模型"></a>进程模型</h2><p>Chrome具有有<strong>四种进程模型</strong>：</p>
+<ol>
+<li><code>Process-per-site-instance</code>：<strong>默认模式</strong>。访问不同站点创建新的进程，在旧页面中打开的新页面，且属于<strong>同一站点</strong>的话会共用一个进程。</li>
+<li><code>Process-per-site</code>：<strong>同一站点</strong>始终使用同一进程，无论在何处打开。</li>
+<li><code>Process-per-tab</code>：每一个标签页都创建新的进程。</li>
+<li><code>Single Process</code>：单进程模式，所有页面共用一个进程。</li>
+</ol>
+<p><strong>同一站点：</strong>具有相同协议、<strong>主域名</strong>、端口，这与CORS的同源判定是有区别的。</p>
+<h1 id="渲染总体流程"><a href="#渲染总体流程" class="headerlink" title="渲染总体流程"></a>渲染总体流程</h1><p>浏览器通过网络请求获取 HTML 字符串。当浏览器收到第一个数据分块，就可以开始解析收到的信息。</p>
+<p><strong>渲染流程</strong>分为多个阶段：HTML 解析、样式计算、布局、分层、生成绘制指令(绘制)、分块、光栅化、绘制(画)。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-1.webp" width="90%" /></p>
+<p>前一个阶段的输出是后一个阶段的输入，这些阶段是<strong>逐步</strong>进行的。</p>
+<h1 id="解析HTML-parse"><a href="#解析HTML-parse" class="headerlink" title="解析HTML parse"></a>解析HTML parse</h1><p><strong>解析 HTML：</strong>浏览器遵守一套步骤将 HTML 转换为 DOM 树 (Document Object Model 文档对象模型)。</p>
+<p><strong>步骤：</strong>字节数据 -&gt; 字符串 -[状态机]-&gt; 词（Token） -&gt; 节点（Node） -&gt; DOM</p>
+<p>浏览器首先将字节数据转为字符串，然后通过<strong>状态机</strong>进行<strong>词法分析</strong>，将字符流分解为词，再将词转为节点，最终形成 DOM 树。</p>
+<p>这个过程是<strong>循序渐进</strong>的，当浏览器收到首个 HTML 数据块，就会开始构建 DOM 树，由于<strong>自顶向下</strong>构建，因此后面构建的不会对前面的造成影响。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-2.webp" width="90%" /></p>
+<p><strong>Token</strong> 分为 <strong>TagToken</strong> 和 <strong>TextToken</strong>，TagToken 即标签，又分为开始标签、结束标签、自封闭标签。</p>
+<h2 id="预解析线程"><a href="#预解析线程" class="headerlink" title="预解析线程"></a>预解析线程</h2><p>在解析 HTML 的过程中，可以能会遇到如 style、link、script 等标签。<br>为了提高解析效率，浏览器在开始解析 HTML 前，会启动一个<strong>预解析线程</strong>，率先下载 HTML 中的外部 CSS 文件和外部的 JS 文件。</p>
+<p><strong>对于 CSS：</strong><br>当渲染主线程解析到 link 位置，若外部 CSS 文件还未下载并解析好，主线程<strong>不会等待</strong>，而是<strong>继续解析</strong>后续的 HTML。下载和解析 CSS 的工作都在预解析线程中完成。所以 CSS 不会阻塞 HTML 解析。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-3.webp" width="60%" /></p>
+<p><strong>对于 JS：</strong><br>当渲染线程解析到 script 位置，会<strong>停止解析</strong> HTML，转而等待 JS 文件下载好，并将全局代码解析执行完成后，才能继续解析 HTML。因为 JS 可能会修改 DOM 结构，此时停止构建 DOM 树才能避免解析错误。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-4.webp" width="60%" /></p>
+<p>执行 JS 实际上在 JS 引擎线程，而不是在 GUI 渲染线程，但这两个线程是互斥的，所以 JS 会阻塞渲染。</p>
+<p>现代化的浏览器提供了一些<strong>资源提示关键词</strong>，以避免 JS 阻塞渲染。</p>
+<ol>
+<li><code>async</code> 异步加载 JS 文件，不等待 JS 文件下载，继续解析 HTML，直到下载完成后再执行 JS。执行时会阻塞 HTML 解析。</li>
+<li><code>defer</code> 延迟加载 JS 文件，等到 HTML 解析完成后再执行 JS（在 <code>DOMContentLoaded</code> 事件之前），不会阻塞 HTML 解析。如果 async 和 defer 同时存在，async 优先级更高。</li>
+<li><code>type=&quot;module&quot;</code> 默认为 defer，且 JS 代码会在严格模式下执行，但也可以使用 async。</li>
+<li><code>rel=&quot;preload&quot;</code> 预加载资源，告诉浏览器提前加载资源，浏览器会<strong>尽快</strong>地加载某个资源，但不执行。preload 优先级高于 prefetch。</li>
+<li><code>rel=&quot;prefetch&quot;</code> 预取资源，告诉浏览器提前加载资源，通常是未来可能需要的资源，浏览器会在<strong>网络空闲时</strong>下载它，但不执行。</li>
+<li>还有一些，后面开个文章再说。</li>
+</ol>
+<h2 id="构建CSSOM"><a href="#构建CSSOM" class="headerlink" title="构建CSSOM"></a>构建CSSOM</h2><p>CSS 字符串同样会被解析，构建 CSSOM 树（CSS Object Model）。与构建 DOM 同时进行。</p>
+<p>CSSOM 的构建必须要获得一份完整的 CSS 文件，因为存在覆盖等情况。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-5.webp" width="90%" /></p>
+<p>CSSOM 中包含</p>
+<ol>
+<li>通过 link 引用的外部 CSS 样式文件</li>
+<li>style 标签内的CSS样式</li>
+<li>元素的 style 属性内嵌的CSS</li>
+</ol>
+<h1 id="样式计算style、Render树"><a href="#样式计算style、Render树" class="headerlink" title="样式计算style、Render树"></a>样式计算style、Render树</h1><p>得到了 DOM 和 CSSOM，还需要在<strong>样式计算</strong>阶段将两者结合起来，形成 <strong>Render</strong> 树（渲染树）。</p>
+<p>渲染树会确定一个节点的<strong>所有</strong>样式属性。计算过程：</p>
+<ol>
+<li>确定声明：如果属性只有一个声明，那么直接应用该声明。</li>
+<li>层叠冲突：如果属性有多个声明，那么进入层叠冲突流程。这一流程分为比较源的重要性、比较优先级和比较次序(声明的先后顺序)三个步骤</li>
+<li>继承：如果属性没有声明且是可继承的属性，那么直接继承最近的父元素属性值。</li>
+<li>默认值：如果一个属性经历了上述三个流程，还无法确定其属性值，那么就使用默认值。</li>
+</ol>
+<p>这个阶段还会<strong>标准化属性值</strong>，将各种 CSS 样式，转换为渲染引擎能够理解的、标准化的值。如将 <code>em</code> 转为 <code>px</code>、<code>red</code> 转为 <code>rgb(255,0,0)</code>。</p>
+<p><strong>不可见</strong>元素<strong>不会</strong>出现在渲染树上，如 <code>&lt;head&gt;</code>、<code>&lt;script&gt;</code>、<code>display: none</code> 等。应用了 <code>visibility: hidden</code> 的节点会包含在渲染树中，因为它们会占用空间、拥有其它样式属性。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-6.webp" width="60%" /></p>
+<p><strong>注意：</strong>此图还不是渲染树，因为缺失了默认样式，并且没有标准化属性值。</p>
+<p><strong>总结：</strong>每个可见节点都应用了 CSSOM 规则。渲染树包含所有可见节点的内容和计算样式，将所有相关样式与 DOM 树中的每个可见节点匹配起来，并根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade">CSS 层叠</a>，确定每个节点的计算样式。</p>
+<h1 id="布局layout"><a href="#布局layout" class="headerlink" title="布局layout"></a>布局layout</h1><p>浏览器根据 Render 树中的节点计算它们在屏幕上的确切位置（x，y 坐标）、输出每个元素的 Box Model（盒子模型）、将所有相对测量值(%)都将转换为绝对像素。这个过程称为<strong>布局</strong>。</p>
+<p>生成布局树的过程：主线程会遍历刚刚构建的渲染树，根据 DOM 节点的计算样式计算出一个布局树（layout tree）。布局树上每个节点会有它在页面上的 x，y 坐标以及盒子尺寸的具体信息。</p>
+<h1 id="分层-layer"><a href="#分层-layer" class="headerlink" title="分层 layer"></a>分层 layer</h1><p><strong>分层</strong>是为了提高渲染性能，将页面分为多个图层。</p>
+<p>页面中有很多复杂的效果，如3D变换，页面滚动等，为了更方便的实现这些效果，渲染引擎为特定的节点生成专用的图层，并生成一颗对应的图层树，最后再合成图层。这些图层会按照一定顺序叠加在一起，就形成了最终的页面。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-7.webp" width="70%" /></p>
+<p>分层是自动的，一些属性会触发分层：</p>
+<ol>
+<li>拥有<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context">层叠上下文属性</a>的元素</li>
+<li>文档根元素、video、canvas、iframe 等元素。</li>
+<li>animation 设置了动画的元素</li>
+<li>backface-visibility: hidden</li>
+<li>滚动条也是一个单独图层</li>
+<li>需要裁剪的元素，文字较多超过了盒子的高度，会为文字部分单独创建一个图层。</li>
+</ol>
+<figure class="highlight txt"><figcaption><span>层叠上下文属性</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">文档根元素（&lt;html&gt;）；</span><br><span class="line">position 值为 absolute（绝对定位）或 relative（相对定位）且 z-index 值不为 auto 的元素；</span><br><span class="line">position 值为 fixed（固定定位）或 sticky（粘滞定位）的元素（沾滞定位适配所有移动设备上的浏览器，但老的桌面浏览器不支持）；</span><br><span class="line">flex (flex) 容器的子元素，且 z-index 值不为 auto；</span><br><span class="line">grid (grid) 容器的子元素，且 z-index 值不为 auto；</span><br><span class="line">opacity 属性值小于 1 的元素（参见 the specification for opacity）；</span><br><span class="line">mix-blend-mode 属性值不为 normal 的元素；</span><br><span class="line">以下任意属性值不为 none 的元素：</span><br><span class="line">transform</span><br><span class="line">filter</span><br><span class="line">backdrop-filter</span><br><span class="line">perspective</span><br><span class="line">clip-path</span><br><span class="line">mask / mask-image / mask-border</span><br><span class="line">isolation 属性值为 isolate 的元素；</span><br><span class="line">will-change 值设定了任一属性而该属性在 non-initial 值时会创建层叠上下文的元素（参考这篇文章）；</span><br><span class="line">contain 属性值为 layout、paint 或包含它们其中之一的合成值（比如 contain: strict、contain: content）的元素。</span><br></pre></td></tr></table></figure>
+<h1 id="生成绘制指令paint"><a href="#生成绘制指令paint" class="headerlink" title="生成绘制指令paint"></a>生成绘制指令paint</h1><p>渲染线程会为每个图层单独生成绘制指令，这些指令描述了如何将图层渲染到屏幕上。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-8.webp" width="70%" /></p>
+<p>绘制指令类似于 canvas 的绘图指令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">context.<span class="title function_">beginPath</span>(); <span class="comment">// 开始路径</span></span><br><span class="line">context.<span class="title function_">moveTo</span>(<span class="number">10</span>, <span class="number">10</span>); <span class="comment">// 移动画笔</span></span><br><span class="line">context.<span class="title function_">lineTo</span>(<span class="number">100</span>, <span class="number">100</span>); <span class="comment">// 绘画出一条直线</span></span><br><span class="line">context.<span class="title function_">closePath</span>(); <span class="comment">// 闭合路径</span></span><br><span class="line">context.<span class="title function_">stroke</span>(); <span class="comment">// 进行勾勒</span></span><br></pre></td></tr></table></figure>
+<p>这一步只是生成了各图层的绘制指令集，还没有开始执行这些指令。</p>
+<p>在开发者工具中，通过Layer标签可以看到图层的绘制列表和绘制过程。</p>
+<p>当图层绘制列表准备好之后，渲染主线程会把该绘制列表提交给<strong>合成线程</strong>。剩余的渲染工作（合成操作）都将由合成线程完成。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-9.webp" width="70%" /></p>
+<h1 id="分块tiling"><a href="#分块tiling" class="headerlink" title="分块tiling"></a>分块tiling</h1><p>一个图层可能很大，为了提高绘制效率、优先绘制视口区域，合成线程会将图层分成很多小块，这个过程称为<strong>分块</strong>。</p>
+<p>这些图块的大小通常是 256x256 或者 512x512。</p>
+<h1 id="光栅化raster"><a href="#光栅化raster" class="headerlink" title="光栅化raster"></a>光栅化raster</h1><p>将图块转为<strong>位图</strong>，确认每一个像素点的 rgb 信息，这个过程称为<strong>光栅化</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-10.webp" width="70%" /></p>
+<p>合成线程将需要光栅化的图块提交给 GPU 进程，由 GPU 进程的<strong>光栅化线程池</strong>完成相关操作。会优先将视口区域的图块进行光栅化。</p>
+<h1 id="绘制draw"><a href="#绘制draw" class="headerlink" title="绘制draw"></a>绘制draw</h1><p>当所有的图块都被栅格化后，合成线程会拿到各个块的<strong>位图</strong>，从而生成一个个 <strong>指引（quad）</strong> 信息。</p>
+<p>指引信息会标识出每个位图应该画到屏幕的哪个位置，还会考虑到旋转、缩放等<strong>变形效果</strong>。</p>
+<p><strong>变形</strong>发生在合成线程，与渲染主线程无关，这就是 <code>transform</code> 效率高的原因。</p>
+<p>合成线程会把指引提交给 GPU 进程，由 GPU 进程产生系统调用，提交给 GPU 硬件，完成最终的屏幕成像。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-11.webp" width="70%" /></p>
+<p>合成线程会通过 IPC 向浏览器进程（browser process）提交（commit）一个渲染帧。这个时候可能有另外一个合成帧被浏览器进程的 UI线程（UI thread）提交以改变浏览器的 UI。这些合成帧都会被发送给 GPU 完成最终的屏幕成像。</p>
+<p>当合成线程收到页面滚动的事件，合成线程会构建另外一个合成帧发送给 GPU 来更新页面。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这些步骤就是<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path">关键渲染路径CRP</a>，其中生成绘制指令及其后的步骤可以合并看作是<strong>绘制</strong>步骤。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-12.webp" width="80%" /></p>
+<p>优化关键渲染路径：</p>
+<ol>
+<li>通过异步、延迟加载或者消除非关键资源来减少关键资源的请求数量。</li>
+<li>优化必须的请求数量和每个请求的文件体积。</li>
+<li>通过区分关键资源的优先级来优化被加载关键资源的顺序，来缩短关键路径长度。</li>
+</ol>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><h2 id="回流reflow"><a href="#回流reflow" class="headerlink" title="回流reflow"></a>回流reflow</h2><p><strong>回流</strong>（重排 reflow）：对页面的任意部分或整个文档的大小和位置的重新计算。性能开销较大。</p>
+<p>本质就是重新计算<strong>布局树</strong>。<strong>回流一定会触发重绘</strong>。</p>
+<p><strong>发生回流的情况：</strong></p>
+<ol>
+<li>页面首次渲染</li>
+<li>浏览器窗口大小发生变化</li>
+<li>元素尺寸、位置、内容发生变化</li>
+<li>添加或删除可见的DOM元素</li>
+<li>激活CSS伪类</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-13.webp" width="70%" /></p>
+<p>在使用 JS 操作元素样式时，为了避免连续的多次操作可能导致布局树反复计算，浏览器会合并这些样式操作，在 JS 执行完后一次性进行渲染。</p>
+<p>若 JS 读取了元素的位置、尺寸等布局相关信息，则会<strong>强制渲染</strong>，这对于制作无缝轮播图以及一些动画效果是非常有用的。</p>
+<blockquote>
+<p>查看属性是否会触发回流或重绘：<a target="_blank" rel="noopener" href="https://csstriggers.com/">csstriggers</a></p>
+</blockquote>
+<h2 id="重绘repaint"><a href="#重绘repaint" class="headerlink" title="重绘repaint"></a>重绘repaint</h2><p>当改动了可见样式后，就需要重新计算，会触发<strong>重绘</strong>。</p>
+<p>重绘不会触发布局、分层阶段，所以效率比回流要高很多。</p>
+<p>本质是重新生成了绘制指令。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/86-14.webp" width="70%" /></p>
+<hr>
+<p><strong>参考：</strong><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work">渲染页面：浏览器的工作原理-MDN</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/445810614">深入理解浏览器解析渲染 HTML</a><br><a target="_blank" rel="noopener" href="https://347830076.github.io/myBlog/javascript/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86%E6%B5%81%E7%A8%8B.html">浏览器渲染原理流程</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2139806">画了20张图，详解浏览器渲染引擎工作原理</a><br><a target="_blank" rel="noopener" href="https://web.dev/articles/critical-rendering-path/render-tree-construction?hl=zh-cn">渲染树构建、布局和绘制</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7126748165625085983">浏览器渲染流程(上) DOM树、CSSOM树、布局</a><br><a target="_blank" rel="noopener" href="https://github.com/jtwang7/JavaScript-Note/issues/2">JS深入浅出 - 浏览器的重绘(Repaint)与回流(Reflow)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>浏览器渲染流程</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://www.qcqx.cn/article/4aea0348.html">https://www.qcqx.cn/article/4aea0348.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>轻笑Chuckle</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-03-15</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-03-15</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a></div><div class="post_share"></div></div><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">投 喂</span><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/weixin.webp" alt="微信" loading="lazy"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/alipay.webp" alt="支付宝" loading="lazy"/></a><div class="post-qr-code-desc">支付宝</div></li><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">一个博客 一叶孤舟 一方世界</div></a></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/article/7343d222.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">⇦上一篇</div><div class="prev_info">浏览器HTTP缓存</div></div></a></div><div class="next-post pull-right"><a href="/article/6e8f8c6c.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇⇨</div><div class="next_info">数据类型与拷贝</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-no-lazy="data-no-lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div></div><a class="card-widget" id="card-tuijian" href="https://afdian.net/a/chuckle" target="_blank" style="display:block"><div id="tj-box"><div id="tj-box1"><div id="tj-left"><p>扫一扫</p>
+<span>快速打开移动端➤</span></div><div id="tj-right"><div id="tj-img-box"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACDklEQVR42u3bSw7CMAwFQO5/aTgAKjzHCWnpZIVQP54umug5fTz/ejzw8PDw8PDw8PDw8PDw8PDw8PDwbsx7xOPorPf/v5Tydu5YDXh4eHh7eUlByf95QbNqwMPDw9vLOyru6JjqJJEcmdSAh4eHd0VesiivkvDw8PDuzMsjDzw8PLyr8/JHkMCqk8EpshY8PDy8BQ2wdb9P0d/Dw8PDC3jVMdYMey4eeHh4eL/k5S/ozqTy5bU+dBYeHh7eXt7Ya70auSZNsnziwcPDw9vF60QSY+HCigU3Hh4e3i5etfXViTMmt8fw8PDwfsjLl7n9USh3RRiBh4eHN4mXUJOXdTXwTZbm08IIPDw8vAUxbifk7QQNSZwxrb+Hh4eHt4yXkz4Xml+h+sEAHh4e3l7e56VtvoGg2vrKrzO5v4eHh4e3IMZNyhqLaKsTQ+HKeHh4eD/nVQF5pJsEu5+vMy2MwMPDw1vAq94+iR46d1ySteDh4eEti3GTRlcnXKh+DDBt6wAeHh5em1cdY42xsWkGDw8P75y86jb96lnVOCMn4eHh4e3l5ZNBHrwmj2asHjw8PLzz8Kot/GoEvDlrwcPDwzsBr9/u6sTHeHh4eFfk5ZtT82mjCsPDw8Pby+sc04kqOlv88fDw8HbxOu2rMWp/GY2Hh4e3i/cfAw8PDw8PDw8PDw8PDw8PDw8PD+8GvBdOekzX1r9EkgAAAABJRU5ErkJggg=="/></div></div></div><div id="tj-box2"><div id="tj-left"><p>爱发电</p>
+<span>扫码或<span class="tj-light">点击跳转</span>➤</span></div><div id="tj-right"><div id="tj-img-box"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACEElEQVR42u3bQXKDMAwFUO5/6fYAmbRfEhiTPK8YhiR+XtiKJI6fjx4HHh4eHh4eHh4eHh4eHh4eHh4e3hfzjnj88wMvz7x+9t33zOeAh4eHt56XT/31OrmTX/fmiYeHh3cX791GnPCSY+DdFl+dAx4eHt4TeclWXiXh4eHhfSqvGgRXkxR4eHh4z+JNUrTl9MGeuRY8PDy8Cwpg111vUd/Dw8PDC3jVkS9BHlKfMCs8PDy8hbxe60C+cfeSwuWWLzw8PLybeHm6tpfwrR4YeHh4eDvz8ibUKiAJu+ehNh4eHt5KXh7CzstU+fPl78HDw8NbzpuAJ4mG/Eg4uQCGh4eHN+ZNylr5ElxXMMPDw8O7i5ds7tV2qPwI6ZW+8PDw8NbzquWrfMvu3U+WAA8PD28fXu+oOOtIqIbReHh4ePvwJlPptZ/2khR4eHh49/KqbVVRmNsqjCWLjoeHh7cDL5/iJNQ+N3WLh4eHtxuvWhLLExB/H0iX/2PAw8PDG/PKW3ALk0+3dzzg4eHhreQd8chD7XlJ7OQCGB4eHt5l/ZyThMVZjftLcy14eHh4Y97fSYFeeF09fi4JqfHw8PA24FVfmuotXOEVLDw8PLxH8arg5Ek8PDy8p/DmRa9ei391UfDw8PB24OVbc34/b+fqvUiAh4eHdxfvMwYeHh4eHh4eHh4eHh4eHh4eHh7eF/B+Acr1Qv2GlsE8AAAAAElFTkSuQmCC"/></div></div></div></div></a><div class="card-widget card-announcement"><div class="item-headline"><i class="iconfont icon-gonggao"></i><span>公告</span></div><div class="announcement_content">欢迎来到『轻笑Chuckle』的小站<br>(￣▽￣)～■干杯□～(￣▽￣)<br>如果有什么加载不出来或者其它滴小bug,「刷新网页/Ctrl+F5」应该、也许能解决</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">浏览器进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">进程模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">渲染总体流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90HTML-parse"><span class="toc-number">4.</span> <span class="toc-text">解析HTML parse</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E8%A7%A3%E6%9E%90%E7%BA%BF%E7%A8%8B"><span class="toc-number">4.1.</span> <span class="toc-text">预解析线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BACSSOM"><span class="toc-number">4.2.</span> <span class="toc-text">构建CSSOM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E8%AE%A1%E7%AE%97style%E3%80%81Render%E6%A0%91"><span class="toc-number">5.</span> <span class="toc-text">样式计算style、Render树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%83%E5%B1%80layout"><span class="toc-number">6.</span> <span class="toc-text">布局layout</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%B1%82-layer"><span class="toc-number">7.</span> <span class="toc-text">分层 layer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%BB%98%E5%88%B6%E6%8C%87%E4%BB%A4paint"><span class="toc-number">8.</span> <span class="toc-text">生成绘制指令paint</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%9D%97tiling"><span class="toc-number">9.</span> <span class="toc-text">分块tiling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E6%A0%85%E5%8C%96raster"><span class="toc-number">10.</span> <span class="toc-text">光栅化raster</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%98%E5%88%B6draw"><span class="toc-number">11.</span> <span class="toc-text">绘制draw</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">12.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-number">13.</span> <span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%B5%81reflow"><span class="toc-number">13.1.</span> <span class="toc-text">回流reflow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BB%98repaint"><span class="toc-number">13.2.</span> <span class="toc-text">重绘repaint</span></a></li></ol></li></ol></div></div><div class="card-widget card-recommend-post"><div class="item-headline"><i class="fas fa-dharmachakra"></i><span>相关推荐</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/7343d222.html" title="浏览器HTTP缓存"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp" alt="浏览器HTTP缓存"></a><div class="content"><a class="title" href="/article/7343d222.html" title="浏览器HTTP缓存">浏览器HTTP缓存</a><time datetime="2024-03-20" title="发表于 2024-03-20">2024-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/55cefeb1.html" title="React-记-3"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" alt="React-记-3"></a><div class="content"><a class="title" href="/article/55cefeb1.html" title="React-记-3">React-记-3</a><time datetime="2024-10-13" title="发表于 2024-10-13">2024-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/f17dfea3.html" title="React-记-2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" alt="React-记-2"></a><div class="content"><a class="title" href="/article/f17dfea3.html" title="React-记-2">React-记-2</a><time datetime="2024-09-26" title="发表于 2024-09-26">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/cb488cbf.html" title="React-记-1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" alt="React-记-1"></a><div class="content"><a class="title" href="/article/cb488cbf.html" title="React-记-1">React-记-1</a><time datetime="2024-09-23" title="发表于 2024-09-23">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/d186ebdd.html" title="闭包与内存泄漏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/103-4.webp" alt="闭包与内存泄漏"></a><div class="content"><a class="title" href="/article/d186ebdd.html" title="闭包与内存泄漏">闭包与内存泄漏</a><time datetime="2024-09-12" title="发表于 2024-09-12">2024-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/d22c87fc.html" title="Vue3.5 更新了啥"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/102-0.webp" alt="Vue3.5 更新了啥"></a><div class="content"><a class="title" href="/article/d22c87fc.html" title="Vue3.5 更新了啥">Vue3.5 更新了啥</a><time datetime="2024-09-12" title="发表于 2024-09-12">2024-09-12</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最近更新</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/1be64a8d.html" title="NestJS实践杂记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/77-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="NestJS实践杂记"/></a><div class="content"><a class="title" href="/article/1be64a8d.html" title="NestJS实践杂记">NestJS实践杂记</a><time datetime="2024-12-09T07:10:08.000Z" title="更新于 2024-12-09 15:10:08">2024-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/55cefeb1.html" title="React-记-3"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-3"/></a><div class="content"><a class="title" href="/article/55cefeb1.html" title="React-记-3">React-记-3</a><time datetime="2024-10-12T17:26:31.000Z" title="更新于 2024-10-13 01:26:31">2024-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/f17dfea3.html" title="React-记-2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-2"/></a><div class="content"><a class="title" href="/article/f17dfea3.html" title="React-记-2">React-记-2</a><time datetime="2024-09-26T11:26:24.000Z" title="更新于 2024-09-26 19:26:24">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/cb488cbf.html" title="React-记-1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-1"/></a><div class="content"><a class="title" href="/article/cb488cbf.html" title="React-记-1">React-记-1</a><time datetime="2024-09-23T13:15:26.000Z" title="更新于 2024-09-23 21:15:26">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/d186ebdd.html" title="闭包与内存泄漏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/103-4.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="闭包与内存泄漏"/></a><div class="content"><a class="title" href="/article/d186ebdd.html" title="闭包与内存泄漏">闭包与内存泄漏</a><time datetime="2024-09-12T12:04:03.000Z" title="更新于 2024-09-12 20:04:03">2024-09-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2025 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+function createtime() {
+var now = new Date();
+var grt= new Date("03/10/2022 00:00:00");
+now.setTime(now.getTime()+1000);
+days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
+document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
+}
+createtime();
+if(typeof footer_time == "undefined"){
+  var footer_time = setInterval("createtime()",1000*60);
+}else{
+  clearInterval(footer_time);
+  footer_time = setInterval("createtime()",1000*60);
+}
+}
+</script></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/hexo.svg"/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/butterfly.svg"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/github.svg"/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20220160" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/20220160.svg"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/2022076449.svg"/></a><a class="github-badge" target="_blank" href="https://cloud.tencent.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tx.svg"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/vercel.svg"/></a><a class="github-badge" target="_blank" href="https://tianli-blog.club/jsd/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tianlicdn.svg"/></a><a class="github-badge" target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ypy.svg"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/cc.svg"/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="refresh-cache" type="button" title="刷新缓存" onclick="refreshCache()"><i class="fas fa-refresh fa-spin"></i></button><button id="enlargePage-btn" type="button" title="放大页面" onclick="enlargePage()"><i class="fa fa-plus"></i></button><button id="narrowPage-btn" type="button" title="缩小页面" onclick="narrowPage()"><i class="fa fa-minus"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fa fa-images"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="to_comment" type="button" title="直达评论" onclick="FixedCommentBtn();"><i class="fas fa-comments"></i></button><button id="share-link" type="button" title="分享链接"><i class="fa fa-share-alt"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-top"><i class="fa fa-angles-up"></i></div></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:kk.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-magnifying-glass"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-read"><a class="rightMenu-item" href="javascript:kk.pasteText();"><i class="fa fa-paste"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" id="menu-radompage" href="/"><i class="fa-solid fa-shoe-prints"></i><span>博客主页</span></a><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-adjust"></i><span>昼夜切换</span></div><div class="rightMenu-item" id="share-chuckle"><i class="fa fa-share-alt"></i><span>分享本页</span></div><a class="rightMenu-item" id="menu-radompage" href="/categories/"><i class="fa fa-archive"></i><span>分类</span></a><a class="rightMenu-item" id="menu-radompage" href="/tags/"><i class="fa fa-tags"></i><span>标签</span></a></div></div><div id="rightmenu-mask" onclick="RemoveRightMenu()"></div><div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/main.js?6"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/search/local-search.js?2"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 2500);</script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.qcqx.cn',
+      path: location.pathname,
+      visitor: true,
+      dark: 'html[data-theme="dark"]'
+    }, {"requiredMeta":["nick","mail"],"wordLimit":400,"placeholder":"来评论交流吧，通过邮件通知（表情点不出来请刷新页面）"}))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/waline.min.js?7').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/qx-tracker.min.js?1"></script><script>const tracker = new Tracker({requestUrl:'https://tracker-api.qcqx.cn/api/tracker',historyTracker:true,realTime:true});</script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/random.min.js?14"></script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle.js?15"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle-post-ai.js?11"></script><script defer>new ChucklePostAI({el:'#post>#article-container',key:'tN2jLmG7fX9zHk5dVbQr',title_el:'.post-title',rec_method:'web',whitelist:['article/17d3383a.html'],pjax:true})</script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#fixedcard-dashboard","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="fixedcard-dashboard"><button class="fixedcard-activebtn" type="button" title="用户信息" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-info&quot;,&quot;0&quot;)"><i class="fas fa-address-book"></i></button><button class="fixedcard-activebtn" type="button" title="公告" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-announcement&quot;,&quot;0&quot;)"><i class="fa fa-bullhorn"></i></button><button class="fixedcard-activebtn" type="button" title="相关推荐" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-recommend-post&quot;,&quot;0&quot;)"><i class="fas fa-dharmachakra"></i></button><button class="fixedcard-activebtn" type="button" title="最近更新" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-recent-post&quot;,&quot;0&quot;)"><i class="fas fa-history"></i></button><div class="fixedcard-user-avatar fixedcard-activebtn" onclick="RemoveFixedCardWidget()"><img class="fixedcard-user-avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/head.webp" title="『轻笑Chuckle』"></div></div></div><!-- hexo injector body_end start --><script data-pjax>function hope_light_loader_injector_config(){
+                var parent_div_git = document.getElementById('body-wrap');
+                var item_html = '<div id="loading-bar-wrapper">';
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementById('body-wrap') && (location.pathname ==='all'|| 'all' ==='all')){
+            hope_light_loader_injector_config()
+        } </script>
+    <script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/nprogress.min.js"></script>
+    <script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script data-pjax>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+      document.addEventListener('pjax:send', window.ShowLoading)
+      document.addEventListener('pjax:success', window.HideLoading)
+      document.addEventListener('pjax:error', window.HideLoading)
+    </script>
+<!-- hexo injector body_end end --></body></html>

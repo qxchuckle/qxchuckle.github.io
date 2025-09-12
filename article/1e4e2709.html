@@ -1,0 +1,813 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
+  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+    (async()=>{window.stop()})()
+    window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  }
+  navigator.serviceWorker.register('/giggles.js')
+    .then(async () => {
+      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+        window.localStorage.setItem('ChenBlogHelper_Set', 2)
+        setTimeout(() => {
+          window.location.reload()
+        }, 150)
+      }
+    })
+}
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>一点点网络知识 | 轻笑Chuckle</title><meta name="keywords" content="网络"><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="当计算机网络与前端相遇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一点点网络知识">
+<meta property="og:url" content="https://www.qcqx.cn/article/1e4e2709.html">
+<meta property="og:site_name" content="轻笑Chuckle">
+<meta property="og:description" content="当计算机网络与前端相遇">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp">
+<meta property="article:published_time" content="2024-03-11T15:20:29.000Z">
+<meta property="article:modified_time" content="2024-03-11T15:20:29.000Z">
+<meta property="article:author" content="『轻笑Chuckle』">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"><link rel="canonical" href="https://www.qcqx.cn/article/1e4e2709"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/index.css?285"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/fontawesome.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":160},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一点点网络知识',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-11 23:20:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/tag_plugins.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="轻笑Chuckle" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"/></div></div><div id="web_bg"></div><div id="svg_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center" id="sidebar-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="menu-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><div id="chuckle_home"><div class="back-home-button"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">传送门</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" loading="lazy"/><span class="back-menu-item-text">博客主页</span></a><a class="back-menu-item" href="https://waline.qcqx.cn/ui" rel="external nofollow" title="前往评论后端" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c4.webp" loading="lazy"/><span class="back-menu-item-text">评论管理</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客线路</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qcqx.cn/" title="前往博客主站" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/h4.webp" loading="lazy"/><span class="back-menu-item-text">主域名线路</span></a><a class="back-menu-item" href="https://qxchuckle.github.io" title="前往博客Github线路" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c6.webp" loading="lazy"/><span class="back-menu-item-text">Github线路</span></a></div></div></div></div></div><span id="blog_name"><a id="site-name" href="/">轻笑Chuckle</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div><div id="buttons"><div id="switch-bg"><a class="site-page social-icon search" href="javascript:;" rel="noopener external nofollow" onclick="toggleWinbox()" title="切换背景-换一种感觉。"><i class="fas fa-images fa-fw"></i></a></div><div id="switch-darkmode"><a class="site-page social-icon" onclick="kk.switchDarkMode()" title="切换模式"><i class="fas fa-adjust fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info" style="background-image: url('https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp')"><div id="post-meta-top"><span class="post-categories"><i class="iconfont icon-fenlei fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="post-tags"><a class="post-meta-tags" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a></span></div><h1 class="post-title">一点点网络知识<a class="post-share" id="share-post" href="javascript:;" rel="noopener external nofollow" onclick="kk.postURL()"><i class="fa fa-share-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="iconfont icon-shalou fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-11T15:20:29.000Z" title="发表于 2024-03-11 23:20:29">2024-03-11</time></span><span class="post-meta-date"><i class="iconfont icon-gengxin fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-11T15:20:29.000Z" title="更新于 2024-03-11 23:20:29">2024-03-11</time></span></div><div class="meta-secondline"><span class="post-meta-wordcount"><i class="iconfont icon-tongji1 fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">12.2k</span></span><span class="post-meta-wordcount"><i class="iconfont icon-tubiaozhizuomoban- fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>40分钟</span></span><span class="leancloud_visitors" id="/article/1e4e2709.html" data-flag-title="一点点网络知识"><i class="iconfont icon-yanjing fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"></span></span><span class="post-meta-commentcount"><i class="iconfont icon-pinglun fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/article/1e4e2709.html#post-comment"><span class="waline-comment-count" id="/article/1e4e2709.html"></span></a></span></div></div></div><article class="post-content" id="article-container"><div class="Copyright-Notice" id="Copyright-Notice"><div id="post-Copyright-bar"></div><div id="Copyright-box"><span>本站博文未在任何平台</span><span class="copyright-phone-none">以任何形式</span><span>售卖，详情:</span><a href="/agreement/">协议</a></div></div><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>计算机网络：</strong>是一个将<strong>分散</strong>的、具有<strong>独立</strong>功能的<strong>计算机系统</strong>，通过<strong>通信设备</strong>与<strong>线路</strong>连接起来，由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的<strong>系统</strong>。</p>
+<p>计网的东西很多，但具体底层的东西，现在还没必要去深究，前端中的网络知识更多是关注偏上层的内容，如TCP、HTTP等，以及相关的技术和工具。</p>
+<h1 id="分层体系结构"><a href="#分层体系结构" class="headerlink" title="分层体系结构"></a>分层体系结构</h1><p>计算机网络是个复杂的系统，<strong>分层</strong>可将复杂的问题转为若干较小的局部问题，易于研究与处理。</p>
+<p>常见的分层体系结构：</p>
+<ol>
+<li><strong>OSI七层模型</strong> OSI（Open System Interconnect）开放式系统互联。是ISO（国际标准化组织）组织在1985年研究的网络互连模型。</li>
+<li><strong>TCP/IP四层模型</strong> OSI是一种理论下的模型，而TCP/IP已被广泛使用，成为网络互联事实上的标准。</li>
+<li><strong>五层原理模型</strong> 便于对计算机网络进行理解和学习的教学模型。</li>
+</ol>
+<p>OSI七层模型：</p>
+<ol>
+<li><strong>物理层</strong> 传输数据的物理媒介，如电缆、光纤、无线电波等。</li>
+<li><strong>数据链路层</strong> 传输数据的链路，如以太网、无线局域网等。</li>
+<li><strong>网络层</strong> IP寻址和路由选择。</li>
+<li><strong>传输层</strong> 建立进程间的端到端连接，如TCP、UDP。</li>
+<li><strong>会话层</strong> 建立会话连接。</li>
+<li><strong>表示层</strong> 提供数据格式转换、数据加密、数据压缩等功能。</li>
+<li><strong>应用层</strong> 为应用程序提高网络服务。</li>
+</ol>
+<p>TCP/IP四层模型：</p>
+<ol>
+<li><strong>网络接口层</strong> 物理层、数据链路层的合并。</li>
+<li><strong>网际层</strong> 网络层。</li>
+<li><strong>传输层</strong> 传输层。</li>
+<li><strong>应用层</strong>：会话层、表示层、应用层的合并。</li>
+</ol>
+<p>而<strong>五层原理模型</strong>是在TCP/IP模型的基础上，将物理层、数据链路层分开，便于理解和学习。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ol>
+<li><strong>实体</strong> 任何可发送和接收信息的<strong>硬件</strong>或<strong>软件进程</strong>。</li>
+<li><strong>对等实体</strong> <strong>相同层次</strong>中的实体。</li>
+<li><strong>协议</strong> 控制两个<strong>对等实体</strong>进行<strong>逻辑通信</strong>的规则集合。</li>
+</ol>
+<p><strong>协议</strong>的<strong>三要素：</strong></p>
+<ol>
+<li><strong>语法</strong> 定义所交换信息的格式</li>
+<li><strong>语义</strong> 定义收发双方要完成的操作。</li>
+<li><strong>时序</strong> 定义操作的时序关系。</li>
+</ol>
+<p><strong>服务：</strong></p>
+<ol>
+<li>本层使用下层的服务，实现本层的协议，并完成对等实体的<strong>逻辑通信</strong>。</li>
+<li>在协议的控制下，两个对等实体进行逻辑通信，使得本层能够向上层提供服务。</li>
+<li>协议是<strong>水平</strong>的，而服务是<strong>垂直</strong>的。</li>
+<li>实体能使用相邻下层提供的服务，但不知道实现服务的具体协议，下层的协议对上层是<strong>透明</strong>的。</li>
+<li><strong>服务访问点</strong> 在同一系统中相邻两层的实体交换信息的逻辑接口，用于区分不同的服务类型。</li>
+<li><strong>服务原语</strong> 上层使用下层服务的方式（需要交换的<strong>命令</strong>）。</li>
+<li><strong>服务数据单元SDU</strong> 服务访问点之间交换的<strong>数据包</strong>。</li>
+<li><strong>协议数据单元PDU</strong> 对等实体之间交换的<strong>数据包</strong>。</li>
+</ol>
+<h2 id="五层原理模型"><a href="#五层原理模型" class="headerlink" title="五层原理模型"></a>五层原理模型</h2><p><strong>物理层：</strong></p>
+<ol>
+<li><strong>数据包：</strong> 比特流</li>
+<li><strong>协议任务：</strong>规定传输媒体的机械、电气、功能和过程特性。</li>
+<li>考虑如何在连接各种设备的<strong>物理传输媒介</strong>上传输数据(<strong>比特流</strong>)。</li>
+<li>为数据链路层屏蔽了各种物理传输媒介的差异，使链路层只需考虑如何完成自己的协议和服务，而不必考虑网络的物理细节。</li>
+</ol>
+<p><strong>数据链路层：</strong></p>
+<ol>
+<li><strong>数据包：</strong>帧</li>
+<li><strong>服务访问点：</strong>帧的类型字段</li>
+<li><strong>封装成帧：</strong>将网络层的数据包封装成帧，添加<strong>帧头</strong>和<strong>帧尾</strong>。</li>
+<li><strong>透明传输：</strong>对网络层交付的数据没有限制，就好像链路层不存在一样。通过比特填充或字符填充实现。</li>
+<li><strong>差错检测：</strong>使用<strong>差错检测码</strong>，通过奇偶校验、CRC循环冗余校验等方法检测数据的<strong>比特差错</strong>。</li>
+<li><strong>可靠传输：</strong>检测到<strong>误码</strong>后，不可靠传输<strong>直接丢弃</strong>有误码的帧，可靠传输则想办法实现接收到的数据与发送的数据一致。如停止等待协议SW、回退N帧协议GBN、选择重传协议SR。</li>
+<li><strong>有线链路</strong>误码率较低，一般不要求链路层提供可靠传输服务，即使有误码也由上层进行处理。而<strong>无线链路</strong>易受干扰，误码率较高，所以链路层必须提供可靠传输服务。</li>
+<li>可靠传输并不只在链路层实现，各层都有不同的<strong>传输差错</strong>，如分组丢失、分组重复、报文段丢失等，各层都可以根据应用需求，选择提供可靠传输服务。</li>
+<li><strong>点对点PPP协议</strong> 实现了透明传输、差错检测、向上提供<strong>不可靠</strong>传输服务。</li>
+<li><strong>媒体接入控制MAC</strong> 信道复用、CSMA/CD(多址接入、载波监听、碰撞检测)</li>
+<li><strong>MAC地址：</strong>每个主机（接口）的唯一标识，一般被固化在网卡（网络适配器）上，也称为硬件地址。</li>
+</ol>
+<p><strong>网络层：</strong></p>
+<ol>
+<li><strong>数据包：</strong>IP数据报或分组</li>
+<li><strong>服务访问点：</strong>IP数据报首部的协议字段</li>
+<li><strong>路由选择：</strong>选择合适的路径，将数据包从源主机传输到目的主机。</li>
+<li><strong>分组转发：</strong>将数据包从一个网络节点传输到另一个网络节点。</li>
+<li><strong>IP地址：</strong>每个主机和路由器的唯一标识，由<strong>网络号</strong>和<strong>主机号</strong>组成。</li>
+<li><strong>子网掩码：</strong>用于划分网络号和主机号。</li>
+<li><strong>路由器：</strong>实现了网络层的功能，负责<strong>转发</strong>数据包，<strong>选择</strong>合适的路径，<strong>拥塞控制</strong>等。</li>
+<li><strong>ARP</strong>地址解析协议：将IP地址解析为MAC地址。</li>
+</ol>
+<p><strong>传输层：</strong></p>
+<ol>
+<li><strong>数据包：</strong>TCP报文段或UDP用户数据报</li>
+<li><strong>服务访问点：</strong>端口号</li>
+<li>面向通信的最高层，面向用户功能的最低层。</li>
+<li>为运行在不同主机上的<strong>应用进程</strong>提供端到端的<strong>逻辑通信</strong>。</li>
+<li><strong>端口：</strong>通过端口号来区分不同的应用进程。将数据包交付给正确的应用进程。</li>
+<li><strong>TCP</strong> 提供<strong>可靠</strong>的、面向<strong>连接</strong>的、<strong>字节流</strong>的<strong>通信服务</strong>。</li>
+<li><strong>UDP</strong> 提供<strong>不可靠</strong>的、无连接的、<strong>数据报</strong>的<strong>通信服务</strong>。</li>
+<li><strong>拥塞控制：</strong>TCP通过<strong>滑动窗口</strong>、<strong>超时重传</strong>、<strong>拥塞窗口</strong>、慢开始和拥塞避免、快重传和快恢复。</li>
+</ol>
+<p><strong>应用层：</strong></p>
+<ol>
+<li><strong>数据包：</strong>报文</li>
+<li><strong>DHCP</strong>动态主机配置协议：为主机分配IP地址。基于UDP。</li>
+<li><strong>ICMP</strong>网际控制报文协议：报文发送出错的处理。终点不可达、超时、源点抑制等。</li>
+<li>客户/服务器模型：客户端向服务器请求服务，服务器向客户端提供服务。</li>
+<li>P2P模型：网络中的每个主机既是客户端也是服务器。数据不再存储在中心服务器上。</li>
+<li>DNS域名系统：将域名解析为IP地址。</li>
+<li>FTP文件传输协议：文件传输。</li>
+<li>电子邮件：SMTP、POP3、IMAP。</li>
+<li>WWW万维网：基于HTTP协议的分布式信息系统。由URL（统一资源定位符）对资源定位，这些资源通过HTTP协议传输。</li>
+<li>HTTP超文本传输协议：使用TCP协议进行可靠传输。</li>
+</ol>
+<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><p><strong>传输控制协议</strong>（Transmission Control Protocol，简称 TCP）是一种 <strong>面向连接</strong>（连接导向）的、可靠的、 基于 IP 协议的传输层协议。</p>
+<ol>
+<li><strong>面向连接：</strong>每条 TCP 连接只能有两个端点（亦即点对点，不可广播、多播），每一条 TCP 连接只能是一对一。</li>
+<li><strong>可靠的传输服务：</strong>通过 TCP 连接传送的数据，无差错、不丢失、不重复、并且按序到达，丢包时通过重传机制进而增加时延实现可靠性。</li>
+<li><strong>全双工通信：</strong>TCP 允许通信双方的应用进程在任何时候都能发送数据。TCP 连接的两端都设有发送缓存和接收缓存，用来临时存放双方通信的数据。</li>
+<li><strong>字节流：</strong>面向字节流，TCP 中的 流（Stream）指的是流入进程或从进程流出的字节序列。</li>
+<li><strong>流量缓冲：</strong>解决速度不匹配问题。</li>
+</ol>
+<p><strong>数据包结构:</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-1.webp" width="80%" /></p>
+<p>TCP 首部标志比特有 6 个：URG、ACK、PSH、RST、SYN、FIN</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>控制位</th>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URG</td>
+<td>Urgent Flag</td>
+<td>紧急指针</td>
+</tr>
+<tr>
+<td><strong>ACK</strong></td>
+<td>Acknowledge Flag</td>
+<td>确认序号有效</td>
+</tr>
+<tr>
+<td>PSH</td>
+<td>Push Flag</td>
+<td>尽可能快地将数据送往接收进程</td>
+</tr>
+<tr>
+<td>RST</td>
+<td>Reset Flag</td>
+<td>可能需要重现创建建 TCP 连接</td>
+</tr>
+<tr>
+<td><strong>SYN</strong></td>
+<td>Synchronize</td>
+<td>同步序号来发起一个连接</td>
+</tr>
+<tr>
+<td><strong>FIN</strong></td>
+<td>Finish</td>
+<td>发送方完成发送任务，要求释放连接</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>两个32位号：</p>
+<ol>
+<li><strong>Seq</strong>(Sequance number) <strong>序列号</strong>，是上次已成功发送的序号+1。</li>
+<li><strong>Ack</strong>() <strong>确认序号</strong>，让发送方(对方)下一次发送的序号，即接收方下一次期望收到的序号。</li>
+</ol>
+<h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>TCP 提供<strong>面向连接</strong>的通信传输，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。三次握手是指建立一个 TCP 连接时需要客户端和服务器端总共发送三个包以确认连接的建立。</p>
+<p><strong>目的：</strong></p>
+<ol>
+<li>同步连接双方的 Sequence 序列号和确认号。</li>
+<li>交换 TCP 窗口大小信息，如 MSS、窗口比例因子、选择性确认、指定校验和算法。</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-2.webp" width="80%" /></p>
+<p>握手过程中传送的包里不包含数据，但第三次握手可以发送数据。</p>
+<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p>断开一个 TCP 连接时，需要客户端和服务端总共发送 4 个包以确认连接的断开。</p>
+<p>由于 TCP 连接是<strong>全双工</strong>的，因此，每个方向都必须要单独进行关闭，</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-3.webp" width="80%" /></p>
+<p>在客户端发送最后一个ACK包后，会进入 <strong>TIME_WAIT</strong> 超时等待状态，通常持续1-4分钟，这是为了实现<strong>可靠、稳定的</strong>传输，若该ACK包丢失了，服务端会超时重发FIN包，客户端接收到重发的FIN包后，重新发送ACK包。</p>
+<h1 id="输入url后"><a href="#输入url后" class="headerlink" title="输入url后"></a>输入url后</h1><p>浏览器输入url后：</p>
+<ol>
+<li><strong>解析URL</strong> 解析出协议、域名、端口、资源路径、参数等。</li>
+<li><strong>[查询缓存]</strong> 如果HTTP缓存命中，则直接返回缓存资源。详见：<a href="/article/7343d222.html">浏览器HTTP缓存</a></li>
+<li><strong>DNS解析</strong> 若域名部分是一个主机名，则通过DNS将域名转换为IP地址。</li>
+<li><strong>建立TCP连接</strong> 三次握手。</li>
+<li><strong>[SSL/TLS]</strong> 如果是 HTTPS 协议，还需要进行 SSL/TLS 握手过程，以协商出一个会话密钥，用于消息加密，提升安全性。</li>
+<li><strong>发送HTTP请求</strong> HTTP请求中包含了浏览器需要获取的资源的相关信息，如请求的方法、资源的路径、查询参数、请求头部信息等。服务器收到HTTP请求后，会根据请求的内容进行处理，并返回相应的HTTP响应。</li>
+<li><strong>接收服务器响应</strong> 获取页面所需的各种资源。</li>
+<li><strong>页面渲染</strong> 将静态资源转为可视、可交互的页面，详见：<a href="/article/4aea0348.html">浏览器渲染流程</a>。</li>
+<li><strong>断开TCP连接</strong> 四次挥手。</li>
+</ol>
+<h2 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h2><p>域名具有<strong>分层结构</strong>，以 <code>www.baidu.com</code> 为例</p>
+<ol>
+<li><code>com</code> 是顶级域名</li>
+<li><code>baidu.com</code> 是主域名、一级域名</li>
+<li><code>www.baidu.com</code> 是子域名、二级域名</li>
+</ol>
+<p><strong>DNS 域名解析系统</strong>（Domain Name System）是将域名转换为IP地址的服务器。</p>
+<p>DNS 服务器也具有对应的层级结构，每个层的域名上都有自己的域名服务器，最顶层的是根域名服务器。</p>
+<ol>
+<li><strong>本地域名服务器</strong>    DNS Resolver 或 Local DNS。本地域名服务器是响应来自客户端的递归请求，并最终跟踪直到获取到解析结果的 DNS 服务器。例如用户本机自动分配的 DNS、运营商 ISP 分配的 DNS、谷歌/114 公共 DNS 等。</li>
+<li><strong>根域名服务器</strong>    Root NameServer，本地域名服务器在本地查询不到解析结果时，则第一步会向它进行查询，并获取顶级域名服务器的 IP 地址。</li>
+<li><strong>顶级域名服务器</strong>    TLD（Top-level）NameServer。负责管理在该顶级域名服务器下注册的一级域名。例如 www.example.com、.com 则是顶级域名服务器，在向它查询时，可以返回一级域名 example.com 所在的权威域名服务器地址。</li>
+<li><strong>权威域名服务器</strong>    Authoritative NameServer。在特定区域内具有唯一性，负责维护该区域内的域名与 IP 地址之间的对应关系，例如云解析 DNS。</li>
+</ol>
+<p><strong>DNS解析过程：</strong></p>
+<ol>
+<li>查询浏览器自身DNS。</li>
+<li>操作系统DNS。</li>
+<li>本地 hosts 文件。</li>
+<li>向域名服务器发送请求。</li>
+</ol>
+<p><strong>DNS查询方式：</strong></p>
+<ol>
+<li><strong>递归查询</strong> 如果主机所询问的本地域名服务器不知道被查询域名的 IP 地址，那么本地域名服务器就以 DNS 客户端的身份，向其他根域名服务器继续发出查询请求报文，即替主机继续查询，而不是让主机自己进行下一步查询。</li>
+<li><strong>迭代查询</strong> 当根域名服务器收到本地域名服务器发出的迭代查询请求报文时，要么给出所要查询的IP 地址，要么告诉本地服务器下一步应该找哪个域名服务器进行查询，然后让本地服务器进行后续的查询。</li>
+</ol>
+<p>通常<strong>客户端</strong>与<strong>本地域名服务器</strong>之间是<strong>递归查询</strong>，而<strong>本地域名服务器</strong>与<strong>其它层级</strong>之间是<strong>迭代查询</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-4.webp" width="80%" /></p>
+<h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p>老生常谈的<strong>跨域</strong>问题，是由于<strong>浏览器</strong>的<strong>同源策略</strong>导致的。</p>
+<p><strong>详见：</strong><br><a href="/article/f3334fd0.html#跨域">AJAX请求相关-跨域</a><br><a href="/article/9b01fd71.html#CORS">Node-回眸[三]-CORS</a><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS">跨源资源共享（CORS）-MDN</a><br><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解-阮一峰</a></p>
+<p>同源策略：<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong> 三者相同，即为同源，否则为跨域。</p>
+<p><strong>解决跨域问题：</strong></p>
+<ol>
+<li>fetch 设置 no-cors 模式，在该模式下，浏览器不会将Origin包含在请求偷中，并且服务器的响应是不透明的，JS无法获取响应内容。此模式适用于不需要服务器响应的情况，例如向第三方分析服务发出请求。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;https://share.qcqx.cn/&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">mode</span>:  <span class="string">&#x27;no-cors&#x27;</span> ,</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(data))</span><br><span class="line">.<span class="title function_">catch</span>(<span class="function"><span class="params">error</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(error))</span><br></pre></td></tr></table></figure></li>
+<li><strong>JSONP</strong> 利用 script 标签的 src 属性不受同源策略限制的特点，通过动态创建 script 标签，将请求的数据作为查询参数，服务器返回的数据会被当做 JS 代码执行(通常是调用一个函数，将数据作为该函数的参数)。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">jsonp</span>(<span class="params">url, name</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">  script.<span class="property">src</span> = url + <span class="string">&#x27;?callback=&#x27;</span> + name;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 全局记录回调函数，服务器返回的数据会被当做 JS 代码执行，即执行回调函数</span></span><br><span class="line">    <span class="variable language_">window</span>[name] = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(data);</span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(script);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">jsonp</span>(<span class="string">&#x27;https://share.qcqx.cn/&#x27;</span>, <span class="string">&#x27;callback&#x27;</span>).<span class="title function_">then</span>(<span class="variable language_">console</span>.<span class="property">log</span>);</span><br><span class="line"><span class="comment">// 后端部分</span></span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;chuckle&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">app.<span class="title function_">all</span>(<span class="string">&#x27;/test&#x27;</span>, <span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; callback &#125; = req.<span class="property">query</span>;</span><br><span class="line">  <span class="comment">// 返回数据，即执行回调函数，将数据作为参数</span></span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">`callback(<span class="subst">$&#123;data.name&#125;</span>)`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><strong>CORS</strong>（Cross-Origin Resource Sharing）跨源资源共享，服务器端设置响应头，以允许跨域请求。通常还需要设置允许的请求头、请求方式、是否携带cookie等。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请求来源白名单</span></span><br><span class="line"><span class="keyword">const</span> allowedOrigins = [<span class="string">&quot;127.0.0.1:5500&quot;</span>, <span class="literal">undefined</span>];</span><br><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> origin = req.<span class="property">headers</span>.<span class="property">origin</span>;</span><br><span class="line">  <span class="comment">// 判断请求来源是否在白名单内</span></span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    (origin &amp;&amp; allowedOrigins.<span class="title function_">some</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> origin.<span class="title function_">includes</span>(item))) ||</span><br><span class="line">    allowedOrigins.<span class="title function_">includes</span>(origin)</span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="comment">// 设置允许跨域的域名，*代表允许任意域名跨域</span></span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, origin);</span><br><span class="line">    <span class="comment">// 允许的header类型，如下设置允许自定义header、允许Content-Type为非默认值等，按需删改</span></span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Headers&#x27;</span>, <span class="string">&quot;*, Origin, X-Requested-With, Content-Type, Accept, Authorization&quot;</span>);</span><br><span class="line">    <span class="comment">// 跨域允许的请求方式 </span></span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span>, <span class="string">&#x27;PUT, POST, GET, DELETE, PATCH ,OPTIONS&#x27;</span>);</span><br><span class="line">    <span class="comment">// 跨域的时候是否携带cookie</span></span><br><span class="line">    <span class="comment">// 需要与 XMLHttpRequest.withCredentials 或 Fetch API 的 Request() 构造函数中的 credentials 选项结合使用</span></span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&quot;Access-Control-Allow-Credentials&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">if</span> (req.<span class="property">method</span>.<span class="title function_">toLowerCase</span>() == <span class="string">&#x27;options&#x27;</span>) &#123;</span><br><span class="line">      res.<span class="title function_">send</span>(<span class="number">200</span>); <span class="comment">// 让options请求快速结束</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="title function_">next</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">403</span>).<span class="title function_">send</span>(<span class="string">&#x27;Forbidden&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><strong>本地代理：</strong>webpack、vite等构建工具都提供了代理配置，将请求代理到本地服务器，再由本地服务器请求真实数据，从而避免跨域问题。只能用于开发环境。</li>
+<li>nginx 代理，将请求代理到后端服务器，避免跨域。适合生产环境。</li>
+</ol>
+<h1 id="ajax相关"><a href="#ajax相关" class="headerlink" title="ajax相关"></a>ajax相关</h1><p>详见：<a href="/article/f3334fd0.html">AJAX请求相关</a></p>
+<h1 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h1><p>详见：<a href="/article/9b01fd71.html#SSE单工通信">Node-回眸[三]-SSE单工通信</a></p>
+<h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>详见：<a href="/article/9b01fd71.html#WebSocket双工通信">Node-回眸[三]-WebSocket双工通信</a></p>
+<h1 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h1><p><a target="_blank" rel="noopener" href="https://jwt.io/introduction">JWT-JSON Web Token</a> 用于会话控制、用户认证，<strong>无状态</strong>，通常无需服务端存储。</p>
+<p>JWT 以 JSON 对象的形式安全地传输信息。该信息可以被验证和信任，因为它是经过数字签名的。</p>
+<p>JWT 由三部分组成，使用 Base64 编码，以点号分隔：</p>
+<ol>
+<li><strong>Header</strong> 头部，包含了两部分：token 的类型（即 JWT）和使用的加密算法（如 HMAC SHA256 或 RSA）。</li>
+<li><strong>Payload</strong> 负载，包含了要传递的信息，如用户 ID、用户名等。</li>
+<li><strong>Signature</strong> 签名，由头部、负载、密钥、加密算法生成，用于验证消息的完整性、防止篡改。</li>
+</ol>
+<blockquote>
+<p>可以使用 <a target="_blank" rel="noopener" href="https://jwt.io/#debugger-io">jwt.io 调试器</a>、<a target="_blank" rel="noopener" href="https://www.bejson.com/jwt/">jwt解密/加密</a> 在线验证和生成 JWT。</p>
+</blockquote>
+<p><strong>Payload</strong> 预先定义了7个<strong>标准字段</strong>，这些字段是推荐的，但不是必须的：</p>
+<ol>
+<li><strong>iss</strong> (issuer)：签发者</li>
+<li><strong>sub</strong> (subject)：主题</li>
+<li><strong>aud</strong> (audience)：受众</li>
+<li><strong>exp</strong> (expiration time)：过期时间</li>
+<li><strong>nbf</strong> (Not Before)：生效时间</li>
+<li><strong>iat</strong> (Issued At)：签发时间</li>
+<li><strong>jti</strong> (JWT ID)：编号</li>
+</ol>
+<p><strong>签名：</strong><br>JWT 会使用<strong>头部中指定的加密算法</strong>（如 HS256）对头部和负载进行签名，作为 <strong>Signature</strong> 部分。<br>签名只是用于验证 token 的完整性，在使用密钥加密后可进行验证，防止篡改。<br><strong>校验过程：</strong>使用相同的密钥和算法对头部和负载进行签名，然后与接收到的签名进行比较，若一致则验证通过。</p>
+<figure class="highlight js"><figcaption><span>HS256签名</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">HMACSHA256</span>(</span><br><span class="line">  <span class="title function_">base64UrlEncode</span>(header) + <span class="string">&quot;.&quot;</span> +</span><br><span class="line">  <span class="title function_">base64UrlEncode</span>(payload),</span><br><span class="line">  secret <span class="comment">// 密钥</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>负载半身并不加密，只是 Base64 编码，所以<strong>不要在 JWT 中存储敏感信息</strong>，如密码等。</p>
+<p>jwt 通常放在请求头的 <code>Authorization</code> 字段中：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer &lt;token&gt;</span><br></pre></td></tr></table></figure>
+<p>在 Node 和 Nest 中使用 JWT，<strong>详见：</strong><br><a href="/article/a1e193d6.html#token">NodeJS接口、会话控制#token</a><br><a href="/article/73b2ab6d.html#JWT-token">NestJS[三]-进阶#JWT-token</a></p>
+<h1 id="前端网络状态"><a href="#前端网络状态" class="headerlink" title="前端网络状态"></a>前端网络状态</h1><p><code>navigator.onLine</code> 返回一个布尔值，表示用户的设备是否与网络连接，即是否在线。</p>
+<p><strong>window 的两个事件：</strong></p>
+<ol>
+<li><strong>online</strong> 从离线状态变为在线状态时触发。</li>
+<li><strong>offline</strong> 从在线状态变为离线状态时触发。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;online&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;online&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;offline&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;offline&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>区分强弱网络环境：</strong><br><code>navigator.connection</code> 返回 <code>NetworkInformation</code> 对象，包含了用户设备的网络信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">downlink</span>: <span class="number">10</span> <span class="comment">// 预估下行速度，单位Mbps</span></span><br><span class="line">  <span class="attr">effectiveType</span>: <span class="string">&quot;4g&quot;</span> <span class="comment">// 网速类型，如 4g、3g、2g、slow-2g</span></span><br><span class="line">  <span class="attr">onchange</span>: <span class="literal">null</span> <span class="comment">// 网络状态变化时触发的事件，可监听</span></span><br><span class="line">  <span class="attr">rtt</span>: <span class="number">150</span> <span class="comment">// 预估往返时间，单位ms</span></span><br><span class="line">  <span class="attr">saveData</span>: <span class="literal">false</span> <span class="comment">// 是否开启数据节省模式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p>XSS 跨站脚本攻击（Cross-Site Scripting）</p>
+<p><strong>方式：</strong>在目标网站 HTML 页面中注入恶意脚本，并使之执行，从而获取用户 cookie、token 等敏感信息。<br><strong>本质：</strong>恶意代码未经过滤，与网站正常的代码混在一起，被浏览器执行。</p>
+<p>可分为三种类型</p>
+<ol>
+<li><strong>反射型</strong> 将恶意脚本放在 URL 中，通常需要用户手动点击。</li>
+<li><strong>存储型</strong> 将恶意脚本存储在数据库中。最严重。</li>
+<li><strong>DOM型</strong> 修改页面的DOM节点，将恶意脚本插入到页面中。</li>
+</ol>
+<p>实际上几种类型通常是混合使用的。最后总是要通过漏洞将恶意脚本插入到页面中执行。</p>
+<p><strong>一个XSS靶场：</strong><a target="_blank" rel="noopener" href="https://xssaq.com/yx/level1.php">xssaq</a></p>
+<p>例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;input&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> root = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  input.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span> (e.<span class="property">key</span> === <span class="string">&#x27;Enter&#x27;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      e.<span class="title function_">preventDefault</span>();</span></span><br><span class="line"><span class="language-javascript">      root.<span class="property">innerHTML</span> = input.<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">      input.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>用户输入的内容未经过滤就插入到页面中。<strong>有效载荷（Payload）：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;x&quot;</span> <span class="attr">onerror</span>=<span class="string">&quot;alert(document.cookie)&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">onfocus</span>=<span class="string">&quot;alert(document.cookie)&quot;</span> <span class="attr">autofocus</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:alert(document.cookie)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>常见攻击漏洞：</strong></p>
+<ol>
+<li><strong>未过滤的用户输入</strong> 如上例，常见于评论、搜索等，innerHTML 会将输入的内容解析为 HTML。</li>
+<li><strong>标签拼接漏洞</strong> 常见于后端模板渲染时，未进行 HTML 实体字符转义。</li>
+<li><strong>提前闭合标签</strong> 对于 input、textarea 等原生会将输入数据转为字符串的标签，可以通过提前闭合标签绕过。</li>
+<li><strong>0级事件注入</strong>，如 <code>onerror</code>、<code>onload</code>、<code>onclick</code> 等。</li>
+<li>在标签的 href、src 等属性中，包含 <code>javascript:</code> 等可执行代码</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提前闭合标签</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">serverRender</span>(<span class="params">input</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> html = <span class="string">`&lt;input type=&quot;text&quot; value=&quot;<span class="subst">$&#123;input&#125;</span>&quot;&gt;`</span></span><br><span class="line">  <span class="keyword">const</span> root = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>);</span><br><span class="line">  root.<span class="property">innerHTML</span> = html;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">serverRender</span>(<span class="string">&#x27;&quot;&gt;&lt;img src=&quot;x&quot; onerror=&quot;alert(document.cookie)&quot;&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>现代化的浏览器通常已经对 XSS 的代码注入进行了一定的防护。HTML5 也规定了不执行由 innerHTML 插入的 script 标签。</p>
+<h2 id="防护手段"><a href="#防护手段" class="headerlink" title="防护手段"></a>防护手段</h2><ol>
+<li><strong>转义字符</strong> 将特殊字符转义为 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Entity">HTML 实体字符</a>，如 <code>&lt;</code> 转为 <code>&amp;lt;</code>。</li>
+<li>对 <code>javascript:</code> 进行过滤。</li>
+<li>Cookie 开启 <code>HttpOnly</code>，防止 JS 访问。</li>
+<li><strong>CSP</strong> Content-Security-Policy 内容安全策略，限制页面加载的资源。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root.<span class="property">innerHTML</span> = input.<span class="property">value</span>.<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&#x27;&amp;lt;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&#x27;&amp;gt;&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>实际生产中，应使用成熟的 XSS 防护库，如：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/xss">xss</a></p>
+<h1 id="CSP-内容安全策略"><a href="#CSP-内容安全策略" class="headerlink" title="CSP 内容安全策略"></a>CSP 内容安全策略</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP">CSP 内容安全策略(Content Security Policy)</a> 约束可信内容来源，是一种白名单机制，用于削弱某些特定类型的攻击，包括跨站脚本 (XSS) 和数据注入攻击等。</p>
+<p>两种配置方式：</p>
+<ol>
+<li><strong>HTTP 头部</strong> 设置 <code>Content-Security-Policy</code> HTTP 头部。</li>
+<li><strong>meta 标签</strong> 添加 <code>&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;...&quot;&gt;</code>。</li>
+</ol>
+<p>content 为规则，包括指令(限制选项)与值，多个值使用空格分割，指令之间用分号分隔。如果同一个限制选项使用多次，只有首个会生效。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Security</span>-<span class="title class_">Policy</span>: script-src <span class="string">&#x27;self&#x27;</span>; object-src <span class="string">&#x27;none&#x27;</span>; style-src cdn.<span class="property">example</span>.<span class="property">org</span> third-party.<span class="property">org</span>; child-src <span class="attr">https</span>:</span><br></pre></td></tr></table></figure>
+<p>启用后，不符合 CSP 规则的外部资源就会被阻止加载。</p>
+<h2 id="限制选项"><a href="#限制选项" class="headerlink" title="限制选项"></a>限制选项</h2><p>CSP 提供了很多限制选项，涉及安全的各个方面。</p>
+<p><strong>资源加载限制：</strong></p>
+<ol>
+<li><code>script-src</code>：用于控制脚本资源的加载和执行。</li>
+<li><code>style-src</code>：会控制样式表 <code>@import</code> 和 <code>rel</code> 时所引入的 URI 资源，设置 <code>unsafe-inline</code> 规则可以是浏览器拒绝解析内部样式和内联样式定义。并不会阻止链入外部样式表。</li>
+<li><code>img-src</code>：可以控制图片资源的连接，包括 img 标签的 src 属性，以及 CSS3 中的 <code>url()</code> 和 <code>image()</code> 方法，以及 link 标签中的 href 属性（当 rel 设置成与图像相关的值，比如 HTML 支持的 icon）</li>
+<li><code>font-src</code>：控制 CSS 中的 @font-face 加载的字体源地址</li>
+<li><code>frame-src</code>：设置允许通过类似 <code>&lt;frame&gt;</code> 和 <code>&lt;iframe&gt;</code> 标签加载的内嵌内容的源地址</li>
+<li><code>manifest-src</code>：限制应用声明文件的源地址</li>
+<li><code>media-src</code>：控制媒体类型的外部链入资源，如 <code>&lt;audio&gt;</code>、<code>&lt;video&gt;</code>、<code>&lt;source&gt;</code> 和 <code>&lt;track&gt;</code> 标签的 src 属性</li>
+<li><code>object-src</code>：控制 <code>&lt;embed&gt;</code>、<code>&lt;code&gt;</code>、<code>&lt;archive&gt;</code>、<code>&lt;applet&gt;</code> 等对象</li>
+<li><code>prefetch-src</code>：指定预加载或预渲染的允许源地址</li>
+<li><code>connect-src</code>：控制 XMLHttpRequest 中的 <code>open()</code>、WebSocket、EventSource</li>
+</ol>
+<p><code>default-src</code> 是一个通用的资源加载限制选项，可以作为其他限制选项的默认值。其它选项的值会覆盖默认值。</p>
+<p><strong>URL 限制：</strong></p>
+<ol>
+<li><code>frame-ancestors</code>：限制嵌入框架的网页</li>
+<li><code>base-uri</code>：限制<code>&lt;base#href&gt;</code></li>
+<li><code>form-action</code>：限制<code>&lt;form#action&gt;</code></li>
+</ol>
+<p><strong>其他限制：</strong></p>
+<ol>
+<li><code>block-all-mixed-content</code>：HTTPS 网页不得加载 HTTP 资源（浏览器已经默认开启）</li>
+<li><code>upgrade-insecure-requests</code>：自动将网页上所有加载外部资源的 HTTP 链接换成 HTTPS 协议</li>
+<li><code>plugin-types</code>：限制可以使用的插件格式</li>
+<li><code>sandbox</code>：浏览器行为的限制，比如不能有弹出窗口等。</li>
+<li><code>report-uri</code> 向指定url上报违反 CSP 的行为，POST 请求，包含 JSON 数据。仅在使用 HTTP 头部时有效。</li>
+</ol>
+<h2 id="选项值"><a href="#选项值" class="headerlink" title="选项值"></a>选项值</h2><ol>
+<li><code>&#39;none&#39;</code>：禁止加载任何外部资源</li>
+<li><code>&#39;self&#39;</code>：只允许加载同源资源</li>
+<li><strong>主机名</strong>：example.org，<a target="_blank" rel="noopener" href="https://example.com">https://example.com</a></li>
+<li><strong>路径名</strong>：example.org/resources/js/</li>
+<li><strong>通配符</strong>：*.example.org，*://*.example.com:*（表示任意协议、任意子域名、任意端口）</li>
+<li><strong>协议名</strong>：https:、data:，注意末尾的冒号</li>
+</ol>
+<h2 id="script-src"><a href="#script-src" class="headerlink" title="script-src"></a>script-src</h2><p><code>script-src</code> 控制脚本资源的加载和执行，具有一些额外的特殊值</p>
+<ol>
+<li><code>unsafe-inline</code>：允许执行页面内嵌的<code>&lt;script&gt;</code>标签和事件监听属性，如<code>onclick</code>、<code>onerror</code>等。</li>
+<li><code>unsafe-eval</code>：允许将字符串当作代码执行，比如使用eval、setTimeout、setInterval和Function等函数。</li>
+<li><code>nonce-值</code>：每次HTTP回应给出一个授权token，页面内嵌脚本必须有这个token，才会执行</li>
+<li><code>hash-值</code>：列出允许执行的脚本代码的Hash值，页面内嵌脚本的哈希值只有吻合的情况下，才能执行。</li>
+</ol>
+<p><strong>nonce值：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Security</span>-<span class="title class_">Policy</span>: script-src <span class="string">&#x27;nonce-EDNnf03nceIOfn39fn3e9h3&#x27;</span></span><br><span class="line"><span class="comment">// 页面内嵌脚本，nonce属性必须为该 token 才能执行。</span></span><br><span class="line">&lt;script nonce=<span class="string">&quot;EDNnf03nceIOfn39fn3e9h3&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>hash值：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Security</span>-<span class="title class_">Policy</span>: script-src <span class="string">&#x27;sha256-qznLcsROx4GACP2dm0UCKCzCG-HiZ1guq6ZZDob_Tng=&#x27;</span></span><br><span class="line"><span class="comment">// 浏览器会计算脚本内容的哈希值与配置的哈希值进行比对，一致则执行。</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;Hello, world.&#x27;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><code>style-src</code> 也具有类似的特殊值，如 <code>unsafe-inline</code>、<code>nonce-值</code>、<code>hash-值</code>。</p>
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><p>HTTP（HyperText Transfer Protocol）超文本传输协议，基于请求/响应模型、无状态的<strong>应用层协议</strong>。</p>
+<ol>
+<li>HTTP/0.9 - 1991 单行协议：只支持 GET 方法；没有首部；只能获取纯文本</li>
+<li>HTTP/1.0 - 1996 搭建协议框架：增加了首部、状态码、权限、缓存、长连接（默认短连接）等规范</li>
+<li>HTTP/1.1 - 1997 默认长连接；缓存字段扩展；强制客户端提供 Host 首部；管线化</li>
+<li>SPDY - 2012 强制压缩、多路复用、Pipeling、双向通信、优先级调用</li>
+<li>HTTP/2 - 2015 头部压缩、多路复用、Pipelining、Server push（解决 HTTP 队头阻塞）</li>
+<li>HTTP/3 - 2018 基于QUIC（UDP），快速握手、可靠传输、有序交付（解决 TCP 队头阻塞）</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-5.webp" width="80%" /></p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/330300133">关于队头阻塞（Head-of-Line blocking），看这一篇就足够了</a><br><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/http/1.0_1.1_2.0.html">面试官：说说 HTTP1.0/1.1/2.0 的区别?</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903988953874445">HTTP发展史（HTTP1.1，HTTPS，SPDY，HTTP2.0，QUIC，HTTP3.0）</a><br><a target="_blank" rel="noopener" href="https://tsejx.github.io/javascript-guidebook/computer-networks/http/http2">JavaScript Guidebook-HTTP</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903589635162120">HTTP2基本概念学习笔记</a><br><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/08/http.html">HTTP 协议入门-阮一峰</a><br><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/03/http2_server_push.html">HTTP/2 服务器推送（Server Push）教程-阮一峰</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/MHYMOYHqhrAbQ0xtTkV2ig">HTTP/3 原理实战</a><br><a target="_blank" rel="noopener" href="https://www.nginx.org.cn/article/detail/422">深入剖析HTTP3协议</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Mg411s7mP">QUIC核心原理和握手过程</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7111298133690155038">QUIC 握手流程梳理</a></p>
+<h2 id="HTTP消息"><a href="#HTTP消息" class="headerlink" title="HTTP消息"></a>HTTP消息</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages">HTTP 消息</a>是服务器和客户端之间交换数据的方式，分为请求和响应。</p>
+<p>HTTP 消息由采用 <strong>ASCII 编码</strong>的<strong>多行文本</strong>构成。在 HTTP/1.1 及早期版本中，这些消息通过连接公开地发送。在 HTTP/2 中，为了优化和性能方面的改进，曾经可人工阅读的消息被分到多个 <strong>HTTP 帧</strong>中。</p>
+<p><strong>消息结构：</strong></p>
+<ol>
+<li><strong>起始行</strong> 包括请求方法、请求目(url)、HTTP版本、状态码、状态描述短语</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers">HTTP标头</a> 用于描述报文</li>
+<li><strong>空行</strong> 用于分隔头部和主体，表示消息的元数据部分结束</li>
+<li><strong>消息主体</strong> 可选，包含任意数据，如文件、图片、表单数据等</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-6.webp" width="80%" /></p>
+<h2 id="HTTP1-0"><a href="#HTTP1-0" class="headerlink" title="HTTP1.0"></a>HTTP1.0</h2><p>HTTP1.0 是第一个被广泛使用的版本，它是一个简单的请求/响应协议，<strong>每个请求都会建立一个新的TCP连接</strong>。</p>
+<p>在 HTTP1.0 中认为每台服务器都绑定一个唯一的IP地址，因此，请求头部中没有 Host 字段。但随着虚拟主机技术的发展，一台物理服务器上可以运行多个虚拟主机共享同一个IP，因此需要在请求头部中加入 Host 字段。</p>
+<p>缺点：</p>
+<ol>
+<li>连接频繁的建立和断开会消耗时间和资源。</li>
+<li>无法充分利用带宽，TCP协议特点是慢启动，即一开始传输的数据量小，然后逐渐增大，而短连接导致每次都要重新慢启动，难以达到峰值。</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%98%9F%E5%A4%B4%E9%98%BB%E5%A1%9E">队头阻塞</a>，同一个域名下的请求会排队等待，需要等待前一个请求完成并断开后才能继续请求下一个资源。</li>
+</ol>
+<h2 id="HTTP1-1"><a href="#HTTP1-1" class="headerlink" title="HTTP1.1"></a>HTTP1.1</h2><p><strong>1、长连接（持久连接）：</strong><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x#%E9%95%BF%E8%BF%9E%E6%8E%A5">MDN</a><br>HTTP1.1<strong>默认开启长连接</strong>，即默认带上 <code>Connection: keep-alive</code> 头部。<br>长连接可以让多个请求和响应复用同一个 TCP 连接进行<strong>串行请求</strong>，减少了建立和断开TCP连接的开销，提高了传输效率。<br>但仍然存在<strong>队头阻塞</strong>问题，后面的请求必须等待前面的请求完成后才能进行。</p>
+<p><strong>2、流水线Pipelining（管线化）：</strong><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x#http_%E6%B5%81%E6%B0%B4%E7%BA%BF">MDN</a><br>HTTP1.1 支持<strong>流水线</strong>，即支持<strong>请求并发</strong>，不用等待上一次请求结果返回，可以直接发出下一次请求。<br>但<strong>响应必须按照请求的顺序返回</strong>，队头阻塞仍然可能发生，如果前一个请求非常耗时甚至超时，那么后续请求的响应仍然会受到影响。<br>管线化只解决了请求的队头阻塞问题，但是响应的队头阻塞问题仍然存在，且web的性能问题大多数是由于响应的队头阻塞问题导致的。<br>现代浏览器中，流水线是<strong>禁用</strong>的，HTTP1.1传输的信息是文本，且没有逻辑流概念，实现流水线非常复杂，让并发的请求和响应一一对应也是困难的，反而会造成更多问题。<br>已被 HTTP/2 中的多路复用（multiplexing）所取代。</p>
+<p>3、增加更多的请求头和响应头来完善的功能：</p>
+<ol>
+<li><strong>Host</strong>：指定服务器的域名和端口号。所有 HTTP/1.1 请求报文中必须包含一个Host头字段。</li>
+<li>引入range，允许只请求资源某个部分。</li>
+<li>引入了更多的缓存控制策略，如If-Unmodified-Since, If-Match, If-None-Match等缓存头来控制缓存策略。</li>
+</ol>
+<p><strong>4、多TCP连接：</strong><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x#%E5%9F%9F%E5%90%8D%E5%88%86%E7%89%87">MDN</a><br>单个TCP连接仍然有队头阻塞问题。因此HTTP1.1允许为每个域名建立多个TCP连接，通常为6个，一个请求选择一个连接发送后就不能再换用其它连接。<br><strong>域名分片：</strong>将资源分散到指向同一个服务器的不同的域名下，以便绕过TCP最大连接限制，提高并发请求的数量。这是一个过时的技术，但仍然广泛使用。</p>
+<p><strong>队头阻塞的根本原因：</strong>http1.1是基于文本的协议，文本是不能分割、乱序传输（乱序封装为TCP报文）的，后续将TCP报文按顺序组装成HTTP报文后，文本就错乱了。所以，一个连接中请求响应必须按顺序完成。</p>
+<h2 id="HTTP2"><a href="#HTTP2" class="headerlink" title="HTTP2"></a>HTTP2</h2><p><strong>旧版本问题:</strong></p>
+<ol>
+<li><strong>多个 TCP 连接：</strong>虽然 HTTP/1.1 管线化可以支持请求并发，但是浏览器很难实现，主流浏览器厂商都禁用了管线化</li>
+<li><strong>队头阻塞：</strong>TCP 连接上只能发送一个请求，由于单连接上的串行请求，前面的请求未完成前，后续的请求都在排队等待</li>
+<li><strong>头部冗余：</strong>HTTP/1.x 采用文本格式传输，首部未压缩，无状态特性让每个请求都会带上 Cookie、User-Agent 等重复的信息</li>
+<li><strong>不支持服务端推送：</strong>HTTP/1.1 不支持服务推送消息，只能使用轮询的方式解决</li>
+</ol>
+<p>HTTP2 引入了<strong>二进制分帧层</strong>，将 HTTP 消息分割为更小的消息和帧，每个帧都是一个二进制块，可以乱序发送，然后在接收端重新组装。</p>
+<h3 id="二进制分帧"><a href="#二进制分帧" class="headerlink" title="二进制分帧"></a>二进制分帧</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages#http2_%E5%B8%A7">HTTP帧</a>：HTTP2 通信的最小单位，每个帧包含<strong>帧头部</strong>（固定9字节），用于描述帧的<strong>流ID</strong>、有效载荷的长度、类型等信息。并且将头部和主体分别封装为<strong>头部帧（HEADERS frame）</strong>和<strong>数据帧（DATA frame）</strong>。<br><strong>消息：</strong> 与逻辑请求或响应消息对应的完整的一系列帧。<br><strong>逻辑数据流：</strong>一个虚拟的连接，可以承载双向消息，每个数据流都有一个唯一的标识符。<br><strong>流ID：</strong> 位于帧头，标识出当前帧所属的数据流，接收数据时根据流ID将帧重新组装为完整的消息。</p>
+<p>逻辑上多个流在一个 TCP 连接上<strong>并行传输</strong>，实际上，各个流的各个帧混合封装为多个TCP报文按顺序进行传输。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-7.webp" width="80%" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-8.webp" width="80%" /></p>
+<h3 id="多路复用-MultiPlexing"><a href="#多路复用-MultiPlexing" class="headerlink" title="多路复用 MultiPlexing"></a>多路复用 MultiPlexing</h3><p>允许<strong>多个消息同时在单个 TCP 连接上传输</strong>，并且不会阻塞或等待其他消息的响应，解决了 HTTP/1.x 的队头阻塞问题。<br>支持流的<strong>优先级</strong>（Stream dependencies）设置，允许客户端告知服务器最优资源，可以优先传输。</p>
+<p><strong>核心概念：</strong>将 HTTP 消息分解为独立的帧，交错发送，然后在另一端重新组装。</p>
+<p>有了二进制分帧后，不再依赖多 TCP 链接、域名分片去实现多流并行，而是通过<strong>逻辑数据流</strong>支持多路复用。</p>
+<h3 id="标头压缩"><a href="#标头压缩" class="headerlink" title="标头压缩"></a>标头压缩</h3><p>在 HTTP/1.x 中，标头元数据以纯文本形式传输，带来额外的空间开销。HTTP/2 使用 <strong>HPACK 霍夫曼编码</strong>压缩请求和响应标头元数据，减少冗余数据，降低开销。<br><strong>做法：</strong><br>通过HPACK对传输的标头字段进行编码，从而减小了消息的大小。<br>要求通讯双方<strong>各自维护一份头域索引表</strong>(首部表)，相同的消息头部字段只发送<strong>索引号</strong>，此索引表随后会用作参考，对之前传输的值进行有效编码。<br><a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc7541">关于 HPACK 头部压缩标准 的制定</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-9.webp" width="60%" /></p>
+<p>索引表又分为<strong>静态表</strong>和<strong>动态表</strong>，静态表包含常见的标头字段，动态表包含最近发送的其它标头字段。</p>
+<ol>
+<li>静态表是<strong>固定的</strong>，根据主流网站最常用的标头字段创建，并添加了 HTTP/2 特定的伪标头字段（以冒号开头），详见<a target="_blank" rel="noopener" href="https://httpwg.org/specs/rfc7541.html#static.table.definition">RFC 7541#HPACK: Header Compression for HTTP/2</a></li>
+<li>动态表一开始是空的，随着通信的进行，会不断添加新的标头字段，以便在后续的通信中复用，通常是一些自定义的标头字段。</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-9-1.webp" width="90%" /></p>
+<p>HTTP2 中请求行独立为了 :method、:scheme、:authority、:path 等键值对</p>
+<figure class="highlight text"><figcaption><span>以淘宝图片请求为例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">:authority: img.alicdn.com</span><br><span class="line">:method: GET</span><br><span class="line">:path: /bao/uploaded/i3/3946635813/O1CN01Kkt4xv1soP9fwhG0z_!!0-item_pic.jpg</span><br><span class="line">:scheme: https</span><br><span class="line">Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</span><br><span class="line">Accept-Encoding: gzip, deflate, br, zstd</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9</span><br><span class="line">Referer: https://www.taobao.com/</span><br></pre></td></tr></table></figure>
+<h3 id="服务器推送-Server-Push"><a href="#服务器推送-Server-Push" class="headerlink" title="服务器推送 Server Push"></a>服务器推送 Server Push</h3><p>HTTP2 的服务器推送用于<strong>提前将资源推送至浏览器缓存</strong>。<br>并不是类似于现在的 SSE 或者 WebSocket 的推送技术。它是一种服务器根据客户端以前发送的请求来猜测未来的请求，并提前将未来请求的结果推送给客户端的技术。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-10.webp" width="80%" /></p>
+<h2 id="HTTP3"><a href="#HTTP3" class="headerlink" title="HTTP3"></a>HTTP3</h2><p>HTTP/2 只解决了<strong>应用层</strong> HTTP 的队头阻塞，但<strong>传输层</strong> TCP 仍然存在队头阻塞问题，因为 TCP 是<strong>面向流的</strong>，一个数据包丢失，后续的数据包都要等待重传，导致队头阻塞。</p>
+<p><strong>TCP 层队头阻塞（由于丢失或延迟的数据包）也会最终导致 HTTP 队头阻塞</strong><br>HTTP/2 将多个消息分解为多个帧，若干个帧合并作为TCP报文的载荷，在一个TCP连接上传输，但 TCP 不知道 HTTP 流的，只将所有上层交付的数据作为一个大流，TCP 为了实现<strong>可靠传输</strong>，会对数据包的丢失进行<strong>等待重传</strong>，后续的TCP报文到达后只能进入缓存，需等待重传完成后才能继续操作，即使缓存中数据包内负载的帧已经能重新组装成完整的消息和资源。</p>
+<p>实际上，在TCP的<strong>拥塞控制</strong>机制下，单个连接上的 HTTP/2 并没有比6个TCP连接上的 HTTP/1.1 快多少，在数据包丢失率较高的低速网络上可能更慢，因此浏览器仍然可能为同一域名打开多个并行的 HTTP/2 连接。</p>
+<p><strong>总之</strong>，TCP 并不能完美适配 HTTP/2 的多路复用，两者的流概念存在冲突，因此 HTTP/3 诞生了。</p>
+<h3 id="QUIC的多路复用"><a href="#QUIC的多路复用" class="headerlink" title="QUIC的多路复用"></a>QUIC的多路复用</h3><p>Google 在推 SPDY 的时候就已经意识到了这些问题，于是就另起炉灶搞了一个基于 UDP 协议的“QUIC”协议，让 HTTP 跑在 QUIC 上而不是 TCP 上。 而这个“HTTP over QUIC”就是 HTTP 协议的下一个大版本，HTTP/3。</p>
+<p>UDP 是<strong>不可靠传输</strong>，数据包在接收端没有处理顺序，即使中间丢失一个包，也不会阻塞整条连接，其他的资源会被正常处理，而 QUIC 在 UDP 上实现了 HTTP 流的<strong>可靠传输</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-11.webp" width="90%" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-12.webp" width="90%" /></p>
+<p><strong>连接上不存在阻塞：</strong>QUIC 知道自己传输的是 HTTP 流，如上图，当 packet2 丢失，且后续的 packet 已经到达，QUIC 会查看 packet3 的流ID，发现与 packet1 是同一个流（stream1），且字节范围是连续的，因此可以直接将 packet3 交付给浏览器进行处理，而不用等待 packet2 重传。</p>
+<p><strong>单个流上的阻塞：</strong>对于 packet4，它属于 stream2，但其字节范围前缺失了 0-299，因此，QUIC 会缓存 packet4，等待 0-299 的 packet，也就是 packet2 到达后再交付给浏览器。</p>
+<p>这意味着，想要发挥出 HTTP/3 的优势，需要在单个TCP连接上经常有多个并发流，这就需要浏览器有一个良好的分配策略。</p>
+<p><strong>存在的问题：</strong><br>QUIC(UDP) 并不保证请求和响应的顺序一致，就像上面的例子，stream2 可能比 stream1 先交付给浏览器进行处理。对于一些重要的资源 121212 的传输顺序可能并不比 111222 好，这是显而易见的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">使用多路复用（较慢）：</span><br><span class="line">---------------------------</span><br><span class="line">                              流1（Stream 1）只有到这里才能使用</span><br><span class="line">                              ▼		</span><br><span class="line">12121212121212121212121212121212</span><br><span class="line">                               ▲</span><br><span class="line">                               流2（Stream 2）在这里下载完毕</span><br><span class="line"></span><br><span class="line">未使用多路复用/顺序（流1（Stream 1）更快）：</span><br><span class="line">------------------------------------------------------</span><br><span class="line">                 流1（Stream 1）在这里下载完毕，可以更早地使用</span><br><span class="line">                 ▼			   </span><br><span class="line">11111111111111111122222222222222</span><br><span class="line">                               ▲</span><br><span class="line">                               流2（Stream 2）还是在这里下载完毕</span><br></pre></td></tr></table></figure>
+<p>数据包的丢失通常是连续的一小段，QUIC的多路复用后，帧的交错传输可能导致两个流恰好都有帧丢失而阻塞。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-13.webp" width="80%" /></p>
+<p>大多数 QUIC 实现很少同时在单个TCP连接上传输多个流。因为如果其中一个数据包丢失，则会立即导致其所含帧所属的流被阻塞。<strong>一个QUIC数据包可能携带了多个来自不同流的帧</strong>，一旦该包丢失，后果是灾难性的。</p>
+<p><strong>多路复用是否重要：</strong><br>虽然仍然存在一些问题，但多路复用绝对是一个有用的特性</p>
+<ol>
+<li>对于<a target="_blank" rel="noopener" href="https://blog.cloudflare.com/parallel-streaming-of-progressive-images/">渐进式图像渲染</a>、文件上传下载、视频等增量处理场景，多路复用可以显著提高性能，基于流与帧的概念，无需等待整个资源加载完毕。</li>
+<li>网页零碎的小文件请求，即使数据包发生丢失，也不会对其他文件造成太多的延迟。</li>
+<li>QUIC的多路复用允许改变响应的顺序，并为高优先级的响应中断低优先级的响应。</li>
+<li>配合CDN分发，缓存在CDN上的资源可以更快响应，而未缓存的资源将从服务器获取，但不会阻塞其它流的传输。</li>
+</ol>
+<h3 id="连接建立"><a href="#连接建立" class="headerlink" title="连接建立"></a>连接建立</h3><p>QUIC 首次连接只需要<strong>1-RTT</strong>，基于 UDP 不需要 TCP 的三次握手，且内部包含了 TLS，它在自己的数据包中携带 TLS 加密等必要参数，加之 QUIC 使用的是 TLS 1.3，因此仅需 <strong>1-RTT</strong> 就可以同时完成建立连接与密钥协商。</p>
+<p>在第二次连接的时候，应用数据包可以和 QUIC 握手信息（连接信息 + TLS 信息）一起发送，达到 0-RTT 的效果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-14.webp" width="60%" /></p>
+<p><a target="_blank" rel="noopener" href="https://cangsdarm.github.io/illustrate/quic">图解 QUIC 连接</a></p>
+<p>QUIC 数据包中包含<strong>连接 ID</strong>（Connection ID），这是连接迁移的基础。</p>
+<h3 id="连接迁移"><a href="#连接迁移" class="headerlink" title="连接迁移"></a>连接迁移</h3><p>基于 TCP 传输协议的 HTTP 协议，由于是通过四元组（源 IP、源端口、目的 IP、目的端口）确定一条 TCP 连接。</p>
+<p>切换网络时至少会有一个因素发生变化，导致连接发生变化。当连接发生变化时，如果还使用原来的 TCP 连接，则会导致连接失败，就得等原来的连接超时后重新建立连接，所以我们有时候发现切换到一个新网络时，即使新网络状况良好，但内容还是需要加载很久。如果实现得好，当检测到网络变化时立刻建立新的 TCP 连接，即使这样，建立新的连接还是需要几百毫秒的时间。</p>
+<p>QUIC 连接不以四元组作为标识，而是使用一个 64 位的随机数，这个随机数被称为 Connection ID，即使 IP 或者端口发生变化，只要 Connection ID 没有变化，那么连接依然可以维持。</p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>QUIC 重新实现了 TCP 协议的 Cubic 算法进行<strong>拥塞控制</strong>，也就是慢启动、拥塞避免、快速重传和快速恢复。并在此基础上进行了改进。</p>
+<ol>
+<li><strong>热插拔</strong> TCP 中如果要修改拥塞控制策略，需要在系统层面进行操作。QUIC 修改拥塞控制策略只需要在应用层操作，并且 QUIC 会根据不同的网络环境、用户来动态选择拥塞控制算法。</li>
+<li><strong>前向纠错 FEC</strong> QUIC 使用前向纠错(FEC，Forward Error Correction)技术增加协议的容错性。一段数据被切分为 10 个包后，依次对每个包进行异或运算，运算结果会作为 FEC 包与数据包一起被传输，如果不幸在传输过程中有一个数据包丢失，那么就可以根据剩余 9 个包以及 FEC 包推算出丢失的那个包的数据，这样就大大增加了协议的容错性。空间换时间。</li>
+<li><strong>单调递增的 Packet Number</strong> TCP 为了保证可靠性，使用 Sequence Number 和 ACK 来确认消息是否有序到达。发生超时重传时请求的 Seq 不变，响应的 Ack 也不变，无法区分是原始请求的 Ack 还是重传请求的 Ack。QUIC 使用 Packet Number 来区分，每个 Packet Number 都是单调递增的，发生重传时，响应的 Ack 也是唯一的。</li>
+<li><strong>更多的 ACK 块</strong> 接收方收到发送方的消息后都应该发送一个 ACK 回复，表示收到了数据。但每收到一个数据就返回一个 ACK 回复太麻烦，所以一般不会立即回复，而是接收到多个数据后再回复，TCP SACK 最多提供 3 个 ACK block。但有些场景下，比如下载，只需要服务器返回数据就好，但按照 TCP 的设计，每收到 3 个数据包就要“礼貌性”地返回一个 ACK。而 QUIC 最多可以捎带 256 个 ACK block。在丢包率比较严重的网络下，更多的 ACK block 可以减少重传量，提升网络效率。</li>
+</ol>
+<p>QUIC 也实现了<strong>流量控制</strong>，两个级别：连接级别（Connection Level）和 Stream 级别（Stream Level）。</p>
+<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p><strong>超文本传输安全协议</strong>（Hyper Text Transfer Protocol over Secure Socket Layer，HTTPS），是一种通过计算机网络进行<strong>安全通信</strong>的传输协议。HTTPS 经由 HTTP 进行通信，但利用 <strong>SSL / TLS</strong> 来加密数据包。</p>
+<p><strong>目的：</strong>提供对网站服务器的身份认证，保护交换数据的隐私与完整性。</p>
+<p>HTTP 是明文传输的，数据在传输过程中可能被窃听、篡改，而 HTTPS 则通过 SSL/TLS 协议对数据进行加密，保证数据的<strong>机密性</strong>和<strong>完整性</strong>。</p>
+<p><strong>安全传输层协议</strong>（Transport Layer Security，SSL/TLS），是介于 TCP 和 HTTP 之间的一层安全协议，不影响原有的 TCP 协议和 HTTP 协议。SSL 是 TLS 的前身。<br>SSL 1.0 – 由于安全问题从未公开发布。<br>SSL 2.0 – 1995年发布。2011年弃用。存在已知的安全问题。<br>SSL 3.0 – 1996年发布。2015年弃用。存在已知的安全问题。<br>TLS 1.0 – 1999年作为SSL 3.0的升级发布。计划在2020年弃用。<br>TLS 1.1 – 2006年发布。计划在2020年弃用。<br>TLS 1.2 – 2008年发布。<br>TLS 1.3 – 2018年发布。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6895624327896432654">TLS 详解握手流程</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/344086342">图解 HTTPS：RSA 握手过程</a><br><a target="_blank" rel="noopener" href="https://www.xiaolincoding.com/network/2_http/https_ecdhe.html">HTTPS ECDHE 握手解析</a><br><a target="_blank" rel="noopener" href="https://tsejx.github.io/javascript-guidebook/computer-networks/http/https">JavaScript Guidebook-HTTPS</a></p>
+<h2 id="TLS握手"><a href="#TLS握手" class="headerlink" title="TLS握手"></a>TLS握手</h2><p><strong>传统TLS使用RSA握手：</strong></p>
+<ol>
+<li>客户端发送 <strong>Client Hello</strong> 消息，包含支持的TLS版本、加密套件、客户端随机数<strong>client_random</strong>。</li>
+<li>服务端返回 <strong>Server Hello</strong> 消息，包含确定的TLS版本、选择的加密套件、服务端随机数<strong>server_random</strong>。</li>
+<li>服务端继续发送 <strong>Certificate</strong> 数字证书 (证书中附带<strong>公钥</strong>)。</li>
+<li><strong>Client Finish</strong> 客户端验证证书和签名，若通过则生成一个随机数<strong>pre_random</strong>作为<strong>预主密钥</strong>，并用RSA公钥加密后发送给服务端。</li>
+<li><strong>Server Finish</strong> 服务端通过RSA私钥解密获得pre_random。此 pre_random 只有服务端和客户端知道，除非私钥泄露。</li>
+<li>最后双方根据 client_random、server_random、pre_random 生成<strong>主密钥</strong>，用于后续的通信加密。</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-16.webp" width="80%" /></p>
+<p><strong>TLS1.2使用DH握手：</strong><br>与RSA区别主要在于<strong>pre_random</strong>的生成方式，RSA在客户端生成后使用公钥加密发送给服务端，DH使用<strong>ECDHE密钥交换算法</strong>生成。</p>
+<figure class="highlight diff"><figcaption><span>DH与RSA握手对比</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1.浏览器向服务器发送随机数 client_random，TLS 版本和供筛选的加密套件列表。</span><br><span class="line"></span><br><span class="line">// RSA</span><br><span class="line"><span class="deletion">-2.服务器接收到，立即返回 server_random，确认好双方都支持的加密套件</span></span><br><span class="line"><span class="deletion">-以及数字证书 (证书中附带公钥)。</span></span><br><span class="line">// DH</span><br><span class="line"><span class="addition">+2.服务器接收到，立即返回 server_random，确认好双方都支持的加密套件</span></span><br><span class="line"><span class="addition">+以及数字证书 (证书中附带公钥)。</span></span><br><span class="line"><span class="addition">+同时服务器利用私钥将 client_random，server_random，服务端椭圆曲线公钥(server_params) 签名，</span></span><br><span class="line"><span class="addition">+生成服务器签名。然后将签名和 server_params 也发送给客户端。 </span></span><br><span class="line"></span><br><span class="line">// RSA</span><br><span class="line"><span class="deletion">-3.浏览器接收，先验证数字证书。</span></span><br><span class="line"><span class="deletion">-若通过，接着使用加密套件的密钥协商算法 RSA 算法</span></span><br><span class="line"><span class="deletion">-生成另一个随机数 pre_random，并且用证书里的公钥加密，传给服务器。</span></span><br><span class="line">// DH</span><br><span class="line"><span class="addition">+3.浏览器接收，先验证数字证书和签名名。</span></span><br><span class="line"><span class="addition">+若通过，将 客户端椭圆曲线公钥(client_params) 传递给服务器。</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">-4.服务器用私钥解密这个被加密后的 pre_random。</span></span><br><span class="line"><span class="addition">+4.现在客户端和服务器都有 对方的椭圆曲线公钥、自己的椭圆曲线私钥。</span></span><br><span class="line"><span class="addition">+因 ECDHE 计算基于 “椭圆曲线离散对数”，客户端和服务器都能计算出 pre_random。</span></span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-15.webp" width="80%" /></p>
+<p><strong>TLS1.3握手：</strong><br>TLS1.3将握手过程简化，<strong>只需要1-RTT</strong>，并废除了 RSA 等不安全算法。</p>
+<p>RSA 算法的废除不仅因为已经能够被破解，同时还缺少<strong>前向安全性</strong>。<br><strong>前向安全：</strong>能够保护过去进行的通讯不受密码或密钥在未来暴露的威胁。</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 原 DH 握手</span><br><span class="line"><span class="deletion">-1.浏览器向服务器发送 client_random，TLS 版本和供筛选的加密套件列表。</span></span><br><span class="line">// TLS1.3 优化</span><br><span class="line"><span class="addition">+1.浏览器向服务器发送 client_params，client_random，TLS 版本和供筛选的加密套件列表。</span></span><br><span class="line"></span><br><span class="line">// 原 DH 握手</span><br><span class="line"><span class="deletion">-2...</span></span><br><span class="line">// TLS1.3 优化</span><br><span class="line"><span class="addition">+2.服务器返回：server_random、server_params、TLS 版本、确定的加密套件方法以及证书。</span></span><br><span class="line"><span class="addition">+浏览器接收，先验证数字证书和签名。</span></span><br><span class="line"><span class="addition">+现在双方都有 client_params、server_params，可以根据 ECDHE 计算出 pre_random 了。</span></span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/83-17.webp" width="80%" /></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>一点点网络知识</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://www.qcqx.cn/article/1e4e2709.html">https://www.qcqx.cn/article/1e4e2709.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>轻笑Chuckle</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-03-11</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-03-11</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a></div><div class="post_share"></div></div><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">投 喂</span><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/weixin.webp" alt="微信" loading="lazy"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/alipay.webp" alt="支付宝" loading="lazy"/></a><div class="post-qr-code-desc">支付宝</div></li><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">一个博客 一叶孤舟 一方世界</div></a></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/article/6e8f8c6c.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">⇦上一篇</div><div class="prev_info">数据类型与拷贝</div></div></a></div><div class="next-post pull-right"><a href="/article/e18aeaaa.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/77-0.webp" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇⇨</div><div class="next_info">NestJS[四]-数据库</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-no-lazy="data-no-lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div></div><a class="card-widget" id="card-tuijian" href="https://afdian.net/a/chuckle" target="_blank" style="display:block"><div id="tj-box"><div id="tj-box1"><div id="tj-left"><p>扫一扫</p>
+<span>快速打开移动端➤</span></div><div id="tj-right"><div id="tj-img-box"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACFElEQVR42u3aS3KDMBAFQN//0skJoN5o9MG4tUoRZKtZIPnNfP5ePT54eHh4eHh4eHh4eHh4eHh4eHh4P8z7xONq7v2V+2/srwEPDw/vFC9ZUGehY5+f34OHh4d3ine1rKt7rq7cbxv3dyZrwMPDw/tGXk7NSXh4eHjv5iX4JPLAw8PD+3Ze/gjyqCLfDB6RteDh4eEtKICt+/sR9T08PDy8gFcdncaCdQMPDw9vJy9/QY/Nil7rQ7Pw8PDwTvGqMUEVfz/3/vqEMAIPDw9vGa9zgM4fQdJSsPUXAx4eHl77SF19TefH5au508pjeHh4eBt5yQYwN1bIGwUmhxF4eHh4C2Lc/LU+ayPJ8Ut6yvDw8PDaOWe1TT+5vxMfT9v38PDw8LYcqZ9TAFsSRuDh4eG1Y9yxdv/O3GSTmBZG4OHh4S3mJWWqsVaA6saQh794eHh4+3nVaKDfWJAf36cVwPDw8PCW8caO0XmYO+t+PDw8vCfwqi/3fFljD6uwBjw8PLyNvOrotPXnYW6+/eDh4eHt51XLV7MC2eS/W+t7eHh4eO0jdTWwGCuhja0HDw8P7zm8sRJ+3tJ6OGvBw8PDO8rL26GqsUVSisPDw8P7Rl51idUIoxpJ4OHh4Z3izSp65aFDv8UfDw8P7xSvGs5Wg9oktB3bEvDw8PD2894x8PDw8PDw8PDw8PDw8PDw8PDw8H6A9w//lr1YjzXSpAAAAABJRU5ErkJggg=="/></div></div></div><div id="tj-box2"><div id="tj-left"><p>爱发电</p>
+<span>扫码或<span class="tj-light">点击跳转</span>➤</span></div><div id="tj-right"><div id="tj-img-box"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACEElEQVR42u3bQXKDMAwFUO5/6fYAmbRfEhiTPK8YhiR+XtiKJI6fjx4HHh4eHh4eHh4eHh4eHh4eHh4e3hfzjnj88wMvz7x+9t33zOeAh4eHt56XT/31OrmTX/fmiYeHh3cX791GnPCSY+DdFl+dAx4eHt4TeclWXiXh4eHhfSqvGgRXkxR4eHh4z+JNUrTl9MGeuRY8PDy8Cwpg111vUd/Dw8PDC3jVkS9BHlKfMCs8PDy8hbxe60C+cfeSwuWWLzw8PLybeHm6tpfwrR4YeHh4eDvz8ibUKiAJu+ehNh4eHt5KXh7CzstU+fPl78HDw8NbzpuAJ4mG/Eg4uQCGh4eHN+ZNylr5ElxXMMPDw8O7i5ds7tV2qPwI6ZW+8PDw8NbzquWrfMvu3U+WAA8PD28fXu+oOOtIqIbReHh4ePvwJlPptZ/2khR4eHh49/KqbVVRmNsqjCWLjoeHh7cDL5/iJNQ+N3WLh4eHtxuvWhLLExB/H0iX/2PAw8PDG/PKW3ALk0+3dzzg4eHhreQd8chD7XlJ7OQCGB4eHt5l/ZyThMVZjftLcy14eHh4Y97fSYFeeF09fi4JqfHw8PA24FVfmuotXOEVLDw8PLxH8arg5Ek8PDy8p/DmRa9ei391UfDw8PB24OVbc34/b+fqvUiAh4eHdxfvMwYeHh4eHh4eHh4eHh4eHh4eHh7eF/B+Acr1Qv2GlsE8AAAAAElFTkSuQmCC"/></div></div></div></div></a><div class="card-widget card-announcement"><div class="item-headline"><i class="iconfont icon-gonggao"></i><span>公告</span></div><div class="announcement_content">欢迎来到『轻笑Chuckle』的小站<br>(￣▽￣)～■干杯□～(￣▽￣)<br>如果有什么加载不出来或者其它滴小bug,「刷新网页/Ctrl+F5」应该、也许能解决</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">分层体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AF%E8%AF%AD"><span class="toc-number">2.1.</span> <span class="toc-text">术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E5%B1%82%E5%8E%9F%E7%90%86%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">五层原理模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP"><span class="toc-number">3.</span> <span class="toc-text">TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-number">3.1.</span> <span class="toc-text">三次握手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">3.2.</span> <span class="toc-text">四次挥手</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%85%A5url%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">输入url后</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS%E8%A7%A3%E6%9E%90"><span class="toc-number">4.1.</span> <span class="toc-text">DNS解析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F"><span class="toc-number">5.</span> <span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ajax%E7%9B%B8%E5%85%B3"><span class="toc-number">6.</span> <span class="toc-text">ajax相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSE"><span class="toc-number">7.</span> <span class="toc-text">SSE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WebSocket"><span class="toc-number">8.</span> <span class="toc-text">WebSocket</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JWT"><span class="toc-number">9.</span> <span class="toc-text">JWT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81"><span class="toc-number">10.</span> <span class="toc-text">前端网络状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XSS"><span class="toc-number">11.</span> <span class="toc-text">XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E6%8A%A4%E6%89%8B%E6%AE%B5"><span class="toc-number">11.1.</span> <span class="toc-text">防护手段</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSP-%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="toc-number">12.</span> <span class="toc-text">CSP 内容安全策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E9%80%89%E9%A1%B9"><span class="toc-number">12.1.</span> <span class="toc-text">限制选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E9%A1%B9%E5%80%BC"><span class="toc-number">12.2.</span> <span class="toc-text">选项值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#script-src"><span class="toc-number">12.3.</span> <span class="toc-text">script-src</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP"><span class="toc-number">13.</span> <span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E6%B6%88%E6%81%AF"><span class="toc-number">13.1.</span> <span class="toc-text">HTTP消息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP1-0"><span class="toc-number">13.2.</span> <span class="toc-text">HTTP1.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP1-1"><span class="toc-number">13.3.</span> <span class="toc-text">HTTP1.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP2"><span class="toc-number">13.4.</span> <span class="toc-text">HTTP2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%88%86%E5%B8%A7"><span class="toc-number">13.4.1.</span> <span class="toc-text">二进制分帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8-MultiPlexing"><span class="toc-number">13.4.2.</span> <span class="toc-text">多路复用 MultiPlexing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%A4%B4%E5%8E%8B%E7%BC%A9"><span class="toc-number">13.4.3.</span> <span class="toc-text">标头压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A8%E9%80%81-Server-Push"><span class="toc-number">13.4.4.</span> <span class="toc-text">服务器推送 Server Push</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP3"><span class="toc-number">13.5.</span> <span class="toc-text">HTTP3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#QUIC%E7%9A%84%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8"><span class="toc-number">13.5.1.</span> <span class="toc-text">QUIC的多路复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%BB%BA%E7%AB%8B"><span class="toc-number">13.5.2.</span> <span class="toc-text">连接建立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E8%BF%81%E7%A7%BB"><span class="toc-number">13.5.3.</span> <span class="toc-text">连接迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-number">13.5.4.</span> <span class="toc-text">其它</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTPS"><span class="toc-number">14.</span> <span class="toc-text">HTTPS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS%E6%8F%A1%E6%89%8B"><span class="toc-number">14.1.</span> <span class="toc-text">TLS握手</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最近更新</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/1be64a8d.html" title="NestJS实践杂记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/77-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="NestJS实践杂记"/></a><div class="content"><a class="title" href="/article/1be64a8d.html" title="NestJS实践杂记">NestJS实践杂记</a><time datetime="2024-12-09T07:10:08.000Z" title="更新于 2024-12-09 15:10:08">2024-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/55cefeb1.html" title="React-记-3"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-3"/></a><div class="content"><a class="title" href="/article/55cefeb1.html" title="React-记-3">React-记-3</a><time datetime="2024-10-12T17:26:31.000Z" title="更新于 2024-10-13 01:26:31">2024-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/f17dfea3.html" title="React-记-2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-2"/></a><div class="content"><a class="title" href="/article/f17dfea3.html" title="React-记-2">React-记-2</a><time datetime="2024-09-26T11:26:24.000Z" title="更新于 2024-09-26 19:26:24">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/cb488cbf.html" title="React-记-1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/104-0.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="React-记-1"/></a><div class="content"><a class="title" href="/article/cb488cbf.html" title="React-记-1">React-记-1</a><time datetime="2024-09-23T13:15:26.000Z" title="更新于 2024-09-23 21:15:26">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/d186ebdd.html" title="闭包与内存泄漏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/103-4.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'" alt="闭包与内存泄漏"/></a><div class="content"><a class="title" href="/article/d186ebdd.html" title="闭包与内存泄漏">闭包与内存泄漏</a><time datetime="2024-09-12T12:04:03.000Z" title="更新于 2024-09-12 20:04:03">2024-09-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2025 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+function createtime() {
+var now = new Date();
+var grt= new Date("03/10/2022 00:00:00");
+now.setTime(now.getTime()+1000);
+days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
+document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
+}
+createtime();
+if(typeof footer_time == "undefined"){
+  var footer_time = setInterval("createtime()",1000*60);
+}else{
+  clearInterval(footer_time);
+  footer_time = setInterval("createtime()",1000*60);
+}
+}
+</script></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/hexo.svg"/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/butterfly.svg"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/github.svg"/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20220160" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/20220160.svg"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/2022076449.svg"/></a><a class="github-badge" target="_blank" href="https://cloud.tencent.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tx.svg"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/vercel.svg"/></a><a class="github-badge" target="_blank" href="https://tianli-blog.club/jsd/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tianlicdn.svg"/></a><a class="github-badge" target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ypy.svg"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/cc.svg"/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="refresh-cache" type="button" title="刷新缓存" onclick="refreshCache()"><i class="fas fa-refresh fa-spin"></i></button><button id="enlargePage-btn" type="button" title="放大页面" onclick="enlargePage()"><i class="fa fa-plus"></i></button><button id="narrowPage-btn" type="button" title="缩小页面" onclick="narrowPage()"><i class="fa fa-minus"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fa fa-images"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="to_comment" type="button" title="直达评论" onclick="FixedCommentBtn();"><i class="fas fa-comments"></i></button><button id="share-link" type="button" title="分享链接"><i class="fa fa-share-alt"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-top"><i class="fa fa-angles-up"></i></div></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:kk.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-magnifying-glass"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-read"><a class="rightMenu-item" href="javascript:kk.pasteText();"><i class="fa fa-paste"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" id="menu-radompage" href="/"><i class="fa-solid fa-shoe-prints"></i><span>博客主页</span></a><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-adjust"></i><span>昼夜切换</span></div><div class="rightMenu-item" id="share-chuckle"><i class="fa fa-share-alt"></i><span>分享本页</span></div><a class="rightMenu-item" id="menu-radompage" href="/categories/"><i class="fa fa-archive"></i><span>分类</span></a><a class="rightMenu-item" id="menu-radompage" href="/tags/"><i class="fa fa-tags"></i><span>标签</span></a></div></div><div id="rightmenu-mask" onclick="RemoveRightMenu()"></div><div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/main.js?6"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/search/local-search.js?2"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 2500);</script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.qcqx.cn',
+      path: location.pathname,
+      visitor: true,
+      dark: 'html[data-theme="dark"]'
+    }, {"requiredMeta":["nick","mail"],"wordLimit":400,"placeholder":"来评论交流吧，通过邮件通知（表情点不出来请刷新页面）"}))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/waline.min.js?7').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/qx-tracker.min.js?1"></script><script>const tracker = new Tracker({requestUrl:'https://tracker-api.qcqx.cn/api/tracker',historyTracker:true,realTime:true});</script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/random.min.js?14"></script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle.js?15"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle-post-ai.js?11"></script><script defer>new ChucklePostAI({el:'#post>#article-container',key:'tN2jLmG7fX9zHk5dVbQr',title_el:'.post-title',rec_method:'web',whitelist:['article/17d3383a.html'],pjax:true})</script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#fixedcard-dashboard","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="fixedcard-dashboard"><button class="fixedcard-activebtn" type="button" title="用户信息" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-info&quot;,&quot;0&quot;)"><i class="fas fa-address-book"></i></button><button class="fixedcard-activebtn" type="button" title="公告" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-announcement&quot;,&quot;0&quot;)"><i class="fa fa-bullhorn"></i></button><button class="fixedcard-activebtn" type="button" title="相关推荐" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-recommend-post&quot;,&quot;0&quot;)"><i class="fas fa-dharmachakra"></i></button><button class="fixedcard-activebtn" type="button" title="最近更新" onclick="FixedCardWidget(&quot;class&quot;,&quot;card-recent-post&quot;,&quot;0&quot;)"><i class="fas fa-history"></i></button><div class="fixedcard-user-avatar fixedcard-activebtn" onclick="RemoveFixedCardWidget()"><img class="fixedcard-user-avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/head.webp" title="『轻笑Chuckle』"></div></div></div><!-- hexo injector body_end start --><script data-pjax>function hope_light_loader_injector_config(){
+                var parent_div_git = document.getElementById('body-wrap');
+                var item_html = '<div id="loading-bar-wrapper">';
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementById('body-wrap') && (location.pathname ==='all'|| 'all' ==='all')){
+            hope_light_loader_injector_config()
+        } </script>
+    <script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/nprogress.min.js"></script>
+    <script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script data-pjax>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+      document.addEventListener('pjax:send', window.ShowLoading)
+      document.addEventListener('pjax:success', window.HideLoading)
+      document.addEventListener('pjax:error', window.HideLoading)
+    </script>
+<!-- hexo injector body_end end --></body></html>

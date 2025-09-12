@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        input {
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .login-box {
+            margin: 0 auto;
+            width: auto;
+            height: auto;
+            background: rgb(244, 242, 242);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 6px;
+            transform: translate(-50%, -50%);
+            border: 1px solid #e4e4e4;
+        }
+
+        .login-box .login-title {
+            width: 100%;
+            text-align: center;
+            margin: 12px 0;
+            font-size: 22px;
+            font-weight: bolder;
+            color: #363636;
+        }
+
+        .login-tab {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            user-select: none;
+        }
+
+        .login-tab-line {
+            width: 1px;
+            height: 20px;
+            background: rgb(30, 110, 140);
+        }
+
+        .login-tab-item {
+            margin: 0px 10px;
+            transition: all 0.2s;
+        }
+
+        .login-tab-item.active {
+            color: #4b98db;
+        }
+
+        .login-form {
+            margin: 10px;
+        }
+
+        .form-item {
+            display: flex;
+            position: relative;
+            width: 300px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 25px;
+            justify-content: space-between;
+            letter-spacing: 0.6px;
+        }
+
+        .form-item input {
+            width: 100%;
+            border: 1px solid #e4e4e4;
+            height: 40px;
+            font-size: 16px;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .form-item .msg {
+            position: absolute;
+            line-height: 1;
+            width: 100%;
+            font-size: 12px;
+            color: rgb(255, 79, 126);
+            bottom: 9px;
+            padding-left: 5px;
+        }
+
+        .code-box {
+            display: flex;
+        }
+
+        .form-item [name="code"] {
+            flex-shrink: 1;
+        }
+
+        .form-item a.code {
+            width: fit-content;
+            height: 40px;
+            line-height: 40px;
+            background: rgb(120, 187, 233);
+            text-align: center;
+            border-radius: 6px;
+            color: #fff;
+            margin-left: 10px;
+            padding: 0 10px;
+            flex-shrink: 0;
+            display: block;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .agree-check {
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        .form-item .agree {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .form-item .agree:checked {
+            background: #9decbe;
+        }
+
+        .agreement {
+            width: calc(100% - 20px);
+            padding-left: 10px;
+            color: #363636;
+            line-height: 20px;
+            height: 20px;
+        }
+
+        .agreement a {
+            color: #6a9adf;
+        }
+
+        .login-submit {
+            margin: 0 auto;
+            display: block;
+            width: calc(100% - 40px);
+            height: 40px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            background: #9decbe;
+            font-size: 18px;
+            color: #363636;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .login-submit:hover {
+            background: #86ebb0;
+        }
+
+        .form-item .see {
+            position: absolute;
+            width: fit-content;
+            height: auto;
+            right: 10px;
+            line-height: 1;
+            cursor: pointer;
+            font-size: 14px;
+            top: 12px;
+            color: #ababab;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .form-item .see:hover {
+            color: #6a9adf;
+        }
+
+        .login-form {
+            display: none;
+        }
+
+        .login-form.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="login-title">登陆</div>
+        <div class="login-tab">
+            <div class="login-tab-item active" data-id="0">密码登陆</div>
+            <div class="login-tab-line"></div>
+            <div class="login-tab-item" data-id="1">短信登陆</div>
+        </div>
+        <div class="form-box">
+            <form class="login-form active">
+                <div class="form-item">
+                    <input name="uname" type="text" placeholder="用户名 / 手机号" maxlength="13" autocomplete="off" required>
+                    <div class="msg"></div>
+                </div>
+                <div class="form-item">
+                    <input name="password" type="password" placeholder="密码" maxlength="20" autocomplete="off" required>
+                    <div class="msg"></div>
+                    <div class="see">显示</div>
+                </div>
+                <button class="login-submit">登录</button>
+            </form>
+            <form class="login-form">
+                <div class="form-item">
+                    <input name="phone" type="text" placeholder="输入手机号" maxlength="11" autocomplete="off" required>
+                    <div class="msg"></div>
+                </div>
+                <div class="form-item">
+                    <div class="code-box">
+                        <input name="code" type="text" placeholder="输入验证码" maxlength="6" autocomplete="off" required>
+                        <div class="msg"></div>
+                        <a href="javascript:;" class="code">发送验证码</a>
+                    </div>
+                </div>
+                <button class="login-submit">登录</button>
+            </form>
+            <div class="form-item agree-check">
+                <input type="checkbox" class="agree" autocomplete="off">
+                <div class="msg"></div>
+                <div class="agreement">已阅读并同意<a href="#">《用户协议》</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const login_tab = document.querySelector('.login-tab');
+        const login_form = document.querySelectorAll('.login-form');
+        const code = document.querySelector('.code-box .code');
+        const agree = document.querySelector('.agree-check .agree');
+        const uname = document.querySelector('.form-item input[name="uname"]');
+        const phone = document.querySelector('.form-item input[name="phone"]');
+        login_tab.addEventListener('click', (e) => {
+            let class_name = e.target.className;
+            if (class_name === 'login-tab-item') {
+                document.querySelector('.login-tab-item.active').classList.remove('active');
+                e.target.classList.add('active');
+                //切换登录方式清空input
+                document.querySelectorAll('.login-form.active input').forEach((item) => {
+                    item.value = '';
+                })
+                document.querySelector('.login-form.active').classList.remove('active');
+                login_form[e.target.dataset.id].classList.add('active');
+            }
+        });
+        //短信模块
+        var code_flag = true;//控制点击有没有效果
+        const codeTime = 30;//验证码发送间隔时间，默认30秒
+        function codeClick() {
+            if (code_flag) {
+                //存入点击发送验证码时的时间戳
+                localStorage.setItem('code_time', new Date().getTime());
+                code_flag = false;//可以点击
+                code_limit_time();
+                //这里就可以去做请求短信接口
+            }
+        }
+        //验证码间隔验证的初始化
+        function codeInit() {
+            //如果验证码间隔倒计时还没30秒，就继续倒计时
+            let code_time = localStorage.getItem('code_time');
+            if (code_time) {
+                let time = codeTime - parseInt((new Date().getTime() - code_time) / 1000);
+                //小于0说明间隔已经满足
+                if (time > 0) {
+                    //执行控制验证码间隔函数
+                    code_limit_time(time);
+                }
+            }
+            // 发送短信验证码
+            code.addEventListener('click', codeClick);
+        }
+        // 控制验证码发送间隔函数
+        function code_limit_time(i = codeTime) {
+            code.innerHTML = `${i}秒后重新获取`;
+            code.style.pointerEvents = 'none';
+            code.style.background = '#c6c6c6';
+            var stv = setInterval(() => {
+                i--;
+                code.innerHTML = `${i}秒后重新获取`;
+                if (i === 0) {
+                    code_flag = true;
+                    code.innerHTML = `重新获取`;
+                    code.style.pointerEvents = 'auto';
+                    code.style.background = 'rgb(120, 187, 233)';
+                    clearInterval(stv);
+                    //倒计时完成移除时间戳
+                    localStorage.removeItem('code_time');
+                }
+            }, 1000)
+        }
+        //密码点击查看隐藏
+        const see_psw = document.querySelector('.form-item .see')
+        see_psw.addEventListener('click', () => {
+            let input = see_psw.parentNode.firstElementChild;
+            if (input.type === "password") {
+                see_psw.innerHTML = "隐藏";
+                input.type = "text";
+            } else {
+                see_psw.innerHTML = "显示";
+                input.type = "password";
+            }
+        });
+        // 检查协议是否同意
+        function inspect_agree() {
+            console.log(11);
+            let div = agree.nextElementSibling;
+            if (agree.checked) {
+                div.innerHTML = "";
+                return true;
+            } else {
+                div.innerHTML = "请同意协议";
+                return false;
+            }
+        }
+        function subInit() {
+            login_form.forEach((item, index) => {
+                item.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!inspect_agree()) {
+                        return;
+                    }
+                    //存储用户名或手机号
+                    localStorage.setItem('user', uname.value||phone.value);
+                    //这里作跳转
+                    // location.href = '/'
+                });
+            })
+        }
+        //初始化函数
+        function loginInit() {
+            codeInit();
+            subInit();
+        }
+        //执行初始化
+        loginInit();
+    </script>
+</body>
+
+</html>

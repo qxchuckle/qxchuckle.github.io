@@ -1,0 +1,611 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
+  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+    (async()=>{window.stop()})()
+    window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  }
+  navigator.serviceWorker.register('/giggles.js')
+    .then(async () => {
+      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+        window.localStorage.setItem('ChenBlogHelper_Set', 2)
+        setTimeout(() => {
+          window.location.reload()
+        }, 150)
+      }
+    })
+}
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>藏宝阁 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="收藏     藏宝阁              包含 影视&#x2F;动漫&#x2F;小说&#x2F;游戏&#x2F;音乐 等                    .stars_box {     display: flex;     flex-wrap: wrap;     justify-content: space-between; } .stars_box .card_box {     margin: 8px !i">
+<meta property="og:type" content="website">
+<meta property="og:title" content="藏宝阁">
+<meta property="og:url" content="https://www.qcqx.cn/stars/index.html">
+<meta property="og:site_name" content="轻笑Chuckle">
+<meta property="og:description" content="收藏     藏宝阁              包含 影视&#x2F;动漫&#x2F;小说&#x2F;游戏&#x2F;音乐 等                    .stars_box {     display: flex;     flex-wrap: wrap;     justify-content: space-between; } .stars_box .card_box {     margin: 8px !i">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp">
+<meta property="article:published_time" content="2022-10-24T23:53:50.000Z">
+<meta property="article:modified_time" content="2025-07-16T06:38:51.675Z">
+<meta property="article:author" content="『轻笑Chuckle』">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"><link rel="canonical" href="https://www.qcqx.cn/stars/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/index.css?285"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/fontawesome.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":160},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '藏宝阁',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-07-16 14:38:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/tag_plugins.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="轻笑Chuckle" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"/></div></div><div id="web_bg"></div><div id="svg_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center" id="sidebar-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="menu-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><div id="chuckle_home"><div class="back-home-button"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">传送门</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" loading="lazy"/><span class="back-menu-item-text">博客主页</span></a><a class="back-menu-item" href="https://waline.qcqx.cn/ui" rel="external nofollow" title="前往评论后端" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c4.webp" loading="lazy"/><span class="back-menu-item-text">评论管理</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客线路</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qcqx.cn/" title="前往博客主站" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/h4.webp" loading="lazy"/><span class="back-menu-item-text">主域名线路</span></a><a class="back-menu-item" href="https://qxchuckle.github.io" title="前往博客Github线路" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c6.webp" loading="lazy"/><span class="back-menu-item-text">Github线路</span></a></div></div></div></div></div><span id="blog_name"><a id="site-name" href="/">轻笑Chuckle</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div><div id="buttons"><div id="switch-bg"><a class="site-page social-icon search" href="javascript:;" rel="noopener external nofollow" onclick="toggleWinbox()" title="切换背景-换一种感觉。"><i class="fas fa-images fa-fw"></i></a></div><div id="switch-darkmode"><a class="site-page social-icon" onclick="kk.switchDarkMode()" title="切换模式"><i class="fas fa-adjust fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav></header><main class="layout hide-aside" id="content-inner"><div class="transparentpage" id="page"><h1 class="page-title"></h1><div id="article-container"><div class="page-top-card" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/stars.webp);">
+    <div class="content-item-tips">收藏</div>
+    <span class="content-item-title">藏宝阁</span>
+    <div class="content-bottom">
+        <div class="tips">包含 影视/动漫/小说/游戏/音乐 等</div>
+        <!-- <a class="banner-button" onclick="pjax.loadUrl('/link/')" data-pjax-state="">
+            <i class="fa-solid fa-link"></i><span>友情链接</span>
+        </a> -->
+    </div>
+    <style>
+.stars_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.stars_box .card_box {
+    margin: 8px !important
+}
+@media screen and (max-width: 768px) {
+  .stars_box .card_box {
+    width: calc(100%/2 - 5px) !important;
+    height: 250px !important;
+    margin: 8px 0 !important
+  }
+}
+</style>
+</div>
+
+<h1 id="📺-动漫·番剧"><a href="#📺-动漫·番剧" class="headerlink" title="📺 动漫·番剧"></a>📺 动漫·番剧</h1><div class="stars_box">
+
+<div title="雾山五行" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/wswx.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md28228714">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>雾山五行</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="灵笼" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ll.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md23432/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>灵笼</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="86 -不存在的战区" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/86.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/33392923/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>86 -不存在的战区</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="伍六七" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/567.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md6360">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>伍六七</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div>
+     </div>
+   </div>
+<div title="埃罗芒阿老师" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/almls.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md5997/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>埃罗芒阿老师</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div>
+     </div>
+   </div>
+<div title="莉可丽丝" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/lkls.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md28338623">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>莉可丽丝</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+<div title="人偶学园" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/roxy.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md28234658">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>人偶学园</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+<div title="Happy Sugar Life" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/hsl.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/30174401/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>Happy Sugar Life</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+<div title="斗罗大陆" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/dldl.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://v.qq.com/x/cover/m441e3rjq9kwpsc/c00442r6ry6.html">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>斗罗大陆</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+<div title="元龙" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/yl.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/media/md4315642/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-brands fa-bilibili"></i>
+       <span>动漫</span>
+     </div>
+     <div class="card_content">
+       <span>元龙</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+</div>
+
+<h1 id="🎞️-影视·电视剧"><a href="#🎞️-影视·电视剧" class="headerlink" title="🎞️ 影视·电视剧"></a>🎞️ 影视·电视剧</h1><div class="stars_box">
+
+<div title="让子弹飞" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/rzdf.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>申遗，必须申遗</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/3742360/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>让子弹飞</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="星际穿越" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/xjcy.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/1889243/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>星际穿越</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="信条" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/xt.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/30444960/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>信条</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div>
+     </div>
+   </div>
+<div title="移动迷宫" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ydmg.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/21349345/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>移动迷宫</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div>
+     </div>
+   </div>
+<div title="流浪地球" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/lldq.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/26266893/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>流浪地球</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="007" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/007.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/20276229/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>007</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="碟中谍" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/dzd.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/30433455/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>碟中谍</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="沙丘" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/sq.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/3001114/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>沙丘</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+<div title="我不是药神" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/wbsys.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/26752088/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>我不是药神</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+     </div>
+   </div>
+<div title="万里归途" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/wlgt.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/26654184/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-film"></i>
+       <span>电影</span>
+     </div>
+     <div class="card_content">
+       <span>万里归途</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div>
+     </div>
+   </div>
+</div>
+
+<h1 id="📺-小说·书籍"><a href="#📺-小说·书籍" class="headerlink" title="📺 小说·书籍"></a>📺 小说·书籍</h1><div class="stars_box">
+
+<div title="傲世九重天" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/asjct.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://book.qidian.com/info/1952707/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-book-open"></i>
+       <span>小说</span>
+     </div>
+     <div class="card_content">
+       <span>傲世九重天</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+</div>
+
+<h1 id="🎮-游戏·娱乐"><a href="#🎮-游戏·娱乐" class="headerlink" title="🎮 游戏·娱乐"></a>🎮 游戏·娱乐</h1><div class="stars_box">
+
+<div title="铁锈战争" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/txzz.webp); width:220px; height:300px;">
+     <div class="card_mask">
+       <span>此作品博主暂未作出评价</span><a target="_blank" rel="noopener" href="https://book.qidian.com/info/1952707/">查看详情</a></div>
+     <div class="card_top">
+       <i class="fa-solid fa-gamepad"></i>
+       <span>多端</span>
+     </div>
+     <div class="card_content">
+       <span>铁锈战争</span>
+       <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+     </div>
+   </div>
+</div></div></div></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2025 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+function createtime() {
+var now = new Date();
+var grt= new Date("03/10/2022 00:00:00");
+now.setTime(now.getTime()+1000);
+days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
+document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
+}
+createtime();
+if(typeof footer_time == "undefined"){
+  var footer_time = setInterval("createtime()",1000*60);
+}else{
+  clearInterval(footer_time);
+  footer_time = setInterval("createtime()",1000*60);
+}
+}
+</script></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/hexo.svg"/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/butterfly.svg"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/github.svg"/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20220160" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/20220160.svg"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/2022076449.svg"/></a><a class="github-badge" target="_blank" href="https://cloud.tencent.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tx.svg"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/vercel.svg"/></a><a class="github-badge" target="_blank" href="https://tianli-blog.club/jsd/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tianlicdn.svg"/></a><a class="github-badge" target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ypy.svg"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/cc.svg"/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="refresh-cache" type="button" title="刷新缓存" onclick="refreshCache()"><i class="fas fa-refresh fa-spin"></i></button><button id="enlargePage-btn" type="button" title="放大页面" onclick="enlargePage()"><i class="fa fa-plus"></i></button><button id="narrowPage-btn" type="button" title="缩小页面" onclick="narrowPage()"><i class="fa fa-minus"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fa fa-images"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="share-link" type="button" title="分享链接"><i class="fa fa-share-alt"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-top"><i class="fa fa-angles-up"></i></div></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:kk.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-magnifying-glass"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-read"><a class="rightMenu-item" href="javascript:kk.pasteText();"><i class="fa fa-paste"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" id="menu-radompage" href="/"><i class="fa-solid fa-shoe-prints"></i><span>博客主页</span></a><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-adjust"></i><span>昼夜切换</span></div><div class="rightMenu-item" id="share-chuckle"><i class="fa fa-share-alt"></i><span>分享本页</span></div><a class="rightMenu-item" id="menu-radompage" href="/categories/"><i class="fa fa-archive"></i><span>分类</span></a><a class="rightMenu-item" id="menu-radompage" href="/tags/"><i class="fa fa-tags"></i><span>标签</span></a></div></div><div id="rightmenu-mask" onclick="RemoveRightMenu()"></div><div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/main.js?6"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/search/local-search.js?2"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 2500);</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/qx-tracker.min.js?1"></script><script>const tracker = new Tracker({requestUrl:'https://tracker-api.qcqx.cn/api/tracker',historyTracker:true,realTime:true});</script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/random.min.js?14"></script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle.js?15"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle-post-ai.js?11"></script><script defer>new ChucklePostAI({el:'#post>#article-container',key:'tN2jLmG7fX9zHk5dVbQr',title_el:'.post-title',rec_method:'web',whitelist:['article/17d3383a.html'],pjax:true})</script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#fixedcard-dashboard","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="fixedcard-dashboard"><div class="fixedcard-user-avatar fixedcard-activebtn" onclick="RemoveFixedCardWidget()"><img class="fixedcard-user-avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/head.webp" title="『轻笑Chuckle』"></div></div></div><!-- hexo injector body_end start --><script data-pjax>function hope_light_loader_injector_config(){
+                var parent_div_git = document.getElementById('body-wrap');
+                var item_html = '<div id="loading-bar-wrapper">';
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementById('body-wrap') && (location.pathname ==='all'|| 'all' ==='all')){
+            hope_light_loader_injector_config()
+        } </script>
+    <script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/nprogress.min.js"></script>
+    <script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script data-pjax>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+      document.addEventListener('pjax:send', window.ShowLoading)
+      document.addEventListener('pjax:success', window.HideLoading)
+      document.addEventListener('pjax:error', window.HideLoading)
+    </script>
+<!-- hexo injector body_end end --></body></html>

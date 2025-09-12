@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(226, 14, 14);
+        }
+
+        .info-box {
+            width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+            user-select: none;
+        }
+
+        .info {
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .ipt-name {
+            width: fit-content;
+            display: inline-block;
+            line-height: 25px;
+            font-size: 16px;
+        }
+
+        .info input,
+        .info select {
+            width: 70px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #b8daff;
+            height: 25px;
+            padding: 0 5px;
+            margin: 0 15px 0 2px;
+        }
+
+        input.sname {
+            width: 80px;
+        }
+
+        input.age {
+            width: 40px;
+        }
+
+        .info button {
+            width: 60px;
+            height: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            background: rgb(82, 191, 231);
+            outline: none;
+            border: 1px solid rgb(98, 98, 98);
+            color: #fff;
+            font-size: 15px;
+        }
+
+        table {
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 20px;
+            color: #363636;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th {
+            padding: 5px 10px;
+            background: #cfe5ff;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        td,
+        th {
+            border: 1px solid #b8daff;
+        }
+
+        td {
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        tbody tr {
+            background: #fff;
+        }
+
+        tbody tr:hover {
+            background: #e1ecf8;
+        }
+        .info-num{
+            right: 10px;
+            width: fit-content;
+            position: absolute;
+            margin-top: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info-box">
+        <h1>新增学生信息</h1>
+        <form class="info" autocomplete="off">
+            <div class="ipt-name">姓名</div>
+            <input type="text" class="sname" name="sname">
+            <div class="ipt-name">年龄</div>
+            <input type="text" class="age" name="age">
+            <div class="ipt-name">性别</div>
+            <select class="gender" name="gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+            <div class="ipt-name">年级</div>
+            <select class="grade" name="grade">
+                <option value="大一">大一</option>
+                <option value="大二">大二</option>
+                <option value="大三">大三</option>
+                <option value="大四">大四</option>
+            </select>
+            <div class="ipt-name">专业</div>
+            <select class="major" name="major">
+                <option value="计科">计科</option>
+                <option value="机械">机械</option>
+                <option value="会计">会计</option>
+            </select>
+            <button class="add-info">录入</button>
+        </form>
+        <h1>学生信息</h1>
+        <div class="info-num">共有0条数据</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>年级</th>
+                    <th>专业</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        var arr = [
+            {
+                name: '张三',
+                age: 19,
+                gender: '男',
+                grade: '大一',
+                major: '计科'
+            },
+            {
+                name: '李四',
+                age: 18,
+                gender: '男',
+                grade: '大二',
+                major: '机械'
+            },
+            {
+                name: '李丽',
+                age: 18,
+                gender: '女',
+                grade: '大三',
+                major: '会计'
+            }
+        ];
+        const info = document.querySelector('.info');
+        const items = document.querySelectorAll('.info [name]');
+        const tbody = document.querySelector('tbody');
+        const infoNum = document.querySelector('.info-num');
+        info.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let i = Array.from(items).reduce((prev, item) => {
+                return item.value === '' ? prev : prev += 1;
+            }, 0);
+            console.log(i);
+            if (i != items.length) {
+                return alert('输入内容不能为空');
+            }
+            let obj = {
+                name: info.children[1].value,
+                age: info.children[3].value,
+                gender: info.children[5].value,
+                grade: info.children[7].value,
+                major: info.children[9].value
+            }
+            console.log(obj);
+            //更新数据
+            arr.push(obj);
+            //重置表单
+            info.reset();
+            //信息本地存储
+            localStorage.setItem('info', JSON.stringify(arr));
+            //调用渲染函数
+            render();
+        });
+        function render() {
+            tbody.innerHTML = '';
+            let trArr = arr.map((item, index) => {
+                return `<tr>
+                    <td>${index + 1}</td>
+                    <td>${item.name}</td>
+                    <td>${item.age}</td>
+                    <td>${item.gender}</td>
+                    <td>${item.grade}</td>
+                    <td>${item.major}</td>
+                    <td><a href="javascript:">删除</a></td>
+                </tr>`
+            });
+            tbody.innerHTML = trArr.join('');
+            infoNum.innerHTML = `共有${arr.length}条数据`;
+        }
+        //删除，事件委托
+        tbody.addEventListener('click', (e) => {
+            let target = e.target;
+            if (target.tagName === 'A') {
+                let num = e.target.parentNode.parentNode.firstElementChild.innerHTML
+                //拿到序号，删除一个
+                let tf = confirm(`确认删除第 ${num} 个学生信息吗？`);
+                if (tf) {
+                    arr.splice(num - 1, 1);
+                    localStorage.setItem('info', JSON.stringify(arr));
+                    render();
+                }
+            }
+        });
+        function infoInit() {
+            //先获取本地数据
+            let info = JSON.parse(localStorage.getItem('info'));
+            if (info) {
+                arr = info;
+            }
+            render();
+        }
+        //初始化
+        infoInit();
+    </script>
+</body>
+
+</html>

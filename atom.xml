@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>轻笑Chuckle</title>
+  <icon>https://www.qcqx.cn/head.webp</icon>
+  
+  <link href="https://www.qcqx.cn/atom.xml" rel="self"/>
+  
+  <link href="https://www.qcqx.cn/"/>
+  <updated>2024-12-09T07:10:08.000Z</updated>
+  <id>https://www.qcqx.cn/</id>
+  
+  <author>
+    <name>『轻笑Chuckle』</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NestJS实践杂记</title>
+    <link href="https://www.qcqx.cn/article/1be64a8d.html"/>
+    <id>https://www.qcqx.cn/article/1be64a8d.html</id>
+    <published>2024-12-09T07:10:08.000Z</published>
+    <updated>2024-12-09T07:10:08.000Z</updated>
+    
+    
+    <summary type="html">毕设后端用的NestJS，记录下实践中的问题、技巧</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NestJS" scheme="https://www.qcqx.cn/tags/NestJS/"/>
+    
+    <category term="后端" scheme="https://www.qcqx.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-记-3</title>
+    <link href="https://www.qcqx.cn/article/55cefeb1.html"/>
+    <id>https://www.qcqx.cn/article/55cefeb1.html</id>
+    <published>2024-10-12T17:26:31.000Z</published>
+    <updated>2024-10-12T17:26:31.000Z</updated>
+    
+    
+    <summary type="html">React 常见的优化手段、Hook</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="React" scheme="https://www.qcqx.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-记-2</title>
+    <link href="https://www.qcqx.cn/article/f17dfea3.html"/>
+    <id>https://www.qcqx.cn/article/f17dfea3.html</id>
+    <published>2024-09-26T11:26:24.000Z</published>
+    <updated>2024-09-26T11:26:24.000Z</updated>
+    
+    
+    <summary type="html">继续学习 React 的核心概念</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="React" scheme="https://www.qcqx.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-记-1</title>
+    <link href="https://www.qcqx.cn/article/cb488cbf.html"/>
+    <id>https://www.qcqx.cn/article/cb488cbf.html</id>
+    <published>2024-09-23T13:15:26.000Z</published>
+    <updated>2024-09-23T13:15:26.000Z</updated>
+    
+    
+    <summary type="html">写 tsx 有些爽的，学一学这 React</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="React" scheme="https://www.qcqx.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>闭包与内存泄漏</title>
+    <link href="https://www.qcqx.cn/article/d186ebdd.html"/>
+    <id>https://www.qcqx.cn/article/d186ebdd.html</id>
+    <published>2024-09-12T12:04:03.000Z</published>
+    <updated>2024-09-12T12:04:03.000Z</updated>
+    
+    
+    <summary type="html">研究下闭包和内存泄露的关系</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JS" scheme="https://www.qcqx.cn/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3.5 更新了啥</title>
+    <link href="https://www.qcqx.cn/article/d22c87fc.html"/>
+    <id>https://www.qcqx.cn/article/d22c87fc.html</id>
+    <published>2024-09-12T06:33:20.000Z</published>
+    <updated>2024-09-12T06:33:20.000Z</updated>
+    
+    
+    <summary type="html">看看 Vue 3.5 更新了啥好东西</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git lint 相关</title>
+    <link href="https://www.qcqx.cn/article/93c63660.html"/>
+    <id>https://www.qcqx.cn/article/93c63660.html</id>
+    <published>2024-09-10T02:09:48.000Z</published>
+    <updated>2024-09-10T02:09:48.000Z</updated>
+    
+    
+    <summary type="html">对 Git 也作一些限制，并集成一些辅助工具</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Git" scheme="https://www.qcqx.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>集成 lint 代码规范工具</title>
+    <link href="https://www.qcqx.cn/article/b2086eb9.html"/>
+    <id>https://www.qcqx.cn/article/b2086eb9.html</id>
+    <published>2024-09-08T01:45:51.000Z</published>
+    <updated>2024-09-08T01:45:51.000Z</updated>
+    
+    
+    <summary type="html">lint 代码规范工具配置好后非常方便</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Monorepo 单仓库多应用</title>
+    <link href="https://www.qcqx.cn/article/65df4aa6.html"/>
+    <id>https://www.qcqx.cn/article/65df4aa6.html</id>
+    <published>2024-08-05T11:32:42.000Z</published>
+    <updated>2024-08-05T11:32:42.000Z</updated>
+    
+    
+    <summary type="html">学习这种先进的管理代码的策略模式</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue+TS 实现虚拟列表</title>
+    <link href="https://www.qcqx.cn/article/6ae8614b.html"/>
+    <id>https://www.qcqx.cn/article/6ae8614b.html</id>
+    <published>2024-07-04T06:41:03.000Z</published>
+    <updated>2024-07-04T06:41:03.000Z</updated>
+    
+    
+    <summary type="html">前端各种各样的虚拟列表实现</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://www.qcqx.cn/tags/Vue/"/>
+    
+    <category term="TS" scheme="https://www.qcqx.cn/tags/TS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开发了一个 Canvas 2D 渲染引擎</title>
+    <link href="https://www.qcqx.cn/article/8275f29.html"/>
+    <id>https://www.qcqx.cn/article/8275f29.html</id>
+    <published>2024-05-23T14:15:42.000Z</published>
+    <updated>2024-05-23T14:15:42.000Z</updated>
+    
+    
+    <summary type="html">从 0 开始的 Canvas 2D 渲染引擎开发</summary>
+    
+    
+    
+    <category term="项目" scheme="https://www.qcqx.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 事件</title>
+    <link href="https://www.qcqx.cn/article/5b168750.html"/>
+    <id>https://www.qcqx.cn/article/5b168750.html</id>
+    <published>2024-05-23T10:52:54.000Z</published>
+    <updated>2024-05-23T10:52:54.000Z</updated>
+    
+    
+    <summary type="html">想要实现 canvas 交互，事件必不可少</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 贝塞尔曲线</title>
+    <link href="https://www.qcqx.cn/article/ba04fd32.html"/>
+    <id>https://www.qcqx.cn/article/ba04fd32.html</id>
+    <published>2024-05-22T02:27:05.000Z</published>
+    <updated>2024-05-22T02:27:05.000Z</updated>
+    
+    
+    <summary type="html">从公式到手写贝塞尔曲线</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 进阶</title>
+    <link href="https://www.qcqx.cn/article/995d74ec.html"/>
+    <id>https://www.qcqx.cn/article/995d74ec.html</id>
+    <published>2024-05-19T06:52:35.000Z</published>
+    <updated>2024-05-19T06:52:35.000Z</updated>
+    
+    
+    <summary type="html">变形、合成、填充规则、控制像素、动画、优化</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas 2D 基础</title>
+    <link href="https://www.qcqx.cn/article/8c1c45d8.html"/>
+    <id>https://www.qcqx.cn/article/8c1c45d8.html</id>
+    <published>2024-05-18T12:53:00.000Z</published>
+    <updated>2024-05-18T12:53:00.000Z</updated>
+    
+    
+    <summary type="html">一直很想玩玩 Canvas 这种随意画图的 API</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="canvas" scheme="https://www.qcqx.cn/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 规范与实践</title>
+    <link href="https://www.qcqx.cn/article/7f942cef.html"/>
+    <id>https://www.qcqx.cn/article/7f942cef.html</id>
+    <published>2024-05-12T07:13:33.000Z</published>
+    <updated>2024-05-12T07:13:33.000Z</updated>
+    
+    
+    <summary type="html">Git 的规范、工作流、常见场景与实践。</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Git" scheme="https://www.qcqx.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 熟知熟用</title>
+    <link href="https://www.qcqx.cn/article/120u7a12.html"/>
+    <id>https://www.qcqx.cn/article/120u7a12.html</id>
+    <published>2024-05-07T13:07:32.000Z</published>
+    <updated>2024-05-13T13:07:32.000Z</updated>
+    
+    
+    <summary type="html">详细学习下Git的各种操作</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Git" scheme="https://www.qcqx.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决System占CPU过高</title>
+    <link href="https://www.qcqx.cn/article/11072a12.html"/>
+    <id>https://www.qcqx.cn/article/11072a12.html</id>
+    <published>2024-04-05T05:46:19.000Z</published>
+    <updated>2024-04-05T05:46:19.000Z</updated>
+    
+    
+    <summary type="html">鹅子的ACE又在开机扫内存了</summary>
+    
+    
+    
+    <category term="其它" scheme="https://www.qcqx.cn/categories/%E5%85%B6%E5%AE%83/"/>
+    
+    
+    <category term="其它" scheme="https://www.qcqx.cn/tags/%E5%85%B6%E5%AE%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器HTTP缓存</title>
+    <link href="https://www.qcqx.cn/article/7343d222.html"/>
+    <id>https://www.qcqx.cn/article/7343d222.html</id>
+    <published>2024-03-20T07:44:50.000Z</published>
+    <updated>2024-03-20T07:44:50.000Z</updated>
+    
+    
+    <summary type="html">了解下浏览器的缓存机制</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="浏览器" scheme="https://www.qcqx.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器渲染流程</title>
+    <link href="https://www.qcqx.cn/article/4aea0348.html"/>
+    <id>https://www.qcqx.cn/article/4aea0348.html</id>
+    <published>2024-03-15T08:46:17.000Z</published>
+    <updated>2024-03-15T08:46:17.000Z</updated>
+    
+    
+    <summary type="html">它埋下了种子，于是参天大树屹立于这片空间。</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.qcqx.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="前端" scheme="https://www.qcqx.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="浏览器" scheme="https://www.qcqx.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+</feed>

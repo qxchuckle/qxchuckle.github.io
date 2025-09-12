@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        input {
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .reg-box {
+            margin: 0 auto;
+            width: auto;
+            height: auto;
+            background: rgb(244, 242, 242);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 6px;
+            transform: translate(-50%, -50%);
+            border: 1px solid #e4e4e4;
+        }
+
+        .reg-box .reg-title {
+            width: 100%;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 22px;
+            font-weight: bolder;
+            color: #363636;
+        }
+
+        .reg-form {
+            margin: 10px;
+        }
+
+        .form-item {
+            display: flex;
+            position: relative;
+            width: 300px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 25px;
+            justify-content: space-between;
+            letter-spacing: 0.6px;
+        }
+
+        .form-item input {
+            width: 100%;
+            border: 1px solid #e4e4e4;
+            height: 40px;
+            font-size: 16px;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .form-item .msg {
+            position: absolute;
+            line-height: 1;
+            width: 100%;
+            font-size: 12px;
+            color: rgb(255, 79, 126);
+            bottom: 9px;
+            padding-left: 5px;
+        }
+
+        .code-box {
+            display: flex;
+        }
+
+        .form-item [name="code"] {
+            flex-shrink: 1;
+        }
+
+        .form-item a.code {
+            width: fit-content;
+            height: 40px;
+            line-height: 40px;
+            background: rgb(120, 187, 233);
+            text-align: center;
+            border-radius: 6px;
+            color: #fff;
+            margin-left: 10px;
+            padding: 0 10px;
+            flex-shrink: 0;
+            display: block;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .agree-check {
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        .form-item .agree {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .form-item .agree:checked {
+            background: #9decbe;
+        }
+
+        .agreement {
+            width: calc(100% - 20px);
+            padding-left: 10px;
+            color: #363636;
+            line-height: 20px;
+            height: 20px;
+        }
+
+        .agreement a {
+            color: #6a9adf;
+        }
+
+        .reg-submit {
+            margin: 0 auto;
+            display: block;
+            width: calc(100% - 40px);
+            height: 40px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            background: #9decbe;
+            font-size: 18px;
+            color: #363636;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .reg-submit:hover {
+            background: #86ebb0;
+        }
+
+        .form-item .see {
+            position: absolute;
+            width: fit-content;
+            height: auto;
+            right: 10px;
+            line-height: 1;
+            cursor: pointer;
+            font-size: 14px;
+            top: 12px;
+            color: #ababab;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .form-item .see:hover {
+            color: #6a9adf;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reg-box">
+        <div class="reg-title">新用户注册</div>
+        <form class="reg-form">
+            <div class="form-item">
+                <input name="uname" type="text" placeholder="设置用户名" maxlength="12" autocomplete="off">
+                <div class="msg"></div>
+            </div>
+            <div class="form-item">
+                <input name="phone" type="text" placeholder="输入手机号" maxlength="11" autocomplete="off">
+                <div class="msg"></div>
+            </div>
+            <div class="form-item">
+                <div class="code-box">
+                    <input name="code" type="text" placeholder="输入验证码" maxlength="6" autocomplete="off">
+                    <div class="msg"></div>
+                    <a href="javascript:;" class="code">发送验证码</a>
+                </div>
+            </div>
+            <div class="form-item">
+                <input name="password" type="password" placeholder="输入密码" maxlength="20" autocomplete="off">
+                <div class="msg"></div>
+                <div class="see">显示</div>
+            </div>
+            <div class="form-item">
+                <input class="password-again" type="password" placeholder="再次输入密码" maxlength="20" autocomplete="off">
+                <div class="msg"></div>
+                <div class="see">显示</div>
+            </div>
+            <div class="form-item agree-check">
+                <input type="checkbox" class="agree" autocomplete="off">
+                <div class="msg"></div>
+                <div class="agreement">已阅读并同意<a href="#">《用户协议》</a></div>
+            </div>
+            <button class="reg-submit">提交</button>
+        </form>
+    </div>
+
+    <script>
+        const code = document.querySelector('.code-box .code');
+        var code_flag = true;//控制点击有没有效果
+        const codeTime = 30;//验证码发送间隔时间，默认30秒
+        //验证码间隔验证的初始化
+        function codeInit() {
+            //如果验证码间隔倒计时还没30秒，就继续倒计时
+            let code_time = localStorage.getItem('code_time');
+            if (code_time) {
+                let time = codeTime - parseInt((new Date().getTime() - code_time) / 1000);
+                //小于0说明间隔已经满足
+                if (time > 0) {
+                    //执行控制验证码间隔函数
+                    code_limit_time(time);
+                }
+            }
+            // 发送短信验证码
+            code.addEventListener('click', () => {
+                if (code_flag) {
+                    //存入点击发送验证码时的时间戳
+                    localStorage.setItem('code_time', new Date().getTime());
+                    code_flag = false;//可以点击
+                    code_limit_time();
+                    //这里就可以去做请求短信接口
+                }
+            });
+        }
+        // 控制验证码发送间隔函数
+        function code_limit_time(i = codeTime) {
+            code.innerHTML = `${i}秒后重新获取`;
+            code.style.pointerEvents = 'none';
+            code.style.background = '#c6c6c6';
+            var stv = setInterval(() => {
+                i--;
+                code.innerHTML = `${i}秒后重新获取`;
+                if (i === 0) {
+                    code_flag = true;
+                    code.innerHTML = `重新获取`;
+                    code.style.pointerEvents = 'auto';
+                    code.style.background = 'rgb(120, 187, 233)';
+                    clearInterval(stv);
+                    //倒计时完成移除时间戳
+                    localStorage.removeItem('code_time');
+                }
+            }, 1000)
+        }
+        //输入框验证函数
+        function input_verification(input, rex, msg) {
+            let div = input.nextElementSibling;
+            if (rex.test(input.value)) {
+                div.innerHTML = "";
+                return true;
+            } else {
+                div.innerHTML = msg;
+                return false;
+            }
+        }
+
+        // 输入框内容检查
+        const uname = document.querySelector('.form-item input[name="uname"]');
+        const phone = document.querySelector('.form-item input[name="phone"]');
+        const code_input = document.querySelector('.form-item input[name="code"]');
+        const password = document.querySelector('.form-item input[name="password"]');
+        const password_again = document.querySelector('input.password-again');
+        const agree = document.querySelector('.agree-check .agree');
+        //用户名验证
+        function inspect_uname() {
+            return input_verification(uname, /^\w{4,12}$/g, "4到12位用户名，只能包含数字、字母、下划线") ? true : false;
+        }
+        //手机号验证
+        function inspect_phone() {
+            return input_verification(phone, /^1[3-9][0-9]{9}$/g, "11位手机号") ? true : false;
+        }
+        //检查验证码是否是6位数字
+        function inspect_code() {
+            return input_verification(code_input, /^\d{6}$/g, "6位数字验证码") ? true : false;
+        }
+        //密码验证，开头必须是字母，6到20位
+        function inspect_password() {
+            return input_verification(password, /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,20}$/gi, "6到20位密码，必须包含数字和字母") ? true : false;
+        }
+        //验证两次密码输入是否相同
+        function inspect_password_again() {
+            let div = password_again.nextElementSibling;
+            if (password_again.value === password.value) {
+                div.innerHTML = "";
+                return true;
+            } else {
+                div.innerHTML = "两次密码不一致";
+                return false;
+            }
+        }
+        // 检查协议是否同意
+        function inspect_agree() {
+            let div = agree.nextElementSibling;
+            if (agree.checked) {
+                div.innerHTML = "";
+                return true;
+            } else {
+                div.innerHTML = "请同意协议";
+                return false;
+            }
+        }
+        //监听各个输入框内容是否改变
+        uname.addEventListener('change', () => {
+            inspect_uname();
+        });
+        phone.addEventListener('change', () => {
+            inspect_phone();
+        });
+        code_input.addEventListener('change', () => {
+            inspect_code();
+        });
+        password.addEventListener('change', () => {
+            inspect_password();
+            if (password_again.value) {
+                inspect_password_again();
+            }
+        });
+        password_again.addEventListener('change', () => {
+            inspect_password_again();
+        });
+        //密码点击查看隐藏
+        const see_psw = document.querySelectorAll('.form-item .see')
+        see_psw.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                let input = item.parentNode.firstElementChild;
+                if (input.type === "password") {
+                    item.innerHTML = "隐藏";
+                    input.type = "text";
+                } else {
+                    item.innerHTML = "显示";
+                    input.type = "password";
+                }
+            });
+        });
+        //点击提交表单
+        const btn_submit = document.querySelector('.reg-submit');
+        const reg_form = document.querySelector('.reg-form');
+        reg_form.addEventListener('submit', (e) => {
+            //提交前再次把所有输入框检查一遍
+            if (!inspect_uname()) { e.preventDefault(); }
+            if (!inspect_phone()) { e.preventDefault(); }
+            if (!inspect_code()) { e.preventDefault(); }
+            if (!inspect_password()) { e.preventDefault(); }
+            if (!inspect_password_again()) { e.preventDefault(); }
+            if (!inspect_agree()) { e.preventDefault(); }
+        })
+        //初始化函数
+        function regInit() {
+            codeInit();
+        }
+        //执行初始化
+        regInit();
+    </script>
+</body>
+
+</html>

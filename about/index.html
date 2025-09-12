@@ -1,0 +1,948 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
+  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+    (async()=>{window.stop()})()
+    window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  }
+  navigator.serviceWorker.register('/giggles.js')
+    .then(async () => {
+      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+        window.localStorage.setItem('ChenBlogHelper_Set', 2)
+        setTimeout(() => {
+          window.location.reload()
+        }, 150)
+      }
+    })
+}
+//- function setQXCookies(obj, limitTime, customDomain) {
+//-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
+//-     for (let i in obj) {
+//-       document.cookie = i + '=' + obj[i] + ';expires=' + data + ';domain=' + customDomain;
+//-     }
+//- }
+//- function getQXCookie(name) {
+//-     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+//-     if (arr = document.cookie.match(reg))
+//-         return decodeURIComponent(arr[2]);
+//-     else
+//-         return null;
+//- }
+//- if(getQXCookie('qcqx')!=="chuckle"){
+//-   setQXCookies({ qcqx: 'chuckle' }, 365, 'qcqx.cn');
+//- }else{
+//-   console.log("qcqx");
+//- }</script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>关于页 | 轻笑Chuckle</title><meta name="author" content="『轻笑Chuckle』"><meta name="copyright" content="『轻笑Chuckle』"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="baidu-site-verification" content="codeva-BLXfA46XrF"><meta name="description" content="@media screen and (max-width:600px){#page{padding:0 5px!important}} #about-page .author-box{position:relative;width:189px;height:189px;background:rgba(253,253,253,0.8);border-radius:50%;overflow:">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于页">
+<meta property="og:url" content="https://www.qcqx.cn/about/index.html">
+<meta property="og:site_name" content="轻笑Chuckle">
+<meta property="og:description" content="@media screen and (max-width:600px){#page{padding:0 5px!important}} #about-page .author-box{position:relative;width:189px;height:189px;background:rgba(253,253,253,0.8);border-radius:50%;overflow:">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp">
+<meta property="article:published_time" content="2025-07-16T06:38:51.565Z">
+<meta property="article:modified_time" content="2025-07-16T06:38:51.565Z">
+<meta property="article:author" content="『轻笑Chuckle』">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/1.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"><link rel="canonical" href="https://www.qcqx.cn/about/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/index.css?285"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/fontawesome.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":160},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于页',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-07-16 14:38:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/css/tag_plugins.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="轻笑Chuckle" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp"/></div></div><div id="web_bg"></div><div id="svg_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center" id="sidebar-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.gif'" alt="avatar"/></div><div class="author-info__name">『轻笑Chuckle』</div><div class="author-info__description">漫天倾尘 风中轻笑</div></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qxchuckle"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="menu-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qxchuckle" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://gitee.com/qxchuckle" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://space.bilibili.com/353049313" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1395730595" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/4137393" target="_blank" title="酷安"><i class="iconfont icon-kuan"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><div id="chuckle_home"><div class="back-home-button"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">传送门</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" loading="lazy"/><span class="back-menu-item-text">博客主页</span></a><a class="back-menu-item" href="https://waline.qcqx.cn/ui" rel="external nofollow" title="前往评论后端" target="_blank"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c4.webp" loading="lazy"/><span class="back-menu-item-text">评论管理</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客线路</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qcqx.cn/" title="前往博客主站" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/h4.webp" loading="lazy"/><span class="back-menu-item-text">主域名线路</span></a><a class="back-menu-item" href="https://qxchuckle.github.io" title="前往博客Github线路" target="_blank" rel="noopener nofollow"><img class="back-menu-item-icon entered loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/c6.webp" loading="lazy"/><span class="back-menu-item-text">Github线路</span></a></div></div></div></div></div><span id="blog_name"><a id="site-name" href="/">轻笑Chuckle</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wenzhang"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-bendiwenjianjia"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei1"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian1"></i><span> 标签</span></a></li><li><a class="site-page child" href="javascript:toRandomPost();"><i class="fa-fw iconfont icon-suijiceliang"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw iconfont icon-tongji"></i><span> 统计</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-_lianjie"></i><span> 空间</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw iconfont icon-pengyouquan"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/bb/"><i class="fa-fw iconfont icon-shejiao"></i><span> 哔哔</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-fasong-"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw iconfont icon-yuangongrizhi"></i><span> 日志</span></a></li><li><a class="site-page child" href="/agreement/"><i class="fa-fw iconfont icon-yinsixieyi"></i><span> 协议</span></a></li><li><a class="site-page child" href="/atom.xml" target="_blank"><i class="fa-fw iconfont icon-RSS"></i><span> RSS</span></a></li><li><a class="site-page child" href="/sitemap.xml" target="_blank"><i class="fa-fw iconfont icon-ditu"></i><span> Sitemap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-aixin"></i><span> 关于我</span></a></div></div><div id="buttons"><div id="switch-bg"><a class="site-page social-icon search" href="javascript:;" rel="noopener external nofollow" onclick="toggleWinbox()" title="切换背景-换一种感觉。"><i class="fas fa-images fa-fw"></i></a></div><div id="switch-darkmode"><a class="site-page social-icon" onclick="kk.switchDarkMode()" title="切换模式"><i class="fas fa-adjust fa-fw"></i></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav></header><main class="layout hide-aside" id="content-inner"><div class="transparentpage" id="page"><h1 class="page-title"></h1><div id="article-container"><!-- <p style="font-size: 3rem!important;font-weight: 700!important;text-align: center!important;padding-top: 70px;">~施工中~</p> -->
+
+<div id="about-page">
+ <style>
+@media screen and (max-width:600px){#page{padding:0 5px!important}}
+#about-page .author-box{position:relative;width:189px;height:189px;background:rgba(253,253,253,0.8);border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#about-page .author-box::before{content:'';position:absolute;width:500px;height:500px;background-image:conic-gradient(transparent,transparent,transparent,#8758FF);animation:animate 4s linear infinite;animation-delay:-2s}
+#about-page .author-box::after{content:'';position:absolute;width:500px;height:500px;background-image:conic-gradient(transparent,transparent,transparent,#5CB8E4);animation:animate 4s linear infinite}
+#about-page .author-box span{position:absolute;inset:5px;border-radius:50%;background:rgba(253,253,253,0.8);z-index:1}
+#about-page .author-main{position:relative;display:flex;align-items: center;user-select: none;-khtml-user-select: none;-moz-user-select: none;}
+#about-page .author-main .image-dot{width:30px;height:30px;background:#6bdf8f;position:absolute;border-radius:50%;border:6px solid rgba(253,253,253,0.9);top:50%;left:50%;z-index:20;transform:translate(51px,54px)}
+#about-page .author-title{font-size:2.7rem;font-weight:700;margin-top:1px;letter-spacing:6px;-webkit-background-clip:text;background-image:linear-gradient(90deg,#2ca2b4,#5598de 24%,#7f87ff 45%,#f65aad 85%,#df80b4);background-clip:text;display:inline-block;color:transparent;text-stroke:2px #3fdaee;-webkit-text-stroke:1px #3fdaee}
+[data-theme=dark] 
+#about-page .author-title{text-stroke:1px #bccbe4;-webkit-text-stroke:1px #bccbe4}
+.author-content-item{width:49%;border-radius:24px;background:var(--heo-card-bg);border:var(--style-border-always);box-shadow:var(--heo-shadow-border);position:relative;padding:1.5rem 2.5rem;overflow:hidden}
+#about-page .myInfoAndSayHello{display:flex;flex-direction:column;justify-content:center;color:var(--heo-white);background:linear-gradient(130deg,#3134f3cc 0,#00dbebcc 80%);background-size:200%;animation:gradient 15s ease infinite;width:59%}
+#about-page .myInfoAndSayHello .title1{opacity:.8;line-height:1.3}
+#about-page .myInfoAndSayHello .title2{font-size:36px;font-weight:700;line-height:1.1;margin:.5rem 0;font-family: STZhongsong,'Microsoft YaHei';}
+#about-page .myInfoAndSayHello .title1{opacity:.8;line-height:1.3}
+#about-page .myInfoAndSayHello .title3{opacity:.8;line-height:2;font-size:10px}
+#about-page .inline-word{word-break:keep-all;white-space:nowrap}
+.author-content-item .author-content-item-tips{opacity:.8;font-size:.6rem;margin-bottom:.5rem}
+.aboutsiteTips h2{margin-right:auto;font-size:36px!important;font-family:Helvetica;line-height:1.06;letter-spacing:-.02em;color:var(--font-color);margin-top:0!important}
+.aboutsiteTips .mask{height:36px;position:relative;overflow:hidden;margin-top:4px}
+.aboutsiteTips .mask span:nth-child(1){background-image:linear-gradient(45deg,#0ecffe 50%,#07a6f1)}
+.aboutsiteTips .mask span{display:block;box-sizing:border-box;position:absolute;top:36px;padding-bottom:var(--offset);background-size:100% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-repeat:no-repeat}
+.aboutsiteTips .mask span[data-up]{transform:translateY(-100%);transition:.5s transform ease-in-out}
+.aboutsiteTips .mask span:nth-child(2){background-image:linear-gradient(45deg,#18e198 50%,#0ec15d)}
+.aboutsiteTips .mask span:nth-child(3){background-image:linear-gradient(45deg,#8a7cfb 50%,#633e9c)}
+.aboutsiteTips .mask span:nth-child(4){background-image:linear-gradient(45deg,#fa7671 50%,#f45f7f)}
+#about-page .about-statistic{min-height:380px;width:39%;background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tongji1.webp) no-repeat top;background-size:cover;color:rgb(255,253,253,0.92);overflow:hidden}
+#about-page .about-statisticc::after{box-shadow:0 -159px 173px 71px #0c1c2c inset;position:absolute;content:'';width:100%;height:100%;top:0;left:0}
+.author-content-item .author-content-item-tips{opacity:.8;font-size:.6rem;margin-bottom:.5rem}
+.author-content-item .card-content .author-content-item-title{margin-bottom:.5rem;font-family: STZhongsong,'Microsoft YaHei';}
+.author-content-item .author-content-item-title{font-size:36px;font-weight:700;line-height:1;font-family: STZhongsong,'Microsoft YaHei';}
+.author-content-item-changjian{font-size:16px;font-weight:600;line-height:1}
+#about-page #statisticc{font-size:16px;border-radius:15px;width:100%;color:var(--heo-white);display:flex;justify-content:space-between;flex-direction:row;flex-wrap:wrap;margin-top:1rem;margin-bottom:2rem}
+.post-tips{color:var(--heo-gray);font-size:14px;position:absolute;bottom:1rem;left:2rem}
+.author-content-item .card-content .banner-button-group{position:absolute;bottom:1.5rem;right:2rem}
+#about-page #statisticc div{display:flex;justify-content:space-between;flex-direction:column;width:50%;margin-bottom:.5rem}
+#about-page #statisticc div span:first-child{opacity:.8;font-size:.6rem}
+#about-page #statisticc div span:last-child{font-weight:700;font-size:34px;line-height:1;white-space:nowrap}
+.post-tips a{color:var(--heo-gray)!important;border:none!important}
+.author-content-item .card-content .banner-button-group .banner-button{height:40px;width:124px;border-radius:20px;justify-content:center;background:rgba(255,253,253,0.9);color:var(--font-color)!important;text-decoration:none!important;display:flex;align-items:center;z-index:1;cursor:pointer}
+[data-theme=dark] 
+.author-content-item .card-content .banner-button-group .banner-button{background:#1d1b26ec}
+.author-content-item .card-content .banner-button-group .banner-button:hover{text-decoration:none!important;color:rgba(255,253,253,0.95)!important;background:linear-gradient(to bottom right,#0396ff,#abdcff)}
+.author-content-item .card-content .banner-button-group .banner-button i{margin-right:8px;font-size:1rem}
+.author-content-item-group.column.mapAndInfo{width:59%}
+.author-content-item.map{background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/map1.webp) no-repeat center;min-height:200px;max-height:400px;position:relative;overflow:hidden;margin-bottom:.5rem;height:60%;border:1px;background-size:100%;transition:1s ease-in-out}
+.author-content-item.single{width:100%}
+.author-content-item.map .map-title,.author-content-item.myphoto .map-title{position:absolute;bottom:0;left:0;width:100%;background:var(--heo-maskbg);padding:.5rem 2rem;backdrop-filter:saturate(180%) blur(2px);-webkit-backdrop-filter:blur(20px);transition:1s ease-in-out;font-size:20px}
+.author-content-item.map .map-title b,.author-content-item.myphoto .map-title b{color:var(--font-color);font-weight:bolder;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.author-content-item.selfInfo{display:flex;min-height:100px;max-height:400px;justify-content:space-between;align-items:center;flex-wrap:wrap;height:-webkit-fill-available;height:40%}
+.author-content-item.selfInfo div{display:flex;flex-direction:column;margin:.5rem 2rem .5rem 0}
+.author-content-item.selfInfo .selfInfo-title{opacity:.8;font-size:.6rem;line-height:1;margin-bottom:8px}
+.author-content-item.selfInfo .selfInfo-content{font-weight:700;font-size:34px;line-height:1;font-family: STZhongsong,'Microsoft YaHei';}
+.author-content-item.map:hover{background-size:120%;transition:3s ease-in-out;background-position-x:80%;background-position-y:36%}
+.author-content-item.map:hover .map-title,.author-content-item.myphoto:hover .map-title{bottom:-100%}
+.author-content-item.myphoto:hover{background-size:150%;transition:3s ease-in-out;background-position-x:60%;background-position-y:20%}
+.author-content-item.ability{background:linear-gradient(60deg,#0f0408d0 0%,#043749d0 100%)}
+.skill{margin:0 auto}
+.skill li p{display:inline-block;width:auto;min-width:26%;max-width:30%;color:rgba(255,253,253,0.9);font-size:16px;padding:0;margin:0!important;transition-timing-function:cubic-bezier(.19,1,.22,1)}
+.skill li{list-style:none}
+.skill li .progress{display:inline-block;width:70%;height:3px;overflow:inherit;background-color:hsla(0,0%,100%,.2);vertical-align:middle}
+.skill li .progress div{background-color:#fff;height:3px;position:relative;animation:progressin 7s;-webkit-animation:progressin 7s;-ms-animation:progressin 7s;-moz-animation:progressin 7s}
+.skill li .progress span{font-size:12px;color:hsla(0,0%,100%,.4);opacity:0;position:relative;top:-5px;letter-spacing:.5em;transition:all .3s}
+.skill li .progress div:after{content:"";display:inline-block;position:absolute;right:-4px;top:-8px;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:3px solid #fff}
+.author-content-item .clear:after{content:"";display:block;height:0;visibility:hidden;clear:both}
+.skill li:hover .progress span{opacity:1;top:0}
+.author-content-item.myphoto{background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/blny.webp) no-repeat;height:60%;background-size:100%;transition:1s ease-in-out;position:relative;min-height:200px;max-height:400px;border:1px;overflow:hidden;width:45%}
+.author-content-item.maxim{font-size:36px;font-weight:700;line-height:1.1;display:flex;color:rgb(255,253,253,0.95);background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/4.webp) no-repeat;background-size:cover;align-items:flex-start;flex-direction:column;justify-content:center;width:53%}
+.author-content-item.maxim .maxim-title{display:flex;flex-direction:column;font-family: STZhongsong,'Microsoft YaHei';}
+.author-content-item.buff{height:200px;font-size:36px;font-weight:700;line-height:1.1;display:flex;align-items:flex-start;flex-direction:column;justify-content:center;background:linear-gradient(120deg,#ff27e8 0,#ff8000 100%);color:var(--heo-white);background-size:200%;animation:gradient 15s ease infinite;min-height:200px;height:fit-content;width:59%}
+.author-content-item.buff .card-content{display:flex;flex-direction:column;justify-content:center}
+.author-content-item.buff .buff-title{display:flex;flex-direction:column}
+.card-background-icon{font-size:12rem;opacity:.2;position:absolute;right:0;bottom:-40%;transform:rotate(30deg)}
+.author-content-item.game-lol{background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/sls1.webp) no-repeat top;background-size:cover;min-height:300px;overflow:hidden;color:var(--heo-white);width:50%;border:1px}
+.author-content-item.game-lol::after{box-shadow:0 -69px 203px 8px #04120f inset;position:absolute;content:'';width:100%;height:100%;top:0;left:0}
+.author-content-item .content-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.author-content-item .content-bottom .icon-group{display:flex}
+.game-lol .content-bottom .icon-group i{display:inline-block;width:22px;height:18px;margin-right:.5rem}
+.icon-pos-mid{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkElEQVQ4ja3UzQ2AIAyG4RfjySVcxc3UzVjFJbziRfxBflrkS0hIkz4H2mCccwCwbwvy2PMAzMDdO4wGoFNgZfQRLSxCAfpEPdlQQFd/qXmKHHrVtbAI1cISdNLCUlQFq9EUbJWoh18JYUt5Tz+DiuUJN0NjcBM0hJuhIdwMhfdfUUInItNPJbfH1WgO/oUCHK48MCZZLMkWAAAAAElFTkSuQmCC")}
+.icon-pos-ys{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAAASCAMAAAC6hxYCAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAD8UExURUdwTOGyN6Hq7aLy9WHMMKPp7FfkvX6inaaulamGN/lYOlbmvA6z8Jbg6VnkvMVjNlO+NErS2FLquuJFN95ENlrjvKS9P6ju8Jfe5e5OOG3GMkSpNAjL90n2t5totZttr+xPOwHB/uQyLajh6LGIxIZUqQ3K8GDUKWTWvgW9+FTqumO6O63w7r1+07uGycaB55tntwCi/1HowACF/6b49/GxIQOG+dZAOd1FOKRrwQqR85vnLNylMs6VE8o4N5Z2HV3fvJJ1GQLe/w6l443bM5lhvriHGBi3Ko5vEJidyoDX8ZHpJduYDnJFmABq/9uG/6tq26p8CL1z9f7PQXYtp7kAAABLdFJOUwDEndnFgtAIFR37RVX7nyibH+eehIdVaMbXdkyh/opOtfb5VC74e/diy7IxM5huzK79/v2++8hUZ9OJ0IznQoxxX/otmva+9tCYcuD8NDIAAAQpSURBVEjHzVbZdqJAEG1A1qCALIKCirsY44q7xi2ZOQcSTfL//zINtIqYD5h6aJs6YF9u3boFAP9nTDfJDL+YTBZ8MvucSySenm5rPOhSv8gkkwXxl6P//qUfcpVKAszkM4xJApCevr/eWlLwI1nbOJRwLdU/XhKn/PlTSB7MfL2+frFJcioVIX69GMGYTEajz8/GHTlpHb/jwMpGm6xF33i57OofxSScfOJg9usdgPcv4T5ZqZTjGR5i4SOSRp9xfgi8lpZildpaVLSjrO2lXi+lWn/eK9JxfgqpAujkO2Kqo2kAiKkrN+s1WO3A2r/jR6mU5Sl7K+FoMIEF4PkDAOZoEOVJXScYicSrACd0HXGSyVrRzoJbdMK8+3Y+nQI4zNt8XguTnWZTTKVSx/wSrmLzIiHa9cHK91naX8f0I88qcmVaual5AdEsBjDaEmiPeFQnnCRBbgye8WoaVWyYVS01kpCaHSJyPurn3qkXbGvneQnRwzabTCef145aJ9+8CkhwMcwXVj7Yue83NJwsVyAg466Ai0G7DQHR0sCMErieI0h8nMNxkogyra3lZLKwSE/ZjGNtW2Gy/wEZYbqQFbr3/QYu3ZViRU8MaWLEi4BetZWLMSuAYWD984qSM47j5M3MMDgDVXBhIx1I5qANbBsxS+ZyBEGk8Sr+jMhRW1TGgfSoToZqqRE9b/WQ91631Dt9z68tnmKax/BfPLGApLP7wTSMhlgwF2juzy5MbiAOZaNMBZkz5OhdJnbj0q+mLZn2jbIxMSaq1ytqmFEpypEYh6LUzDAST70f/nR7tVrv+9LpYjMFmsuwal6h46UQHFcDPhaQA3EhOIrMlcHUgAtXns0iHg4hR3vbBLTNm23U5EGpxgSBkzqJyMsOh9RTy3FaT9RwmI1abv4SvkjQ7d3uBXhe9AqFJWwq9ngEUMyoWD/rAMuKwdyVhopV3nCCoIApxyqcIKPHDxJE07YhS3bDRs5DkNXxMzlmSPw5japFB27ccjKtwJdRb3RfAhy9wHHirix6sGIM6DAg71276N3dAX8l+BjmXnzGUJQZpEYw4E5W0DGQl8EC8HsTtNt71OhpPV0FOahiQk/HvFnNwFBjNgtFXDyd+nGDDrXshQruLL2bM9Nrn2Z9fwV89wKdNeSpLLMCO+OM8tUHYYPD/ubpQ3uPyMlVczmaJKs6XSWrscnVohyHaiWc//z9HXpz8SY0yIqngaW3jDse66/BbnVvg0pZmW0ESJESHztS+wBf7YoGSVlvpZODkcpkqOQkKr2dz/1iv96P38wcvSVEdBdCOCTuTVkolzdTQ4kP1oPJN8yGud8nRmj6IpsYcop6GN2AKdbrH8mRBbl5uJP9bYRC75neZw6NhmmajeTsz+mPXwiq+pCqlYr1/svj2drj0/RvHxj/R/wDmNh+TPJIpz8AAAAASUVORK5CYII=")}
+.game-wolf .content-bottom .icon-group i{display:inline-block;height:18px;margin-right:.5rem;width:143px}
+.icon-pos-dy{background:url("data:image/webp;base64,UklGRswBAABXRUJQVlA4WAoAAAAQAAAAFQAAEQAAQUxQSPQAAAAB5+KgjSRHuuqecOGfP92+QxEReRjxKaTEqw/FxMEqUlbowVdnS4wRppSK4vZFo2B12L+nRUa8gFjbtmlnfTvOR2zbdr5t7P7reE5KiOh/Yvs3kzhy50G8Tu6ww41HPGebW1gPgxiuKFa+hDmvV9y3F5iX2sB40h7ubT1j7KtIZtBLY6SvcFzpgfRImZwaASLNGxxzfZ3S0gu/dYy3QRxnQd3Mlzqh5XuWdIfrWka5JOMYH5/awXUoxztGsjvM4loZy66F2dVwAVe4JLuzyJkqUdzTVVmTdT6aU3glK7LWOFrFO1WV0Z7h70Re3/wn9nOABwAAVlA4ILIAAACwBQCdASoWABIAAAAAJZjbAPwAXID+AA1AroH4AfqrTgP4B+IG9/5wB/QMoA/UCVAAwo6eH9AA/v8e3//yV///k4P/kq3//8Kn+dRaGe4yayRzyHOnBYsf//uqmBUxxKdq/lxND/+dyv//wsr5HXg/m3J5HXk/+n1f/+GE/+qX7/8Th/9Ln/Pn37ZD/lzRvwhP/oef/nMg9DkxTTJVX8O4uvyTcpduZNQv6DQwybUAAAAA");}
+.icon-pos-sup{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZUlEQVQ4ja3TPUsdYRAF4GejXYSA2NgatQhYCl4Uy0BSGFPbClqIEvz4DeIHgtaSKoVlmggRUqQTOyFBRNFKG5WAiiBetNi5ZN1s7l3BgZedOXPm7O68M8mfk10NrAVLSCK+xywu6xU1N1LFBMZy2DHm6xW9KCH8uiT2ZOFxbGTijcDqWnO8fV3ay7x9wQpGIk7Cr+JTBs/aDUaTuLxefEV7AXEOi2iKuCq9vIUC7ik+YrvWih30YBVXOfJMiFbjNAWWtSushcY2j3t8jim8wjBuA/8sbdN0nJbABGc4aiZDAyQFczyIb3gpndkudOB75N/iCPvSnl/jPX5mRYqm4gy/wv+BQ1Qy+QoOIie4Z3mRogX5jX7pb+8F1pfJ1/w1bGEZd3mRolb8w4kvao34Am3SNv3XyizIm4yo8LsbFZUR7ivABp5DuFISe7JwVwHW+RzCQ/4uhPA/NCoqMxU1exfPzTLkBzctS76SprNHAAAAAElFTkSuQmCC")}
+.author-content-item.game-wolf{border:1px;width:56%;background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/end.webp) no-repeat top;background-size:cover;min-height:300px;overflow:hidden;color:var(--heo-white)}
+.author-content-item.game-wolf::after{box-shadow:0 -69px 203px 4px #04120f inset;position:absolute;content:'';width:100%;height:100%;top:0;left:0}
+.author-content-item.like-technology{border:1px;background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/xp.webp) no-repeat;background-size:cover;min-height:230px;color:var(--heo-white)}
+.author-content-item.like-music{border:1px;background:url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/music.webp) no-repeat top;background-size:cover;min-height:400px;color:var(--heo-white);overflow:hidden}
+.author-content-item.like-music::after{box-shadow:0 -69px 203px 5px #e49fdec7 inset;position:absolute;content:'';width:100%;height:100%;top:0;left:0}
+.author-content-item.single.reward .author-content-item-description{font-size:16px;margin-top:.5rem}
+.author-content-item.single.reward .reward-list-all{display:flex;flex-wrap:wrap;flex-direction:row;margin-top:1rem;margin-bottom:.5rem;margin-left:-.25rem;margin-right:-.25rem}
+.author-content-item.single.reward .reward-list-all .reward-list-item{position: relative;transition: 0.3s;overflow: hidden;padding:1rem;border-radius:12px;border:1px solid rgba(55,55,55,0.8);width:calc((100% / 6) - .5rem);margin:1px .25rem .5rem .25rem;box-shadow:var(--heo-shadow-border)}
+[data-theme="dark"]
+.author-content-item.single.reward .reward-list-all .reward-list-item{border:1px solid rgba(255,253,253,0.8)}
+.author-content-item.single.reward .reward-list-all .reward-list-item .reward-list-item-name{font-size:1rem;font-weight:700;line-height:1;margin-bottom:.5rem}
+.author-content-item.single.reward .reward-list-all .reward-list-item .reward-list-bottom-group{display:flex;align-items:center;justify-content:space-between}
+.author-content-item.single.reward .reward-list-all .reward-list-item .reward-list-item-money{padding:4px;background:var(--font-color);color:var(--card-bg);font-size:12px;line-height:1;border-radius:4px;margin-right:4px;white-space:nowrap}
+.author-content-item.single.reward .reward-list-all .reward-list-item .reward-list-item-time{font-size:12px;color:var(--heo-secondtext);white-space:nowrap}
+.author-content-item.single.reward .reward-list-updateDate{color:var(--heo-gray);font-size:14px}
+@media screen and (max-width:1300px){.author-content-item.selfInfo{height:70%}
+}@media screen and (max-width:1200px){.author-content-item.single.reward .reward-list-all .reward-list-item{width:calc((100% / 4) - .5rem)}
+}@media screen and (max-width:1150px){.author-content-item.myphoto{background-size:cover}
+}@media screen and (max-width:900px){.author-content-item.single.reward .reward-list-all .reward-list-item{width:calc((100% / 2) - .5rem)}
+}@media screen and (max-width:768px){.author-content-item{width:100%!important;margin-top:1rem;padding:1rem}
+.skill li{width:100%}
+.author-content-item.map,.author-content-item.myphoto{margin-bottom:0}
+.author-content-item-group.column{width:100%!important}
+.author-content-item.single.reward .reward-list-all .reward-list-item{width:100%}
+.author-content{margin-top:0}
+.author-content-item.map{background-size:cover}
+.like-technology .content-bottom,.like-music .content-bottom{margin-bottom:50px}
+.about-statistic .card-content .banner-button-group{bottom:2.3rem}
+}
+.chuckle-img{height:auto;display:flex;width:100%;justify-content:center;align-items:center;background:radial-gradient(circle at top center,#29323cd0,#1C1C1Cd4)}
+.chuckle-img .container{display:flex;width:90vw;max-width:auto;height:350px;overflow:hidden}
+.chuckle-img .item{position:relative;width:60px;margin:10px;cursor:pointer;border-radius:30px;background-size:cover;background-position:center;transition:0.5s cubic-bezier(0.05,0.61,0.41,0.95);overflow:hidden}
+.chuckle-img .item .shadow{position:absolute;bottom:0;left:0;right:0;height:100px;transition:0.5s cubic-bezier(0.05,0.61,0.41,0.95)}
+.chuckle-img .item .content{display:flex;position:absolute;left:10px;right:0;bottom:10px;height:40px;transition:0.5s cubic-bezier(0.05,0.61,0.41,0.95)}
+.chuckle-img .item .content .icon{min-width:40px;width:40px;height:40px;border-radius:50%;background-color:#fff;display:flex;justify-content:center;align-items:center;font-size:16px}
+.chuckle-img .item:nth-child(1) .fa{color:#fc6e51}
+.chuckle-img .item:nth-child(2) .fa{color:#ffce54}
+.chuckle-img .item:nth-child(3) .fa{color:#2ecc71}
+.chuckle-img .item:nth-child(4) .fa{color:#5d9cec}
+.chuckle-img .item:nth-child(5) .fa{color:#ac92ec}
+.chuckle-img .item:nth-child(6) .fa{color:#363636}
+.chuckle-img .item .content .text{display:flex;flex-direction:column;justify-content:center;margin-left:10px;color:#fff;width:100%}
+.chuckle-img .item .content .text div{width:calc(100% - 70px);text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:20px;opacity:0;transition:opacity 0.5s ease-out}
+.chuckle-img .item .content .text .tit{font-weight:bold;font-size:18px}
+.chuckle-img .item .content .text .sub{transition-delay:0.1s}
+.chuckle-img .item.active{flex:1;margin:0;border-radius:40px}
+.chuckle-img .item.active .shadow{background:linear-gradient(to top,rgba(0,0,0,0.35) 65%,transparent)}
+.chuckle-img .item.active .content{bottom:20px;left:20px}
+.chuckle-img .item.active .content .text div{opacity:1}
+.reward-br{display: none;height: 0;}
+.reward-fenge{margin: 0 10px;}
+.reward-list-item .reward-list-bottom-group .reward-money-vip{background:#F0DC14!important;color:#363636!important;}
+.isFriends{position: absolute;right: 0;top:0;background: #49b1f5;color: #fff;font-size:14px;line-height: 1.8;padding: 0 8px;margin:0;border-radius: 0 12px 0 12px;}
+.reward-list-item>a{position: absolute;top: 0;right: 0;width: 100%;height: 100%;padding: 0!important;border-bottom: none!important;background: transparent!important;}
+.author-content-item.single.reward .reward-list-all .reward-list-item:hover{border: 1px solid #4976f5;}
+@media screen and (max-width:900px){.chuckle-img{display:none;}.reward-br{display: block;}.reward-fenge{display: none;}}
+.author-tag-left{
+        display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 30px;
+}
+.author-tag-left .author-tag:first-child,.author-tag-left .author-tag:last-child{
+        margin-right: -16px;
+}
+.author-tag-right .author-tag:first-child, .author-tag-right .author-tag:last-child{
+    margin-left: -16px;
+}
+.author-tag:nth-child(1){
+        animation-delay: 0s;
+}
+.author-tag:nth-child(2){
+    animation-delay: 0.6s;
+}
+.author-tag:nth-child(3){
+animation-delay: 1.2s;
+}
+.author-tag:nth-child(4){
+animation-delay: 1.8s;
+}
+.author-tag{
+        transform: translate(0,  -4px);
+    padding: 1px 8px;
+    background: var(--heo-card-bg);
+    border: var(--style-border-always);
+    border-radius: 40px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: var(--heo-shadow-lightblack);
+    animation: 6s ease-in-out 0s infinite normal none running floating;
+}
+.author-tag-right{
+        display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+@keyframes floating {
+  0% { transform: translate(0,  -4px); }
+  50%  { transform: translate(0, 4px); }
+  100%   { transform: translate(0, -4px); }   
+}
+@media screen and (max-width:550px){
+    .author-tag-left,.author-tag-right{
+        display:none;
+    }
+}
+</style>
+                <div class="author-main">
+                    <div class="author-tag-left">
+                        <span class="author-tag">💻 Like数码科技</span>
+                        <span class="author-tag">🥣 干饭魂 干饭人</span>
+                        <span class="author-tag">🕊 咕咕咕咕咕咕~</span>
+                        <span class="author-tag">🧱 CV工程师</span>
+                    </div>
+                    <div class="author-box">
+                        <span></span>
+                        <div class="author-img">
+                            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" class="no-lightbox entered loaded">
+                        </div>
+                    </div>
+                    <div class="author-tag-right"> 
+                        <span class="author-tag">吃饭不如碎觉 💤</span>
+                        <span class="author-tag">乐观 积极 向上 🤝</span>
+                        <span class="author-tag">专攻各种困难 🔨</span>
+                        <span class="author-tag">人不狠话超多 💢</span>
+                    </div>
+                    <div class="image-dot"></div>
+                </div>
+                <div class="author-title">关于本站</div>
+                <div class="author-content">
+                    <div class="author-content-item myInfoAndSayHello">
+                        <div class="title1">这里~这里~</div>
+                        <div class="title2">网名 <span class="inline-word">轻笑Chuckle</span></div>
+                        <div class="title3">有了备案就是 <span class="inline-word">实名制上网啦QAQ</span></div>
+                        <div class="title1">是一只还在求学路上的 <span class="inline-word">大学生、个人博主</span></div>
+                    </div>
+                    <div class="aboutsiteTips author-content-item">
+                        <div class="author-content-item-tips">追求</div>
+                        <h2>源于<br>乐趣·兴趣<span class="inline-word"></span>
+                            <div class="mask"><span class="first-tips"
+                                    data-show="">技术</span><span>生活</span><span>程序</span><span data-up="">学习</span></div>
+                        </h2>
+                    </div>
+                </div>
+                <div class="author-content">
+                    <div class="about-statistic author-content-item">
+                        <div class="card-content">
+                            <div class="author-content-item-tips">数据</div>
+                            <span
+                                class="author-content-item-title">访问统计</span>
+                            <!-- <div id="statisticc"></div> -->
+                            <div id="statisticc"><div><span>今日人数:</span><span class="num">0</span></div><div><span>今日访问:</span><span class="num">0</span></div><div><span>昨日人数:</span><span class="num">0</span></div><div><span>昨日访问:</span><span class="num">0</span></div><div><span>本月访问:</span><span class="num">0</span></div><div><span>总访问量:</span><span class="num">107104</span></div></div>
+                            <div class="post-tips">统计信息来自 
+                            <a href="https://github.com/qxchuckle/qx-tracker"
+                                    target="_blank" rel="noopener nofollow">qx-tracker</a>
+                                    </div>
+                            <div class="banner-button-group"><a class="banner-button"
+                                    onclick="pjax.loadUrl(/charts/)" data-pjax-state=""><i
+                                        class="fas fa-circle-plus"></i><span class="banner-button-text">文章统计</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author-content-item-group column mapAndInfo">
+                        <div class="author-content-item map single"><span class="map-title">我现在住在 <b>中国，广东省</b></span>
+                        </div>
+                        <div class="author-content-item selfInfo single">
+                            <div><span class="selfInfo-title">生于</span><span class="selfInfo-content"
+                                    style="color:#43a6c6;font-family:'Microsoft YaHei';">2003</span></div>
+                            <div><span class="selfInfo-title">专业</span><span class="selfInfo-content"
+                                    style="color:#c69043">计算机科学与技术</span></div>
+                            <div><span class="selfInfo-title">现在职业</span><span class="selfInfo-content"
+                                    style="color:#b04fe6">大四学生</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="author-content">
+                    <div class="author-content-item maxim">
+                        <div class="author-content-item-tips">个性签名</div><span class="maxim-title"><span
+                                style="opacity:.6;margin-bottom:8px">漫天倾尘，</span><span>风中轻笑。</span></span>
+                    </div>
+                    <!-- <div class="author-content-item myphoto"><span class="map-title">布洛妮娅·扎伊切克 <b>单推人</b><sup>冲鸭</sup></span></div> -->
+                    <div class="author-content-item myphoto"><span class="map-title">冲鸭</span></div>
+                </div>
+                <!-- <div class="author-content">
+                    <div class="author-content-item chuckle-img">
+                        <div class="container">
+                            <div class="item active" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/img3.webp);">
+                                <div class="shadow"></div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                    <div class="text">
+                                        <div class="tit">这是标题</div>
+                                        <div class="sub">这是一段描述</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/blny.webp);">
+                                <div class="shadow"></div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                    <div class="text">
+                                        <div class="tit">这是标题</div>
+                                        <div class="sub">这是一段描述</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/img3.webp);">
+                                <div class="shadow"></div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                    <div class="text">
+                                        <div class="tit">这是标题</div>
+                                        <div class="sub">这是一段描述</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/blny.webp);">
+                                <div class="shadow"></div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                    <div class="text">
+                                        <div class="tit">这是标题</div>
+                                        <div class="sub">这是一段描述</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/img3.webp);">
+                                <div class="shadow"></div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                    <div class="text">
+                                        <div class="tit">这是标题</div>
+                                        <div class="sub">这是一段描述</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/blny.webp);">
+                                <div class="shadow"></div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                    <div class="text">
+                                        <div class="tit">这是标题</div>
+                                        <div class="sub">这是一段描述</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="author-content">
+                    <div class="author-content-item game-lol">
+                        <div class="card-content">
+                            <div class="author-content-item-tips">爱好游戏</div><span
+                                class="author-content-item-title">英雄联盟</span>
+                            <div class="content-bottom">
+                                <div class="icon-group"><i class="icon-pos-mid"></i><i class="icon-pos-dy"></i><i class="icon-pos-sup"></i></div>
+                                <div class="tips">艾欧尼亚</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author-content-item game-wolf">
+                        <div class="card-content">
+                            <div class="author-content-item-tips">爱好游戏</div><span
+                                class="author-content-item-title">崩坏三·原神</span>
+                            <div class="content-bottom">
+                                <div class="icon-group"><i class="icon-pos-ys"></i></div>
+                                <div class="tips">虽然已退坑</div>
+                                <div class="tips">UID 134905576</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="author-content">
+                    <div class="author-content-item like-technology">
+                        <div class="card-content">
+                            <div class="author-content-item-tips">关注偏好</div><span
+                                class="author-content-item-title">数码科技</span>
+                            <div class="content-bottom">
+                                <div class="tips">手机、电脑软硬件，退役搞机er</div>
+                            </div>
+                            <div class="banner-button-group"><a class="banner-button" target="_blank"
+                                    href="http://www.coolapk.com/u/4137393"><i
+                                        class="fas fa-circle-plus"></i><span class="banner-button-text">酷安</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="author-content-item like-music">
+                        <div class="card-content">
+                            <div class="author-content-item-tips">音乐偏好</div><span
+                                class="author-content-item-title">ACG、华语流行</span><span
+                                class="author-content-item-changjian">关注 三无、漆柚、蛀牙、Hanser、祈lnory……</span>
+                            <div class="content-bottom">
+                                <div class="tips">跟 轻笑Chuckle 在音乐中漫游</div>
+                            </div>
+                            <div class="banner-button-group"><a class="banner-button"
+                                    onclick="pjax.loadUrl(/music/)" data-pjax-state=""><i
+                                        class="fas fa-circle-plus"></i><span class="banner-button-text">音乐页</span></a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="author-content-item game-lol">
+                        <div class="card-content">
+                            <div class="author-content-item-tips">爱好游戏</div><span
+                                class="author-content-item-title">英雄联盟</span>
+                            <div class="content-bottom">
+                                <div class="icon-group"><i class="icon-pos-mid"></i><i class="icon-pos-dy"></i><i class="icon-pos-sup"></i></div>
+                                <div class="tips">艾欧尼亚</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="author-content">
+                    <div class="create-site-post author-content-item single">
+                        <div class="author-content-item-tips">心路历程</div><span
+                            class="author-content-item-title">为什么建站</span>
+                        <p>以前尝试过搭自己的网站，但当时技术力低，视野不够广阔，互联网也未进入新时代，最终无果而终。</p>
+                        <p>如今建此站，一方面是记录自己的学习与生活，另一方面，是在这日新月异的互联网上，留下一点点的足迹。当然，作为一个计科专业的人来说，也理应有一个博客。<strong>日月忽其不淹兮，春与秋其代序</strong>，此地也会成为回忆之所。
+                        <p>这是我所做的，感到快乐的事。</p>
+                        </p>
+                        <p>这是一个个人博客，亦是一叶轻舟，欢迎在互联网上的旅人来此做客，与各位交流和分享。</p>
+                    </div>
+                </div>
+                <div class="author-content" id="about-reward">
+                    <div class="author-content-item single reward">
+                        <div class="author-content-item-tips">致谢</div><span
+                            class="author-content-item-title">投喂名单</span>
+                        <div class="author-content-item-description">感谢~维持此互联网中的一叶轻舟
+                        </div>
+                        <div class="reward-list-all">
+                            <div class="reward-list-item">
+                                <a href="https://blog.itciraos.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">葱苓</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 5</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2022-10-13T00:00:00.000Z">2024-08-04</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://blog.zerolacqua.top/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">丘卡</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 20</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-05-19T00:00:00.000Z">2023-05-19</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">*天</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 1</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-03-15T00:00:00.000Z">2023-03-15</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://www.startly.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">Cartafi</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 30</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-02-07T00:00:00.000Z">2023-02-07</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">*欣</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 2</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-02-06T00:00:00.000Z">2023-02-06</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">v*y</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 1</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-02-05T00:00:00.000Z">2023-02-05</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://www.startly.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">Cartafi</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 30</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-02-01T00:00:00.000Z">2023-02-01</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">*帆(新年快乐)</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 6.66</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-01-22T00:00:00.000Z">2023-01-22</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">哈哈哈哈哈</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 10</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-01-22T00:00:00.000Z">2023-01-22</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://www.startly.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">Cartafi</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 8.88</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-01-21T00:00:00.000Z">2023-01-21</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://www.startly.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">Cartafi</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 20</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-01-20T00:00:00.000Z">2023-01-20</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://www.startly.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">Cartafi</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 30</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2023-01-06T00:00:00.000Z">2023-01-06</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">Zerol Acqua</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 10</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2022-11-19T00:00:00.000Z">2022-11-19</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">f*p</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 0.02</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2022-10-24T00:00:00.000Z">2022-10-24</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">*听</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money">¥ 1</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2022-10-22T00:00:00.000Z">2022-10-22</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <a href="https://blog.itciraos.cn/" target="_blank">
+                                    <div class="isFriends">友链</div>
+                                </a>
+                                <div class="reward-list-item-name">葱苓</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 10</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2022-10-13T00:00:00.000Z">2022-10-13</time>
+                                </div>
+                            </div>
+                            <div class="reward-list-item">
+                                <div class="reward-list-item-name">RoversX</div>
+                                <div class="reward-list-bottom-group">
+                                    <div class="reward-list-item-money reward-money-vip">¥ 10</div><time
+                                        class="datatime reward-list-item-time"
+                                        datetime="2022-09-20T00:00:00.000Z">2022-09-20</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reward-list-updateDate">
+                        最新更新时间：<time class="datatime reward-list-updateDate-time">2024-08-04</time></div>
+                        <div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">投 喂</span><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a class="about-reward" arget="_blank"><img class="post-qr-code-img" loading="lazy" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/weixin.webp" alt="微信"></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a class="about-reward" target="_blank"><img class="post-qr-code-img" loading="lazy" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/blog/pay/alipay.webp" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></button></div>
+                    </div>
+                </div>
+            </div>
+
+<script>
+  var pursuitInterval = null;
+  pursuitInterval = setInterval(function () {
+    const show = document.querySelector('span[data-show]')
+    const next = show.nextElementSibling || document.querySelector('.first-tips')
+    const up = document.querySelector('span[data-up]')
+    if (up) {
+      up.removeAttribute('data-up')
+    }
+    show.removeAttribute('data-show')
+    show.setAttribute('data-up', '')
+    next.setAttribute('data-show', '')
+  }, 2000)
+  document.addEventListener('pjax:send', function(){
+  clearInterval(pursuitInterval);
+});
+</script>
+<script>
+fetch('https://tracker-api.qcqx.cn/api/stats').then(res => res.json()).then((data) => {
+    let s = document.querySelector('#statisticc')
+    console.log(data)
+    let html = ''
+    html += `<div><span>今日人数:</span><span class="num">${data.today.visitors}</span></div>`
+    html += `<div><span>今日访问:</span><span class="num">${data.today.visitCount}</span></div>`
+    html += `<div><span>昨日人数:</span><span class="num">${data.yesterday.visitors}</span></div>`
+    html += `<div><span>昨日访问:</span><span class="num">${data.yesterday.visitCount}</span></div>`
+    html += `<div><span>本月访问:</span><span class="num">${data.month.visitCount}</span></div>`
+    html += `<div><span>总访问量:</span><span class="num">${107104 + data.total.visitCount}</span></div>`
+    s.innerHTML = html
+});
+
+// if(1){
+// let items=document.querySelectorAll('.item');
+// function setActive(){
+//     items.forEach((item)=>{
+//         item.classList.remove('active');
+//     })
+//     this.classList.add('active');
+// }
+// items.forEach((item)=>{
+//     item.addEventListener('click',setActive);
+// })
+// }
+</script>
+
+</div></div></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2025 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+function createtime() {
+var now = new Date();
+var grt= new Date("03/10/2022 00:00:00");
+now.setTime(now.getTime()+1000);
+days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
+document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
+}
+createtime();
+if(typeof footer_time == "undefined"){
+  var footer_time = setInterval("createtime()",1000*60);
+}else{
+  clearInterval(footer_time);
+  footer_time = setInterval("createtime()",1000*60);
+}
+}
+</script></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/hexo.svg"/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/butterfly.svg"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/github.svg"/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20220160" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/20220160.svg"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/2022076449.svg"/></a><a class="github-badge" target="_blank" href="https://cloud.tencent.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tx.svg"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/vercel.svg"/></a><a class="github-badge" target="_blank" href="https://tianli-blog.club/jsd/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/tianlicdn.svg"/></a><a class="github-badge" target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/ypy.svg"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/cc.svg"/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="refresh-cache" type="button" title="刷新缓存" onclick="refreshCache()"><i class="fas fa-refresh fa-spin"></i></button><button id="enlargePage-btn" type="button" title="放大页面" onclick="enlargePage()"><i class="fa fa-plus"></i></button><button id="narrowPage-btn" type="button" title="缩小页面" onclick="narrowPage()"><i class="fa fa-minus"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fa fa-images"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="share-link" type="button" title="分享链接"><i class="fa fa-share-alt"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-top"><i class="fa fa-angles-up"></i></div></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:kk.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-magnifying-glass"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-read"><a class="rightMenu-item" href="javascript:kk.pasteText();"><i class="fa fa-paste"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" id="menu-radompage" href="/"><i class="fa-solid fa-shoe-prints"></i><span>博客主页</span></a><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-adjust"></i><span>昼夜切换</span></div><div class="rightMenu-item" id="share-chuckle"><i class="fa fa-share-alt"></i><span>分享本页</span></div><a class="rightMenu-item" id="menu-radompage" href="/categories/"><i class="fa fa-archive"></i><span>分类</span></a><a class="rightMenu-item" id="menu-radompage" href="/tags/"><i class="fa fa-tags"></i><span>标签</span></a></div></div><div id="rightmenu-mask" onclick="RemoveRightMenu()"></div><div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/main.js?6"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/search/local-search.js?2"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 2500);</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/qx-tracker.min.js?1"></script><script>const tracker = new Tracker({requestUrl:'https://tracker-api.qcqx.cn/api/tracker',historyTracker:true,realTime:true});</script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/random.min.js?14"></script><script defer="true" src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle.js?15"></script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/chuckle-post-ai.js?11"></script><script defer>new ChucklePostAI({el:'#post>#article-container',key:'tN2jLmG7fX9zHk5dVbQr',title_el:'.post-title',rec_method:'web',whitelist:['article/17d3383a.html'],pjax:true})</script><script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#fixedcard-dashboard","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="fixedcard-dashboard"><div class="fixedcard-user-avatar fixedcard-activebtn" onclick="RemoveFixedCardWidget()"><img class="fixedcard-user-avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/head.webp" title="『轻笑Chuckle』"></div></div></div><!-- hexo injector body_end start --><script data-pjax>function hope_light_loader_injector_config(){
+                var parent_div_git = document.getElementById('body-wrap');
+                var item_html = '<div id="loading-bar-wrapper">';
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementById('body-wrap') && (location.pathname ==='all'|| 'all' ==='all')){
+            hope_light_loader_injector_config()
+        } </script>
+    <script src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/js/nprogress.min.js"></script>
+    <script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script data-pjax>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+      document.addEventListener('pjax:send', window.ShowLoading)
+      document.addEventListener('pjax:success', window.HideLoading)
+      document.addEventListener('pjax:error', window.HideLoading)
+    </script>
+<!-- hexo injector body_end end --></body></html>

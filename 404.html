@@ -1,17 +1,29 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
-  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
-    (async()=>{window.stop()})()
-    window.localStorage.setItem('ChenBlogHelper_Set', 1)
-  }
-  navigator.serviceWorker.register('/giggles.js')
-    .then(async () => {
-      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
-        window.localStorage.setItem('ChenBlogHelper_Set', 2)
-        setTimeout(() => {
-          window.location.reload()
-        }, 150)
-      }
-    })
+  //- if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+  //-   (async()=>{window.stop()})()
+  //-   window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  //- }
+  //- navigator.serviceWorker.register('/giggles.js')
+  //-   .then(async () => {
+  //-     if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+  //-       window.localStorage.setItem('ChenBlogHelper_Set', 2)
+  //-       setTimeout(() => {
+  //-         window.location.reload()
+  //-       }, 150)
+  //-     }
+  //-   })
+  // 卸载所有 Service Worker
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister().then(function(success) {
+        if (success) {
+          console.log('Service Worker 已成功卸载');
+        }
+      });
+    }
+  });
+  // 清除相关的 localStorage
+  window.localStorage.removeItem('ChenBlogHelper_Set');
 }
 //- function setQXCookies(obj, limitTime, customDomain) {
 //-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
@@ -80,7 +92,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-09-12 19:59:27'
+  postUpdate: '2026-01-15 10:29:13'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1

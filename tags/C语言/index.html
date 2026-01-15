@@ -1,17 +1,29 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><script>if ('serviceWorker' in navigator) {
-  if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
-    (async()=>{window.stop()})()
-    window.localStorage.setItem('ChenBlogHelper_Set', 1)
-  }
-  navigator.serviceWorker.register('/giggles.js')
-    .then(async () => {
-      if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
-        window.localStorage.setItem('ChenBlogHelper_Set', 2)
-        setTimeout(() => {
-          window.location.reload()
-        }, 150)
-      }
-    })
+  //- if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+  //-   (async()=>{window.stop()})()
+  //-   window.localStorage.setItem('ChenBlogHelper_Set', 1)
+  //- }
+  //- navigator.serviceWorker.register('/giggles.js')
+  //-   .then(async () => {
+  //-     if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+  //-       window.localStorage.setItem('ChenBlogHelper_Set', 2)
+  //-       setTimeout(() => {
+  //-         window.location.reload()
+  //-       }, 150)
+  //-     }
+  //-   })
+  // 卸载所有 Service Worker
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister().then(function(success) {
+        if (success) {
+          console.log('Service Worker 已成功卸载');
+        }
+      });
+    }
+  });
+  // 清除相关的 localStorage
+  window.localStorage.removeItem('ChenBlogHelper_Set');
 }
 //- function setQXCookies(obj, limitTime, customDomain) {
 //-     let data = new Date(new Date().getTime() + limitTime * 24 * 60 * 60 * 1000).toGMTString();
@@ -80,7 +92,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-09-12 19:59:29'
+  postUpdate: '2026-01-15 10:29:16'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -305,7 +317,7 @@
       </div><a class="catalog-more" href="/tags/">更多</a></div><div class="article-sort-title">标签 - C语言</div><div class="article-sort"><div class="article-sort-item year">2022</div><div class="article-sort-item"><a class="article-sort-item-img" href="/article/a696e8fe.html" title="C语言单链表菜品管理系统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/6-1.webp" alt="C语言单链表菜品管理系统" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><time class="post-meta-date-created" datetime="2022-03-31T11:07:19.000Z" title="发表于 2022-03-31 19:07:19">2022-03-31</time></div><a class="article-sort-item-title" href="/article/a696e8fe.html" title="C语言单链表菜品管理系统">C语言单链表菜品管理系统</a><span class="article-sort-item-index">1</span><div class="article-meta-wrap"><span class="article-sort-item-categories"><i class="iconfont icon-fenlei"></i><a class="article-meta__categories" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></span><span class="article-sort-item-tags"><i class="iconfont icon-biaoqian"></i><a class="article-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></span><div class="article-sort-item-time"><time class="post-meta-date-created" datetime="2022-03-31T11:07:19.000Z" title="发表于 2022-03-31 19:07:19">2022-03-31</time></div></div></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/article/13675369.html" title="C语言学习笔记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/images/5-1.webp" alt="C语言学习笔记" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><time class="post-meta-date-created" datetime="2022-03-27T06:08:09.000Z" title="发表于 2022-03-27 14:08:09">2022-03-27</time></div><a class="article-sort-item-title" href="/article/13675369.html" title="C语言学习笔记">C语言学习笔记</a><span class="article-sort-item-index">2</span><div class="article-meta-wrap"><span class="article-sort-item-categories"><i class="iconfont icon-fenlei"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="article-sort-item-tags"><i class="iconfont icon-biaoqian"></i><a class="article-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></span><div class="article-sort-item-time"><time class="post-meta-date-created" datetime="2022-03-27T06:08:09.000Z" title="发表于 2022-03-27 14:08:09">2022-03-27</time></div></div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><script>try{
   document.removeEventListener('pjax:success', catalogActive);
   document.addEventListener('pjax:success', catalogActive);
-}catch(e){}</script></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2025 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+}catch(e){}</script></main><footer id="footer" style="background: rgba(0, 0, 0, 0);"><div id="footer-wrap"><div id="footer_icon"><div class="icon_left"><a class="icon_link" target="_blank" href="http://foreverblog.cn/go.html" rel="noopener external nofollow" title="虫洞-随机访问十年之约成员博客"><i class="fa-solid fa-circle-notch fa-fw"></i></a><a class="icon_link" target="_blank" href="https://travellings.cn" rel="noopener external nofollow" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a><a class="icon_link" href="/link/" title="友链"><i class="fa-solid fa-link fa-fw"></i></a><a class="icon_link" href="/messageboard/" title="留言"><i class="fa-regular fa-comment fa-fw"></i></a></div><img class="footer_logo entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/qxchuckle/qxchuckle.github.io/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><div class="icon_left"><a class="icon_link" target="_blank" rel="noopener" href="https://www.qcqx.cn/" title="我的主页"><i class="fa-solid fa-compass fa-fw"></i></a><a class="icon_link" target="_blank" href="https://res.abeim.cn/api/qq/?qq=1934009145" rel="noopener external nofollow" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a><a class="icon_link" target="_blank" href="https://github.com/qxchuckle" rel="noopener external nofollow" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a><a class="icon_link" href="mailto:chuckle@chuckle.top" rel="noopener external nofollow" title="邮件联系"><i class="fa-solid fa-envelope fa-fw"></i></a></div></div><div class="copyright">&copy;2022 - 2026 By 『轻笑Chuckle』<a id="beianhao" style="color:#fff;font-size:0.9rem;font-weight:400;" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022076449号</a></div><div class="footer_custom_text">『Another branch will grow and flourish in the future』</div><div class="footer-banner"><div id="footer-banner-time"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
 function createtime() {
 var now = new Date();
 var grt= new Date("03/10/2022 00:00:00");

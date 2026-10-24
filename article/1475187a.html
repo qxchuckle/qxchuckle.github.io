@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HTML基础笔记 · 轻笑Chuckle</title><meta name="description" content="记录下零零碎碎的HTML标签和属性"><link rel="canonical" href="https://www.qcqx.cn/article/1475187a.html"><meta name="author" content="轻笑Chuckle"><meta property="og:type" content="article"><meta property="og:site_name" content="轻笑Chuckle"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="HTML基础笔记 · 轻笑Chuckle"><meta property="og:description" content="记录下零零碎碎的HTML标签和属性"><meta property="og:url" content="https://www.qcqx.cn/article/1475187a.html"><meta property="og:image" content="https://www.qcqx.cn/assets/site/f7dd0fa9498d4b6f-384.webp"><meta name="twitter:card" content="summary"><link rel="alternate" type="application/atom+xml" title="轻笑Chuckle" href="/atom.xml"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)"><script>(function(){var e="system";try{var a=localStorage.getItem("qcqx-theme");(a==="light"||a==="dark")&&(e=a)}catch{}var t=!1;window.matchMedia&&(t=window.matchMedia("(prefers-color-scheme: dark)").matches);var r=e==="system"?t?"dark":"light":e,o=document.documentElement;o.dataset.theme=r,o.style.colorScheme=r==="dark"?"dark only":"light only"})();</script><script>document.documentElement.dataset.js="1";</script><noscript><style>
+        pre[data-folded="true"] {
+          max-height: none !important;
+          overflow-y: visible !important;
+        }
+      </style></noscript><link rel="stylesheet" href="/_static/BackLink.DB5iJlZs.css"><link rel="stylesheet" href="/_static/_slug_.BR7lfXy5.css"><link rel="stylesheet" href="/_static/Pager.CyKydJOF.css"><link rel="stylesheet" href="/_static/BaseLayout.CPn0yOaM.css"><link rel="stylesheet" href="/_static/DraftBadge.BFurP3QT.css"><link rel="stylesheet" href="/_static/RailSection.D-UbEKa4.css"><link rel="stylesheet" href="/_static/WalineComments.Dqk9hD5x.css"></head> <body> <a class="skip-link" href="#main">跳到正文</a> <header class="_header_26tta_128"> <div class="container _inner_26tta_136"> <div class="_root_i62nn_128" data-site-portals data-shell-enter> <button type="button" class="_trigger_i62nn_133" aria-label="站点入口" title="站点入口" aria-haspopup="true" aria-expanded="false" aria-controls="site-portals" data-portals-trigger> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" ><circle cx="9" cy="5.5" r="1.55" /><circle cx="15" cy="5.5" r="1.55" /><circle cx="9" cy="12" r="1.55" /><circle cx="15" cy="12" r="1.55" /><circle cx="9" cy="18.5" r="1.55" /><circle cx="15" cy="18.5" r="1.55" /></svg> </button> <div id="site-portals" class="_panel_i62nn_170" data-open="false" data-portals-panel> <div class="_group_i62nn_215" role="group" aria-labelledby="site-portals-group-0"> <p id="site-portals-group-0" class="_groupTitle_i62nn_220"> 传送门 </p> <ul class="_list_i62nn_230"> <li> <a href="/" class="_item_i62nn_238"> <span class="_itemLabel_i62nn_265">博客主页</span> <span class="_itemMeta_i62nn_269"> 本站 </span> </a> </li><li> <a href="https://waline.qcqx.cn/ui" class="_item_i62nn_238" target="_blank" rel="noopener"> <span class="_itemLabel_i62nn_265">评论管理</span> <span class="_itemMeta_i62nn_269"> Waline 后台 </span> </a> </li> </ul> </div><div class="_group_i62nn_215" role="group" aria-labelledby="site-portals-group-1"> <p id="site-portals-group-1" class="_groupTitle_i62nn_220"> 博客线路 </p> <ul class="_list_i62nn_230"> <li> <a href="https://www.qcqx.cn/" class="_item_i62nn_238" target="_blank" rel="noopener" data-current> <span class="_itemLabel_i62nn_265">主域名线路</span> <span class="_itemMeta_i62nn_269"> 当前线路 </span> </a> </li><li> <a href="https://vb.qcqx.cn/" class="_item_i62nn_238" target="_blank" rel="noopener"> <span class="_itemLabel_i62nn_265">Vercel 线路</span> <span class="_itemMeta_i62nn_269"> 灾备站 </span> </a> </li> </ul> </div> </div> </div> <a href="/" class="_brand_26tta_159" aria-label="轻笑Chuckle 首页" data-shell-enter> <span class="_brandMark_26tta_174" aria-hidden="true"> <span></span> </span> <span class="_brandName_26tta_198">轻笑Chuckle</span> </a> <nav class="_nav_1y1m8_128" aria-label="主导航" data-shell-enter data-nav-measured="false"> <a href="/" data-nav-index="0" data-nav-item> 首页 </a><a href="/archives/" data-nav-index="1" data-nav-item> 归档 </a><a href="/series/" data-nav-index="2" data-nav-item> 系列 </a><a href="/categories/" data-nav-index="3" data-nav-item> 分类 </a><a href="/tags/" data-nav-index="4" data-nav-item> 标签 </a><a href="/link/" data-nav-index="5" data-nav-item> 友链 </a><a href="/messageboard/" data-nav-index="6" data-nav-item> 留言板 </a><a href="/about/" data-nav-index="7" data-nav-item> 关于 </a><a href="/charts/" data-nav-index="8" data-nav-item> 统计 </a><a href="/update/" data-nav-index="9" data-nav-item> 日志 </a><a href="/agreement/" data-nav-index="10" data-nav-item> 协议 </a>  <div class="_more_1y1m8_241" data-nav-more hidden> <button type="button" class="_moreTrigger_1y1m8_248" aria-haspopup="true" aria-expanded="false" data-nav-more-trigger>
+更多
+</button> <div class="_morePanel_1y1m8_276" data-open="false" data-nav-more-panel></div> </div>  <div class="_nav_1y1m8_128 _ruler_1y1m8_314" aria-hidden="true" inert data-nav-ruler> <a href="/" data-ruler-item data-nav-index="0" tabindex="-1"> 首页 </a><a href="/archives/" data-ruler-item data-nav-index="1" tabindex="-1"> 归档 </a><a href="/series/" data-ruler-item data-nav-index="2" tabindex="-1"> 系列 </a><a href="/categories/" data-ruler-item data-nav-index="3" tabindex="-1"> 分类 </a><a href="/tags/" data-ruler-item data-nav-index="4" tabindex="-1"> 标签 </a><a href="/link/" data-ruler-item data-nav-index="5" tabindex="-1"> 友链 </a><a href="/messageboard/" data-ruler-item data-nav-index="6" tabindex="-1"> 留言板 </a><a href="/about/" data-ruler-item data-nav-index="7" tabindex="-1"> 关于 </a><a href="/charts/" data-ruler-item data-nav-index="8" tabindex="-1"> 统计 </a><a href="/update/" data-ruler-item data-nav-index="9" tabindex="-1"> 日志 </a><a href="/agreement/" data-ruler-item data-nav-index="10" tabindex="-1"> 协议 </a> <span data-ruler-more class="_moreTrigger_1y1m8_248">
+更多
+</span> </div> </nav> <div class="_actions_26tta_202" data-shell-enter> <div class="_railTriggers_26tta_272"> <button type="button" class="_railTrigger_26tta_272" data-rail-trigger="left" aria-haspopup="dialog" hidden>
+站点
+</button> <button type="button" class="_railTrigger_26tta_272" data-rail-trigger="right" aria-haspopup="dialog" hidden>
+目录
+</button> </div> <button type="button" class="_searchTrigger_26tta_210" aria-label="搜索文章（⌘K）" title="搜索文章 ⌘K" data-command-open> <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg> <span class="_searchLabel_26tta_365">搜索</span> <kbd aria-hidden="true">⌘K</kbd> </button>  <button type="button" class="_button_8hk14_128" aria-label="切换主题" title="切换主题" popovertarget="theme-menu" data-theme-toggle> <svg class="_moon_8hk14_161" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" /></svg> <svg class="_sun_8hk14_160" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg> </button> <div id="theme-menu" popover class="_content_8hk14_186" data-theme-menu> <div class="_label_8hk14_198">外观</div> <div role="radiogroup" aria-label="外观" data-theme-group> <button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="system"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>跟随系统</strong> <span>随设备自动切换</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button><button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="light"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>浅色</strong> <span>纸与墨</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button><button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="dark"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>深色</strong> <span>夜与灯</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button> </div> </div><script type="module" src="/_static/ThemeToggle.astro_astro_type_script_index_0_lang.C8b8KPj-.js"></script> <div class="_mobileOnly_26tta_323"> <button type="button" class="_iconButton_26tta_248" aria-label="打开菜单" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-navigation" data-sheet-open="mobile-navigation"> <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="M4 7h16M4 12h16M4 17h16" /></svg> </button> <dialog id="mobile-navigation" class="_dialog_p820f_128 _left_p820f_157" data-sheet="left" aria-labelledby="mobile-navigation-title"> <div class="_panel_p820f_162"> <header class="_header_p820f_188"> <div> <h2 id="mobile-navigation-title">轻笑Chuckle</h2> <p class="_description_p820f_205">漫天倾尘，风中轻笑。</p> </div> <button type="button" class="_close_p820f_212" aria-label="关闭" autofocus data-sheet-close> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="m6 6 12 12M18 6 6 18" /></svg> </button> </header> <div class="_body_p820f_237"> <nav class="_nav_1y1m8_128 _mobile_1y1m8_189" aria-label="移动端导航"> <a href="/" data-nav-item> 首页 </a><a href="/archives/" data-nav-item> 归档 </a><a href="/series/" data-nav-item> 系列 </a><a href="/categories/" data-nav-item> 分类 </a><a href="/tags/" data-nav-item> 标签 </a><a href="/link/" data-nav-item> 友链 </a><a href="/messageboard/" data-nav-item> 留言板 </a><a href="/about/" data-nav-item> 关于 </a><a href="/charts/" data-nav-item> 统计 </a><a href="/update/" data-nav-item> 日志 </a><a href="/agreement/" data-nav-item> 协议 </a> </nav> <button type="button" class="_sheetSearch_26tta_237" data-command-open data-sheet-then-command> <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+搜索文章
+<kbd>⌘K</kbd> </button> </div> </div> </dialog> </div> </div> </div>  <div class="_track_1v1iy_41" aria-hidden="true" data-reading-progress> <span data-reading-bar></span> </div> </header><script type="module" src="/_static/SiteHeader.astro_astro_type_script_index_0_lang.DLY5Ntxp.js"></script> <main id="main" class="transition-main" tabindex="-1">  <div class="container page _page_vnlu0_128 _page_tc8st_128"> <div class="_grid_vnlu0_132 _rightCollapse1180_vnlu0_259"> <aside class="_left_vnlu0_155" aria-label="左侧栏" data-rail="left">  <a class="_link_bndhu_128" href="/" data-atom> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m14 6-6 6 6 6" /></svg> 返回文章 </a> <div class="_progress_tc8st_186" data-atom> <span class="_progressRing_tc8st_193" data-reading-ring></span> <span class="_progressValue_tc8st_212" data-reading-percent>0%</span> <span class="_progressLabel_tc8st_219">阅读进度</span> </div> <section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">标签</p>  </div>   <div class="_tags_1te21_260" data-dense-order> <a href="/tags/7a19a8e2/" data-atom>
+#前端  </a> </div>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">相关阅读</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/55cefeb1.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-3</span>  <span class="_meta_1te21_55">10-13</span>  </a> </li><li data-atom> <a href="/article/f17dfea3.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-2</span>  <span class="_meta_1te21_55">09-27</span>  </a> </li><li data-atom> <a href="/article/cb488cbf.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-1</span>  <span class="_meta_1te21_55">09-24</span>  </a> </li> </ol>  </section> </aside> <div class="_center_vnlu0_151" data-column="center">    <article class="_article_tc8st_132"> <header class="_header_tc8st_248">   <div> <p class="_kicker_tc8st_325">  <a href="/categories/bcda4893/">学习笔记</a> </p> <h1 class="_title_tc8st_345" data-atom>HTML基础笔记</h1> <p class="_lede_tc8st_349" data-atom>记录下零零碎碎的HTML标签和属性</p> <div class="_metaRow_tc8st_415" data-atom> <div class="_meta_tc8st_55"> <time datetime="2022-11-14T16:40:32.000Z">2022年11月15日</time> <span>13 分钟</span> <span>5,114 字</span>  <span class="_views_tc8st_468"> <span data-pageview></span> 次浏览
+</span>  <span class="_comments_tc8st_469"> <a href="#comments" title="跳转到评论区"><span data-comment-count data-path="/article/1475187a.html"></span> 条评论</a> </span>  </div> <div class="_metaActions_tc8st_518" data-atom> <div class="_actions_kmpj4_128" data-article-actions> <button type="button" class="_trigger_2hzyr_128" aria-label="打开文章目录" aria-haspopup="dialog" aria-expanded="false" aria-controls="toc-dialog" data-toc-open> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 6h12M8 12h12M8 18h12" /><path d="M4 6h.01M4 12h.01M4 18h.01" /></svg>
+目录
+</button> <button type="button" class="_action_kmpj4_128" data-copy-link data-copy-path="/article/1475187a.html" aria-label="复制链接"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="8" y="8" width="11" height="11" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></svg> <span>复制链接</span> </button> <button type="button" class="_action_kmpj4_128" data-share data-share-path="/article/1475187a.html" data-share-title="HTML基础笔记" aria-label="分享"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4" /></svg> <span>分享</span> </button> <span class="_message_kmpj4_163" role="status" aria-live="polite" data-action-message></span> </div> </div> </div> </div> </header>   <button type="button" class="_trigger_2hzyr_128 _floating_2hzyr_168" aria-label="打开文章目录" aria-haspopup="dialog" aria-expanded="false" aria-controls="toc-dialog" data-toc-open data-toc-floating> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 6h12M8 12h12M8 18h12" /><path d="M4 6h.01M4 12h.01M4 18h.01" /></svg>
+目录
+</button> <dialog class="_dialog_p820f_128 _bottom_p820f_152" id="toc-dialog" aria-labelledby="toc-dialog-title" data-toc-dialog> <div class="_panel_p820f_162"> <header class="_header_p820f_188"> <div> <h2 id="toc-dialog-title">文章目录</h2> <p class="_description_p820f_205">跳到感兴趣的小节</p> </div> <button type="button" class="_close_p820f_212" aria-label="关闭目录" data-toc-close autofocus> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="m6 6 12 12M18 6 6 18" /></svg> </button> </header> <div class="_body_p820f_237 _body_2hzyr_198" data-toc-scroll> <div class="_meta_2hzyr_55"> <span>共 31 节</span> <span>当前章节会自动高亮</span> </div> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#html" data-toc-link> <span class="_linkText_kec3t_264">HTML</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#头标签head" data-toc-link> <span class="_linkText_kec3t_264">头标签head</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#body标签" data-toc-link> <span class="_linkText_kec3t_264">body标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#排版标签" data-toc-link> <span class="_linkText_kec3t_264">排版标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#字体标签" data-toc-link> <span class="_linkText_kec3t_264">字体标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#超链接a" data-toc-link> <span class="_linkText_kec3t_264">超链接a</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#图片标签" data-toc-link> <span class="_linkText_kec3t_264">图片标签</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#相对路径" data-toc-link> <span class="_linkText_kec3t_264">相对路径</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#绝对路径" data-toc-link> <span class="_linkText_kec3t_264">绝对路径</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#列表标签" data-toc-link> <span class="_linkText_kec3t_264">列表标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#表格标签table" data-toc-link> <span class="_linkText_kec3t_264">表格标签table</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#单元格的合并" data-toc-link> <span class="_linkText_kec3t_264">单元格的合并</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#theadtbodytfoot" data-toc-link> <span class="_linkText_kec3t_264">thead、tbody、tfoot</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#框架标签" data-toc-link> <span class="_linkText_kec3t_264">框架标签</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#frameset" data-toc-link> <span class="_linkText_kec3t_264">frameset</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#frame" data-toc-link> <span class="_linkText_kec3t_264">frame</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#内嵌框架" data-toc-link> <span class="_linkText_kec3t_264">内嵌框架</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#表单标签" data-toc-link> <span class="_linkText_kec3t_264">表单标签</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#input输入标签" data-toc-link> <span class="_linkText_kec3t_264">input输入标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#select下拉列表" data-toc-link> <span class="_linkText_kec3t_264">select下拉列表</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#textarea多行文本框" data-toc-link> <span class="_linkText_kec3t_264">textarea多行文本框</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#fieldset表单分组" data-toc-link> <span class="_linkText_kec3t_264">fieldset表单分组</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#label" data-toc-link> <span class="_linkText_kec3t_264">label</span> </a>  </li> </ol> </ol> </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#html5" data-toc-link> <span class="_linkText_kec3t_264">HTML5</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#新增的语义标签" data-toc-link> <span class="_linkText_kec3t_264">新增的语义标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#h5中的表单" data-toc-link> <span class="_linkText_kec3t_264">H5中的表单</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#新表单标签" data-toc-link> <span class="_linkText_kec3t_264">新表单标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#新表单属性" data-toc-link> <span class="_linkText_kec3t_264">新表单属性</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#表单事件" data-toc-link> <span class="_linkText_kec3t_264">表单事件</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#audio音频标签" data-toc-link> <span class="_linkText_kec3t_264">audio音频标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#video视频标签" data-toc-link> <span class="_linkText_kec3t_264">video视频标签</span> </a>  </li> </ol> </ol> </li> </ol> <div class="_foot_kec3t_283"> <a class="_top_kec3t_293" href="#main" data-toc-link> <span aria-hidden="true">↑</span>
+回到顶部
+</a> <a class="_top_kec3t_293 undefined" href="#comments" data-toc-link> <span aria-hidden="true">↓</span>
+评论区
+</a> </div> </div> </div> </dialog>  <div id="article-content" class="prose" data-reading-target data-pagefind-body> <h2 id="html">HTML</h2>
+<p>  一个最基本的H5骨架长这样：</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_static/expressive-code.35cb7027.css" /><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code">&#x3C;!<span class="t5">DOCTYPE</span> <span class="t9">html</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">html</span> <span class="t9">lang</span>=<span class="t2">"en"</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">head</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">meta</span> <span class="t9">charset</span>=<span class="t2">"UTF-8"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"viewport"</span> <span class="t9">content</span>=<span class="t2">"width=device-width, initial-scale=1.0"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">meta</span> <span class="t9">http-equiv</span>=<span class="t2">"Content-Type"</span> <span class="t9">content</span>=<span class="t2">"text/html;charset=UTF-8"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"Author"</span> <span class="t9">content</span>=<span class="t2">""</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"Keywords"</span> <span class="t9">content</span>=<span class="t2">"123"</span> /></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"Description"</span> <span class="t9">content</span>=<span class="t2">"123456"</span> /></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">title</span>>Document&#x3C;/<span class="t5">title</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">head</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">body</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">body</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">html</span>></div></div></code></pre></figure></div>
+<blockquote>
+<p>标准的div+css页面，只会用到种类很少的标签：div、p、h1、span、a、img、ul、ol、dl、input、i等</p>
+</blockquote>
+<hr>
+<h3 id="头标签head">头标签head</h3>
+<p>  head标签表示的是页面的配置，有字符集、关键词、页面描述、页面标题、IE适配、视口、iPhone小图标等等</p>
+<ol>
+<li><strong>文档声明头：</strong><code>&#x3C;!DOCTYPE html></code>，DocType Declaration，简称DTD,DTD可告知浏览器文档使用哪种 HTML 或 XHTML 规范。</li>
+<li><strong>页面语言lang：</strong><code>&#x3C;html lang="en"></code>，指定页面的语言类型，en、zh-CN。</li>
+<li>**meta标签：**提供相关页面的元信息（meta-information）</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--必要，网页标题--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">title</span>>轻笑Chuckle&#x3C;/<span class="t5">title</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--必要，网页的编码方式,文件格式要与其声明相符--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">charset</span>=<span class="t2">"UTF-8"</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">http-equiv</span>=<span class="t2">"Content-Type"</span> <span class="t9">content</span>=<span class="t2">"text/html;charset=UTF-8"</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--视口viewport，适配移动端--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"viewport"</span> <span class="t9">content</span>=<span class="t2">"width=device-width, initial-scale=1.0"</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--网页关键词，SEO用--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"Keywords"</span> <span class="t9">content</span>=<span class="t2">"轻笑,Chuckle"</span> /></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--网页描述--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"Description"</span> <span class="t9">content</span>=<span class="t2">"漫天倾尘,风中轻笑"</span> /></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--网页作者--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">name</span>=<span class="t2">"Author"</span> <span class="t9">content</span>=<span class="t2">"轻笑Chuckle"</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--3s后跳转百度--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">meta</span> <span class="t9">http-equiv</span>=<span class="t2">"refresh"</span> <span class="t9">content</span>=<span class="t2">"3;http://www.baidu.com"</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--指定基础的路径，a链接以此为基准--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">base</span> <span class="t9">href</span>=<span class="t2">"/"</span>></div></div></code></pre></figure></div>
+<hr>
+<h3 id="body标签">body标签</h3>
+<ul>
+<li>div、section、article、aside、header、footer</li>
+<li>p</li>
+<li>span、em、strong</li>
+<li>表格元素：table、thead、tbody、tr、td</li>
+<li>列表元素：ul、ol、dl、dt、dd</li>
+<li>a</li>
+<li>表单元素：form、input、select、textarea、button</li>
+</ul>
+<p>  <strong>HTML标签分为两种：</strong></p>
+<ol>
+<li>文本级标签：p、span、a、b、i、u、em。文本级标签里只能放文字、图片、表单元素。（a标签里不能放a和input）</li>
+<li>容器级标签：div、h系列、li、dt、dd。容器级标签里可以放置任何东西。</li>
+</ol>
+<hr>
+<h3 id="排版标签">排版标签</h3>
+<ol>
+<li><code>&#x3C;h1></code>标题使用<code>&#x3C;h1></code>至<code>&#x3C;h6></code>标签定义,有align属性(对齐方式)：left、center、right。</li>
+<li><code>&#x3C;p></code>段落标签，单独成段，分割网页。有align属性。</li>
+<li><code>&#x3C;hr/></code>水平分割线线标签。</li>
+<li><code>&#x3C;br/></code></li>
+<li><code>&#x3C;div></code>可以把标签中的内容分割为独立的区块。必须单独占据一行,DIV+CSS来实现各种样式,<strong>div标签负责布局、结构、分块，css负责样式</strong></li>
+<li><code>&#x3C;span></code>和div的作用一致，但不换行</li>
+<li><code>&#x3C;center></code>让元素居中，H5中不使用</li>
+<li><code>&#x3C;pre></code>预格式化，让文本不空格和空行，几乎用不着</li>
+<li><code>&#x3C;!-- 我是 html 注释  --></code></li>
+</ol>
+<hr>
+<h3 id="字体标签">字体标签</h3>
+<ol>
+<li>特殊字符（转义字符），需要时百度，<code>&#x26;nbsp;</code>空格,<code>&#x26;lt;</code>小于号&#x3C;,<code>&#x26;gt;</code>大于号>，等</li>
+<li><code>&#x3C;u></code>下划线,<code>&#x3C;s></code>或<code>&#x3C;del></code>中划线,<code>&#x3C;i></code>或<code>&#x3C;em></code>斜体</li>
+<li><strong>弃用:</strong><code>&#x3C;b></code> <code>&#x3C;strong></code>粗体，<code>&#x3C;font></code>字体标签</li>
+<li><code>&#x3C;sup></code>上标，<code>&#x3C;sub></code>下标</li>
+</ol>
+<hr>
+<h3 id="超链接a">超链接a</h3>
+<p> 一个文本级标签</p>
+<ol>
+<li>外部链接:<code>&#x3C;a href="02页面.html">点击进入另外一个文件&#x3C;/a></code><strong>href</strong>超文本地址</li>
+<li>锚链接:</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--设置锚点，必须是a标签--></span></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--name属性是HTML4.0以前使用的，id属性是HTML4.0后才开始使用。为了向前兼容，因此，name和id这两个属性都要写上，并且值是一样的--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">a</span> <span class="t9">name</span>=<span class="t2">"a1"</span> <span class="t9">id</span>=<span class="t2">"a1"</span>>a1点&#x3C;/<span class="t5">a</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--触发锚点--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">a</span> <span class="t9">href</span>=<span class="t2">"#a1"</span>>去a1点&#x3C;/<span class="t5">a</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!--跳转到a.html页面的a1锚点中去--></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">a</span> <span class="t9">href</span>=<span class="t2">"a.html#a1"</span>>去a1&#x3C;/<span class="t5">a</span>></div></div></code></pre></figure></div>
+<p> 通常p包裹a</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>超链接的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><p><strong>href</strong>：目标URL<br>
+<strong>title</strong>：悬停文本。<br>
+<strong>name</strong>：主要用于设置一个锚点的名称。<br>
+<strong>target</strong>：告诉浏览器用什么方式来打开目标页面。target属性有以下几个值：<br>
+ <strong>_self</strong>：在同一个网页中显示（默认值）<br>
+ <strong>_blank</strong>：在新的窗口中打开。<br>
+ <strong>_top</strong>：在顶级窗口中显示</p></div></details>
+<hr>
+<h2 id="图片标签">图片标签</h2>
+<p> <code>&#x3C;img src="图片的URL" /></code>src中写图片路径</p>
+<p> 标签属性：</p>
+<ol>
+<li><strong>width</strong>、<strong>height</strong>
+在 HTML5 中的单位是 CSS 像素，在 HTML 4 中既可以是像素，也可以是百分比
+可以只指定 width 和 height 中的一个值，浏览器会根据原始图像进行<strong>等比缩放</strong></li>
+<li><strong>alt</strong>：当图片无法显示时，代替图片的文本</li>
+<li><strong>title</strong>：鼠标悬停时出现的文本</li>
+<li>align属性，默认bottom</li>
+</ol>
+<hr>
+<h3 id="相对路径">相对路径</h3>
+<p> <code>.</code>当前目录,<code>..</code>上一层目录</p>
+<div class="expressive-code"><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre><code><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 当前目录中的图片 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">img</span> <span class="t9">src</span>=<span class="t2">"img.jpg"</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">img</span> <span class="t9">src</span>=<span class="t2">"./img.jpg"</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 上一级目录中的图片 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">img</span> <span class="t9">src</span>=<span class="t2">"../img.jpg"</span>></div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- ../要么不写，要么就写在开头 --></span></div></div></code></pre></figure></div>
+<hr>
+<h3 id="绝对路径">绝对路径</h3>
+<p> <code>&#x3C;img src="C:\img.jpg" /></code>C盘图片
+ <code>&#x3C;img src="http://img.baidu.com/head.png" /></code>网络路径</p>
+<hr>
+<h2 id="列表标签">列表标签</h2>
+<ol>
+<li>无序列表<code>&#x3C;ul></code>,type="属性值";disc(实心原点，默认)，square(实心方点)，circle(空心圆)</li>
+<li>有序列表<code>&#x3C;ol></code>,type="属性值";1(阿拉伯数字，默认)、a、A、i、I。结合start属性表示从几开始
+<code>&#x3C;ul></code>、<code>&#x3C;ol></code>里放<code>&#x3C;li></code>,li是容器级</li>
+<li>定义列表<code>&#x3C;al></code>,没有属性,子元素<code>&#x3C;dt></code>、<code>&#x3C;dd></code></li>
+</ol>
+<div id="list-example"></div>
+<p>  从语义上来说，dt表示名称，dd表示对其的描述，dt、dd都是容器级标签，想放什么都可以。用什么标签，不是根据样子来决定，而是语义（语义本质上是结构）。</p>
+<hr>
+<h2 id="表格标签table">表格标签table</h2>
+<p>  网页中表格由每行<code>&#x3C;tr></code>组成，每一行由一个个单元格<code>&#x3C;td></code>组成
+  <code>&#x3C;th></code>加粗的单元格。相当于<code>&#x3C;td></code> + <code>&#x3C;b></code></p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">&#x3C;<span class="t5">table</span>></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>&#x3C;<span class="t5">tr</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">td</span>>&#x3C;/<span class="t5">td</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">td</span>>&#x3C;/<span class="t5">td</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">td</span>>&#x3C;/<span class="t5">td</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">td</span>>&#x3C;/<span class="t5">td</span>></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>&#x3C;/<span class="t5">tr</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">table</span>></div></div></code></pre></figure></div>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>table的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>border</strong> 边框</li>
+<li>**style="border-collapse:collapse;"**单元格的线和表格的边框线合并（表格的两边框合并为一条）</li>
+<li><strong>width</strong>、<strong>height</strong></li>
+<li><strong>bordercolor</strong> 表格的边框颜色</li>
+<li><strong>align</strong> 表格的水平对齐方式left right center，注意：这里不是设置表格里内容的对齐方式，如果想设置内容的对齐方式，要对单元格标签<code>&#x3C;td></code>进行设置）</li>
+<li><strong>cellpadding</strong> 单元格和单元格之间的距离（外边距），像素为单位。默认情况下的值为0</li>
+<li><strong>bgcolor</strong> 背景颜色，<strong>background</strong> 背景图片。背景图片的优先级大于背景颜色。</li>
+<li><strong>bordercolorlight</strong> 表格的上、左边框，以及单元格的右、下边框的颜色,<strong>bordercolordark</strong> 表格的右、下边框，以及单元格的上、左的边框的颜色 这两个属性的目的是为了设置3D的效果</li>
+<li><strong>dir</strong> 公有属性，单元格内容的排列方式，取值ltr左到右，rtl从右到左</li>
+</ul></div></details>
+
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>tr的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>dir</strong> 公有属性，单元格内容的排列方式，取值ltr左到右，rtl从右到左</li>
+<li><strong>bgcolor</strong> 设置这一行的单元格的背景色</li>
+<li><strong>height</strong></li>
+<li><strong>align</strong> 一行的内容水平居中显示，取值：left、center、right</li>
+<li><strong>valign</strong> 一行的内容垂直居中，取值：top、middle、bottom</li>
+</ul></div></details>
+
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>tr的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>bgcolor</strong> 单元格的背景色，<strong>background</strong> 设置这个单元格的背景（图片）</li>
+<li><strong>height</strong> 单元格的高度</li>
+<li><strong>width</strong> 绝对值或者相对值(%)</li>
+<li><strong>align</strong> 内容的横向对齐方式，取值：left right center</li>
+<li><strong>valign</strong> 内容的纵向对齐方式。取值：top middle bottom</li>
+</ul></div></details>
+<hr>
+<h3 id="单元格的合并">单元格的合并</h3>
+<ol>
+<li><strong>colspan</strong>：横向往右合并</li>
+<li><strong>rowspan</strong>：纵向往下合并</li>
+</ol>
+<div id="table1-example"></div>
+<hr>
+<h3 id="theadtbodytfoot">thead、tbody、tfoot</h3>
+<p>  表格优先按照thead、tbody、tfoot的顺序依次来显示内容（三个标签无需同时存在），如果不写，表格按代码从上到下的顺序来显示
+  当表格非常大内容非常多的时候，用thead、tbody、tfoot标签，数据可以边获取边显示。如果不写，则必须等表格的内容全部从服务器获取完成才能显示出来。
+  tr和tbody同级，按代码从上到下的顺序来显示</p>
+<div id="table2-example"></div>
+<hr>
+<h2 id="框架标签">*框架标签</h2>
+<p>  框架标签用于在一个网页中显示多个页面（html）</p>
+<blockquote>
+<ol>
+<li><code>&#x3C;frameset></code>和<code>&#x3C;body></code>只能二选一。框架标签不能放在<code>&#x3C;body></code>标签里面，因为<code>&#x3C;body></code>标签代表的只是一个页面，而框架标签代表的是多个页面</li>
+<li>框架的集合用<code>&#x3C;frameset></code>表示，然后在<code>&#x3C;frameset></code>集合里放入一个一个的框架<code>&#x3C;frame></code></li>
+<li><strong>frameset和frame已经从 Web标准中删除，使用iframe代替</strong></li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="frameset">*frameset</h3>
+<p>  <code>&#x3C;frameset></code> 框架的集合,一个框架的集合可以包含<strong>多个框架</strong>或<strong>框架的集合</strong></p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>frameset的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>rows</strong> 水平分割，将框架分为上下部分</li>
+<li><strong>cols</strong> 垂直分割，将框架分为左右部分。
+写法有两种：</li>
+</ul>
+<ol>
+<li>绝对值写法：<code>rows/cols="200,*"</code> *代表剩余的。包含了两个框架：一个占200个像素，另一个占剩下的部分。</li>
+<li>相对值写法：<code>rows/cols="30%,*"</code> *代表剩余的。包含了两个框架：一个占30%，另一个占70%。</li>
+</ol>
+<p> 如果想将框架分成很多个，在属性值里用多个逗号隔开。</p></div></details>
+<div class="expressive-code"><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre><code><div class="ec-line"><div class="code">&#x3C;<span class="t11">frameset</span> <span class="t9">rows</span>=<span class="t2">"20%,*"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t11">frame</span> <span class="t9">src</span>=<span class="t2">"1.html"</span>>&#x3C;/<span class="t11">frame</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t11">frameset</span> <span class="t9">cols</span>=<span class="t2">"30%,*"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">        </span>&#x3C;<span class="t11">frame</span> <span class="t9">src</span>=<span class="t2">"1.html"</span>>&#x3C;/<span class="t11">frame</span>></div></div><div class="ec-line"><div class="code"><span class="indent">        </span>&#x3C;<span class="t11">frame</span> <span class="t9">src</span>=<span class="t2">"1.html"</span>>&#x3C;/<span class="t11">frame</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;/<span class="t11">frameset</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t11">frameset</span>></div></div></code></pre></figure></div>
+<hr>
+<h3 id="frame">*frame</h3>
+<p>  <code>&#x3C;frame></code>是<code>&#x3C;frameset></code>的子标签，一个框架显示一个页面。</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>frame的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>scrolling="no"</strong> 是否要滚动条,默认值是true。</li>
+<li><strong>noresize</strong> 不可以改变框架大小。默认情况下，单个框架的边界是可以拖动的,用了这个属性值，框架大小将固定。</li>
+<li><strong>bordercolor</strong> 框架边框颜色,仅IE生效</li>
+<li><strong>frameborder="0"<strong>或</strong>"1"</strong> 隐藏或显示边框（框架线）。</li>
+<li><strong>name</strong> 框架名字，用于框架内的超链</li>
+</ul></div></details>
+<hr>
+<h2 id="内嵌框架">内嵌框架</h2>
+<p>  内嵌框架用<code>&#x3C;iframe></code>表示。<code>&#x3C;iframe></code>写在<code>&#x3C;body></code>中，在其中嵌入html页面</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>iframe的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>src=""</strong> 嵌入html页面的路径</li>
+<li><strong>height</strong>,<strong>width</strong></li>
+<li><strong>scrolling="no"</strong> 是否需要滚动条。默认值是true。</li>
+<li><strong>name</strong> 名称</li>
+</ul></div></details>
+<div id="iframe-example"></div>
+<hr>
+<h2 id="表单标签">表单标签</h2>
+<p>  表单标签用<code>&#x3C;form></code>表示，收集用户信息，用于与服务器的交互。</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>form的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>name</strong>，<strong>id</strong> 表单的名称，JS来操作或控制表单时使用</li>
+<li><strong>action</strong> 指定表单数据的处理程序</li>
+<li><strong>method</strong> 表单数据的提交方式，一般取值：get(默认)和post</li>
+</ul></div></details>
+<hr>
+<h3 id="input输入标签">input输入标签</h3>
+<p>  <code>&#x3C;input /></code>是一个输入标签，用于接收用户输入或选择</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>input的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>type="属性值"</strong> 文本类型
+<em><strong>text</strong></em> 文本框，默认
+<em><strong>password</strong></em> 密码框
+<em><strong>radio</strong></em> 单选按钮
+<em><strong>checkbox</strong></em> 多选按钮，name属性值相同的按钮作为一组进行选择，但id必须唯一。
+<em><strong>hidden</strong></em> 隐藏框，在表单中包含不希望用户看见的信息
+<em><strong>button</strong></em> 普通按钮，结合js代码进行使用。
+<em><strong>submit</strong></em> 提交按钮，提交当前表单的数据给服务器或其他程序处理。这个按钮不需要写value自动就会有“提交”文字，点击按钮后，整个表单就会被提交到form标签的action属性中指定的那个页面中去
+<em><strong>reset</strong></em> 重置按钮，清空当前表单的内容，并设置为最初的默认值
+<em><strong>image</strong></em> 图片按钮，和submit提交按钮的功能完全一致，图片按钮可以显示图片。
+<em><strong>file</strong></em> 文件选择框，配合JS对文件进行限制和检查</li>
+<li><strong>checked</strong> 将单选按钮或多选按钮默认处于选中状态。当<code>&#x3C;input /></code>标签设置为<strong>type="radio"<strong>或者</strong>type=checkbox</strong>时，可用此属性</li>
+<li><strong>value="内容"</strong> 文本框里的默认内容（已经被填好了的）</li>
+<li><strong>size="50"</strong> 表示文本框内可以显示<strong>五十个字符</strong>。一个英文或一个中文都算一个字符</li>
+<li><strong>readonly</strong> 文本框只读</li>
+<li><strong>disabled</strong> 文本框只读</li>
+</ul></div></details>
+<div id="input1-example"></div>
+<hr>
+<h3 id="select下拉列表">select下拉列表</h3>
+<p>  <code>&#x3C;select></code>列表中每一选项为<code>&#x3C;option></code></p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>select、option的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><p><code>&#x3C;select></code>的属性:</p>
+<ul>
+<li><strong>multiple</strong> 多选(ctrl加左键点击)</li>
+<li><strong>size="3"</strong> 属性值大于1，则列表为滚动视图，默认属性值为1，即下拉视图。</li>
+</ul>
+<p><code>&#x3C;option></code>的属性:</p>
+<ul>
+<li><strong>selected</strong> 预选中</li>
+</ul></div></details>
+<div id="select1-example"></div>
+<hr>
+<h3 id="textarea多行文本框">textarea多行文本框</h3>
+<p>  <code>&#x3C;textarea></code>不会省略空格和换行</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>textarea的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>rows="4"</strong> 文本框行数</li>
+<li><strong>cols="20"</strong> 文本框列数</li>
+<li><strong>readonly</strong> 文本框只读</li>
+</ul></div></details>
+<div id="textarea1-example"></div>
+<hr>
+<h3 id="fieldset表单分组">fieldset表单分组</h3>
+<p>  <code>&#x3C;fieldset></code>子标签<code>&#x3C;legend></code>定义组的标题</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>fieldset的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>disabled</strong> 表单仍然显示，但是禁用</li>
+<li><strong>form="另一个表单的id"</strong> 让此fieldset也属于该表单一部分</li>
+<li><strong>name</strong> fieldset的名称</li>
+</ul></div></details>
+<div id="fieldset1-example"></div>
+<hr>
+<h3 id="label">label</h3>
+<p>  <code>label</code>使其中文字内容与<code>&#x3C;input /></code>绑定，点击文字也能选择选项等</p>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>fieldset的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>for="[id]"</strong> label要绑定的input的id</li>
+</ul></div></details>
+<div id="label1-example"></div>
+<hr>
+<h2 id="html5">HTML5</h2>
+<p>  HTML5是新一代开发Web富客户端应用程序整体解决方案。包括：HTML5,CSS3，Javascript API在内的一套<strong>技术组合</strong>。富客户端具有很强的<strong>交互性</strong>和体验。</p>
+<hr>
+<h3 id="新增的语义标签">新增的语义标签</h3>
+<p>  相较于使用<code>class="header"</code>给网页做语义化处理，HTML5本身提供了一些语义化的标签。强调了HTML的职责是描述一块内容是什么（或其意义）。</p>
+<p>  常见的HTML结构：</p>
+<div class="expressive-code"><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 头部 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">div</span> <span class="t9">class</span>=<span class="t2">"header"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">ul</span> <span class="t9">class</span>=<span class="t2">"nav"</span>>&#x3C;/<span class="t5">ul</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">div</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 主体部分 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">div</span> <span class="t9">class</span>=<span class="t2">"main"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">&#x3C;!-- 文章 --></span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">div</span> <span class="t9">class</span>=<span class="t2">"article"</span>>&#x3C;/<span class="t5">div</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">&#x3C;!-- 侧边栏 --></span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">div</span> <span class="t9">class</span>=<span class="t2">"aside"</span>>&#x3C;/<span class="t5">div</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">div</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 底部 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">div</span> <span class="t9">class</span>=<span class="t2">"footer"</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">div</span>></div></div></code></pre></figure></div>
+<p>  HTML5中这样写</p>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 头部 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">header</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">ul</span> <span class="t9">class</span>=<span class="t2">"nav"</span>>&#x3C;/<span class="t5">ul</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">header</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 主体部分 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">div</span> <span class="t9">class</span>=<span class="t2">"main"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">&#x3C;!-- 文章 --></span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">article</span>>&#x3C;/<span class="t5">article</span>></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">&#x3C;!-- 侧边栏 --></span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>&#x3C;<span class="t5">aside</span>>&#x3C;/<span class="t5">aside</span>></div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">div</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span class="t8">&#x3C;!-- 底部 --></span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">footer</span>></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">footer</span>></div></div></code></pre></figure></div>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>HTML5语义标签</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>section</strong> 区块</li>
+<li><strong>article</strong> 表示主体内容，如文章</li>
+<li><strong>header</strong> 页眉</li>
+<li><strong>footer</strong> 页脚</li>
+<li><strong>nav</strong> 导航栏</li>
+<li><strong>aside</strong> 侧边栏</li>
+<li><strong>figure</strong> 媒介内容分组</li>
+<li><strong>mark</strong> 标记</li>
+<li><strong>progress</strong> 进度</li>
+<li><strong>time</strong> 日期</li>
+</ul></div></details>
+<hr>
+<h2 id="h5中的表单">H5中的表单</h2>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>HTML5表单中input新增的类型</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>email</strong> 只能输入email格式，自带格式验证</li>
+<li><strong>tel</strong> 手机号码</li>
+<li><strong>url</strong> 只能输入url格式</li>
+<li><strong>number</strong> 只能输入数字。</li>
+<li><strong>search</strong> 搜索框</li>
+<li><strong>range</strong> 滑动条</li>
+<li><strong>color</strong> 拾色器</li>
+<li><strong>time</strong> 时间</li>
+<li><strong>date</strong> 日期</li>
+<li><strong>datetime</strong> 时间日期</li>
+<li><strong>month</strong> 月份</li>
+<li><strong>week</strong> 星期</li>
+</ul></div></details>
+<div id="h5-input-example"></div>
+<hr>
+<h2 id="新表单标签">新表单标签</h2>
+<ul>
+<li><code>&#x3C;datalist></code> 数据列表,用于数据自动提示</li>
+</ul>
+<div id="datalist-example"></div>
+<ul>
+<li><code>&#x3C;keygen></code> 用于验证用户，本质是密钥对生成器，当提交表单时，会生成两个键：一个公钥，一个私钥，私钥存储于客户端，公钥则被发送到服务器。公钥可用于之后验证用户的客户端证书。</li>
+</ul>
+<hr>
+<h2 id="新表单属性">新表单属性</h2>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>新表单属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>placeholder</strong> 占位符（提示文字）</li>
+<li><strong>autofocus</strong> 自动获取焦点</li>
+<li><strong>multiple</strong> 文件上传多选或多个邮箱地址</li>
+<li><strong>autocomplete</strong> 自动完成（填充的）on开启（默认）off取消。效果是会记住之前的提交，可以快速选择</li>
+<li><strong>form</strong> 指定表单项属于哪个form，处理复杂表单时会需要</li>
+<li><strong>novalidate</strong> 关闭默认的验证功能（只能加给form）</li>
+<li><strong>required</strong> 表示必填项</li>
+<li><strong>pattern</strong> 自定义正则，验证表单。</li>
+</ul></div></details>
+<div id="new-form-example"></div>
+<hr>
+<h2 id="表单事件">表单事件</h2>
+<ol>
+<li><code>oninput()</code> 用户输入内容时触发，可用于输入字数统计。</li>
+<li><code>oninvalid()</code> 验证不通过时触发</li>
+</ol>
+<hr>
+<h2 id="audio音频标签">audio音频标签</h2>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>audio的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>autoplay</strong> 自动播放</li>
+<li><strong>controls</strong> 控制条</li>
+<li><strong>loop</strong> 循环播放</li>
+<li><strong>preload</strong> 预加载，设置autoplay此属性失效</li>
+</ul></div></details>
+<div id="audio-example"></div>
+<hr>
+<h2 id="video视频标签">video视频标签</h2>
+<details class="folding" data-color="cyan"><summary class="folding-summary"><span class="folding-dot" aria-hidden="true"></span><span>audio的属性</span><span class="folding-icon" aria-hidden="true"></span></summary><div class="folding-body"><ul>
+<li><strong>autoplay</strong> 自动播放</li>
+<li><strong>controls</strong> 控制条</li>
+<li><strong>loop</strong> 循环播放</li>
+<li><strong>preload</strong> 预加载，设置autoplay此属性失效</li>
+<li><strong>width</strong>、<strong>height</strong></li>
+</ul></div></details>
+<div class="expressive-code"><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre><code><div class="ec-line"><div class="code">&#x3C;<span class="t5">video</span> <span class="t9">src</span>=<span class="t2">"video/movie.mp4"</span> <span class="t9">controls</span>  <span class="t9">autoplay</span> >&#x3C;/<span class="t5">video</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">video</span> <span class="t9">controls</span> <span class="t9">autoplay</span>></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>&#x3C;<span class="t5">source</span> <span class="t9">src</span>=<span class="t2">"video/movie.mp4"</span>/></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>&#x3C;<span class="t5">source</span> <span class="t9">src</span>=<span class="t2">"video/movie.ogg"</span>/></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>&#x3C;<span class="t5">source</span> <span class="t9">src</span>=<span class="t2">"video/movie.webm"</span>/></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>抱歉，不支持此视频</div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">video</span>></div></div></code></pre></figure></div>
+<hr>
+<script src="/js/mini-sandbox.min.js?2"></script>
+<script src="/js/31.js?3"></script> </div> <nav class="_pagination_tc8st_522" aria-label="文章导航"> <a class="_pageLink_tc8st_529" href="/article/b827db53.html" data-atom> <span class="_pageLabel_tc8st_556">上一篇</span> <strong>使用MiniSandbox前端代码可视化</strong> <span class="_pageArrow_tc8st_561" aria-hidden="true">←</span> </a> <a class="_pageLink_tc8st_529 _pageLinkNext_tc8st_574" href="/article/e61f6567.html" data-atom> <span class="_pageLabel_tc8st_556">下一篇</span> <strong>老旧浏览器弹窗提醒</strong> <span class="_pageArrow_tc8st_561" aria-hidden="true">→</span> </a> </nav>  <section id="comments" class="_comments_1v81l_1" aria-label="评论"> <h2 class="_title_1v81l_9">评论</h2> <div class="_container_1v81l_17" data-waline data-waline-path="/article/1475187a.html"></div> </section> </article>  </div> <aside class="_right_vnlu0_156" aria-label="右侧栏" data-rail="right"> <nav class="_toc_kec3t_128" aria-label="文章目录" data-toc> <div class="_head_kec3t_137" data-atom> <span class="_kicker_kec3t_146">目录</span> <span class="_count_kec3t_55">31</span> </div> <div class="_scroll_kec3t_160" data-toc-scroll> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#html" data-toc-link> <span class="_linkText_kec3t_264">HTML</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#头标签head" data-toc-link> <span class="_linkText_kec3t_264">头标签head</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#body标签" data-toc-link> <span class="_linkText_kec3t_264">body标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#排版标签" data-toc-link> <span class="_linkText_kec3t_264">排版标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#字体标签" data-toc-link> <span class="_linkText_kec3t_264">字体标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#超链接a" data-toc-link> <span class="_linkText_kec3t_264">超链接a</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#图片标签" data-toc-link> <span class="_linkText_kec3t_264">图片标签</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#相对路径" data-toc-link> <span class="_linkText_kec3t_264">相对路径</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#绝对路径" data-toc-link> <span class="_linkText_kec3t_264">绝对路径</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#列表标签" data-toc-link> <span class="_linkText_kec3t_264">列表标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#表格标签table" data-toc-link> <span class="_linkText_kec3t_264">表格标签table</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#单元格的合并" data-toc-link> <span class="_linkText_kec3t_264">单元格的合并</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#theadtbodytfoot" data-toc-link> <span class="_linkText_kec3t_264">thead、tbody、tfoot</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#框架标签" data-toc-link> <span class="_linkText_kec3t_264">框架标签</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#frameset" data-toc-link> <span class="_linkText_kec3t_264">frameset</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#frame" data-toc-link> <span class="_linkText_kec3t_264">frame</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#内嵌框架" data-toc-link> <span class="_linkText_kec3t_264">内嵌框架</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#表单标签" data-toc-link> <span class="_linkText_kec3t_264">表单标签</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#input输入标签" data-toc-link> <span class="_linkText_kec3t_264">input输入标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#select下拉列表" data-toc-link> <span class="_linkText_kec3t_264">select下拉列表</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#textarea多行文本框" data-toc-link> <span class="_linkText_kec3t_264">textarea多行文本框</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#fieldset表单分组" data-toc-link> <span class="_linkText_kec3t_264">fieldset表单分组</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#label" data-toc-link> <span class="_linkText_kec3t_264">label</span> </a>  </li> </ol> </ol> </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#html5" data-toc-link> <span class="_linkText_kec3t_264">HTML5</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#新增的语义标签" data-toc-link> <span class="_linkText_kec3t_264">新增的语义标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#h5中的表单" data-toc-link> <span class="_linkText_kec3t_264">H5中的表单</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#新表单标签" data-toc-link> <span class="_linkText_kec3t_264">新表单标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#新表单属性" data-toc-link> <span class="_linkText_kec3t_264">新表单属性</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#表单事件" data-toc-link> <span class="_linkText_kec3t_264">表单事件</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#audio音频标签" data-toc-link> <span class="_linkText_kec3t_264">audio音频标签</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#video视频标签" data-toc-link> <span class="_linkText_kec3t_264">video视频标签</span> </a>  </li> </ol> </ol> </li> </ol> </div> <div class="_foot_kec3t_283" data-atom> <a class="_top_kec3t_293" href="#main" data-nudge="up"> <span class="_arrow_kec3t_313 nudge" aria-hidden="true"> <span class="nudge-glyph">↑</span> </span>
+回到顶部
+</a> <a class="_top_kec3t_293 undefined" href="#comments" data-nudge="down"> <span class="_arrow_kec3t_313 nudge" aria-hidden="true"> <span class="nudge-glyph">↓</span> </span>
+评论区
+</a> </div> </nav> </aside> </div>  <dialog class="_railDialog_vnlu0_307 _railDialogLeft_vnlu0_331" data-rail-dialog="left" aria-labelledby="rail-dialog-left-title"> <div class="_railPanel_vnlu0_339"> <header class="_railHead_vnlu0_355"> <h2 id="rail-dialog-left-title">站点</h2> <button type="button" class="_railClose_vnlu0_371" data-rail-close aria-label="关闭">
+关闭
+</button> </header> <div class="_railBody_vnlu0_394">  <a class="_link_bndhu_128" href="/" data-atom> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m14 6-6 6 6 6" /></svg> 返回文章 </a> <div class="_progress_tc8st_186" data-atom> <span class="_progressRing_tc8st_193" data-reading-ring></span> <span class="_progressValue_tc8st_212" data-reading-percent>0%</span> <span class="_progressLabel_tc8st_219">阅读进度</span> </div> <section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">标签</p>  </div>   <div class="_tags_1te21_260" data-dense-order> <a href="/tags/7a19a8e2/" data-atom>
+#前端  </a> </div>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">相关阅读</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/55cefeb1.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-3</span>  <span class="_meta_1te21_55">10-13</span>  </a> </li><li data-atom> <a href="/article/f17dfea3.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-2</span>  <span class="_meta_1te21_55">09-27</span>  </a> </li><li data-atom> <a href="/article/cb488cbf.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-1</span>  <span class="_meta_1te21_55">09-24</span>  </a> </li> </ol>  </section> </div> </div> </dialog>  </div> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTML基础笔记","description":"记录下零零碎碎的HTML标签和属性","datePublished":"2022-11-14T16:40:32.000Z","dateModified":"2022-11-14T16:40:32.000Z","author":{"@type":"Person","name":"轻笑Chuckle","url":"https://www.qcqx.cn"},"image":["https://www.qcqx.cn/assets/site/f7dd0fa9498d4b6f-384.webp"],"mainEntityOfPage":"https://www.qcqx.cn/article/1475187a.html","keywords":"前端","inLanguage":"zh-CN"}</script> </main> <footer class="_footer_x6azg_128"> <div class="container _inner_x6azg_133"> <div class="_brand_x6azg_143" data-reveal> <span class="_mark_x6azg_149" aria-hidden="true"></span> <div> <strong>轻笑Chuckle</strong> <p>漫天倾尘，风中轻笑。</p> </div> </div> <div class="_meta_x6azg_55" data-reveal> <p class="_copy_x6azg_176"> <span class="_rights_x6azg_224">© 2021–2026 轻笑Chuckle</span> <span class="_filing_x6azg_228"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备2022076449号</a><span class="_dot_x6azg_236" aria-hidden="true">·</span><a href="https://icp.gov.moe/?keyword=20220160" target="_blank" rel="noreferrer">萌ICP备20220160号</a> </span> </p> <p class="_build_x6azg_177">Astro · Swup · Pagefind · Waline</p> </div> <nav class="_links_x6azg_189" aria-label="页脚导航" data-reveal> <a href="/atom.xml" data-no-swup>
+RSS
+</a> <a href="/sitemap.xml" data-no-swup>
+Sitemap
+</a> <a href="https://github.com/qxchuckle" target="_blank" rel="noreferrer">
+GitHub
+</a> </nav> </div> </footer>  <dialog class="_dialog_1bp20_136" aria-label="站点搜索与快捷导航" data-command-dialog> <div class="_searchRow_1bp20_162"> <span class="_searchIcon_1bp20_170" aria-hidden="true"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"> <circle cx="11" cy="11" r="6.5"></circle> <path d="m20 20-3.3-3.3"></path> </svg> </span> <input class="_input_1bp20_184" id="command-palette-input" name="q" placeholder="搜索文章，或输入页面名称…" aria-label="搜索文章" autocomplete="off" spellcheck="false" data-command-input> <button type="button" class="_close_1bp20_198" aria-label="关闭搜索" data-command-close>
+esc
+</button> </div> <div class="_list_1bp20_218" role="listbox" aria-label="搜索结果" data-command-list> <div data-command-quick> <div data-group-heading>快速前往</div> <div class="_quickGrid_1bp20_254"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">首页</span> <span class="_itemMeta_1bp20_334">/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/archives/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">归档</span> <span class="_itemMeta_1bp20_334">/archives/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/series/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">系列</span> <span class="_itemMeta_1bp20_334">/series/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/categories/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">分类</span> <span class="_itemMeta_1bp20_334">/categories/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/tags/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">标签</span> <span class="_itemMeta_1bp20_334">/tags/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/link/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">友链</span> <span class="_itemMeta_1bp20_334">/link/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/messageboard/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">留言板</span> <span class="_itemMeta_1bp20_334">/messageboard/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/about/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">关于</span> <span class="_itemMeta_1bp20_334">/about/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/charts/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">统计</span> <span class="_itemMeta_1bp20_334">/charts/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/update/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">日志</span> <span class="_itemMeta_1bp20_334">/update/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/agreement/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">协议</span> <span class="_itemMeta_1bp20_334">/agreement/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/search/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">搜索全部文章</span> <span class="_itemMeta_1bp20_334">/search/</span> </span> </button> </div> </div> <div data-command-loading hidden> <div class="_loading_1bp20_344"> <span class="_spinner_1bp20_363" aria-hidden="true"></span>
+正在查找…
+</div> </div> <div data-command-results hidden></div> <div data-command-empty hidden> <div class="_empty_1bp20_345"> <span data-command-empty-text></span> <button type="button" data-command-search-all>打开完整搜索页 →</button> </div> </div> </div> <footer class="_footer_1bp20_372"> <span> <kbd>↑</kbd> <kbd>↓</kbd> 选择
+</span> <span> <kbd>↵</kbd> 打开
+</span> <span> <kbd>esc</kbd> 关闭
+</span> <span class="_footerBrand_1bp20_398">轻笑 / 索引</span> </footer> </dialog>  <template data-command-tpl="post"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item> <span class="_itemMarker_1bp20_296" aria-hidden="true">¶</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314" data-field="title"></span> <span class="_itemExcerpt_1bp20_324" data-field="excerpt"></span> <span class="_itemMeta_1bp20_334" data-field="url"></span> </span> </button> </template>  <template data-command-tpl="search-all"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-search-all> <span class="_itemMarker_1bp20_296" aria-hidden="true">↗</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">在搜索页继续</span> <span class="_itemMeta_1bp20_334">Pagefind 全文搜索</span> </span> </button> </template> <span hidden data-command-dev-search="0"></span><script type="module" src="/_static/CommandPalette.astro_astro_type_script_index_0_lang.DRN8DVBH.js"></script>  <script>(function(){try{var v=document.getElementById("main");if(!v)return;var F=window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!F){for(var e={step:24,stepMin:6,stepBudget:220,section:60,sectionMin:24,sectionBudget:240,max:400},y=v.querySelectorAll("[data-atom],[data-module]"),a=[],u=0;u<y.length;u++){var r=y[u];if(!r.closest("[data-rail-dialog]")&&!r.hasAttribute("data-enter")){var A=r.closest("[data-rail],[data-column]")||r.parentElement||v,t=r.closest("section");if(!t)for(t=r;t.parentElement&&t.parentElement!==A;)t=t.parentElement;a.push([r,A,t])}}for(var M=new Map,p=new Map,w=new Map,i=0;i<a.length;i++){var l=a[i][2];M.set(l,(M.get(l)||0)+1);var h=p.get(a[i][1]);h||(h=[],p.set(a[i][1],h)),h.indexOf(l)<0&&h.push(l)}for(var d=0;d<a.length;d++){var n=a[d],f=p.get(n[1]),I=f.indexOf(n[2]),E=w.get(n[2])||0;w.set(n[2],E+1);var L=Math.max(e.sectionMin,Math.min(e.section,Math.floor(e.sectionBudget/Math.max(1,f.length)))),T=Math.max(1,M.get(n[2])||1),c=Math.max(e.stepMin,Math.min(e.step,Math.floor(e.stepBudget/T))),j=Math.min(I*L+E*c,e.max);n[0].style.setProperty("--enter-delay",j+"ms"),n[0].setAttribute("data-enter","")}for(var q=v.querySelectorAll(".prose"),B=window.innerHeight*1.2,P=0,c=0,m=0;m<q.length;m++)for(var f=q[m].children,t=0;t<f.length&&P<B;t++){var o=f[t];if(!(!(o instanceof HTMLElement)||o.hasAttribute("data-enter"))){var H=o.offsetHeight;H&&(o.style.setProperty("--enter-delay",Math.min(c*24,240)+"ms"),o.setAttribute("data-enter","near"),P+=H,c++)}}}for(var O=["var(--color-accent)","var(--color-accent-soft)","var(--color-border-strong)"],S=v.querySelectorAll("[data-friend-board]"),x=0;x<S.length;x++){var C=S[x];if(C.getClientRects().length){var g=Array.prototype.slice.call(C.querySelectorAll("[data-friend-card]"));if(g.length)for(var s=0;s<g.length;s++)g[s].style.setProperty("--cell-mix",(2+Math.random()*8).toFixed(1)+"%"),g[s].style.setProperty("--cell-tint",O[Math.floor(Math.random()*O.length)])}}}catch{}})();</script><script type="module" src="/_static/BaseLayout.astro_astro_type_script_index_0_lang.DhVNVGr_.js"></script> </body> </html>

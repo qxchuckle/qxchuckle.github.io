@@ -1,0 +1,659 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>一点点网络知识 · 轻笑Chuckle</title><meta name="description" content="当计算机网络与前端相遇"><link rel="canonical" href="https://www.qcqx.cn/article/1e4e2709.html"><meta name="author" content="轻笑Chuckle"><meta property="og:type" content="article"><meta property="og:site_name" content="轻笑Chuckle"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="一点点网络知识 · 轻笑Chuckle"><meta property="og:description" content="当计算机网络与前端相遇"><meta property="og:url" content="https://www.qcqx.cn/article/1e4e2709.html"><meta property="og:image" content="https://www.qcqx.cn/assets/site/f7dd0fa9498d4b6f-384.webp"><meta name="twitter:card" content="summary"><link rel="alternate" type="application/atom+xml" title="轻笑Chuckle" href="/atom.xml"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)"><script>(function(){var e="system";try{var a=localStorage.getItem("qcqx-theme");(a==="light"||a==="dark")&&(e=a)}catch{}var t=!1;window.matchMedia&&(t=window.matchMedia("(prefers-color-scheme: dark)").matches);var r=e==="system"?t?"dark":"light":e,o=document.documentElement;o.dataset.theme=r,o.style.colorScheme=r==="dark"?"dark only":"light only"})();</script><script>document.documentElement.dataset.js="1";</script><noscript><style>
+        pre[data-folded="true"] {
+          max-height: none !important;
+          overflow-y: visible !important;
+        }
+      </style></noscript><link rel="stylesheet" href="/_static/BackLink.DB5iJlZs.css"><link rel="stylesheet" href="/_static/_slug_.BR7lfXy5.css"><link rel="stylesheet" href="/_static/Pager.CyKydJOF.css"><link rel="stylesheet" href="/_static/BaseLayout.CPn0yOaM.css"><link rel="stylesheet" href="/_static/DraftBadge.BFurP3QT.css"><link rel="stylesheet" href="/_static/RailSection.D-UbEKa4.css"><link rel="stylesheet" href="/_static/WalineComments.Dqk9hD5x.css"></head> <body> <a class="skip-link" href="#main">跳到正文</a> <header class="_header_26tta_128"> <div class="container _inner_26tta_136"> <div class="_root_i62nn_128" data-site-portals data-shell-enter> <button type="button" class="_trigger_i62nn_133" aria-label="站点入口" title="站点入口" aria-haspopup="true" aria-expanded="false" aria-controls="site-portals" data-portals-trigger> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" ><circle cx="9" cy="5.5" r="1.55" /><circle cx="15" cy="5.5" r="1.55" /><circle cx="9" cy="12" r="1.55" /><circle cx="15" cy="12" r="1.55" /><circle cx="9" cy="18.5" r="1.55" /><circle cx="15" cy="18.5" r="1.55" /></svg> </button> <div id="site-portals" class="_panel_i62nn_170" data-open="false" data-portals-panel> <div class="_group_i62nn_215" role="group" aria-labelledby="site-portals-group-0"> <p id="site-portals-group-0" class="_groupTitle_i62nn_220"> 传送门 </p> <ul class="_list_i62nn_230"> <li> <a href="/" class="_item_i62nn_238"> <span class="_itemLabel_i62nn_265">博客主页</span> <span class="_itemMeta_i62nn_269"> 本站 </span> </a> </li><li> <a href="https://waline.qcqx.cn/ui" class="_item_i62nn_238" target="_blank" rel="noopener"> <span class="_itemLabel_i62nn_265">评论管理</span> <span class="_itemMeta_i62nn_269"> Waline 后台 </span> </a> </li> </ul> </div><div class="_group_i62nn_215" role="group" aria-labelledby="site-portals-group-1"> <p id="site-portals-group-1" class="_groupTitle_i62nn_220"> 博客线路 </p> <ul class="_list_i62nn_230"> <li> <a href="https://www.qcqx.cn/" class="_item_i62nn_238" target="_blank" rel="noopener" data-current> <span class="_itemLabel_i62nn_265">主域名线路</span> <span class="_itemMeta_i62nn_269"> 当前线路 </span> </a> </li><li> <a href="https://vb.qcqx.cn/" class="_item_i62nn_238" target="_blank" rel="noopener"> <span class="_itemLabel_i62nn_265">Vercel 线路</span> <span class="_itemMeta_i62nn_269"> 灾备站 </span> </a> </li> </ul> </div> </div> </div> <a href="/" class="_brand_26tta_159" aria-label="轻笑Chuckle 首页" data-shell-enter> <span class="_brandMark_26tta_174" aria-hidden="true"> <span></span> </span> <span class="_brandName_26tta_198">轻笑Chuckle</span> </a> <nav class="_nav_1y1m8_128" aria-label="主导航" data-shell-enter data-nav-measured="false"> <a href="/" data-nav-index="0" data-nav-item> 首页 </a><a href="/archives/" data-nav-index="1" data-nav-item> 归档 </a><a href="/series/" data-nav-index="2" data-nav-item> 系列 </a><a href="/categories/" data-nav-index="3" data-nav-item> 分类 </a><a href="/tags/" data-nav-index="4" data-nav-item> 标签 </a><a href="/link/" data-nav-index="5" data-nav-item> 友链 </a><a href="/messageboard/" data-nav-index="6" data-nav-item> 留言板 </a><a href="/about/" data-nav-index="7" data-nav-item> 关于 </a><a href="/charts/" data-nav-index="8" data-nav-item> 统计 </a><a href="/update/" data-nav-index="9" data-nav-item> 日志 </a><a href="/agreement/" data-nav-index="10" data-nav-item> 协议 </a>  <div class="_more_1y1m8_241" data-nav-more hidden> <button type="button" class="_moreTrigger_1y1m8_248" aria-haspopup="true" aria-expanded="false" data-nav-more-trigger>
+更多
+</button> <div class="_morePanel_1y1m8_276" data-open="false" data-nav-more-panel></div> </div>  <div class="_nav_1y1m8_128 _ruler_1y1m8_314" aria-hidden="true" inert data-nav-ruler> <a href="/" data-ruler-item data-nav-index="0" tabindex="-1"> 首页 </a><a href="/archives/" data-ruler-item data-nav-index="1" tabindex="-1"> 归档 </a><a href="/series/" data-ruler-item data-nav-index="2" tabindex="-1"> 系列 </a><a href="/categories/" data-ruler-item data-nav-index="3" tabindex="-1"> 分类 </a><a href="/tags/" data-ruler-item data-nav-index="4" tabindex="-1"> 标签 </a><a href="/link/" data-ruler-item data-nav-index="5" tabindex="-1"> 友链 </a><a href="/messageboard/" data-ruler-item data-nav-index="6" tabindex="-1"> 留言板 </a><a href="/about/" data-ruler-item data-nav-index="7" tabindex="-1"> 关于 </a><a href="/charts/" data-ruler-item data-nav-index="8" tabindex="-1"> 统计 </a><a href="/update/" data-ruler-item data-nav-index="9" tabindex="-1"> 日志 </a><a href="/agreement/" data-ruler-item data-nav-index="10" tabindex="-1"> 协议 </a> <span data-ruler-more class="_moreTrigger_1y1m8_248">
+更多
+</span> </div> </nav> <div class="_actions_26tta_202" data-shell-enter> <div class="_railTriggers_26tta_272"> <button type="button" class="_railTrigger_26tta_272" data-rail-trigger="left" aria-haspopup="dialog" hidden>
+站点
+</button> <button type="button" class="_railTrigger_26tta_272" data-rail-trigger="right" aria-haspopup="dialog" hidden>
+目录
+</button> </div> <button type="button" class="_searchTrigger_26tta_210" aria-label="搜索文章（⌘K）" title="搜索文章 ⌘K" data-command-open> <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg> <span class="_searchLabel_26tta_365">搜索</span> <kbd aria-hidden="true">⌘K</kbd> </button>  <button type="button" class="_button_8hk14_128" aria-label="切换主题" title="切换主题" popovertarget="theme-menu" data-theme-toggle> <svg class="_moon_8hk14_161" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" /></svg> <svg class="_sun_8hk14_160" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg> </button> <div id="theme-menu" popover class="_content_8hk14_186" data-theme-menu> <div class="_label_8hk14_198">外观</div> <div role="radiogroup" aria-label="外观" data-theme-group> <button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="system"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>跟随系统</strong> <span>随设备自动切换</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button><button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="light"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>浅色</strong> <span>纸与墨</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button><button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="dark"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>深色</strong> <span>夜与灯</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button> </div> </div><script type="module" src="/_static/ThemeToggle.astro_astro_type_script_index_0_lang.C8b8KPj-.js"></script> <div class="_mobileOnly_26tta_323"> <button type="button" class="_iconButton_26tta_248" aria-label="打开菜单" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-navigation" data-sheet-open="mobile-navigation"> <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="M4 7h16M4 12h16M4 17h16" /></svg> </button> <dialog id="mobile-navigation" class="_dialog_p820f_128 _left_p820f_157" data-sheet="left" aria-labelledby="mobile-navigation-title"> <div class="_panel_p820f_162"> <header class="_header_p820f_188"> <div> <h2 id="mobile-navigation-title">轻笑Chuckle</h2> <p class="_description_p820f_205">漫天倾尘，风中轻笑。</p> </div> <button type="button" class="_close_p820f_212" aria-label="关闭" autofocus data-sheet-close> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="m6 6 12 12M18 6 6 18" /></svg> </button> </header> <div class="_body_p820f_237"> <nav class="_nav_1y1m8_128 _mobile_1y1m8_189" aria-label="移动端导航"> <a href="/" data-nav-item> 首页 </a><a href="/archives/" data-nav-item> 归档 </a><a href="/series/" data-nav-item> 系列 </a><a href="/categories/" data-nav-item> 分类 </a><a href="/tags/" data-nav-item> 标签 </a><a href="/link/" data-nav-item> 友链 </a><a href="/messageboard/" data-nav-item> 留言板 </a><a href="/about/" data-nav-item> 关于 </a><a href="/charts/" data-nav-item> 统计 </a><a href="/update/" data-nav-item> 日志 </a><a href="/agreement/" data-nav-item> 协议 </a> </nav> <button type="button" class="_sheetSearch_26tta_237" data-command-open data-sheet-then-command> <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+搜索文章
+<kbd>⌘K</kbd> </button> </div> </div> </dialog> </div> </div> </div>  <div class="_track_1v1iy_41" aria-hidden="true" data-reading-progress> <span data-reading-bar></span> </div> </header><script type="module" src="/_static/SiteHeader.astro_astro_type_script_index_0_lang.DLY5Ntxp.js"></script> <main id="main" class="transition-main" tabindex="-1">  <div class="container page _page_vnlu0_128 _page_tc8st_128"> <div class="_grid_vnlu0_132 _rightCollapse1180_vnlu0_259"> <aside class="_left_vnlu0_155" aria-label="左侧栏" data-rail="left">  <a class="_link_bndhu_128" href="/" data-atom> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m14 6-6 6 6 6" /></svg> 返回文章 </a> <div class="_progress_tc8st_186" data-atom> <span class="_progressRing_tc8st_193" data-reading-ring></span> <span class="_progressValue_tc8st_212" data-reading-percent>0%</span> <span class="_progressLabel_tc8st_219">阅读进度</span> </div> <section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">标签</p>  </div>   <div class="_tags_1te21_260" data-dense-order> <a href="/tags/0cbda6b5/" data-atom>
+#网络  </a> </div>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">相关阅读</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/1be64a8d.html" class="_item_1te21_180">  <span class="_label_1te21_241">NestJS实践杂记</span>  <span class="_meta_1te21_55">12-09</span>  </a> </li><li data-atom> <a href="/article/55cefeb1.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-3</span>  <span class="_meta_1te21_55">10-13</span>  </a> </li><li data-atom> <a href="/article/f17dfea3.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-2</span>  <span class="_meta_1te21_55">09-27</span>  </a> </li> </ol>  </section> </aside> <div class="_center_vnlu0_151" data-column="center">    <article class="_article_tc8st_132"> <header class="_header_tc8st_248">   <div> <p class="_kicker_tc8st_325">  <a href="/categories/bcda4893/">学习笔记</a> </p> <h1 class="_title_tc8st_345" data-atom>一点点网络知识</h1> <p class="_lede_tc8st_349" data-atom>当计算机网络与前端相遇</p> <div class="_metaRow_tc8st_415" data-atom> <div class="_meta_tc8st_55"> <time datetime="2024-03-11T23:20:29.000Z">2024年3月12日</time> <span>39 分钟</span> <span>15,446 字</span>  <span class="_views_tc8st_468"> <span data-pageview></span> 次浏览
+</span>  <span class="_comments_tc8st_469"> <a href="#comments" title="跳转到评论区"><span data-comment-count data-path="/article/1e4e2709.html"></span> 条评论</a> </span>  </div> <div class="_metaActions_tc8st_518" data-atom> <div class="_actions_kmpj4_128" data-article-actions> <button type="button" class="_trigger_2hzyr_128" aria-label="打开文章目录" aria-haspopup="dialog" aria-expanded="false" aria-controls="toc-dialog" data-toc-open> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 6h12M8 12h12M8 18h12" /><path d="M4 6h.01M4 12h.01M4 18h.01" /></svg>
+目录
+</button> <button type="button" class="_action_kmpj4_128" data-copy-link data-copy-path="/article/1e4e2709.html" aria-label="复制链接"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="8" y="8" width="11" height="11" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></svg> <span>复制链接</span> </button> <button type="button" class="_action_kmpj4_128" data-share data-share-path="/article/1e4e2709.html" data-share-title="一点点网络知识" aria-label="分享"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4" /></svg> <span>分享</span> </button> <span class="_message_kmpj4_163" role="status" aria-live="polite" data-action-message></span> </div> </div> </div> </div> </header>   <button type="button" class="_trigger_2hzyr_128 _floating_2hzyr_168" aria-label="打开文章目录" aria-haspopup="dialog" aria-expanded="false" aria-controls="toc-dialog" data-toc-open data-toc-floating> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 6h12M8 12h12M8 18h12" /><path d="M4 6h.01M4 12h.01M4 18h.01" /></svg>
+目录
+</button> <dialog class="_dialog_p820f_128 _bottom_p820f_152" id="toc-dialog" aria-labelledby="toc-dialog-title" data-toc-dialog> <div class="_panel_p820f_162"> <header class="_header_p820f_188"> <div> <h2 id="toc-dialog-title">文章目录</h2> <p class="_description_p820f_205">跳到感兴趣的小节</p> </div> <button type="button" class="_close_p820f_212" aria-label="关闭目录" data-toc-close autofocus> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="m6 6 12 12M18 6 6 18" /></svg> </button> </header> <div class="_body_p820f_237 _body_2hzyr_198" data-toc-scroll> <div class="_meta_2hzyr_55"> <span>共 37 节</span> <span>当前章节会自动高亮</span> </div> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#前言" data-toc-link> <span class="_linkText_kec3t_264">前言</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#分层体系结构" data-toc-link> <span class="_linkText_kec3t_264">分层体系结构</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#术语" data-toc-link> <span class="_linkText_kec3t_264">术语</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#五层原理模型" data-toc-link> <span class="_linkText_kec3t_264">五层原理模型</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#tcp" data-toc-link> <span class="_linkText_kec3t_264">TCP</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#三次握手" data-toc-link> <span class="_linkText_kec3t_264">三次握手</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#四次挥手" data-toc-link> <span class="_linkText_kec3t_264">四次挥手</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#输入url后" data-toc-link> <span class="_linkText_kec3t_264">输入url后</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#dns解析" data-toc-link> <span class="_linkText_kec3t_264">DNS解析</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#跨域" data-toc-link> <span class="_linkText_kec3t_264">跨域</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#ajax相关" data-toc-link> <span class="_linkText_kec3t_264">ajax相关</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#sse" data-toc-link> <span class="_linkText_kec3t_264">SSE</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#websocket" data-toc-link> <span class="_linkText_kec3t_264">WebSocket</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#jwt" data-toc-link> <span class="_linkText_kec3t_264">JWT</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#前端网络状态" data-toc-link> <span class="_linkText_kec3t_264">前端网络状态</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#xss" data-toc-link> <span class="_linkText_kec3t_264">XSS</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#防护手段" data-toc-link> <span class="_linkText_kec3t_264">防护手段</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#csp-内容安全策略" data-toc-link> <span class="_linkText_kec3t_264">CSP 内容安全策略</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#限制选项" data-toc-link> <span class="_linkText_kec3t_264">限制选项</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#选项值" data-toc-link> <span class="_linkText_kec3t_264">选项值</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#script-src" data-toc-link> <span class="_linkText_kec3t_264">script-src</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#http" data-toc-link> <span class="_linkText_kec3t_264">HTTP</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http消息" data-toc-link> <span class="_linkText_kec3t_264">HTTP消息</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http10" data-toc-link> <span class="_linkText_kec3t_264">HTTP1.0</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http11" data-toc-link> <span class="_linkText_kec3t_264">HTTP1.1</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http2" data-toc-link> <span class="_linkText_kec3t_264">HTTP2</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#二进制分帧" data-toc-link> <span class="_linkText_kec3t_264">二进制分帧</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#多路复用-multiplexing" data-toc-link> <span class="_linkText_kec3t_264">多路复用 MultiPlexing</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#标头压缩" data-toc-link> <span class="_linkText_kec3t_264">标头压缩</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#服务器推送-server-push" data-toc-link> <span class="_linkText_kec3t_264">服务器推送 Server Push</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http3" data-toc-link> <span class="_linkText_kec3t_264">HTTP3</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#quic的多路复用" data-toc-link> <span class="_linkText_kec3t_264">QUIC的多路复用</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#连接建立" data-toc-link> <span class="_linkText_kec3t_264">连接建立</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#连接迁移" data-toc-link> <span class="_linkText_kec3t_264">连接迁移</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#其它" data-toc-link> <span class="_linkText_kec3t_264">其它</span> </a>  </li> </ol> </ol> </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#https" data-toc-link> <span class="_linkText_kec3t_264">HTTPS</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#tls握手" data-toc-link> <span class="_linkText_kec3t_264">TLS握手</span> </a>  </li> </ol> </ol> </li> </ol> <div class="_foot_kec3t_283"> <a class="_top_kec3t_293" href="#main" data-toc-link> <span aria-hidden="true">↑</span>
+回到顶部
+</a> <a class="_top_kec3t_293 undefined" href="#comments" data-toc-link> <span aria-hidden="true">↓</span>
+评论区
+</a> </div> </div> </div> </dialog>  <div id="article-content" class="prose" data-reading-target data-pagefind-body> <h2 id="前言">前言</h2>
+<p><strong>计算机网络：<strong>是一个将</strong>分散</strong>的、具有<strong>独立</strong>功能的<strong>计算机系统</strong>，通过<strong>通信设备</strong>与<strong>线路</strong>连接起来，由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的<strong>系统</strong>。</p>
+<p>计网的东西很多，但具体底层的东西，现在还没必要去深究，前端中的网络知识更多是关注偏上层的内容，如TCP、HTTP等，以及相关的技术和工具。</p>
+<h2 id="分层体系结构">分层体系结构</h2>
+<p>计算机网络是个复杂的系统，<strong>分层</strong>可将复杂的问题转为若干较小的局部问题，易于研究与处理。</p>
+<p>常见的分层体系结构：</p>
+<ol>
+<li><strong>OSI七层模型</strong> OSI（Open System Interconnect）开放式系统互联。是ISO（国际标准化组织）组织在1985年研究的网络互连模型。</li>
+<li><strong>TCP/IP四层模型</strong> OSI是一种理论下的模型，而TCP/IP已被广泛使用，成为网络互联事实上的标准。</li>
+<li><strong>五层原理模型</strong> 便于对计算机网络进行理解和学习的教学模型。</li>
+</ol>
+<p>OSI七层模型：</p>
+<ol>
+<li><strong>物理层</strong> 传输数据的物理媒介，如电缆、光纤、无线电波等。</li>
+<li><strong>数据链路层</strong> 传输数据的链路，如以太网、无线局域网等。</li>
+<li><strong>网络层</strong> IP寻址和路由选择。</li>
+<li><strong>传输层</strong> 建立进程间的端到端连接，如TCP、UDP。</li>
+<li><strong>会话层</strong> 建立会话连接。</li>
+<li><strong>表示层</strong> 提供数据格式转换、数据加密、数据压缩等功能。</li>
+<li><strong>应用层</strong> 为应用程序提高网络服务。</li>
+</ol>
+<p>TCP/IP四层模型：</p>
+<ol>
+<li><strong>网络接口层</strong> 物理层、数据链路层的合并。</li>
+<li><strong>网际层</strong> 网络层。</li>
+<li><strong>传输层</strong> 传输层。</li>
+<li><strong>应用层</strong>：会话层、表示层、应用层的合并。</li>
+</ol>
+<p>而<strong>五层原理模型</strong>是在TCP/IP模型的基础上，将物理层、数据链路层分开，便于理解和学习。</p>
+<h3 id="术语">术语</h3>
+<ol>
+<li><strong>实体</strong> 任何可发送和接收信息的<strong>硬件</strong>或<strong>软件进程</strong>。</li>
+<li><strong>对等实体</strong> <strong>相同层次</strong>中的实体。</li>
+<li><strong>协议</strong> 控制两个<strong>对等实体</strong>进行<strong>逻辑通信</strong>的规则集合。</li>
+</ol>
+<p><strong>协议</strong>的<strong>三要素：</strong></p>
+<ol>
+<li><strong>语法</strong> 定义所交换信息的格式</li>
+<li><strong>语义</strong> 定义收发双方要完成的操作。</li>
+<li><strong>时序</strong> 定义操作的时序关系。</li>
+</ol>
+<p><strong>服务：</strong></p>
+<ol>
+<li>本层使用下层的服务，实现本层的协议，并完成对等实体的<strong>逻辑通信</strong>。</li>
+<li>在协议的控制下，两个对等实体进行逻辑通信，使得本层能够向上层提供服务。</li>
+<li>协议是<strong>水平</strong>的，而服务是<strong>垂直</strong>的。</li>
+<li>实体能使用相邻下层提供的服务，但不知道实现服务的具体协议，下层的协议对上层是<strong>透明</strong>的。</li>
+<li><strong>服务访问点</strong> 在同一系统中相邻两层的实体交换信息的逻辑接口，用于区分不同的服务类型。</li>
+<li><strong>服务原语</strong> 上层使用下层服务的方式（需要交换的<strong>命令</strong>）。</li>
+<li><strong>服务数据单元SDU</strong> 服务访问点之间交换的<strong>数据包</strong>。</li>
+<li><strong>协议数据单元PDU</strong> 对等实体之间交换的<strong>数据包</strong>。</li>
+</ol>
+<h3 id="五层原理模型">五层原理模型</h3>
+<p><strong>物理层：</strong></p>
+<ol>
+<li><strong>数据包：</strong> 比特流</li>
+<li>**协议任务：**规定传输媒体的机械、电气、功能和过程特性。</li>
+<li>考虑如何在连接各种设备的<strong>物理传输媒介</strong>上传输数据(<strong>比特流</strong>)。</li>
+<li>为数据链路层屏蔽了各种物理传输媒介的差异，使链路层只需考虑如何完成自己的协议和服务，而不必考虑网络的物理细节。</li>
+</ol>
+<p><strong>数据链路层：</strong></p>
+<ol>
+<li>**数据包：**帧</li>
+<li>**服务访问点：**帧的类型字段</li>
+<li><strong>封装成帧：<strong>将网络层的数据包封装成帧，添加</strong>帧头</strong>和<strong>帧尾</strong>。</li>
+<li>**透明传输：**对网络层交付的数据没有限制，就好像链路层不存在一样。通过比特填充或字符填充实现。</li>
+<li><strong>差错检测：<strong>使用</strong>差错检测码</strong>，通过奇偶校验、CRC循环冗余校验等方法检测数据的<strong>比特差错</strong>。</li>
+<li><strong>可靠传输：<strong>检测到</strong>误码</strong>后，不可靠传输<strong>直接丢弃</strong>有误码的帧，可靠传输则想办法实现接收到的数据与发送的数据一致。如停止等待协议SW、回退N帧协议GBN、选择重传协议SR。</li>
+<li><strong>有线链路</strong>误码率较低，一般不要求链路层提供可靠传输服务，即使有误码也由上层进行处理。而<strong>无线链路</strong>易受干扰，误码率较高，所以链路层必须提供可靠传输服务。</li>
+<li>可靠传输并不只在链路层实现，各层都有不同的<strong>传输差错</strong>，如分组丢失、分组重复、报文段丢失等，各层都可以根据应用需求，选择提供可靠传输服务。</li>
+<li><strong>点对点PPP协议</strong> 实现了透明传输、差错检测、向上提供<strong>不可靠</strong>传输服务。</li>
+<li><strong>媒体接入控制MAC</strong> 信道复用、CSMA/CD(多址接入、载波监听、碰撞检测)</li>
+<li>**MAC地址：**每个主机（接口）的唯一标识，一般被固化在网卡（网络适配器）上，也称为硬件地址。</li>
+</ol>
+<p><strong>网络层：</strong></p>
+<ol>
+<li>**数据包：**IP数据报或分组</li>
+<li>**服务访问点：**IP数据报首部的协议字段</li>
+<li>**路由选择：**选择合适的路径，将数据包从源主机传输到目的主机。</li>
+<li>**分组转发：**将数据包从一个网络节点传输到另一个网络节点。</li>
+<li><strong>IP地址：<strong>每个主机和路由器的唯一标识，由</strong>网络号</strong>和<strong>主机号</strong>组成。</li>
+<li>**子网掩码：**用于划分网络号和主机号。</li>
+<li><strong>路由器：<strong>实现了网络层的功能，负责</strong>转发</strong>数据包，<strong>选择</strong>合适的路径，<strong>拥塞控制</strong>等。</li>
+<li><strong>ARP</strong>地址解析协议：将IP地址解析为MAC地址。</li>
+</ol>
+<p><strong>传输层：</strong></p>
+<ol>
+<li>**数据包：**TCP报文段或UDP用户数据报</li>
+<li>**服务访问点：**端口号</li>
+<li>面向通信的最高层，面向用户功能的最低层。</li>
+<li>为运行在不同主机上的<strong>应用进程</strong>提供端到端的<strong>逻辑通信</strong>。</li>
+<li>**端口：**通过端口号来区分不同的应用进程。将数据包交付给正确的应用进程。</li>
+<li><strong>TCP</strong> 提供<strong>可靠</strong>的、面向<strong>连接</strong>的、<strong>字节流</strong>的<strong>通信服务</strong>。</li>
+<li><strong>UDP</strong> 提供<strong>不可靠</strong>的、无连接的、<strong>数据报</strong>的<strong>通信服务</strong>。</li>
+<li><strong>拥塞控制：<strong>TCP通过</strong>滑动窗口</strong>、<strong>超时重传</strong>、<strong>拥塞窗口</strong>、慢开始和拥塞避免、快重传和快恢复。</li>
+</ol>
+<p><strong>应用层：</strong></p>
+<ol>
+<li>**数据包：**报文</li>
+<li><strong>DHCP</strong>动态主机配置协议：为主机分配IP地址。基于UDP。</li>
+<li><strong>ICMP</strong>网际控制报文协议：报文发送出错的处理。终点不可达、超时、源点抑制等。</li>
+<li>客户/服务器模型：客户端向服务器请求服务，服务器向客户端提供服务。</li>
+<li>P2P模型：网络中的每个主机既是客户端也是服务器。数据不再存储在中心服务器上。</li>
+<li>DNS域名系统：将域名解析为IP地址。</li>
+<li>FTP文件传输协议：文件传输。</li>
+<li>电子邮件：SMTP、POP3、IMAP。</li>
+<li>WWW万维网：基于HTTP协议的分布式信息系统。由URL（统一资源定位符）对资源定位，这些资源通过HTTP协议传输。</li>
+<li>HTTP超文本传输协议：使用TCP协议进行可靠传输。</li>
+</ol>
+<h2 id="tcp">TCP</h2>
+<p><strong>传输控制协议</strong>（Transmission Control Protocol，简称 TCP）是一种 <strong>面向连接</strong>（连接导向）的、可靠的、 基于 IP 协议的传输层协议。</p>
+<ol>
+<li>**面向连接：**每条 TCP 连接只能有两个端点（亦即点对点，不可广播、多播），每一条 TCP 连接只能是一对一。</li>
+<li>**可靠的传输服务：**通过 TCP 连接传送的数据，无差错、不丢失、不重复、并且按序到达，丢包时通过重传机制进而增加时延实现可靠性。</li>
+<li>**全双工通信：**TCP 允许通信双方的应用进程在任何时候都能发送数据。TCP 连接的两端都设有发送缓存和接收缓存，用来临时存放双方通信的数据。</li>
+<li>**字节流：**面向字节流，TCP 中的 流（Stream）指的是流入进程或从进程流出的字节序列。</li>
+<li>**流量缓冲：**解决速度不匹配问题。</li>
+</ol>
+<p><strong>数据包结构:</strong></p>
+<img src="/assets/posts/66af020002fde754.webp" loading="lazy" decoding="async" style="width:80%" width="886" height="431" srcset="/assets/posts/66af020002fde754-480.webp 480w, /assets/posts/66af020002fde754-768.webp 768w, /assets/posts/66af020002fde754.webp 886w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>TCP 首部标志比特有 6 个：URG、ACK、PSH、RST、SYN、FIN</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>控制位</th><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>URG</td><td>Urgent Flag</td><td>紧急指针</td></tr><tr><td><strong>ACK</strong></td><td>Acknowledge Flag</td><td>确认序号有效</td></tr><tr><td>PSH</td><td>Push Flag</td><td>尽可能快地将数据送往接收进程</td></tr><tr><td>RST</td><td>Reset Flag</td><td>可能需要重现创建建 TCP 连接</td></tr><tr><td><strong>SYN</strong></td><td>Synchronize</td><td>同步序号来发起一个连接</td></tr><tr><td><strong>FIN</strong></td><td>Finish</td><td>发送方完成发送任务，要求释放连接</td></tr></tbody></table>
+<p>两个32位号：</p>
+<ol>
+<li><strong>Seq</strong>(Sequance number) <strong>序列号</strong>，是上次已成功发送的序号+1。</li>
+<li><strong>Ack</strong>() <strong>确认序号</strong>，让发送方(对方)下一次发送的序号，即接收方下一次期望收到的序号。</li>
+</ol>
+<h3 id="三次握手">三次握手</h3>
+<p>TCP 提供<strong>面向连接</strong>的通信传输，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。三次握手是指建立一个 TCP 连接时需要客户端和服务器端总共发送三个包以确认连接的建立。</p>
+<p><strong>目的：</strong></p>
+<ol>
+<li>同步连接双方的 Sequence 序列号和确认号。</li>
+<li>交换 TCP 窗口大小信息，如 MSS、窗口比例因子、选择性确认、指定校验和算法。</li>
+</ol>
+<img src="/assets/posts/a3393194dc3d4deb.webp" loading="lazy" decoding="async" style="width:80%" width="1726" height="1244" srcset="/assets/posts/a3393194dc3d4deb-480.webp 480w, /assets/posts/a3393194dc3d4deb-768.webp 768w, /assets/posts/a3393194dc3d4deb-1280.webp 1280w, /assets/posts/a3393194dc3d4deb.webp 1726w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>握手过程中传送的包里不包含数据，但第三次握手可以发送数据。</p>
+<h3 id="四次挥手">四次挥手</h3>
+<p>断开一个 TCP 连接时，需要客户端和服务端总共发送 4 个包以确认连接的断开。</p>
+<p>由于 TCP 连接是<strong>全双工</strong>的，因此，每个方向都必须要单独进行关闭，</p>
+<img src="/assets/posts/4b0847593dcc097a.webp" loading="lazy" decoding="async" style="width:80%" width="1644" height="1360" srcset="/assets/posts/4b0847593dcc097a-480.webp 480w, /assets/posts/4b0847593dcc097a-768.webp 768w, /assets/posts/4b0847593dcc097a-1280.webp 1280w, /assets/posts/4b0847593dcc097a.webp 1644w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>在客户端发送最后一个ACK包后，会进入 <strong>TIME_WAIT</strong> 超时等待状态，通常持续1-4分钟，这是为了实现<strong>可靠、稳定的</strong>传输，若该ACK包丢失了，服务端会超时重发FIN包，客户端接收到重发的FIN包后，重新发送ACK包。</p>
+<h2 id="输入url后">输入url后</h2>
+<p>浏览器输入url后：</p>
+<ol>
+<li><strong>解析URL</strong> 解析出协议、域名、端口、资源路径、参数等。</li>
+<li><strong>[查询缓存]</strong> 如果HTTP缓存命中，则直接返回缓存资源。详见：<a href="/article/7343d222.html">浏览器HTTP缓存</a></li>
+<li><strong>DNS解析</strong> 若域名部分是一个主机名，则通过DNS将域名转换为IP地址。</li>
+<li><strong>建立TCP连接</strong> 三次握手。</li>
+<li><strong>[SSL/TLS]</strong> 如果是 HTTPS 协议，还需要进行 SSL/TLS 握手过程，以协商出一个会话密钥，用于消息加密，提升安全性。</li>
+<li><strong>发送HTTP请求</strong> HTTP请求中包含了浏览器需要获取的资源的相关信息，如请求的方法、资源的路径、查询参数、请求头部信息等。服务器收到HTTP请求后，会根据请求的内容进行处理，并返回相应的HTTP响应。</li>
+<li><strong>接收服务器响应</strong> 获取页面所需的各种资源。</li>
+<li><strong>页面渲染</strong> 将静态资源转为可视、可交互的页面，详见：<a href="/article/4aea0348.html">浏览器渲染流程</a>。</li>
+<li><strong>断开TCP连接</strong> 四次挥手。</li>
+</ol>
+<h3 id="dns解析">DNS解析</h3>
+<p>域名具有<strong>分层结构</strong>，以 <code>www.baidu.com</code> 为例</p>
+<ol>
+<li><code>com</code> 是顶级域名</li>
+<li><code>baidu.com</code> 是主域名、一级域名</li>
+<li><code>www.baidu.com</code> 是子域名、二级域名</li>
+</ol>
+<p><strong>DNS 域名解析系统</strong>（Domain Name System）是将域名转换为IP地址的服务器。</p>
+<p>DNS 服务器也具有对应的层级结构，每个层的域名上都有自己的域名服务器，最顶层的是根域名服务器。</p>
+<ol>
+<li><strong>本地域名服务器</strong>	DNS Resolver 或 Local DNS。本地域名服务器是响应来自客户端的递归请求，并最终跟踪直到获取到解析结果的 DNS 服务器。例如用户本机自动分配的 DNS、运营商 ISP 分配的 DNS、谷歌/114 公共 DNS 等。</li>
+<li><strong>根域名服务器</strong>	Root NameServer，本地域名服务器在本地查询不到解析结果时，则第一步会向它进行查询，并获取顶级域名服务器的 IP 地址。</li>
+<li><strong>顶级域名服务器</strong>	TLD（Top-level）NameServer。负责管理在该顶级域名服务器下注册的一级域名。例如 <a href="http://www.example.com%E3%80%81.com">www.example.com、.com</a> 则是顶级域名服务器，在向它查询时，可以返回一级域名 example.com 所在的权威域名服务器地址。</li>
+<li><strong>权威域名服务器</strong>	Authoritative NameServer。在特定区域内具有唯一性，负责维护该区域内的域名与 IP 地址之间的对应关系，例如云解析 DNS。</li>
+</ol>
+<p><strong>DNS解析过程：</strong></p>
+<ol>
+<li>查询浏览器自身DNS。</li>
+<li>操作系统DNS。</li>
+<li>本地 hosts 文件。</li>
+<li>向域名服务器发送请求。</li>
+</ol>
+<p><strong>DNS查询方式：</strong></p>
+<ol>
+<li><strong>递归查询</strong> 如果主机所询问的本地域名服务器不知道被查询域名的 IP 地址，那么本地域名服务器就以 DNS 客户端的身份，向其他根域名服务器继续发出查询请求报文，即替主机继续查询，而不是让主机自己进行下一步查询。</li>
+<li><strong>迭代查询</strong> 当根域名服务器收到本地域名服务器发出的迭代查询请求报文时，要么给出所要查询的IP 地址，要么告诉本地服务器下一步应该找哪个域名服务器进行查询，然后让本地服务器进行后续的查询。</li>
+</ol>
+<p>通常<strong>客户端</strong>与<strong>本地域名服务器</strong>之间是<strong>递归查询</strong>，而<strong>本地域名服务器</strong>与<strong>其它层级</strong>之间是<strong>迭代查询</strong>。</p>
+<img src="/assets/posts/ef76ce0f814cea62.webp" loading="lazy" decoding="async" style="width:80%" width="691" height="503" srcset="/assets/posts/ef76ce0f814cea62-480.webp 480w, /assets/posts/ef76ce0f814cea62.webp 691w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<h2 id="跨域">跨域</h2>
+<p>老生常谈的<strong>跨域</strong>问题，是由于<strong>浏览器</strong>的<strong>同源策略</strong>导致的。</p>
+<p><strong>详见：</strong>
+<a href="/article/f3334fd0.html#%E8%B7%A8%E5%9F%9F">AJAX请求相关-跨域</a>
+<a href="/article/9b01fd71.html#CORS">Node-回眸[三]-CORS</a>
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS">跨源资源共享（CORS）-MDN</a>
+<a href="https://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解-阮一峰</a></p>
+<p>同源策略：<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong> 三者相同，即为同源，否则为跨域。</p>
+<p><strong>解决跨域问题：</strong></p>
+<ol>
+<li>fetch 设置 no-cors 模式，在该模式下，浏览器不会将Origin包含在请求偷中，并且服务器的响应是不透明的，JS无法获取响应内容。此模式适用于不需要服务器响应的情况，例如向第三方分析服务发出请求。</li>
+</ol>
+<div class="expressive-code"><link rel="stylesheet" href="/_static/expressive-code.35cb7027.css" /><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre><code><div class="ec-line"><div class="code"><span class="t9">fetch</span>(<span class="t2">'https://share.qcqx.cn/'</span>, {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>mode:  <span class="t2">'no-cors'</span> ,</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>method: <span class="t2">'GET'</span>,</div></div><div class="ec-line"><div class="code">})</div></div><div class="ec-line"><div class="code">.<span class="t9">then</span>(<span class="t10">response</span> <span class="t12">=></span> response.<span class="t9">json</span>())</div></div><div class="ec-line"><div class="code">.<span class="t9">then</span>(<span class="t10">data</span> <span class="t12">=></span> console.<span class="t9">log</span>(data))</div></div><div class="ec-line"><div class="code">.<span class="t9">catch</span>(<span class="t10">error</span> <span class="t12">=></span> console.<span class="t9">error</span>(error))</div></div></code></pre></figure></div>
+<ol>
+<li><strong>JSONP</strong> 利用 script 标签的 src 属性不受同源策略限制的特点，通过动态创建 script 标签，将请求的数据作为查询参数，服务器返回的数据会被当做 JS 代码执行(通常是调用一个函数，将数据作为该函数的参数)。</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code"><span class="t12">function</span> <span class="t9">jsonp</span>(<span class="t10">url</span>, <span class="t10">name</span>) {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> <span class="t0">script</span> <span class="t12">=</span> document.<span class="t9">createElement</span>(<span class="t2">'script'</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>script.src <span class="t12">=</span> url <span class="t12">+</span> <span class="t2">'?callback='</span> <span class="t12">+</span> name;</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>document.body.<span class="t9">appendChild</span>(script);</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">return</span> <span class="t12">new</span> <span class="t0">Promise</span>((<span class="t10">resolve</span>, <span class="t10">reject</span>) <span class="t12">=></span> {</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">// 全局记录回调函数，服务器返回的数据会被当做 JS 代码执行，即执行回调函数</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>window[name] <span class="t12">=</span> <span class="t10">data</span> <span class="t12">=></span> {</div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span class="t9">resolve</span>(data);</div></div><div class="ec-line"><div class="code"><span class="indent">      </span>document.body.<span class="t9">removeChild</span>(script);</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>}</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>})</div></div><div class="ec-line"><div class="code">}</div></div><div class="ec-line"><div class="code"><span class="t9">jsonp</span>(<span class="t2">'https://share.qcqx.cn/'</span>, <span class="t2">'callback'</span>).<span class="t9">then</span>(console.log);</div></div><div class="ec-line"><div class="code"><span class="t8">// 后端部分</span></div></div><div class="ec-line"><div class="code"><span class="t12">const</span> <span class="t0">data</span> <span class="t12">=</span> {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>name: <span class="t2">'chuckle'</span></div></div><div class="ec-line"><div class="code">}</div></div><div class="ec-line"><div class="code">app.<span class="t9">all</span>(<span class="t2">'/test'</span>, (<span class="t10">req</span>,<span class="t10">res</span>)<span class="t12">=></span>{</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> { <span class="t0">callback</span> } <span class="t12">=</span> req.query;</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t8">// 返回数据，即执行回调函数，将数据作为参数</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>res.<span class="t9">end</span>(<span class="t2">`callback(${</span>data<span class="t2">.</span>name<span class="t2">})`</span>);</div></div><div class="ec-line"><div class="code">})</div></div></code></pre></figure></div>
+<ol>
+<li><strong>CORS</strong>（Cross-Origin Resource Sharing）跨源资源共享，服务器端设置响应头，以允许跨域请求。通常还需要设置允许的请求头、请求方式、是否携带cookie等。</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code"><span class="t8">// 请求来源白名单</span></div></div><div class="ec-line"><div class="code"><span class="t12">const</span> <span class="t0">allowedOrigins</span> <span class="t12">=</span> [<span class="t2">"127.0.0.1:5500"</span>, <span class="t0">undefined</span>];</div></div><div class="ec-line"><div class="code">app.<span class="t9">use</span>((<span class="t10">req</span>, <span class="t10">res</span>, <span class="t10">next</span>) <span class="t12">=></span> {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> <span class="t0">origin</span> <span class="t12">=</span> req.headers.origin;</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t8">// 判断请求来源是否在白名单内</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">if</span> (</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>(origin <span class="t12">&#x26;&#x26;</span> allowedOrigins.<span class="t9">some</span>((<span class="t10">item</span>) <span class="t12">=></span> origin.<span class="t9">includes</span>(item))) <span class="t12">||</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>allowedOrigins.<span class="t9">includes</span>(origin)</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>) {</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">// 设置允许跨域的域名，*代表允许任意域名跨域</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>res.<span class="t9">header</span>(<span class="t2">'Access-Control-Allow-Origin'</span>, origin);</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">// 允许的header类型，如下设置允许自定义header、允许Content-Type为非默认值等，按需删改</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>res.<span class="t9">header</span>(<span class="t2">'Access-Control-Allow-Headers'</span>, <span class="t2">"*, Origin, X-Requested-With, Content-Type, Accept, Authorization"</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">// 跨域允许的请求方式</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>res.<span class="t9">header</span>(<span class="t2">'Access-Control-Allow-Methods'</span>, <span class="t2">'PUT, POST, GET, DELETE, PATCH ,OPTIONS'</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">// 跨域的时候是否携带cookie</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t8">// 需要与 XMLHttpRequest.withCredentials 或 Fetch API 的 Request() 构造函数中的 credentials 选项结合使用</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>res.<span class="t9">header</span>(<span class="t2">"Access-Control-Allow-Credentials"</span>, <span class="t0">true</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t12">if</span> (req.method.<span class="t9">toLowerCase</span>() <span class="t12">==</span> <span class="t2">'options'</span>) {</div></div><div class="ec-line"><div class="code"><span class="indent">      </span>res.<span class="t9">send</span>(<span class="t0">200</span>); <span class="t8">// 让options请求快速结束</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span>}</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t12">else</span> {</div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span class="t9">next</span>();</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>}</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>} <span class="t12">else</span> {</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>res.<span class="t9">status</span>(<span class="t0">403</span>).<span class="t9">send</span>(<span class="t2">'Forbidden'</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>}</div></div><div class="ec-line"><div class="code">})</div></div></code></pre></figure></div>
+<ol>
+<li>**本地代理：**webpack、vite等构建工具都提供了代理配置，将请求代理到本地服务器，再由本地服务器请求真实数据，从而避免跨域问题。只能用于开发环境。</li>
+<li>nginx 代理，将请求代理到后端服务器，避免跨域。适合生产环境。</li>
+</ol>
+<h2 id="ajax相关">ajax相关</h2>
+<p>详见：<a href="/article/f3334fd0.html">AJAX请求相关</a></p>
+<h2 id="sse">SSE</h2>
+<p>详见：<a href="/article/9b01fd71.html#SSE%E5%8D%95%E5%B7%A5%E9%80%9A%E4%BF%A1">Node-回眸[三]-SSE单工通信</a></p>
+<h2 id="websocket">WebSocket</h2>
+<p>详见：<a href="/article/9b01fd71.html#WebSocket%E5%8F%8C%E5%B7%A5%E9%80%9A%E4%BF%A1">Node-回眸[三]-WebSocket双工通信</a></p>
+<h2 id="jwt">JWT</h2>
+<p><a href="https://jwt.io/introduction">JWT-JSON Web Token</a> 用于会话控制、用户认证，<strong>无状态</strong>，通常无需服务端存储。</p>
+<p>JWT 以 JSON 对象的形式安全地传输信息。该信息可以被验证和信任，因为它是经过数字签名的。</p>
+<p>JWT 由三部分组成，使用 Base64 编码，以点号分隔：</p>
+<ol>
+<li><strong>Header</strong> 头部，包含了两部分：token 的类型（即 JWT）和使用的加密算法（如 HMAC SHA256 或 RSA）。</li>
+<li><strong>Payload</strong> 负载，包含了要传递的信息，如用户 ID、用户名等。</li>
+<li><strong>Signature</strong> 签名，由头部、负载、密钥、加密算法生成，用于验证消息的完整性、防止篡改。</li>
+</ol>
+<blockquote>
+<p>可以使用 <a href="https://jwt.io/#debugger-io">jwt.io 调试器</a>、<a href="https://www.bejson.com/jwt/">jwt解密/加密</a> 在线验证和生成 JWT。</p>
+</blockquote>
+<p><strong>Payload</strong> 预先定义了7个<strong>标准字段</strong>，这些字段是推荐的，但不是必须的：</p>
+<ol>
+<li><strong>iss</strong> (issuer)：签发者</li>
+<li><strong>sub</strong> (subject)：主题</li>
+<li><strong>aud</strong> (audience)：受众</li>
+<li><strong>exp</strong> (expiration time)：过期时间</li>
+<li><strong>nbf</strong> (Not Before)：生效时间</li>
+<li><strong>iat</strong> (Issued At)：签发时间</li>
+<li><strong>jti</strong> (JWT ID)：编号</li>
+</ol>
+<p><strong>签名：</strong>
+JWT 会使用<strong>头部中指定的加密算法</strong>（如 HS256）对头部和负载进行签名，作为 <strong>Signature</strong> 部分。
+签名只是用于验证 token 的完整性，在使用密钥加密后可进行验证，防止篡改。
+**校验过程：**使用相同的密钥和算法对头部和负载进行签名，然后与接收到的签名进行比较，若一致则验证通过。</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code"><span class="t9">HMACSHA256</span>(</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">base64UrlEncode</span>(header) <span class="t12">+</span> <span class="t2">"."</span> <span class="t12">+</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">base64UrlEncode</span>(payload),</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>secret <span class="t8">// 密钥</span></div></div><div class="ec-line"><div class="code">)</div></div></code></pre></figure></div>
+<p>负载半身并不加密，只是 Base64 编码，所以<strong>不要在 JWT 中存储敏感信息</strong>，如密码等。</p>
+<p>jwt 通常放在请求头的 <code>Authorization</code> 字段中：</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">Authorization: Bearer &#x3C;token></div></div></code></pre></figure></div>
+<p>在 Node 和 Nest 中使用 JWT，<strong>详见：</strong>
+<a href="/article/a1e193d6.html#token">NodeJS接口、会话控制#token</a>
+<a href="/article/73b2ab6d.html#JWT-token">NestJS[三]-进阶#JWT-token</a></p>
+<h2 id="前端网络状态">前端网络状态</h2>
+<p><code>navigator.onLine</code> 返回一个布尔值，表示用户的设备是否与网络连接，即是否在线。</p>
+<p><strong>window 的两个事件：</strong></p>
+<ol>
+<li><strong>online</strong> 从离线状态变为在线状态时触发。</li>
+<li><strong>offline</strong> 从在线状态变为离线状态时触发。</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">window.<span class="t9">addEventListener</span>(<span class="t2">'online'</span>, () <span class="t12">=></span> {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>console.<span class="t9">log</span>(<span class="t2">'online'</span>);</div></div><div class="ec-line"><div class="code">});</div></div><div class="ec-line"><div class="code">window.<span class="t9">addEventListener</span>(<span class="t2">'offline'</span>, () <span class="t12">=></span> {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>console.<span class="t9">log</span>(<span class="t2">'offline'</span>);</div></div><div class="ec-line"><div class="code">});</div></div></code></pre></figure></div>
+<p><strong>区分强弱网络环境：</strong>
+<code>navigator.connection</code> 返回 <code>NetworkInformation</code> 对象，包含了用户设备的网络信息。</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">{</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">downlink</span>: <span class="t0">10</span> <span class="t8">// 预估下行速度，单位Mbps</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">effectiveType</span>: <span class="t2">"4g"</span> <span class="t8">// 网速类型，如 4g、3g、2g、slow-2g</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">onchange</span>: <span class="t0">null</span> <span class="t8">// 网络状态变化时触发的事件，可监听</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">rtt</span>: <span class="t0">150</span> <span class="t8">// 预估往返时间，单位ms</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t9">saveData</span>: <span class="t0">false</span> <span class="t8">// 是否开启数据节省模式</span></div></div><div class="ec-line"><div class="code">}</div></div></code></pre></figure></div>
+<h2 id="xss">XSS</h2>
+<p>XSS 跨站脚本攻击（Cross-Site Scripting）</p>
+<p>**方式：**在目标网站 HTML 页面中注入恶意脚本，并使之执行，从而获取用户 cookie、token 等敏感信息。
+**本质：**恶意代码未经过滤，与网站正常的代码混在一起，被浏览器执行。</p>
+<p>可分为三种类型</p>
+<ol>
+<li><strong>反射型</strong> 将恶意脚本放在 URL 中，通常需要用户手动点击。</li>
+<li><strong>存储型</strong> 将恶意脚本存储在数据库中。最严重。</li>
+<li><strong>DOM型</strong> 修改页面的DOM节点，将恶意脚本插入到页面中。</li>
+</ol>
+<p>实际上几种类型通常是混合使用的。最后总是要通过漏洞将恶意脚本插入到页面中执行。</p>
+<p><strong>一个XSS靶场：</strong><a href="https://xssaq.com/yx/level1.php">xssaq</a></p>
+<p>例子：</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">&#x3C;<span class="t5">textarea</span> <span class="t9">id</span>=<span class="t2">"input"</span>>&#x3C;/<span class="t5">textarea</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">div</span> <span class="t9">id</span>=<span class="t2">"root"</span>>&#x3C;/<span class="t5">div</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">script</span>></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> <span class="t0">input</span> <span class="t12">=</span> document.<span class="t9">getElementById</span>(<span class="t2">'input'</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> <span class="t0">root</span> <span class="t12">=</span> document.<span class="t9">getElementById</span>(<span class="t2">'root'</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>input.<span class="t9">addEventListener</span>(<span class="t2">'keydown'</span>, <span class="t12">function</span> (<span class="t10">e</span>) {</div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span class="t12">if</span> (e.key <span class="t12">===</span> <span class="t2">'Enter'</span>) {</div></div><div class="ec-line"><div class="code"><span class="indent">      </span>e.<span class="t9">preventDefault</span>();</div></div><div class="ec-line"><div class="code"><span class="indent">      </span>root.innerHTML <span class="t12">=</span> input.value;</div></div><div class="ec-line"><div class="code"><span class="indent">      </span>input.value <span class="t12">=</span> <span class="t2">''</span>;</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>}</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>});</div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">script</span>></div></div></code></pre></figure></div>
+<p>用户输入的内容未经过滤就插入到页面中。<strong>有效载荷（Payload）：</strong></p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">&#x3C;<span class="t5">script</span>><span class="t9">alert</span>(document.cookie)&#x3C;/<span class="t5">script</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">img</span> <span class="t9">src</span>=<span class="t2">"x"</span> <span class="t9">onerror</span>=<span class="t2">"</span><span class="t9">alert</span><span class="t2">(</span>document<span class="t2">.</span>cookie<span class="t2">)"</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">input</span> <span class="t9">onfocus</span>=<span class="t2">"</span><span class="t9">alert</span><span class="t2">(</span>document<span class="t2">.</span>cookie<span class="t2">)"</span> <span class="t9">autofocus</span>></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">a</span> <span class="t9">href</span>=<span class="t2">"javascript:alert(document.cookie)"</span>>&#x3C;/<span class="t5">a</span>></div></div></code></pre></figure></div>
+<p><strong>常见攻击漏洞：</strong></p>
+<ol>
+<li><strong>未过滤的用户输入</strong> 如上例，常见于评论、搜索等，innerHTML 会将输入的内容解析为 HTML。</li>
+<li><strong>标签拼接漏洞</strong> 常见于后端模板渲染时，未进行 HTML 实体字符转义。</li>
+<li><strong>提前闭合标签</strong> 对于 input、textarea 等原生会将输入数据转为字符串的标签，可以通过提前闭合标签绕过。</li>
+<li><strong>0级事件注入</strong>，如 <code>onerror</code>、<code>onload</code>、<code>onclick</code> 等。</li>
+<li>在标签的 href、src 等属性中，包含 <code>javascript:</code> 等可执行代码</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code"><span class="t8">// 提前闭合标签</span></div></div><div class="ec-line"><div class="code"><span class="t12">function</span> <span class="t9">serverRender</span>(<span class="t10">input</span>) {</div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> <span class="t0">html</span> <span class="t12">=</span> <span class="t2">`&#x3C;input type="text" value="${</span>input<span class="t2">}">`</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span class="t12">const</span> <span class="t0">root</span> <span class="t12">=</span> document.<span class="t9">getElementById</span>(<span class="t2">'root'</span>);</div></div><div class="ec-line"><div class="code"><span class="indent">  </span>root.innerHTML <span class="t12">=</span> html;</div></div><div class="ec-line"><div class="code">}</div></div><div class="ec-line"><div class="code"><span class="t9">serverRender</span>(<span class="t2">'">&#x3C;img src="x" onerror="alert(document.cookie)">'</span>)</div></div></code></pre></figure></div>
+<p>现代化的浏览器通常已经对 XSS 的代码注入进行了一定的防护。HTML5 也规定了不执行由 innerHTML 插入的 script 标签。</p>
+<h3 id="防护手段">防护手段</h3>
+<ol>
+<li><strong>转义字符</strong> 将特殊字符转义为 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Entity">HTML 实体字符</a>，如 <code>&#x3C;</code> 转为 <code>&#x26;lt;</code>。</li>
+<li>对 <code>javascript:</code> 进行过滤。</li>
+<li>Cookie 开启 <code>HttpOnly</code>，防止 JS 访问。</li>
+<li><strong>CSP</strong> Content-Security-Policy 内容安全策略，限制页面加载的资源。</li>
+</ol>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">root.innerHTML <span class="t12">=</span> input.value.<span class="t9">replace</span>(<span class="t2">/</span><span class="t3">&#x3C;</span><span class="t2">/</span><span class="t12">g</span>, <span class="t2">'&#x26;lt;'</span>).<span class="t9">replace</span>(<span class="t2">/</span><span class="t3">></span><span class="t2">/</span><span class="t12">g</span>, <span class="t2">'&#x26;gt;'</span>);</div></div></code></pre></figure></div>
+<p>实际生产中，应使用成熟的 XSS 防护库，如：<a href="https://www.npmjs.com/package/xss">xss</a></p>
+<h2 id="csp-内容安全策略">CSP 内容安全策略</h2>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP">CSP 内容安全策略(Content Security Policy)</a> 约束可信内容来源，是一种白名单机制，用于削弱某些特定类型的攻击，包括跨站脚本 (XSS) 和数据注入攻击等。</p>
+<p>两种配置方式：</p>
+<ol>
+<li><strong>HTTP 头部</strong> 设置 <code>Content-Security-Policy</code> HTTP 头部。</li>
+<li><strong>meta 标签</strong> 添加 <code>&#x3C;meta http-equiv="Content-Security-Policy" content="..." /></code>。</li>
+</ol>
+<p>content 为规则，包括指令(限制选项)与值，多个值使用空格分割，指令之间用分号分隔。如果同一个限制选项使用多次，只有首个会生效。</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">Content<span class="t12">-</span>Security<span class="t12">-</span><span class="t9">Policy</span>: script<span class="t12">-</span>src <span class="t2">'self'</span>; object<span class="t12">-</span>src <span class="t2">'none'</span>; style<span class="t12">-</span>src cdn.example.org third<span class="t12">-</span>party.org; child<span class="t12">-</span>src <span class="t9">https</span>:</div></div></code></pre></figure></div>
+<p>启用后，不符合 CSP 规则的外部资源就会被阻止加载。</p>
+<h3 id="限制选项">限制选项</h3>
+<p>CSP 提供了很多限制选项，涉及安全的各个方面。</p>
+<p><strong>资源加载限制：</strong></p>
+<ol>
+<li><code>script-src</code>：用于控制脚本资源的加载和执行。</li>
+<li><code>style-src</code>：会控制样式表 <code>@import</code> 和 <code>rel</code> 时所引入的 URI 资源，设置 <code>unsafe-inline</code> 规则可以是浏览器拒绝解析内部样式和内联样式定义。并不会阻止链入外部样式表。</li>
+<li><code>img-src</code>：可以控制图片资源的连接，包括 img 标签的 src 属性，以及 CSS3 中的 <code>url()</code> 和 <code>image()</code> 方法，以及 link 标签中的 href 属性（当 rel 设置成与图像相关的值，比如 HTML 支持的 icon）</li>
+<li><code>font-src</code>：控制 CSS 中的 @font-face 加载的字体源地址</li>
+<li><code>frame-src</code>：设置允许通过类似 <code>&#x3C;frame></code> 和 <code>&#x3C;iframe></code> 标签加载的内嵌内容的源地址</li>
+<li><code>manifest-src</code>：限制应用声明文件的源地址</li>
+<li><code>media-src</code>：控制媒体类型的外部链入资源，如 <code>&#x3C;audio></code>、<code>&#x3C;video></code>、<code>&#x3C;source /></code> 和 <code>&#x3C;track /></code> 标签的 src 属性</li>
+<li><code>object-src</code>：控制 <code>&#x3C;embed /></code>、<code>&#x3C;code></code>、<code>&#x3C;archive></code>、<code>&#x3C;applet></code> 等对象</li>
+<li><code>prefetch-src</code>：指定预加载或预渲染的允许源地址</li>
+<li><code>connect-src</code>：控制 XMLHttpRequest 中的 <code>open()</code>、WebSocket、EventSource</li>
+</ol>
+<p><code>default-src</code> 是一个通用的资源加载限制选项，可以作为其他限制选项的默认值。其它选项的值会覆盖默认值。</p>
+<p><strong>URL 限制：</strong></p>
+<ol>
+<li><code>frame-ancestors</code>：限制嵌入框架的网页</li>
+<li><code>base-uri</code>：限制<code>&#x3C;base#href></code></li>
+<li><code>form-action</code>：限制<code>&#x3C;form#action></code></li>
+</ol>
+<p><strong>其他限制：</strong></p>
+<ol>
+<li><code>block-all-mixed-content</code>：HTTPS 网页不得加载 HTTP 资源（浏览器已经默认开启）</li>
+<li><code>upgrade-insecure-requests</code>：自动将网页上所有加载外部资源的 HTTP 链接换成 HTTPS 协议</li>
+<li><code>plugin-types</code>：限制可以使用的插件格式</li>
+<li><code>sandbox</code>：浏览器行为的限制，比如不能有弹出窗口等。</li>
+<li><code>report-uri</code> 向指定url上报违反 CSP 的行为，POST 请求，包含 JSON 数据。仅在使用 HTTP 头部时有效。</li>
+</ol>
+<h3 id="选项值">选项值</h3>
+<ol>
+<li><code>'none'</code>：禁止加载任何外部资源</li>
+<li><code>'self'</code>：只允许加载同源资源</li>
+<li><strong>主机名</strong>：example.org，<a href="https://example.com">https://example.com</a></li>
+<li><strong>路径名</strong>：example.org/resources/js/</li>
+<li><strong>通配符</strong>：*.example.org，*://*.example.com:*（表示任意协议、任意子域名、任意端口）</li>
+<li><strong>协议名</strong>：https:、data:，注意末尾的冒号</li>
+</ol>
+<h3 id="script-src">script-src</h3>
+<p><code>script-src</code> 控制脚本资源的加载和执行，具有一些额外的特殊值</p>
+<ol>
+<li><code>unsafe-inline</code>：允许执行页面内嵌的<code>&#x3C;script></code>标签和事件监听属性，如<code>onclick</code>、<code>onerror</code>等。</li>
+<li><code>unsafe-eval</code>：允许将字符串当作代码执行，比如使用eval、setTimeout、setInterval和Function等函数。</li>
+<li><code>nonce-值</code>：每次HTTP回应给出一个授权token，页面内嵌脚本必须有这个token，才会执行</li>
+<li><code>hash-值</code>：列出允许执行的脚本代码的Hash值，页面内嵌脚本的哈希值只有吻合的情况下，才能执行。</li>
+</ol>
+<p><strong>nonce值：</strong></p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">Content<span class="t12">-</span>Security<span class="t12">-</span><span class="t9">Policy</span>: script<span class="t12">-</span>src <span class="t2">'nonce-EDNnf03nceIOfn39fn3e9h3'</span></div></div><div class="ec-line"><div class="code"><span class="t8">// 页面内嵌脚本，nonce属性必须为该 token 才能执行。</span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">script</span> <span class="t9">nonce</span><span class="t12">=</span><span class="t2">"EDNnf03nceIOfn39fn3e9h3"</span>>&#x3C;/<span class="t5">script</span>></div></div></code></pre></figure></div>
+<p><strong>hash值：</strong></p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">Content<span class="t12">-</span>Security<span class="t12">-</span><span class="t9">Policy</span>: script<span class="t12">-</span>src <span class="t2">'sha256-qznLcsROx4GACP2dm0UCKCzCG-HiZ1guq6ZZDob_Tng='</span></div></div><div class="ec-line"><div class="code"><span class="t8">// 浏览器会计算脚本内容的哈希值与配置的哈希值进行比对，一致则执行。</span></div></div><div class="ec-line"><div class="code">&#x3C;<span class="t5">script</span> <span class="t9">type</span><span class="t12">=</span><span class="t2">"text/javascript"</span>></div></div><div class="ec-line"><div class="code"><span class="indent">  </span>alert('Hello, world.');</div></div><div class="ec-line"><div class="code">&#x3C;/<span class="t5">script</span>></div></div></code></pre></figure></div>
+<p><code>style-src</code> 也具有类似的特殊值，如 <code>unsafe-inline</code>、<code>nonce-值</code>、<code>hash-值</code>。</p>
+<h2 id="http">HTTP</h2>
+<p>HTTP（HyperText Transfer Protocol）超文本传输协议，基于请求/响应模型、无状态的<strong>应用层协议</strong>。</p>
+<ol>
+<li>HTTP/0.9 - 1991 单行协议：只支持 GET 方法；没有首部；只能获取纯文本</li>
+<li>HTTP/1.0 - 1996 搭建协议框架：增加了首部、状态码、权限、缓存、长连接（默认短连接）等规范</li>
+<li>HTTP/1.1 - 1997 默认长连接；缓存字段扩展；强制客户端提供 Host 首部；管线化</li>
+<li>SPDY - 2012 强制压缩、多路复用、Pipeling、双向通信、优先级调用</li>
+<li>HTTP/2 - 2015 头部压缩、多路复用、Pipelining、Server push（解决 HTTP 队头阻塞）</li>
+<li>HTTP/3 - 2018 基于QUIC（UDP），快速握手、可靠传输、有序交付（解决 TCP 队头阻塞）</li>
+</ol>
+<img src="/assets/posts/2344101dc5fb8c22.webp" loading="lazy" decoding="async" style="width:80%" width="1200" height="530" srcset="/assets/posts/2344101dc5fb8c22-480.webp 480w, /assets/posts/2344101dc5fb8c22-768.webp 768w, /assets/posts/2344101dc5fb8c22.webp 1200w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>参考：
+<a href="https://zhuanlan.zhihu.com/p/330300133">关于队头阻塞（Head-of-Line blocking），看这一篇就足够了</a>
+<a href="https://vue3js.cn/interview/http/1.0_1.1_2.0.html">面试官：说说 HTTP1.0/1.1/2.0 的区别?</a>
+<a href="https://juejin.cn/post/6844903988953874445">HTTP发展史（HTTP1.1，HTTPS，SPDY，HTTP2.0，QUIC，HTTP3.0）</a>
+<a href="https://tsejx.github.io/javascript-guidebook/computer-networks/http/http2">JavaScript Guidebook-HTTP</a>
+<a href="https://juejin.cn/post/6844903589635162120">HTTP2基本概念学习笔记</a>
+<a href="https://www.ruanyifeng.com/blog/2016/08/http.html">HTTP 协议入门-阮一峰</a>
+<a href="https://www.ruanyifeng.com/blog/2018/03/http2_server_push.html">HTTP/2 服务器推送（Server Push）教程-阮一峰</a>
+<a href="https://mp.weixin.qq.com/s/MHYMOYHqhrAbQ0xtTkV2ig">HTTP/3 原理实战</a>
+<a href="https://www.nginx.org.cn/article/detail/422">深入剖析HTTP3协议</a>
+<a href="https://www.bilibili.com/video/BV1Mg411s7mP">QUIC核心原理和握手过程</a>
+<a href="https://juejin.cn/post/7111298133690155038">QUIC 握手流程梳理</a></p>
+<h3 id="http消息">HTTP消息</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages">HTTP 消息</a>是服务器和客户端之间交换数据的方式，分为请求和响应。</p>
+<p>HTTP 消息由采用 <strong>ASCII 编码</strong>的<strong>多行文本</strong>构成。在 HTTP/1.1 及早期版本中，这些消息通过连接公开地发送。在 HTTP/2 中，为了优化和性能方面的改进，曾经可人工阅读的消息被分到多个 <strong>HTTP 帧</strong>中。</p>
+<p><strong>消息结构：</strong></p>
+<ol>
+<li><strong>起始行</strong> 包括请求方法、请求目(url)、HTTP版本、状态码、状态描述短语</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers">HTTP标头</a> 用于描述报文</li>
+<li><strong>空行</strong> 用于分隔头部和主体，表示消息的元数据部分结束</li>
+<li><strong>消息主体</strong> 可选，包含任意数据，如文件、图片、表单数据等</li>
+</ol>
+<img src="/assets/posts/506bb76a537a9662.webp" loading="lazy" decoding="async" style="width:80%" width="1108" height="326" srcset="/assets/posts/506bb76a537a9662-480.webp 480w, /assets/posts/506bb76a537a9662-768.webp 768w, /assets/posts/506bb76a537a9662.webp 1108w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<h3 id="http10">HTTP1.0</h3>
+<p>HTTP1.0 是第一个被广泛使用的版本，它是一个简单的请求/响应协议，<strong>每个请求都会建立一个新的TCP连接</strong>。</p>
+<p>在 HTTP1.0 中认为每台服务器都绑定一个唯一的IP地址，因此，请求头部中没有 Host 字段。但随着虚拟主机技术的发展，一台物理服务器上可以运行多个虚拟主机共享同一个IP，因此需要在请求头部中加入 Host 字段。</p>
+<p>缺点：</p>
+<ol>
+<li>连接频繁的建立和断开会消耗时间和资源。</li>
+<li>无法充分利用带宽，TCP协议特点是慢启动，即一开始传输的数据量小，然后逐渐增大，而短连接导致每次都要重新慢启动，难以达到峰值。</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%98%9F%E5%A4%B4%E9%98%BB%E5%A1%9E">队头阻塞</a>，同一个域名下的请求会排队等待，需要等待前一个请求完成并断开后才能继续请求下一个资源。</li>
+</ol>
+<h3 id="http11">HTTP1.1</h3>
+<p><strong>1、长连接（持久连接）：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x#%E9%95%BF%E8%BF%9E%E6%8E%A5">MDN</a>
+HTTP1.1<strong>默认开启长连接</strong>，即默认带上 <code>Connection: keep-alive</code> 头部。
+长连接可以让多个请求和响应复用同一个 TCP 连接进行<strong>串行请求</strong>，减少了建立和断开TCP连接的开销，提高了传输效率。
+但仍然存在<strong>队头阻塞</strong>问题，后面的请求必须等待前面的请求完成后才能进行。</p>
+<p><strong>2、流水线Pipelining（管线化）：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x#http_%E6%B5%81%E6%B0%B4%E7%BA%BF">MDN</a>
+HTTP1.1 支持<strong>流水线</strong>，即支持<strong>请求并发</strong>，不用等待上一次请求结果返回，可以直接发出下一次请求。
+但<strong>响应必须按照请求的顺序返回</strong>，队头阻塞仍然可能发生，如果前一个请求非常耗时甚至超时，那么后续请求的响应仍然会受到影响。
+管线化只解决了请求的队头阻塞问题，但是响应的队头阻塞问题仍然存在，且web的性能问题大多数是由于响应的队头阻塞问题导致的。
+现代浏览器中，流水线是<strong>禁用</strong>的，HTTP1.1传输的信息是文本，且没有逻辑流概念，实现流水线非常复杂，让并发的请求和响应一一对应也是困难的，反而会造成更多问题。
+已被 HTTP/2 中的多路复用（multiplexing）所取代。</p>
+<p>3、增加更多的请求头和响应头来完善的功能：</p>
+<ol>
+<li><strong>Host</strong>：指定服务器的域名和端口号。所有 HTTP/1.1 请求报文中必须包含一个Host头字段。</li>
+<li>引入range，允许只请求资源某个部分。</li>
+<li>引入了更多的缓存控制策略，如If-Unmodified-Since, If-Match, If-None-Match等缓存头来控制缓存策略。</li>
+</ol>
+<p><strong>4、多TCP连接：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x#%E5%9F%9F%E5%90%8D%E5%88%86%E7%89%87">MDN</a>
+单个TCP连接仍然有队头阻塞问题。因此HTTP1.1允许为每个域名建立多个TCP连接，通常为6个，一个请求选择一个连接发送后就不能再换用其它连接。
+**域名分片：**将资源分散到指向同一个服务器的不同的域名下，以便绕过TCP最大连接限制，提高并发请求的数量。这是一个过时的技术，但仍然广泛使用。</p>
+<p>**队头阻塞的根本原因：**http1.1是基于文本的协议，文本是不能分割、乱序传输（乱序封装为TCP报文）的，后续将TCP报文按顺序组装成HTTP报文后，文本就错乱了。所以，一个连接中请求响应必须按顺序完成。</p>
+<h3 id="http2">HTTP2</h3>
+<p><strong>旧版本问题:</strong></p>
+<ol>
+<li>**多个 TCP 连接：**虽然 HTTP/1.1 管线化可以支持请求并发，但是浏览器很难实现，主流浏览器厂商都禁用了管线化</li>
+<li>**队头阻塞：**TCP 连接上只能发送一个请求，由于单连接上的串行请求，前面的请求未完成前，后续的请求都在排队等待</li>
+<li>**头部冗余：**HTTP/1.x 采用文本格式传输，首部未压缩，无状态特性让每个请求都会带上 Cookie、User-Agent 等重复的信息</li>
+<li>**不支持服务端推送：**HTTP/1.1 不支持服务推送消息，只能使用轮询的方式解决</li>
+</ol>
+<p>HTTP2 引入了<strong>二进制分帧层</strong>，将 HTTP 消息分割为更小的消息和帧，每个帧都是一个二进制块，可以乱序发送，然后在接收端重新组装。</p>
+<h4 id="二进制分帧">二进制分帧</h4>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages#http2_%E5%B8%A7">HTTP帧</a>：HTTP2 通信的最小单位，每个帧包含<strong>帧头部</strong>（固定9字节），用于描述帧的<strong>流ID</strong>、有效载荷的长度、类型等信息。并且将头部和主体分别封装为<strong>头部帧（HEADERS frame）<strong>和</strong>数据帧（DATA frame）</strong>。
+<strong>消息：</strong> 与逻辑请求或响应消息对应的完整的一系列帧。
+**逻辑数据流：**一个虚拟的连接，可以承载双向消息，每个数据流都有一个唯一的标识符。
+<strong>流ID：</strong> 位于帧头，标识出当前帧所属的数据流，接收数据时根据流ID将帧重新组装为完整的消息。</p>
+<p>逻辑上多个流在一个 TCP 连接上<strong>并行传输</strong>，实际上，各个流的各个帧混合封装为多个TCP报文按顺序进行传输。</p>
+<img src="/assets/posts/d5625f90a086db35.webp" loading="lazy" decoding="async" style="width:80%" width="2216" height="548" srcset="/assets/posts/d5625f90a086db35-480.webp 480w, /assets/posts/d5625f90a086db35-768.webp 768w, /assets/posts/d5625f90a086db35-1280.webp 1280w, /assets/posts/d5625f90a086db35.webp 2216w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<img src="/assets/posts/cc69e96be0cc95e9.webp" loading="lazy" decoding="async" style="width:80%" width="959" height="227" srcset="/assets/posts/cc69e96be0cc95e9-480.webp 480w, /assets/posts/cc69e96be0cc95e9-768.webp 768w, /assets/posts/cc69e96be0cc95e9.webp 959w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<h4 id="多路复用-multiplexing">多路复用 MultiPlexing</h4>
+<p>允许<strong>多个消息同时在单个 TCP 连接上传输</strong>，并且不会阻塞或等待其他消息的响应，解决了 HTTP/1.x 的队头阻塞问题。
+支持流的<strong>优先级</strong>（Stream dependencies）设置，允许客户端告知服务器最优资源，可以优先传输。</p>
+<p>**核心概念：**将 HTTP 消息分解为独立的帧，交错发送，然后在另一端重新组装。</p>
+<p>有了二进制分帧后，不再依赖多 TCP 链接、域名分片去实现多流并行，而是通过<strong>逻辑数据流</strong>支持多路复用。</p>
+<h4 id="标头压缩">标头压缩</h4>
+<p>在 HTTP/1.x 中，标头元数据以纯文本形式传输，带来额外的空间开销。HTTP/2 使用 <strong>HPACK 霍夫曼编码</strong>压缩请求和响应标头元数据，减少冗余数据，降低开销。
+<strong>做法：</strong>
+通过HPACK对传输的标头字段进行编码，从而减小了消息的大小。
+要求通讯双方<strong>各自维护一份头域索引表</strong>(首部表)，相同的消息头部字段只发送<strong>索引号</strong>，此索引表随后会用作参考，对之前传输的值进行有效编码。
+<a href="https://datatracker.ietf.org/doc/html/rfc7541">关于 HPACK 头部压缩标准 的制定</a></p>
+<img src="/assets/posts/ac84d2ae63369019.webp" loading="lazy" decoding="async" style="width:60%" width="532" height="428" srcset="/assets/posts/ac84d2ae63369019-480.webp 480w, /assets/posts/ac84d2ae63369019.webp 532w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>索引表又分为<strong>静态表</strong>和<strong>动态表</strong>，静态表包含常见的标头字段，动态表包含最近发送的其它标头字段。</p>
+<ol>
+<li>静态表是<strong>固定的</strong>，根据主流网站最常用的标头字段创建，并添加了 HTTP/2 特定的伪标头字段（以冒号开头），详见<a href="https://httpwg.org/specs/rfc7541.html#static.table.definition">RFC 7541#HPACK: Header Compression for HTTP/2</a></li>
+<li>动态表一开始是空的，随着通信的进行，会不断添加新的标头字段，以便在后续的通信中复用，通常是一些自定义的标头字段。</li>
+</ol>
+<img src="/assets/posts/ff821b1d7e042b46.webp" loading="lazy" decoding="async" style="width:90%" width="1826" height="674" srcset="/assets/posts/ff821b1d7e042b46-480.webp 480w, /assets/posts/ff821b1d7e042b46-768.webp 768w, /assets/posts/ff821b1d7e042b46-1280.webp 1280w, /assets/posts/ff821b1d7e042b46.webp 1826w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>HTTP2 中请求行独立为了 :method、:scheme、:authority、:path 等键值对</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">:authority: img.alicdn.com</div></div><div class="ec-line"><div class="code">:method: GET</div></div><div class="ec-line"><div class="code">:path: /bao/uploaded/i3/3946635813/O1CN01Kkt4xv1soP9fwhG0z_!!0-item_pic.jpg</div></div><div class="ec-line"><div class="code">:scheme: https</div></div><div class="ec-line"><div class="code">Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</div></div><div class="ec-line"><div class="code">Accept-Encoding: gzip, deflate, br, zstd</div></div><div class="ec-line"><div class="code">Accept-Language: zh-CN,zh;q=0.9</div></div><div class="ec-line"><div class="code">Referer: https://www.taobao.com/</div></div></code></pre></figure></div>
+<h4 id="服务器推送-server-push">服务器推送 Server Push</h4>
+<p>HTTP2 的服务器推送用于<strong>提前将资源推送至浏览器缓存</strong>。
+并不是类似于现在的 SSE 或者 WebSocket 的推送技术。它是一种服务器根据客户端以前发送的请求来猜测未来的请求，并提前将未来请求的结果推送给客户端的技术。</p>
+<img src="/assets/posts/a284e3bb3e006b3e.webp" loading="lazy" decoding="async" style="width:80%" width="800" height="402" srcset="/assets/posts/a284e3bb3e006b3e-480.webp 480w, /assets/posts/a284e3bb3e006b3e.webp 800w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<h3 id="http3">HTTP3</h3>
+<p>HTTP/2 只解决了<strong>应用层</strong> HTTP 的队头阻塞，但<strong>传输层</strong> TCP 仍然存在队头阻塞问题，因为 TCP 是<strong>面向流的</strong>，一个数据包丢失，后续的数据包都要等待重传，导致队头阻塞。</p>
+<p><strong>TCP 层队头阻塞（由于丢失或延迟的数据包）也会最终导致 HTTP 队头阻塞</strong>
+HTTP/2 将多个消息分解为多个帧，若干个帧合并作为TCP报文的载荷，在一个TCP连接上传输，但 TCP 不知道 HTTP 流的，只将所有上层交付的数据作为一个大流，TCP 为了实现<strong>可靠传输</strong>，会对数据包的丢失进行<strong>等待重传</strong>，后续的TCP报文到达后只能进入缓存，需等待重传完成后才能继续操作，即使缓存中数据包内负载的帧已经能重新组装成完整的消息和资源。</p>
+<p>实际上，在TCP的<strong>拥塞控制</strong>机制下，单个连接上的 HTTP/2 并没有比6个TCP连接上的 HTTP/1.1 快多少，在数据包丢失率较高的低速网络上可能更慢，因此浏览器仍然可能为同一域名打开多个并行的 HTTP/2 连接。</p>
+<p><strong>总之</strong>，TCP 并不能完美适配 HTTP/2 的多路复用，两者的流概念存在冲突，因此 HTTP/3 诞生了。</p>
+<h4 id="quic的多路复用">QUIC的多路复用</h4>
+<p>Google 在推 SPDY 的时候就已经意识到了这些问题，于是就另起炉灶搞了一个基于 UDP 协议的“QUIC”协议，让 HTTP 跑在 QUIC 上而不是 TCP 上。 而这个“HTTP over QUIC”就是 HTTP 协议的下一个大版本，HTTP/3。</p>
+<p>UDP 是<strong>不可靠传输</strong>，数据包在接收端没有处理顺序，即使中间丢失一个包，也不会阻塞整条连接，其他的资源会被正常处理，而 QUIC 在 UDP 上实现了 HTTP 流的<strong>可靠传输</strong>。</p>
+<img src="/assets/posts/c73f61c9bc0db4a2.webp" loading="lazy" decoding="async" style="width:90%" width="2532" height="704" srcset="/assets/posts/c73f61c9bc0db4a2-480.webp 480w, /assets/posts/c73f61c9bc0db4a2-768.webp 768w, /assets/posts/c73f61c9bc0db4a2-1280.webp 1280w, /assets/posts/c73f61c9bc0db4a2.webp 2532w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<img src="/assets/posts/1b623b052fbccba5.webp" loading="lazy" decoding="async" style="width:90%" width="2252" height="608" srcset="/assets/posts/1b623b052fbccba5-480.webp 480w, /assets/posts/1b623b052fbccba5-768.webp 768w, /assets/posts/1b623b052fbccba5-1280.webp 1280w, /assets/posts/1b623b052fbccba5.webp 2252w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>**连接上不存在阻塞：**QUIC 知道自己传输的是 HTTP 流，如上图，当 packet2 丢失，且后续的 packet 已经到达，QUIC 会查看 packet3 的流ID，发现与 packet1 是同一个流（stream1），且字节范围是连续的，因此可以直接将 packet3 交付给浏览器进行处理，而不用等待 packet2 重传。</p>
+<p>**单个流上的阻塞：**对于 packet4，它属于 stream2，但其字节范围前缺失了 0-299，因此，QUIC 会缓存 packet4，等待 0-299 的 packet，也就是 packet2 到达后再交付给浏览器。</p>
+<p>这意味着，想要发挥出 HTTP/3 的优势，需要在单个TCP连接上经常有多个并发流，这就需要浏览器有一个良好的分配策略。</p>
+<p><strong>存在的问题：</strong>
+QUIC(UDP) 并不保证请求和响应的顺序一致，就像上面的例子，stream2 可能比 stream1 先交付给浏览器进行处理。对于一些重要的资源 121212 的传输顺序可能并不比 111222 好，这是显而易见的。</p>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code">使用多路复用（较慢）：</div></div><div class="ec-line"><div class="code">---------------------------</div></div><div class="ec-line"><div class="code"><span class="indent">                              </span>流1（Stream 1）只有到这里才能使用</div></div><div class="ec-line"><div class="code"><span class="indent">                              </span>▼</div></div><div class="ec-line"><div class="code">12121212121212121212121212121212</div></div><div class="ec-line"><div class="code"><span class="indent">                               </span>▲</div></div><div class="ec-line"><div class="code"><span class="indent">                               </span>流2（Stream 2）在这里下载完毕</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">未使用多路复用/顺序（流1（Stream 1）更快）：</div></div><div class="ec-line"><div class="code">------------------------------------------------------</div></div><div class="ec-line"><div class="code"><span class="indent">                 </span>流1（Stream 1）在这里下载完毕，可以更早地使用</div></div><div class="ec-line"><div class="code"><span class="indent">                 </span>▼</div></div><div class="ec-line"><div class="code">11111111111111111122222222222222</div></div><div class="ec-line"><div class="code"><span class="indent">                               </span>▲</div></div><div class="ec-line"><div class="code"><span class="indent">                               </span>流2（Stream 2）还是在这里下载完毕</div></div></code></pre></figure></div>
+<p>数据包的丢失通常是连续的一小段，QUIC的多路复用后，帧的交错传输可能导致两个流恰好都有帧丢失而阻塞。</p>
+<img src="/assets/posts/8abe7f7b10b97bae.webp" loading="lazy" decoding="async" style="width:80%" width="1078" height="429" srcset="/assets/posts/8abe7f7b10b97bae-480.webp 480w, /assets/posts/8abe7f7b10b97bae-768.webp 768w, /assets/posts/8abe7f7b10b97bae.webp 1078w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p>大多数 QUIC 实现很少同时在单个TCP连接上传输多个流。因为如果其中一个数据包丢失，则会立即导致其所含帧所属的流被阻塞。<strong>一个QUIC数据包可能携带了多个来自不同流的帧</strong>，一旦该包丢失，后果是灾难性的。</p>
+<p><strong>多路复用是否重要：</strong>
+虽然仍然存在一些问题，但多路复用绝对是一个有用的特性</p>
+<ol>
+<li>对于<a href="https://blog.cloudflare.com/parallel-streaming-of-progressive-images/">渐进式图像渲染</a>、文件上传下载、视频等增量处理场景，多路复用可以显著提高性能，基于流与帧的概念，无需等待整个资源加载完毕。</li>
+<li>网页零碎的小文件请求，即使数据包发生丢失，也不会对其他文件造成太多的延迟。</li>
+<li>QUIC的多路复用允许改变响应的顺序，并为高优先级的响应中断低优先级的响应。</li>
+<li>配合CDN分发，缓存在CDN上的资源可以更快响应，而未缓存的资源将从服务器获取，但不会阻塞其它流的传输。</li>
+</ol>
+<h4 id="连接建立">连接建立</h4>
+<p>QUIC 首次连接只需要<strong>1-RTT</strong>，基于 UDP 不需要 TCP 的三次握手，且内部包含了 TLS，它在自己的数据包中携带 TLS 加密等必要参数，加之 QUIC 使用的是 TLS 1.3，因此仅需 <strong>1-RTT</strong> 就可以同时完成建立连接与密钥协商。</p>
+<p>在第二次连接的时候，应用数据包可以和 QUIC 握手信息（连接信息 + TLS 信息）一起发送，达到 0-RTT 的效果。</p>
+<img src="/assets/posts/30faf555207faae3.webp" loading="lazy" decoding="async" style="width:60%" width="578" height="362" srcset="/assets/posts/30faf555207faae3-480.webp 480w, /assets/posts/30faf555207faae3.webp 578w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p><a href="https://cangsdarm.github.io/illustrate/quic">图解 QUIC 连接</a></p>
+<p>QUIC 数据包中包含<strong>连接 ID</strong>（Connection ID），这是连接迁移的基础。</p>
+<h4 id="连接迁移">连接迁移</h4>
+<p>基于 TCP 传输协议的 HTTP 协议，由于是通过四元组（源 IP、源端口、目的 IP、目的端口）确定一条 TCP 连接。</p>
+<p>切换网络时至少会有一个因素发生变化，导致连接发生变化。当连接发生变化时，如果还使用原来的 TCP 连接，则会导致连接失败，就得等原来的连接超时后重新建立连接，所以我们有时候发现切换到一个新网络时，即使新网络状况良好，但内容还是需要加载很久。如果实现得好，当检测到网络变化时立刻建立新的 TCP 连接，即使这样，建立新的连接还是需要几百毫秒的时间。</p>
+<p>QUIC 连接不以四元组作为标识，而是使用一个 64 位的随机数，这个随机数被称为 Connection ID，即使 IP 或者端口发生变化，只要 Connection ID 没有变化，那么连接依然可以维持。</p>
+<h4 id="其它">其它</h4>
+<p>QUIC 重新实现了 TCP 协议的 Cubic 算法进行<strong>拥塞控制</strong>，也就是慢启动、拥塞避免、快速重传和快速恢复。并在此基础上进行了改进。</p>
+<ol>
+<li><strong>热插拔</strong> TCP 中如果要修改拥塞控制策略，需要在系统层面进行操作。QUIC 修改拥塞控制策略只需要在应用层操作，并且 QUIC 会根据不同的网络环境、用户来动态选择拥塞控制算法。</li>
+<li><strong>前向纠错 FEC</strong> QUIC 使用前向纠错(FEC，Forward Error Correction)技术增加协议的容错性。一段数据被切分为 10 个包后，依次对每个包进行异或运算，运算结果会作为 FEC 包与数据包一起被传输，如果不幸在传输过程中有一个数据包丢失，那么就可以根据剩余 9 个包以及 FEC 包推算出丢失的那个包的数据，这样就大大增加了协议的容错性。空间换时间。</li>
+<li><strong>单调递增的 Packet Number</strong> TCP 为了保证可靠性，使用 Sequence Number 和 ACK 来确认消息是否有序到达。发生超时重传时请求的 Seq 不变，响应的 Ack 也不变，无法区分是原始请求的 Ack 还是重传请求的 Ack。QUIC 使用 Packet Number 来区分，每个 Packet Number 都是单调递增的，发生重传时，响应的 Ack 也是唯一的。</li>
+<li><strong>更多的 ACK 块</strong> 接收方收到发送方的消息后都应该发送一个 ACK 回复，表示收到了数据。但每收到一个数据就返回一个 ACK 回复太麻烦，所以一般不会立即回复，而是接收到多个数据后再回复，TCP SACK 最多提供 3 个 ACK block。但有些场景下，比如下载，只需要服务器返回数据就好，但按照 TCP 的设计，每收到 3 个数据包就要“礼貌性”地返回一个 ACK。而 QUIC 最多可以捎带 256 个 ACK block。在丢包率比较严重的网络下，更多的 ACK block 可以减少重传量，提升网络效率。</li>
+</ol>
+<p>QUIC 也实现了<strong>流量控制</strong>，两个级别：连接级别（Connection Level）和 Stream 级别（Stream Level）。</p>
+<h2 id="https">HTTPS</h2>
+<p><strong>超文本传输安全协议</strong>（Hyper Text Transfer Protocol over Secure Socket Layer，HTTPS），是一种通过计算机网络进行<strong>安全通信</strong>的传输协议。HTTPS 经由 HTTP 进行通信，但利用 <strong>SSL / TLS</strong> 来加密数据包。</p>
+<p>**目的：**提供对网站服务器的身份认证，保护交换数据的隐私与完整性。</p>
+<p>HTTP 是明文传输的，数据在传输过程中可能被窃听、篡改，而 HTTPS 则通过 SSL/TLS 协议对数据进行加密，保证数据的<strong>机密性</strong>和<strong>完整性</strong>。</p>
+<p><strong>安全传输层协议</strong>（Transport Layer Security，SSL/TLS），是介于 TCP 和 HTTP 之间的一层安全协议，不影响原有的 TCP 协议和 HTTP 协议。SSL 是 TLS 的前身。
+SSL 1.0 – 由于安全问题从未公开发布。
+SSL 2.0 – 1995年发布。2011年弃用。存在已知的安全问题。
+SSL 3.0 – 1996年发布。2015年弃用。存在已知的安全问题。
+TLS 1.0 – 1999年作为SSL 3.0的升级发布。计划在2020年弃用。
+TLS 1.1 – 2006年发布。计划在2020年弃用。
+TLS 1.2 – 2008年发布。
+TLS 1.3 – 2018年发布。</p>
+<p>参考：
+<a href="https://juejin.cn/post/6895624327896432654">TLS 详解握手流程</a>
+<a href="https://zhuanlan.zhihu.com/p/344086342">图解 HTTPS：RSA 握手过程</a>
+<a href="https://www.xiaolincoding.com/network/2_http/https_ecdhe.html">HTTPS ECDHE 握手解析</a>
+<a href="https://tsejx.github.io/javascript-guidebook/computer-networks/http/https">JavaScript Guidebook-HTTPS</a></p>
+<h3 id="tls握手">TLS握手</h3>
+<p><strong>传统TLS使用RSA握手：</strong></p>
+<ol>
+<li>客户端发送 <strong>Client Hello</strong> 消息，包含支持的TLS版本、加密套件、客户端随机数<strong>client_random</strong>。</li>
+<li>服务端返回 <strong>Server Hello</strong> 消息，包含确定的TLS版本、选择的加密套件、服务端随机数<strong>server_random</strong>。</li>
+<li>服务端继续发送 <strong>Certificate</strong> 数字证书 (证书中附带<strong>公钥</strong>)。</li>
+<li><strong>Client Finish</strong> 客户端验证证书和签名，若通过则生成一个随机数<strong>pre_random</strong>作为<strong>预主密钥</strong>，并用RSA公钥加密后发送给服务端。</li>
+<li><strong>Server Finish</strong> 服务端通过RSA私钥解密获得pre_random。此 pre_random 只有服务端和客户端知道，除非私钥泄露。</li>
+<li>最后双方根据 client_random、server_random、pre_random 生成<strong>主密钥</strong>，用于后续的通信加密。</li>
+</ol>
+<img src="/assets/posts/ac68b2e65470cfb7.webp" loading="lazy" decoding="async" style="width:80%" width="1047" height="663" srcset="/assets/posts/ac68b2e65470cfb7-480.webp 480w, /assets/posts/ac68b2e65470cfb7-768.webp 768w, /assets/posts/ac68b2e65470cfb7.webp 1047w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p><strong>TLS1.2使用DH握手：</strong>
+与RSA区别主要在于<strong>pre_random</strong>的生成方式，RSA在客户端生成后使用公钥加密发送给服务端，DH使用<strong>ECDHE密钥交换算法</strong>生成。</p>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code">1.浏览器向服务器发送随机数 client_random，TLS 版本和供筛选的加密套件列表。</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">// RSA</div></div><div class="ec-line highlight del"><div class="code">2.服务器接收到，立即返回 server_random，确认好双方都支持的加密套件</div></div><div class="ec-line highlight del"><div class="code">以及数字证书 (证书中附带公钥)。</div></div><div class="ec-line"><div class="code">// DH</div></div><div class="ec-line highlight ins"><div class="code">2.服务器接收到，立即返回 server_random，确认好双方都支持的加密套件</div></div><div class="ec-line highlight ins"><div class="code">以及数字证书 (证书中附带公钥)。</div></div><div class="ec-line highlight ins"><div class="code">同时服务器利用私钥将 client_random，server_random，服务端椭圆曲线公钥(server_params) 签名，</div></div><div class="ec-line highlight ins"><div class="code">生成服务器签名。然后将签名和 server_params 也发送给客户端。</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">// RSA</div></div><div class="ec-line highlight del"><div class="code">3.浏览器接收，先验证数字证书。</div></div><div class="ec-line highlight del"><div class="code">若通过，接着使用加密套件的密钥协商算法 RSA 算法</div></div><div class="ec-line highlight del"><div class="code">生成另一个随机数 pre_random，并且用证书里的公钥加密，传给服务器。</div></div><div class="ec-line"><div class="code">// DH</div></div><div class="ec-line highlight ins"><div class="code">3.浏览器接收，先验证数字证书和签名名。</div></div><div class="ec-line highlight ins"><div class="code">若通过，将 客户端椭圆曲线公钥(client_params) 传递给服务器。</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line highlight del"><div class="code">4.服务器用私钥解密这个被加密后的 pre_random。</div></div><div class="ec-line highlight ins"><div class="code">4.现在客户端和服务器都有 对方的椭圆曲线公钥、自己的椭圆曲线私钥。</div></div><div class="ec-line highlight ins"><div class="code">因 ECDHE 计算基于 “椭圆曲线离散对数”，客户端和服务器都能计算出 pre_random。</div></div></code></pre></figure></div>
+<img src="/assets/posts/1cd40a4f5e3bdc9a.webp" loading="lazy" decoding="async" style="width:80%" width="1228" height="718" srcset="/assets/posts/1cd40a4f5e3bdc9a-480.webp 480w, /assets/posts/1cd40a4f5e3bdc9a-768.webp 768w, /assets/posts/1cd40a4f5e3bdc9a.webp 1228w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder">
+<p><strong>TLS1.3握手：</strong>
+TLS1.3将握手过程简化，<strong>只需要1-RTT</strong>，并废除了 RSA 等不安全算法。</p>
+<p>RSA 算法的废除不仅因为已经能够被破解，同时还缺少<strong>前向安全性</strong>。
+**前向安全：**能够保护过去进行的通讯不受密码或密钥在未来暴露的威胁。</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">// 原 DH 握手</div></div><div class="ec-line highlight del"><div class="code">1.浏览器向服务器发送 client_random，TLS 版本和供筛选的加密套件列表。</div></div><div class="ec-line"><div class="code">// TLS1.3 优化</div></div><div class="ec-line highlight ins"><div class="code">1.浏览器向服务器发送 client_params，client_random，TLS 版本和供筛选的加密套件列表。</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">// 原 DH 握手</div></div><div class="ec-line highlight del"><div class="code">2...</div></div><div class="ec-line"><div class="code">// TLS1.3 优化</div></div><div class="ec-line highlight ins"><div class="code">2.服务器返回：server_random、server_params、TLS 版本、确定的加密套件方法以及证书。</div></div><div class="ec-line highlight ins"><div class="code">浏览器接收，先验证数字证书和签名。</div></div><div class="ec-line highlight ins"><div class="code">现在双方都有 client_params、server_params，可以根据 ECDHE 计算出 pre_random 了。</div></div></code></pre></figure></div>
+<img src="/assets/posts/7ce579e26ade13f0.webp" loading="lazy" decoding="async" style="width:80%" width="1047" height="481" srcset="/assets/posts/7ce579e26ade13f0-480.webp 480w, /assets/posts/7ce579e26ade13f0-768.webp 768w, /assets/posts/7ce579e26ade13f0.webp 1047w" sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc(100vw - 19rem), min(calc(100vw - 35.5rem), 71rem)" data-fallback="placeholder"> </div> <nav class="_pagination_tc8st_522" aria-label="文章导航"> <a class="_pageLink_tc8st_529" href="/article/6e8f8c6c.html" data-atom> <span class="_pageLabel_tc8st_556">上一篇</span> <strong>数据类型与拷贝</strong> <span class="_pageArrow_tc8st_561" aria-hidden="true">←</span> </a> <a class="_pageLink_tc8st_529 _pageLinkNext_tc8st_574" href="/article/e18aeaaa.html" data-atom> <span class="_pageLabel_tc8st_556">下一篇</span> <strong>NestJS[四]-数据库</strong> <span class="_pageArrow_tc8st_561" aria-hidden="true">→</span> </a> </nav>  <section id="comments" class="_comments_1v81l_1" aria-label="评论"> <h2 class="_title_1v81l_9">评论</h2> <div class="_container_1v81l_17" data-waline data-waline-path="/article/1e4e2709.html"></div> </section> </article>  </div> <aside class="_right_vnlu0_156" aria-label="右侧栏" data-rail="right"> <nav class="_toc_kec3t_128" aria-label="文章目录" data-toc> <div class="_head_kec3t_137" data-atom> <span class="_kicker_kec3t_146">目录</span> <span class="_count_kec3t_55">37</span> </div> <div class="_scroll_kec3t_160" data-toc-scroll> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#前言" data-toc-link> <span class="_linkText_kec3t_264">前言</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#分层体系结构" data-toc-link> <span class="_linkText_kec3t_264">分层体系结构</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#术语" data-toc-link> <span class="_linkText_kec3t_264">术语</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#五层原理模型" data-toc-link> <span class="_linkText_kec3t_264">五层原理模型</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#tcp" data-toc-link> <span class="_linkText_kec3t_264">TCP</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#三次握手" data-toc-link> <span class="_linkText_kec3t_264">三次握手</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#四次挥手" data-toc-link> <span class="_linkText_kec3t_264">四次挥手</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#输入url后" data-toc-link> <span class="_linkText_kec3t_264">输入url后</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#dns解析" data-toc-link> <span class="_linkText_kec3t_264">DNS解析</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#跨域" data-toc-link> <span class="_linkText_kec3t_264">跨域</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#ajax相关" data-toc-link> <span class="_linkText_kec3t_264">ajax相关</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#sse" data-toc-link> <span class="_linkText_kec3t_264">SSE</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#websocket" data-toc-link> <span class="_linkText_kec3t_264">WebSocket</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#jwt" data-toc-link> <span class="_linkText_kec3t_264">JWT</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#前端网络状态" data-toc-link> <span class="_linkText_kec3t_264">前端网络状态</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#xss" data-toc-link> <span class="_linkText_kec3t_264">XSS</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#防护手段" data-toc-link> <span class="_linkText_kec3t_264">防护手段</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#csp-内容安全策略" data-toc-link> <span class="_linkText_kec3t_264">CSP 内容安全策略</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#限制选项" data-toc-link> <span class="_linkText_kec3t_264">限制选项</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#选项值" data-toc-link> <span class="_linkText_kec3t_264">选项值</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#script-src" data-toc-link> <span class="_linkText_kec3t_264">script-src</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#http" data-toc-link> <span class="_linkText_kec3t_264">HTTP</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http消息" data-toc-link> <span class="_linkText_kec3t_264">HTTP消息</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http10" data-toc-link> <span class="_linkText_kec3t_264">HTTP1.0</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http11" data-toc-link> <span class="_linkText_kec3t_264">HTTP1.1</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http2" data-toc-link> <span class="_linkText_kec3t_264">HTTP2</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#二进制分帧" data-toc-link> <span class="_linkText_kec3t_264">二进制分帧</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#多路复用-multiplexing" data-toc-link> <span class="_linkText_kec3t_264">多路复用 MultiPlexing</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#标头压缩" data-toc-link> <span class="_linkText_kec3t_264">标头压缩</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#服务器推送-server-push" data-toc-link> <span class="_linkText_kec3t_264">服务器推送 Server Push</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#http3" data-toc-link> <span class="_linkText_kec3t_264">HTTP3</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#quic的多路复用" data-toc-link> <span class="_linkText_kec3t_264">QUIC的多路复用</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#连接建立" data-toc-link> <span class="_linkText_kec3t_264">连接建立</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#连接迁移" data-toc-link> <span class="_linkText_kec3t_264">连接迁移</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#其它" data-toc-link> <span class="_linkText_kec3t_264">其它</span> </a>  </li> </ol> </ol> </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#https" data-toc-link> <span class="_linkText_kec3t_264">HTTPS</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#tls握手" data-toc-link> <span class="_linkText_kec3t_264">TLS握手</span> </a>  </li> </ol> </ol> </li> </ol> </div> <div class="_foot_kec3t_283" data-atom> <a class="_top_kec3t_293" href="#main" data-nudge="up"> <span class="_arrow_kec3t_313 nudge" aria-hidden="true"> <span class="nudge-glyph">↑</span> </span>
+回到顶部
+</a> <a class="_top_kec3t_293 undefined" href="#comments" data-nudge="down"> <span class="_arrow_kec3t_313 nudge" aria-hidden="true"> <span class="nudge-glyph">↓</span> </span>
+评论区
+</a> </div> </nav> </aside> </div>  <dialog class="_railDialog_vnlu0_307 _railDialogLeft_vnlu0_331" data-rail-dialog="left" aria-labelledby="rail-dialog-left-title"> <div class="_railPanel_vnlu0_339"> <header class="_railHead_vnlu0_355"> <h2 id="rail-dialog-left-title">站点</h2> <button type="button" class="_railClose_vnlu0_371" data-rail-close aria-label="关闭">
+关闭
+</button> </header> <div class="_railBody_vnlu0_394">  <a class="_link_bndhu_128" href="/" data-atom> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m14 6-6 6 6 6" /></svg> 返回文章 </a> <div class="_progress_tc8st_186" data-atom> <span class="_progressRing_tc8st_193" data-reading-ring></span> <span class="_progressValue_tc8st_212" data-reading-percent>0%</span> <span class="_progressLabel_tc8st_219">阅读进度</span> </div> <section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">标签</p>  </div>   <div class="_tags_1te21_260" data-dense-order> <a href="/tags/0cbda6b5/" data-atom>
+#网络  </a> </div>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">相关阅读</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/1be64a8d.html" class="_item_1te21_180">  <span class="_label_1te21_241">NestJS实践杂记</span>  <span class="_meta_1te21_55">12-09</span>  </a> </li><li data-atom> <a href="/article/55cefeb1.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-3</span>  <span class="_meta_1te21_55">10-13</span>  </a> </li><li data-atom> <a href="/article/f17dfea3.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-2</span>  <span class="_meta_1te21_55">09-27</span>  </a> </li> </ol>  </section> </div> </div> </dialog>  </div> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"一点点网络知识","description":"当计算机网络与前端相遇","datePublished":"2024-03-11T23:20:29.000Z","dateModified":"2024-03-11T23:20:29.000Z","author":{"@type":"Person","name":"轻笑Chuckle","url":"https://www.qcqx.cn"},"image":["https://www.qcqx.cn/assets/site/f7dd0fa9498d4b6f-384.webp"],"mainEntityOfPage":"https://www.qcqx.cn/article/1e4e2709.html","keywords":"网络","inLanguage":"zh-CN"}</script> </main> <footer class="_footer_x6azg_128"> <div class="container _inner_x6azg_133"> <div class="_brand_x6azg_143" data-reveal> <span class="_mark_x6azg_149" aria-hidden="true"></span> <div> <strong>轻笑Chuckle</strong> <p>漫天倾尘，风中轻笑。</p> </div> </div> <div class="_meta_x6azg_55" data-reveal> <p class="_copy_x6azg_176"> <span class="_rights_x6azg_224">© 2021–2026 轻笑Chuckle</span> <span class="_filing_x6azg_228"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备2022076449号</a><span class="_dot_x6azg_236" aria-hidden="true">·</span><a href="https://icp.gov.moe/?keyword=20220160" target="_blank" rel="noreferrer">萌ICP备20220160号</a> </span> </p> <p class="_build_x6azg_177">Astro · Swup · Pagefind · Waline</p> </div> <nav class="_links_x6azg_189" aria-label="页脚导航" data-reveal> <a href="/atom.xml" data-no-swup>
+RSS
+</a> <a href="/sitemap.xml" data-no-swup>
+Sitemap
+</a> <a href="https://github.com/qxchuckle" target="_blank" rel="noreferrer">
+GitHub
+</a> </nav> </div> </footer>  <dialog class="_dialog_1bp20_136" aria-label="站点搜索与快捷导航" data-command-dialog> <div class="_searchRow_1bp20_162"> <span class="_searchIcon_1bp20_170" aria-hidden="true"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"> <circle cx="11" cy="11" r="6.5"></circle> <path d="m20 20-3.3-3.3"></path> </svg> </span> <input class="_input_1bp20_184" id="command-palette-input" name="q" placeholder="搜索文章，或输入页面名称…" aria-label="搜索文章" autocomplete="off" spellcheck="false" data-command-input> <button type="button" class="_close_1bp20_198" aria-label="关闭搜索" data-command-close>
+esc
+</button> </div> <div class="_list_1bp20_218" role="listbox" aria-label="搜索结果" data-command-list> <div data-command-quick> <div data-group-heading>快速前往</div> <div class="_quickGrid_1bp20_254"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">首页</span> <span class="_itemMeta_1bp20_334">/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/archives/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">归档</span> <span class="_itemMeta_1bp20_334">/archives/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/series/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">系列</span> <span class="_itemMeta_1bp20_334">/series/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/categories/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">分类</span> <span class="_itemMeta_1bp20_334">/categories/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/tags/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">标签</span> <span class="_itemMeta_1bp20_334">/tags/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/link/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">友链</span> <span class="_itemMeta_1bp20_334">/link/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/messageboard/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">留言板</span> <span class="_itemMeta_1bp20_334">/messageboard/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/about/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">关于</span> <span class="_itemMeta_1bp20_334">/about/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/charts/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">统计</span> <span class="_itemMeta_1bp20_334">/charts/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/update/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">日志</span> <span class="_itemMeta_1bp20_334">/update/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/agreement/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">协议</span> <span class="_itemMeta_1bp20_334">/agreement/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/search/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">搜索全部文章</span> <span class="_itemMeta_1bp20_334">/search/</span> </span> </button> </div> </div> <div data-command-loading hidden> <div class="_loading_1bp20_344"> <span class="_spinner_1bp20_363" aria-hidden="true"></span>
+正在查找…
+</div> </div> <div data-command-results hidden></div> <div data-command-empty hidden> <div class="_empty_1bp20_345"> <span data-command-empty-text></span> <button type="button" data-command-search-all>打开完整搜索页 →</button> </div> </div> </div> <footer class="_footer_1bp20_372"> <span> <kbd>↑</kbd> <kbd>↓</kbd> 选择
+</span> <span> <kbd>↵</kbd> 打开
+</span> <span> <kbd>esc</kbd> 关闭
+</span> <span class="_footerBrand_1bp20_398">轻笑 / 索引</span> </footer> </dialog>  <template data-command-tpl="post"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item> <span class="_itemMarker_1bp20_296" aria-hidden="true">¶</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314" data-field="title"></span> <span class="_itemExcerpt_1bp20_324" data-field="excerpt"></span> <span class="_itemMeta_1bp20_334" data-field="url"></span> </span> </button> </template>  <template data-command-tpl="search-all"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-search-all> <span class="_itemMarker_1bp20_296" aria-hidden="true">↗</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">在搜索页继续</span> <span class="_itemMeta_1bp20_334">Pagefind 全文搜索</span> </span> </button> </template> <span hidden data-command-dev-search="0"></span><script type="module" src="/_static/CommandPalette.astro_astro_type_script_index_0_lang.DRN8DVBH.js"></script>  <script>(function(){try{var v=document.getElementById("main");if(!v)return;var F=window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!F){for(var e={step:24,stepMin:6,stepBudget:220,section:60,sectionMin:24,sectionBudget:240,max:400},y=v.querySelectorAll("[data-atom],[data-module]"),a=[],u=0;u<y.length;u++){var r=y[u];if(!r.closest("[data-rail-dialog]")&&!r.hasAttribute("data-enter")){var A=r.closest("[data-rail],[data-column]")||r.parentElement||v,t=r.closest("section");if(!t)for(t=r;t.parentElement&&t.parentElement!==A;)t=t.parentElement;a.push([r,A,t])}}for(var M=new Map,p=new Map,w=new Map,i=0;i<a.length;i++){var l=a[i][2];M.set(l,(M.get(l)||0)+1);var h=p.get(a[i][1]);h||(h=[],p.set(a[i][1],h)),h.indexOf(l)<0&&h.push(l)}for(var d=0;d<a.length;d++){var n=a[d],f=p.get(n[1]),I=f.indexOf(n[2]),E=w.get(n[2])||0;w.set(n[2],E+1);var L=Math.max(e.sectionMin,Math.min(e.section,Math.floor(e.sectionBudget/Math.max(1,f.length)))),T=Math.max(1,M.get(n[2])||1),c=Math.max(e.stepMin,Math.min(e.step,Math.floor(e.stepBudget/T))),j=Math.min(I*L+E*c,e.max);n[0].style.setProperty("--enter-delay",j+"ms"),n[0].setAttribute("data-enter","")}for(var q=v.querySelectorAll(".prose"),B=window.innerHeight*1.2,P=0,c=0,m=0;m<q.length;m++)for(var f=q[m].children,t=0;t<f.length&&P<B;t++){var o=f[t];if(!(!(o instanceof HTMLElement)||o.hasAttribute("data-enter"))){var H=o.offsetHeight;H&&(o.style.setProperty("--enter-delay",Math.min(c*24,240)+"ms"),o.setAttribute("data-enter","near"),P+=H,c++)}}}for(var O=["var(--color-accent)","var(--color-accent-soft)","var(--color-border-strong)"],S=v.querySelectorAll("[data-friend-board]"),x=0;x<S.length;x++){var C=S[x];if(C.getClientRects().length){var g=Array.prototype.slice.call(C.querySelectorAll("[data-friend-card]"));if(g.length)for(var s=0;s<g.length;s++)g[s].style.setProperty("--cell-mix",(2+Math.random()*8).toFixed(1)+"%"),g[s].style.setProperty("--cell-tint",O[Math.floor(Math.random()*O.length)])}}}catch{}})();</script><script type="module" src="/_static/BaseLayout.astro_astro_type_script_index_0_lang.DhVNVGr_.js"></script> </body> </html>

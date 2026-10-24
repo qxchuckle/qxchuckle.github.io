@@ -1,0 +1,470 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>C语言学习笔记 · 轻笑Chuckle</title><meta name="description" content="我的C语言学习笔记"><link rel="canonical" href="https://www.qcqx.cn/article/13675369.html"><meta name="author" content="轻笑Chuckle"><meta property="og:type" content="article"><meta property="og:site_name" content="轻笑Chuckle"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="C语言学习笔记 · 轻笑Chuckle"><meta property="og:description" content="我的C语言学习笔记"><meta property="og:url" content="https://www.qcqx.cn/article/13675369.html"><meta property="og:image" content="https://www.qcqx.cn/assets/posts/119568aec9b68b33.webp"><meta name="twitter:card" content="summary"><link rel="alternate" type="application/atom+xml" title="轻笑Chuckle" href="/atom.xml"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)"><script>(function(){var e="system";try{var a=localStorage.getItem("qcqx-theme");(a==="light"||a==="dark")&&(e=a)}catch{}var t=!1;window.matchMedia&&(t=window.matchMedia("(prefers-color-scheme: dark)").matches);var r=e==="system"?t?"dark":"light":e,o=document.documentElement;o.dataset.theme=r,o.style.colorScheme=r==="dark"?"dark only":"light only"})();</script><script>document.documentElement.dataset.js="1";</script><noscript><style>
+        pre[data-folded="true"] {
+          max-height: none !important;
+          overflow-y: visible !important;
+        }
+      </style></noscript><link rel="stylesheet" href="/_static/BackLink.DB5iJlZs.css"><link rel="stylesheet" href="/_static/_slug_.BR7lfXy5.css"><link rel="stylesheet" href="/_static/Pager.CyKydJOF.css"><link rel="stylesheet" href="/_static/BaseLayout.CPn0yOaM.css"><link rel="stylesheet" href="/_static/DraftBadge.BFurP3QT.css"><link rel="stylesheet" href="/_static/RailSection.D-UbEKa4.css"><link rel="stylesheet" href="/_static/WalineComments.Dqk9hD5x.css"></head> <body> <a class="skip-link" href="#main">跳到正文</a> <header class="_header_26tta_128"> <div class="container _inner_26tta_136"> <div class="_root_i62nn_128" data-site-portals data-shell-enter> <button type="button" class="_trigger_i62nn_133" aria-label="站点入口" title="站点入口" aria-haspopup="true" aria-expanded="false" aria-controls="site-portals" data-portals-trigger> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" ><circle cx="9" cy="5.5" r="1.55" /><circle cx="15" cy="5.5" r="1.55" /><circle cx="9" cy="12" r="1.55" /><circle cx="15" cy="12" r="1.55" /><circle cx="9" cy="18.5" r="1.55" /><circle cx="15" cy="18.5" r="1.55" /></svg> </button> <div id="site-portals" class="_panel_i62nn_170" data-open="false" data-portals-panel> <div class="_group_i62nn_215" role="group" aria-labelledby="site-portals-group-0"> <p id="site-portals-group-0" class="_groupTitle_i62nn_220"> 传送门 </p> <ul class="_list_i62nn_230"> <li> <a href="/" class="_item_i62nn_238"> <span class="_itemLabel_i62nn_265">博客主页</span> <span class="_itemMeta_i62nn_269"> 本站 </span> </a> </li><li> <a href="https://waline.qcqx.cn/ui" class="_item_i62nn_238" target="_blank" rel="noopener"> <span class="_itemLabel_i62nn_265">评论管理</span> <span class="_itemMeta_i62nn_269"> Waline 后台 </span> </a> </li> </ul> </div><div class="_group_i62nn_215" role="group" aria-labelledby="site-portals-group-1"> <p id="site-portals-group-1" class="_groupTitle_i62nn_220"> 博客线路 </p> <ul class="_list_i62nn_230"> <li> <a href="https://www.qcqx.cn/" class="_item_i62nn_238" target="_blank" rel="noopener" data-current> <span class="_itemLabel_i62nn_265">主域名线路</span> <span class="_itemMeta_i62nn_269"> 当前线路 </span> </a> </li><li> <a href="https://vb.qcqx.cn/" class="_item_i62nn_238" target="_blank" rel="noopener"> <span class="_itemLabel_i62nn_265">Vercel 线路</span> <span class="_itemMeta_i62nn_269"> 灾备站 </span> </a> </li> </ul> </div> </div> </div> <a href="/" class="_brand_26tta_159" aria-label="轻笑Chuckle 首页" data-shell-enter> <span class="_brandMark_26tta_174" aria-hidden="true"> <span></span> </span> <span class="_brandName_26tta_198">轻笑Chuckle</span> </a> <nav class="_nav_1y1m8_128" aria-label="主导航" data-shell-enter data-nav-measured="false"> <a href="/" data-nav-index="0" data-nav-item> 首页 </a><a href="/archives/" data-nav-index="1" data-nav-item> 归档 </a><a href="/series/" data-nav-index="2" data-nav-item> 系列 </a><a href="/categories/" data-nav-index="3" data-nav-item> 分类 </a><a href="/tags/" data-nav-index="4" data-nav-item> 标签 </a><a href="/link/" data-nav-index="5" data-nav-item> 友链 </a><a href="/messageboard/" data-nav-index="6" data-nav-item> 留言板 </a><a href="/about/" data-nav-index="7" data-nav-item> 关于 </a><a href="/charts/" data-nav-index="8" data-nav-item> 统计 </a><a href="/update/" data-nav-index="9" data-nav-item> 日志 </a><a href="/agreement/" data-nav-index="10" data-nav-item> 协议 </a>  <div class="_more_1y1m8_241" data-nav-more hidden> <button type="button" class="_moreTrigger_1y1m8_248" aria-haspopup="true" aria-expanded="false" data-nav-more-trigger>
+更多
+</button> <div class="_morePanel_1y1m8_276" data-open="false" data-nav-more-panel></div> </div>  <div class="_nav_1y1m8_128 _ruler_1y1m8_314" aria-hidden="true" inert data-nav-ruler> <a href="/" data-ruler-item data-nav-index="0" tabindex="-1"> 首页 </a><a href="/archives/" data-ruler-item data-nav-index="1" tabindex="-1"> 归档 </a><a href="/series/" data-ruler-item data-nav-index="2" tabindex="-1"> 系列 </a><a href="/categories/" data-ruler-item data-nav-index="3" tabindex="-1"> 分类 </a><a href="/tags/" data-ruler-item data-nav-index="4" tabindex="-1"> 标签 </a><a href="/link/" data-ruler-item data-nav-index="5" tabindex="-1"> 友链 </a><a href="/messageboard/" data-ruler-item data-nav-index="6" tabindex="-1"> 留言板 </a><a href="/about/" data-ruler-item data-nav-index="7" tabindex="-1"> 关于 </a><a href="/charts/" data-ruler-item data-nav-index="8" tabindex="-1"> 统计 </a><a href="/update/" data-ruler-item data-nav-index="9" tabindex="-1"> 日志 </a><a href="/agreement/" data-ruler-item data-nav-index="10" tabindex="-1"> 协议 </a> <span data-ruler-more class="_moreTrigger_1y1m8_248">
+更多
+</span> </div> </nav> <div class="_actions_26tta_202" data-shell-enter> <div class="_railTriggers_26tta_272"> <button type="button" class="_railTrigger_26tta_272" data-rail-trigger="left" aria-haspopup="dialog" hidden>
+站点
+</button> <button type="button" class="_railTrigger_26tta_272" data-rail-trigger="right" aria-haspopup="dialog" hidden>
+目录
+</button> </div> <button type="button" class="_searchTrigger_26tta_210" aria-label="搜索文章（⌘K）" title="搜索文章 ⌘K" data-command-open> <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg> <span class="_searchLabel_26tta_365">搜索</span> <kbd aria-hidden="true">⌘K</kbd> </button>  <button type="button" class="_button_8hk14_128" aria-label="切换主题" title="切换主题" popovertarget="theme-menu" data-theme-toggle> <svg class="_moon_8hk14_161" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" /></svg> <svg class="_sun_8hk14_160" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg> </button> <div id="theme-menu" popover class="_content_8hk14_186" data-theme-menu> <div class="_label_8hk14_198">外观</div> <div role="radiogroup" aria-label="外观" data-theme-group> <button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="system"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>跟随系统</strong> <span>随设备自动切换</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button><button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="light"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>浅色</strong> <span>纸与墨</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button><button type="button" role="radio" aria-checked="false" class="_item_8hk14_207" data-theme-value="dark"> <span class="_itemIcon_8hk14_234"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" /></svg> </span> <span class="_itemText_8hk14_245"> <strong>深色</strong> <span>夜与灯</span> </span> <svg class="_check_8hk14_263" data-theme-check width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m5 12 4.5 4.5L19 7" /></svg> </button> </div> </div><script type="module" src="/_static/ThemeToggle.astro_astro_type_script_index_0_lang.C8b8KPj-.js"></script> <div class="_mobileOnly_26tta_323"> <button type="button" class="_iconButton_26tta_248" aria-label="打开菜单" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-navigation" data-sheet-open="mobile-navigation"> <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="M4 7h16M4 12h16M4 17h16" /></svg> </button> <dialog id="mobile-navigation" class="_dialog_p820f_128 _left_p820f_157" data-sheet="left" aria-labelledby="mobile-navigation-title"> <div class="_panel_p820f_162"> <header class="_header_p820f_188"> <div> <h2 id="mobile-navigation-title">轻笑Chuckle</h2> <p class="_description_p820f_205">漫天倾尘，风中轻笑。</p> </div> <button type="button" class="_close_p820f_212" aria-label="关闭" autofocus data-sheet-close> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="m6 6 12 12M18 6 6 18" /></svg> </button> </header> <div class="_body_p820f_237"> <nav class="_nav_1y1m8_128 _mobile_1y1m8_189" aria-label="移动端导航"> <a href="/" data-nav-item> 首页 </a><a href="/archives/" data-nav-item> 归档 </a><a href="/series/" data-nav-item> 系列 </a><a href="/categories/" data-nav-item> 分类 </a><a href="/tags/" data-nav-item> 标签 </a><a href="/link/" data-nav-item> 友链 </a><a href="/messageboard/" data-nav-item> 留言板 </a><a href="/about/" data-nav-item> 关于 </a><a href="/charts/" data-nav-item> 统计 </a><a href="/update/" data-nav-item> 日志 </a><a href="/agreement/" data-nav-item> 协议 </a> </nav> <button type="button" class="_sheetSearch_26tta_237" data-command-open data-sheet-then-command> <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+搜索文章
+<kbd>⌘K</kbd> </button> </div> </div> </dialog> </div> </div> </div>  <div class="_track_1v1iy_41" aria-hidden="true" data-reading-progress> <span data-reading-bar></span> </div> </header><script type="module" src="/_static/SiteHeader.astro_astro_type_script_index_0_lang.DLY5Ntxp.js"></script> <main id="main" class="transition-main" tabindex="-1">  <div class="container page _page_vnlu0_128 _page_tc8st_128"> <div class="_grid_vnlu0_132 _rightCollapse1180_vnlu0_259"> <aside class="_left_vnlu0_155" aria-label="左侧栏" data-rail="left">  <a class="_link_bndhu_128" href="/" data-atom> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m14 6-6 6 6 6" /></svg> 返回文章 </a> <div class="_progress_tc8st_186" data-atom> <span class="_progressRing_tc8st_193" data-reading-ring></span> <span class="_progressValue_tc8st_212" data-reading-percent>0%</span> <span class="_progressLabel_tc8st_219">阅读进度</span> </div> <section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">同系列</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/13675369.html" class="_item_1te21_180" data-active="true" aria-current="page"> <span class="_number_1te21_234">01</span> <span class="_label_1te21_241">C语言学习笔记</span>    </a> </li><li data-atom> <a href="/article/a696e8fe.html" class="_item_1te21_180"> <span class="_number_1te21_234">02</span> <span class="_label_1te21_241">C语言单链表菜品管理系统</span>    </a> </li> </ol> <a class="_seriesAll_tc8st_224" href="/series/c-language/" data-nudge="right">
+系列首页
+<span class="nudge" aria-hidden="true"><span class="nudge-glyph">→</span></span> </a>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">标签</p>  </div>   <div class="_tags_1te21_260" data-dense-order> <a href="/tags/700b19ab/" data-atom>
+#C语言  </a> </div>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">相关阅读</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/a696e8fe.html" class="_item_1te21_180">  <span class="_label_1te21_241">C语言单链表菜品管理系统</span>  <span class="_meta_1te21_55">04-01</span>  </a> </li><li data-atom> <a href="/article/1be64a8d.html" class="_item_1te21_180">  <span class="_label_1te21_241">NestJS实践杂记</span>  <span class="_meta_1te21_55">12-09</span>  </a> </li><li data-atom> <a href="/article/55cefeb1.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-3</span>  <span class="_meta_1te21_55">10-13</span>  </a> </li> </ol>  </section> </aside> <div class="_center_vnlu0_151" data-column="center">    <article class="_article_tc8st_132"> <header class="_header_tc8st_248 _headerOnCover_tc8st_256" style="--hero-veil-strong: rgb(25 24 23 / 0.84); --hero-veil-soft: rgb(25 24 23 / 0.11); --hero-veil-strong-dark: rgb(25 24 23 / 0.86); --hero-veil-soft-dark: rgb(25 24 23 / 0.16)">  <div class="_cover_tc8st_266"> <img src="/assets/posts/119568aec9b68b33.webp" srcset="/assets/posts/covers/119568aec9b68b33-480.webp 480w, /assets/posts/covers/119568aec9b68b33-960.webp 960w, /assets/posts/119568aec9b68b33.webp 500w" sizes="(max-width: 767px) 92vw, (max-width: 1179px) 64vw, 58vw" alt="" width="500" height="236" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="origin" data-fallback="hide"> </div> <div class="_headerBodyOnCover_tc8st_284"> <p class="_kicker_tc8st_325"> <span>
+系列 · <a href="/series/c-language/">C 语言</a> </span> <a href="/categories/bcda4893/">学习笔记</a> </p> <h1 class="_title_tc8st_345" data-atom>C语言学习笔记</h1> <p class="_lede_tc8st_349" data-atom>我的C语言学习笔记</p> <div class="_metaRow_tc8st_415" data-atom> <div class="_meta_tc8st_55"> <time datetime="2022-03-27T14:08:09.000Z">2022年3月27日</time> <span>10 分钟</span> <span>4,109 字</span>  <span class="_views_tc8st_468"> <span data-pageview></span> 次浏览
+</span>  <span class="_comments_tc8st_469"> <a href="#comments" title="跳转到评论区"><span data-comment-count data-path="/article/13675369.html"></span> 条评论</a> </span> <span>更新于 2022年3月30日</span> </div> <div class="_metaActions_tc8st_518" data-atom> <div class="_actions_kmpj4_128 _light_kmpj4_175" data-article-actions> <button type="button" class="_trigger_2hzyr_128 _light_2hzyr_153" aria-label="打开文章目录" aria-haspopup="dialog" aria-expanded="false" aria-controls="toc-dialog" data-toc-open> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 6h12M8 12h12M8 18h12" /><path d="M4 6h.01M4 12h.01M4 18h.01" /></svg>
+目录
+</button> <button type="button" class="_action_kmpj4_128" data-copy-link data-copy-path="/article/13675369.html" aria-label="复制链接"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="8" y="8" width="11" height="11" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></svg> <span>复制链接</span> </button> <button type="button" class="_action_kmpj4_128" data-share data-share-path="/article/13675369.html" data-share-title="C语言学习笔记" aria-label="分享"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4" /></svg> <span>分享</span> </button> <span class="_message_kmpj4_163" role="status" aria-live="polite" data-action-message></span> </div> </div> </div> </div> </header>   <button type="button" class="_trigger_2hzyr_128 _floating_2hzyr_168" aria-label="打开文章目录" aria-haspopup="dialog" aria-expanded="false" aria-controls="toc-dialog" data-toc-open data-toc-floating> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 6h12M8 12h12M8 18h12" /><path d="M4 6h.01M4 12h.01M4 18h.01" /></svg>
+目录
+</button> <dialog class="_dialog_p820f_128 _bottom_p820f_152" id="toc-dialog" aria-labelledby="toc-dialog-title" data-toc-dialog> <div class="_panel_p820f_162"> <header class="_header_p820f_188"> <div> <h2 id="toc-dialog-title">文章目录</h2> <p class="_description_p820f_205">跳到感兴趣的小节</p> </div> <button type="button" class="_close_p820f_212" aria-label="关闭目录" data-toc-close autofocus> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" ><path d="m6 6 12 12M18 6 6 18" /></svg> </button> </header> <div class="_body_p820f_237 _body_2hzyr_198" data-toc-scroll> <div class="_meta_2hzyr_55"> <span>共 59 节</span> <span>当前章节会自动高亮</span> </div> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#整数运算" data-toc-link> <span class="_linkText_kec3t_264">整数运算</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#所表达的数的范围" data-toc-link> <span class="_linkText_kec3t_264">所表达的数的范围</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#sizeof" data-toc-link> <span class="_linkText_kec3t_264">sizeof()</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#unsigned" data-toc-link> <span class="_linkText_kec3t_264">unsigned</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#整数的输入输出" data-toc-link> <span class="_linkText_kec3t_264">整数的输入输出</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#选搔整数类型" data-toc-link> <span class="_linkText_kec3t_264">选搔整数类型</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#选浮点类型" data-toc-link> <span class="_linkText_kec3t_264">选浮点类型</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#自动类型转换" data-toc-link> <span class="_linkText_kec3t_264">自动类型转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#强制类型转换" data-toc-link> <span class="_linkText_kec3t_264">强制类型转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#逻辑运算符优先级" data-toc-link> <span class="_linkText_kec3t_264">逻辑运算符优先级:</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#短路" data-toc-link> <span class="_linkText_kec3t_264">短路</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#tip1" data-toc-link> <span class="_linkText_kec3t_264">tip1</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#数组的大小" data-toc-link> <span class="_linkText_kec3t_264">数组的大小</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#数组的操作" data-toc-link> <span class="_linkText_kec3t_264">数组的操作</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#作为参数的指针" data-toc-link> <span class="_linkText_kec3t_264">作为参数的指针</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#指针是const" data-toc-link> <span class="_linkText_kec3t_264">指针是const</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#所指是-const" data-toc-link> <span class="_linkText_kec3t_264">所指是 const</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#const" data-toc-link> <span class="_linkText_kec3t_264">const</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#转换" data-toc-link> <span class="_linkText_kec3t_264">转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#const数组" data-toc-link> <span class="_linkText_kec3t_264">const数组</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#保护数组值" data-toc-link> <span class="_linkText_kec3t_264">保护数组值</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#指针" data-toc-link> <span class="_linkText_kec3t_264">指针</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针遍历数组方法" data-toc-link> <span class="_linkText_kec3t_264">指针遍历数组方法</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针比較" data-toc-link> <span class="_linkText_kec3t_264">指针比較</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#0地址" data-toc-link> <span class="_linkText_kec3t_264">0地址</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针的类型" data-toc-link> <span class="_linkText_kec3t_264">指针的类型</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针的类型转换" data-toc-link> <span class="_linkText_kec3t_264">指针的类型转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#用指针来做什么" data-toc-link> <span class="_linkText_kec3t_264">用指针来做什么</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#内存操作" data-toc-link> <span class="_linkText_kec3t_264">内存操作</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#malloc跟系统要一块内存" data-toc-link> <span class="_linkText_kec3t_264">malloc(跟系统要一块内存)</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#free" data-toc-link> <span class="_linkText_kec3t_264">free()</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#free常见问题" data-toc-link> <span class="_linkText_kec3t_264">free常见问题</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#字符串" data-toc-link> <span class="_linkText_kec3t_264">字符串</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#字符串常量" data-toc-link> <span class="_linkText_kec3t_264">字符串常量</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#字符串输入输出" data-toc-link> <span class="_linkText_kec3t_264">字符串输入输出</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#空字符串" data-toc-link> <span class="_linkText_kec3t_264">空字符串</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#复制一个字符串" data-toc-link> <span class="_linkText_kec3t_264">复制一个字符串</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#枚挙" data-toc-link> <span class="_linkText_kec3t_264">枚挙</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#结构" data-toc-link> <span class="_linkText_kec3t_264">结构</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#声明结构的形式" data-toc-link> <span class="_linkText_kec3t_264">声明结构的形式</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#结构指针" data-toc-link> <span class="_linkText_kec3t_264">结构指针</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#结构作为函数参数" data-toc-link> <span class="_linkText_kec3t_264">结构作为函数参数</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指向结构的指针" data-toc-link> <span class="_linkText_kec3t_264">指向结构的指针</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#全局变量初始化" data-toc-link> <span class="_linkText_kec3t_264">全局变量初始化</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#静态本地变量全局生存期本地作用域" data-toc-link> <span class="_linkText_kec3t_264">静态本地变量（全局生存期，本地作用域）</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#返回指针的函数" data-toc-link> <span class="_linkText_kec3t_264">返回指针的函数</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#编译预处理指令" data-toc-link> <span class="_linkText_kec3t_264">编译预处理指令</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#define纯文本替换" data-toc-link> <span class="_linkText_kec3t_264">#define(纯文本替换)</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#宏" data-toc-link> <span class="_linkText_kec3t_264">宏</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#预定义的宏" data-toc-link> <span class="_linkText_kec3t_264">预定义的宏</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#带参数的宏" data-toc-link> <span class="_linkText_kec3t_264">带参数的宏</span> </a>  </li> </ol> </ol> </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#变量的声明" data-toc-link> <span class="_linkText_kec3t_264">变量的声明</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#声明和定义" data-toc-link> <span class="_linkText_kec3t_264">声明和定义</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#重复声明" data-toc-link> <span class="_linkText_kec3t_264">重复声明</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#标准头文件结构宏的if" data-toc-link> <span class="_linkText_kec3t_264">标准头文件结构(宏的if)</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#链表" data-toc-link> <span class="_linkText_kec3t_264">链表</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#遍历链表" data-toc-link> <span class="_linkText_kec3t_264">遍历链表</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#清除整个链表" data-toc-link> <span class="_linkText_kec3t_264">清除整个链表</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#main" data-toc-link> <span class="_linkText_kec3t_264">main()</span> </a>  </li> </ol> <div class="_foot_kec3t_283"> <a class="_top_kec3t_293" href="#main" data-toc-link> <span aria-hidden="true">↑</span>
+回到顶部
+</a> <a class="_top_kec3t_293 undefined" href="#comments" data-toc-link> <span aria-hidden="true">↓</span>
+评论区
+</a> </div> </div> </div> </dialog>  <div id="article-content" class="prose" data-reading-target data-pagefind-body> <h2 id="整数运算">整数运算</h2>
+<p>两个整数运算结果也只能是整数<br>
+a+=5等价于a=a+5<br>
+a*=b+5等价于a=a*(b+5)<br>
+a++等a+=1等a=a+1<br>
+a++是a加1以前的值，++a是a加1后的值<br>
+运算符优先级：算数>关系>赋值，判断是否相等的优先级比大于小于低</p>
+<hr>
+<h2 id="所表达的数的范围">所表达的数的范围</h2>
+<p>char&#x3C; short&#x3C;int&#x3C; float&#x3C;double</p>
+<hr>
+<h2 id="sizeof">sizeof()</h2>
+<p>sizeof()是一个运算符,给出某个类型或变量在内存中所占据的字节数<br>
+sizeof()是静态运算符,它的结果在编译时刻就决定了，不要在 sizeof的括号里做运算,这些运算不会做的</p>
+<hr>
+<h2 id="unsigned">unsigned</h2>
+<p>unsigned：如果一个字面量常数想要表达自己是 unsigned,可以在后面加u或U，255U用l或L表示long(long)<br>
+unsigned的初衷并非扩展数能表达的范围,而是为了做纯二进制运算,主要是为了移位</p>
+<hr>
+<h2 id="整数的输入输出">整数的输入输出</h2>
+<p>只有两种形式:int或 long long<br>
+%d: int<br>
+%u: unsigned<br>
+%ld: longlong<br>
+%lu: unsigned long long</p>
+<hr>
+<h2 id="选搔整数类型">选搔整数类型</h2>
+<p>为什么整数要有那么多种?为了准确表达内存,做底层程序的需要<br>
+没有特殊需要,就选int<br>
+现在的CPU的字长普遍是32位或64位,一次内存该写就是个int,一次计算也是一个int,选择更短的类型不会更快,甚至可能更慢<br>
+现代的编译器一般会设计内存对齐,所以更短的类型实际在内存中有可能也占据一个int的大小(虽然sizeof告诉你更小)</p>
+<hr>
+<p>unsigned与否只是输出的不同,内部计算是一样的<br>
+printf输出inf表示超过范围的浮点数:±∞<br>
+print输出nan表示不存在的浮点数<br>
+带小数点的字面量是 double而非 float<br>
+float需要用或F后綴来表明身份<br>
+1.234f</p>
+<hr>
+<p>判断两个浮点数是否相等可能失败<br>
+fabs(fl-2)&#x3C; le-2//两个浮点数相减的绝对值小于一个很小的数，可认为两个浮点数相等</p>
+<hr>
+<h2 id="选浮点类型">选浮点类型</h2>
+<p>如果没有特殊需要,只使用 double<br>
+现代CPU能直接对 double做硬件运算,性能不会比float差,在64位的机器上,数据存儲的速度也不比float慢</p>
+<hr>
+<h2 id="自动类型转换">自动类型转换</h2>
+<p>当运算符的两边出现不一致的类型时,会自动转换成較大的类型<br>
+大的意思是能表达的数的范围更大<br>
+char——> short——>int——>long——>long long<br>
+int——> float——> double<br>
+对于 printf,任何小于int的类型会被转换成int，float会被转换成 double<br>
+但是scanf不会,要输入short,需要%hd</p>
+<hr>
+<h2 id="强制类型转换">强制类型转换</h2>
+<p>要把一个量强制转换成另一个类型(通常是較小的类型),需要:(类型)值<br>
+比如：<br>
+(int)10.2<br>
+(short)32<br>
+注意这时候的安全性,小的变量不总能表达大的量<br>
+(short)32768<br>
+只是从那个变量计算出了一个新的类型的值,它并不改变那个变量,无论是值还是类型都不改变<br>
+强制类型转换的优先级高于四则运算</p>
+<hr>
+<h2 id="逻辑运算符优先级">逻辑运算符优先级:</h2>
+<p>!>&#x26;&#x26;>||</p>
+<hr>
+<h2 id="短路">短路</h2>
+<p>逻辑运算是自左向右进行的,如果左边的结果已经能够决定结果了,就不会做右边的计算<br>
+a==6&#x26;&#x26;b==1<br>
+a==6&#x26;&#x26;b+=1<br>
+对于&#x26;&#x26;,左边是 false时就不做右边了<br>
+对于‖,左边是true时就不做右边了</p>
+<hr>
+<h2 id="tip1">tip1</h2>
+<p>不要把赋值,包括复合赋值组合进表达式!<br>
+一个代码内有重复相似段是程序质量不良的表现<br>
+函数是一块代,接收零个或多个参数做一件事情,并返回零个或一个值</p>
+<hr>
+<h2 id="数组的大小">数组的大小</h2>
+<p>sizeof给出整个数组所占据的内容的大小,单位是字节<br>
+sizeof(a)/sizeof(a[0])<br>
+sizeof(a[0])给出数组中单个元素的大小,于是相除就得到了数组的单元个数<br>
+这样的代码,一旦修改数组中初始的数据,不需要修改遍历的代吗</p>
+<hr>
+<h2 id="数组的操作">数组的操作</h2>
+<p>遍历数组：通常都是使用for循环,让循环变量i从0到&#x3C;数组的长度,这样循环体内最大的正好是数组最大的有效下标<br>
+数组作为函数的参数时:不能在[]中给出数组的大小，不能再利用 sizeof来计算数组的元素个数!<br>
+数组作为函数参数时,往往必再用另一个参数来传入数组的大小</p>
+<h2 id="作为参数的指针">作为参数的指针</h2>
+<p>void f(int * p)<br>
+在被调用的时候得到了某个变量的地址<br>
+int i=O; f(&#x26;i)<br>
+在函数里面可以通过这个指针访问外面的这个<br>
+函数参数表中的数组实际上是指针<br>
+sizeof(a)==sizeof(int *)<br>
+但是可以用数组的运算符进行运算</p>
+<hr>
+<h2 id="指针是const">指针是const</h2>
+<p>表示一旦得到了某个变量的地址,不能再指向其他变量<br>
+int *const q=&#x26;i;//q是 const<br>
+*q=26;//OK<br>
+q++; //ERROR</p>
+<hr>
+<h2 id="所指是-const">所指是 const</h2>
+<p>表示不能通过这个指针去修改那个变量(并不能使得那个变量成为 const)<br>
+const int *p=&#x26;i<br>
+*p= 26; //ERROR!<br>
+i=26;//OK<br>
+P=&#x26;i;//OK</p>
+<hr>
+<h2 id="const">const</h2>
+<p>lnt i<br>
+const int* p1 =&#x26;i<br>
+int const* p2=&#x26;i<br>
+int <em>const p3=&#x26;i<br>
+判断哪个被const了的标志是const在</em>的前面还是后面<br>
+*const p指针不许动<br>
+const *p指针不许动变量</p>
+<hr>
+<h3 id="转换">转换</h3>
+<p>总是可以把一个非 const的值转換成 const的<br>
+void f(const int* x)<br>
+int a =15:<br>
+f(&#x26;a);//ok<br>
+const int b = a<br>
+f(&#x26;b);//ok<br>
+b =a+1: // Error<br>
+当要传递的参数的类型比地址大的时候,这是常用的手段:既能用比較少的字节数传递值给参数,又能避免函数对外面的变量的修改</p>
+<hr>
+<h3 id="const数组">const数组</h3>
+<p>const int a[]={1,2,3,4,5,6};<br>
+数组变量已经是 const的指针了,这里的 const表明数组的每个单元都是 const Int所以必须通过初始化进行赋值</p>
+<hr>
+<h3 id="保护数组值">保护数组值</h3>
+<p>因为把数组传入函数时传递的是地址,所以那个函数内部可以修改数组的值<br>
+为了保护数组不被函数破坏,可以设置参数为 const<br>
+int sum(const int a[], int length);</p>
+<hr>
+<h2 id="指针">指针</h2>
+<p>int *p ：指针加一p+1是指加上一个sizeof(int)，将指针移到下一个单元<br>
+int *p=a[];<br>
+*p -->a[0]<br>
+*(p+1)-->a[1]<br>
+*(p++)可以遍历数组</p>
+<hr>
+<p>给一个指针加|表示要让指针指向下一个变量<br>
+int a[l0]<br>
+int *p= a<br>
+*(p+1)-->a[1]<br>
+如果指针不是指向一片连分配的空间,如数组,则这种运算没有意义<br>
+*(p+n)&#x3C;-->a[n]<br>
+<em>p</em>q两个指针相减p-q，等于q加多少个单元等于p</p>
+<hr>
+<p>*p++<br>
+取出p所指的那个数据来,完事之后顺便把移到下一个位置去<br>
+*的优先级然高,但是没有++高<br>
+常用于数组类的连续空间操作<br>
+在某些CPU上,这可以直接被翻译成一条汇编指令</p>
+<p>指针乘除无意义</p>
+<hr>
+<h3 id="指针遍历数组方法">指针遍历数组方法</h3>
+<div class="expressive-code"><link rel="stylesheet" href="/_static/expressive-code.35cb7027.css" /><script type="module">try{(()=>{function n(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var c=window.requestIdleCallback||(e=>setTimeout(e,1)),l=window.cancelIdleCallback||clearTimeout;function u(e){let t=new Set,r,o;return new ResizeObserver(b=>{b.forEach(d=>t.add(d.target)),r&&clearTimeout(r),o&&l(o),r=setTimeout(()=>{o&&l(o),o=c(()=>{t.forEach(d=>e(d)),t.clear()})},250)})}function a(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let o=r.parentElement;o&&t.observe(o)})}var i=u(n);a(document,i);var s=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{a(r,i)})));s.observe(document.body,{childList:!0,subtree:!0}),document.addEventListener("astro:page-load",()=>{a(document,i)})})()}catch(n){console.error("[EC] tabindex-js-module failed:",n)}</script><figure class="frame"><pre><code><div class="ec-line"><div class="code">*p a[10]</div></div><div class="ec-line"><div class="code">p=a</div></div><div class="ec-line"><div class="code">for(i=0;i&#x3C;sizeof(a)/sizeof(a[0]); i++ ){</div></div><div class="ec-line"><div class="code">printf("%d\n", acri[i]);</div></div><div class="ec-line"><div class="code">}</div></div><div class="ec-line"><div class="code">a[9]=-1//在数组末尾放入一个特殊的东西</div></div><div class="ec-line"><div class="code">while(*p!=-1){</div></div><div class="ec-line"><div class="code">printf("%d\n",*p++);</div></div><div class="ec-line"><div class="code">}</div></div></code></pre></figure></div>
+<hr>
+<h3 id="指针比較">指针比較</h3>
+<p>&#x3C;,&#x3C;=,==,>,>=,!=都可以对指针做<br>
+比较它们在内存中的地址<br>
+数组中的单元的地址肯定是线性从小到大递增的</p>
+<hr>
+<h3 id="0地址">0地址</h3>
+<p>当然你的内存中有0地址,但是0地址通常是个不能随便碰的地址<br>
+所以你的指针不应该具有0值</p>
+<p>因此可以用0地址来表示特殊的事情:<br>
+1返回的指针是无效的<br>
+2指针没有被真正初始化(先初始化为0)</p>
+<p>NULL（必须是大写）是一个预定定义的符号,表示0地址<br>
+有的编译器不愿意你用0来表示0地址</p>
+<hr>
+<h3 id="指针的类型">指针的类型</h3>
+<p>无论指向什么类型,所有的指针的大小都是一样的,因为都是地址<br>
+但是指向不同类型的指针是不能直接互相赋值的<br>
+这是为了避免用错指针</p>
+<h3 id="指针的类型转换">指针的类型转换</h3>
+<p>void<em>表示不知道指向什么东西的指针<br>
+计算时与char</em>相同(但不相通)</p>
+<p>指针也可以转换类型<br>
+int<em>p =&#x26;i<br>
+void</em>p&#x3C;-->(void *)p<br>
+这并没有改变p所指的变量的类型,而是让后人用不同的眼光通过p看它所指的变量<br>
+我不再当你是int,我认为你就是个void!</p>
+<hr>
+<h3 id="用指针来做什么">用指针来做什么</h3>
+<p>需要传入較大的数据时用作参数<br>
+传入数组后对数组做操作<br>
+函数返回不止一个结果是<br>
+需要用函数来修改不止一个变量<br>
+动态申请的内存</p>
+<hr>
+<h2 id="内存操作">内存操作</h2>
+<h3 id="malloc跟系统要一块内存">malloc(跟系统要一块内存)</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">#include &#x3C;stdlib. h></div></div><div class="ec-line"><div class="code">void*malloc(size_t size)</div></div><div class="ec-line"><div class="code">//向malloc申请的空间的大小是以字节为单位返回的结果是void,需要类型转换为自己需要的类型</div></div><div class="ec-line"><div class="code">(int *)malloc(n*sizeof(int))</div></div></code></pre></figure></div>
+<p>如果申请失敗则返回0,或者叫做NULL</p>
+<hr>
+<h3 id="free">free()</h3>
+<p>把申请得来的空间还给“系统”<br>
+申请过的空间,最终都应该要还<br>
+只能还申请来的空间的首地址</p>
+<h3 id="free常见问题">free常见问题</h3>
+<p>申请了没free—>长时间运行内存逐漸下降<br>
+新手:忘了<br>
+老手:找不到合的free的时机<br>
+free过了再free<br>
+地址变过了,直接去free</p>
+<hr>
+<h2 id="字符串">字符串</h2>
+<p>char a[]={'h','a','l','l','o','!'}//字符数组<br>
+char a[]={'h','a','l','l','o','!','\0'}//字符串</p>
+<hr>
+<p>以0(整数0)结尾的一串字符<br>
+0或'\0'是一样的,但是和0不同<br>
+0标志字符串的结束,但它不是字符串的一部分<br>
+计算字符串长度的时候不包含这个0<br>
+字符串以数组的形式存在,以数组或指针的形式访问<br>
+更多的是以指针的形式<br>
+string.h里有很多处理字符串的函数</p>
+<hr>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">char*str="Hello"</div></div><div class="ec-line"><div class="code">char word[]="Hello"</div></div><div class="ec-line"><div class="code">char linel[10]="Hello"</div></div></code></pre></figure></div>
+<hr>
+<h3 id="字符串常量">字符串常量</h3>
+<p>Char* s="Hello, world"<br>
+●s是一个指针,初始化为指向一个字符串常量
+●由于这个常量所在的地方,所以实际上s是 const<br>
+char*s,但是由于历史的原因,编译器接受不带const的写法<br>
+●但是试图对s所指的字符串做写入会导致严重的后果</p>
+<hr>
+<p>char S[]="Hello, world"//这个字符串就在我这里<br>
+Char* s="Hello, world"//指向某个地方的字符串<br>
+数组:这个字符串在这里(作为本地变量,空间自动被回收)<br>
+指针:这个字符串不知道在哪里(处理参数,动态分配空间)<br>
+如果要构造一个字符串一>数组<br>
+如果要处理一个字符串一>指针</p>
+<hr>
+<h3 id="字符串输入输出">字符串输入输出</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">char string[8];</div></div><div class="ec-line"><div class="code">scanf("%s", string);</div></div><div class="ec-line"><div class="code">printf("%s", string);</div></div><div class="ec-line"><div class="code">//scanf读入一个単词(到空格、tab或回车为止)</div></div><div class="ec-line"><div class="code">//scanf是不安全的,因为不知道要该入的内容的长度</div></div><div class="ec-line"><div class="code">scanf("%7s", string)</div></div><div class="ec-line"><div class="code">//在%和s之间的数字表示最多允许该入的字符的数量,这个数字应该比数组的大小小</div></div></code></pre></figure></div>
+<hr>
+<h3 id="空字符串">空字符串</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">char buffer[100]="";</div></div><div class="ec-line"><div class="code">//这是一个空的字符串, buffer[O]=="\0";</div></div><div class="ec-line"><div class="code">char buffer[]="";</div></div><div class="ec-line"><div class="code">//这个数组的长度只有1</div></div></code></pre></figure></div>
+<hr>
+<h3 id="复制一个字符串">复制一个字符串</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">char*dst=(char*)malloc(strlen(src)+1)</div></div><div class="ec-line"><div class="code">strcpy(dst, src)</div></div></code></pre></figure></div>
+<hr>
+<h2 id="枚挙">枚挙</h2>
+<p>枚挙是一种用戶定义的数据类型,它用关键字enum以如下语法来声明<br>
+enum枚挙类型名字{名字0,……,名字n};</p>
+<p>枚挙类型名字通常并不真的使用,要用的是在大括号里的名字,因为它们就是就是常量符号,它们的类型是int,值则依次从0到n。如：<br>
+enum colors {red, yellow, green};<br>
+就创建了三个常量,red的值是0, yellow是1,而 green是2。<br>
+当需要一些可以排列起来的常量值时,定义枚举的意义就是给了这些常量值名字。</p>
+<blockquote>
+<p>声明枚挙量的时候可以指定值
+enum COLOR {RED=1, YELLOW, GREEN =5};</p>
+</blockquote>
+<hr>
+<h2 id="结构">结构</h2>
+<h3 id="声明结构的形式">声明结构的形式</h3>
+<div class="expressive-code"><figure class="frame"><pre data-folded="true"><code><div class="ec-line"><div class="code">struct point{</div></div><div class="ec-line"><div class="code">int X;</div></div><div class="ec-line"><div class="code">Int y;</div></div><div class="ec-line"><div class="code">};</div></div><div class="ec-line"><div class="code">struct point p1, p2</div></div><div class="ec-line"><div class="code">//pl和p2都是 point里面有x和y的值</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">struct {</div></div><div class="ec-line"><div class="code">Int x;</div></div><div class="ec-line"><div class="code">int y;</div></div><div class="ec-line"><div class="code">}pl, p2;</div></div><div class="ec-line"><div class="code">//pl和p2都是一种无名结构,里面有x和y</div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code">struct point {</div></div><div class="ec-line"><div class="code">Int x;</div></div><div class="ec-line"><div class="code">int y;</div></div><div class="ec-line"><div class="code">}pl, p2;</div></div><div class="ec-line"><div class="code">//pI和p2都是point, 里面有x和y的值t</div></div></code></pre></figure></div>
+<blockquote>
+<p>和本地变量一样,在函数内部声明的结构类型只能在函数内部使用<br>
+所以通常在函数外部声明结构类型,这样就可以被多个函数所使用了</p>
+</blockquote>
+<hr>
+<h3 id="结构指针">结构指针</h3>
+<p>和数组不同,结构变量的名字并不是结构变量的地址,必须使用&#x26;运算符</p>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">struct date*pdate= &#x26;today;</div></div></code></pre></figure></div>
+<hr>
+<h3 id="结构作为函数参数">结构作为函数参数</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">int numberofdays(struct date d)</div></div></code></pre></figure></div>
+<p>整个结构可以作为参数的值传入函数<br>
+这时候是在函数内新建一个结构变量,并复制调用者的结构的值<br>
+也可以返回一个结构<br>
+这与数组完全不同</p>
+<hr>
+<h3 id="指向结构的指针">指向结构的指针</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">struct date {</div></div><div class="ec-line"><div class="code">int month;</div></div><div class="ec-line"><div class="code">int day;</div></div><div class="ec-line"><div class="code">int yeari;</div></div><div class="ec-line"><div class="code">}myday;</div></div><div class="ec-line"><div class="code">struct date *p =&#x26;myday;</div></div><div class="ec-line"><div class="code">(*p).month 12;</div></div><div class="ec-line"><div class="code">p->zmonth 12;</div></div><div class="ec-line"><div class="code">//用->表示指针所指的结构变量中的成员</div></div></code></pre></figure></div>
+<hr>
+<h2 id="全局变量初始化">全局变量初始化</h2>
+<p>没有做初始化的全局变量会得到0值<br>
+指针会得到NULL值<br>
+只能用编译时刻已知的值来初始化全局变量<br>
+它们的初始化发生在main函数之前<br>
+全局变量不应该和另一个全局变量有联系<br>
+同名变量，本地变量优先级高于全局变量，即本地变量隐藏了全局变量</p>
+<hr>
+<h2 id="静态本地变量全局生存期本地作用域">静态本地变量（全局生存期，本地作用域）</h2>
+<p>在本地变量定义时加上 static修饰符就成为静态本地变量<br>
+当函数离开的时候,静态本地变量会銖存在并保持其值<br>
+静态本地变量的初始化只会在第一次进入这个函数时做（只做一次初始化）,以后进入函数时会保持上次离开时的值<br>
+静态本地变量实际上是特殊的全局变量，它们位于相同的内存区域<br>
+静态本地变量具有全局的生存期,函数内的局部作用域<br>
+static在这里的意思是局部作用域(本地可访问)</p>
+<blockquote>
+<p>不要使用全局变量来在函数间传递参数和结果<br>
+尽量避免使用全局变量<br>
+丰田汽车的案子<br>
+使用全局变量和静态本地变量的函数是线程不安全的</p>
+</blockquote>
+<hr>
+<h2 id="返回指针的函数">返回指针的函数</h2>
+<p>返回本地变量的地址是危险的<br>
+返回全局变量或静态本地变量的地址是安全的<br>
+返回在函数内 malloc的内存是安全的,但是容易造成问题<br>
+最好的做法是返回传入的指针</p>
+<hr>
+<h2 id="编译预处理指令">编译预处理指令</h2>
+<p>#开头的是编译预处理指令<br>
+它们不是C语言的成分,但是C语言程序离不开它们</p>
+<hr>
+<h3 id="define纯文本替换">#define(纯文本替换)</h3>
+<p>#define用来定义一个宏<br>
+#define&#x3C;名字>&#x3C;值><br>
+注意没有结尾的分号,因为不是C的语句<br>
+名字必颁是一个单词,值可以是各种东西<br>
+在C语言的编译器开始编译之前,编译预处理程序<br>
+(cpp)会把程序中的名字换成值<br>
+完全的文本替换<br>
+acc-save-temps</p>
+<hr>
+<h3 id="宏">宏</h3>
+<p>如果一个宏的值中有其他的宏的名字,也是会被替换的<br>
+如果一个宏的值超过一行,最后一行之前的行末需要加  \<br>
+宏的值后面出现的注释不会被当作宏的值的一部分</p>
+<hr>
+<h4 id="预定义的宏">预定义的宏</h4>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">_LINE_</div></div><div class="ec-line"><div class="code">_FILE_</div></div><div class="ec-line"><div class="code">_DATE_</div></div><div class="ec-line"><div class="code">_TIME_</div></div><div class="ec-line"><div class="code">_STDC_</div></div></code></pre></figure></div>
+<h4 id="带参数的宏">带参数的宏</h4>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">#define cube(x) ((x)*(x)*(x))</div></div></code></pre></figure></div>
+<p>在大型程序的代吗中使用非常普遍<br>
+可以非常复杂,如“产生”函数:在#和##这两个运算符的帮助下<br>
+存在中西方文化差异<br>
+部分宏会被inline函数替代</p>
+<hr>
+<h2 id="变量的声明">变量的声明</h2>
+<p>int i;是变量的定义<br>
+extern int i;是变量的声明</p>
+<hr>
+<h2 id="声明和定义">声明和定义</h2>
+<p>声明是不产生代码的东西<br>
+函数原型<br>
+变量声明<br>
+结构声明<br>
+宏声明<br>
+枚挙声明<br>
+类型声明<br>
+inline函数<br>
+定义是产生代码的东西<br>
+头文件放声明是规则</p>
+<hr>
+<h2 id="重复声明">重复声明</h2>
+<p>同一个编译单元里,同名的结构不能被重复声明<br>
+如果你的头文件里有结构的声明,很难这个头文件不会在一个编译单元里被#include多次，所以需要"标准头文件结构"</p>
+<hr>
+<h2 id="标准头文件结构宏的if">标准头文件结构(宏的if)</h2>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">#ifndef _LIST_HEAD_</div></div><div class="ec-line"><div class="code">#define _LIST_HEAD_</div></div><div class="ec-line"><div class="code">#include "node.h"</div></div><div class="ec-line"><div class="code">typedef struct _list{</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>Node* head</div></div><div class="ec-line"><div class="code"><span class="indent">    </span>Node* tail</div></div><div class="ec-line"><div class="code">}List</div></div><div class="ec-line"><div class="code">#endif</div></div><div class="ec-line"><div class="code">//运用条件编译和宏,保证这个头文件在一个编译单元中只会被#include一次</div></div><div class="ec-line"><div class="code">#pragma once//也能起到相同的作用,但是不是所有的编译器都支持</div></div></code></pre></figure></div>
+<h2 id="链表">链表</h2>
+<blockquote>
+<p>0建一个node结构<br>
+1首选有个node结构(作为节点)，结构里有int(或者其他类型)变量去存数据，还有个同样结构的*next(next要等于下一个节点)（套娃）<br>
+2读入数据，并新建一个node结构p，要让一个node结构head始终等于链表第一个节点<br>
+3要有一个node结构last，每次要让last从head开始，直到last->next是空的，然后让next等于新的p结构（这样就链起来了）<br>
+4每次读入新的数据，就新建一个p，然后让last从head开始遍历链表，直到last->next是空的，然后然后让next等于新的p结构</p>
+</blockquote>
+<p><strong>要在函数内改变指针的指向，就要传指针的指针进去</strong></p>
+<hr>
+<h3 id="遍历链表">遍历链表</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">for(p=list.head; p; p=p->next){}</div></div><div class="ec-line"><div class="code">//单用一个指针p可以遍历链表</div></div></code></pre></figure></div>
+<p>但要让删除链表中某一结点，需要另一个指针q，q一开始为null，后来始终指向p前一个节点<br>
+当p找到了要删除的节点，就让q->next等于p->next，然后free(p)<br>
+for(q=null，p=list.head; p; q=p，p=p->next){}<br>
+当然还要判断链表的第一个元素是不是我们要删除的<br>
+如果是，就不能让q->next等于p->next，因为q一开始是NULL<br>
+我们应该让head->next等于p->next，然后free(p)</p>
+<blockquote>
+<p>"."一般情况下读作"的”。<br>
+"->"一般读作"指向的结构体的"。</p>
+</blockquote>
+<hr>
+<h3 id="清除整个链表">清除整个链表</h3>
+<div class="expressive-code"><figure class="frame"><pre><code><div class="ec-line"><div class="code">for(p=head;p;p=q){</div></div><div class="ec-line"><div class="code"><span class="indent">     </span>q=p->next;</div></div><div class="ec-line"><div class="code"><span class="indent">     </span>free(p)</div></div><div class="ec-line"><div class="code">}</div></div><div class="ec-line"><div class="code">//先让指针p等于head，让q始终指向p的下一个节点，然后free(p),再让p=q，p去等于下一个节点</div></div></code></pre></figure></div>
+<hr>
+<h2 id="main">main()</h2>
+<p>main(成为C语言的入口函数其实和C语言本身无关,你的代码是被一小段叫做启动代的程序所调用的,它需要叫做main的地方)<br>
+操作系统把你的可执行程序装载到内存里,启动运行,然后调用你的main函数<br>
+在不同操作系统，入口函数可能不是main()</p>
+<hr> </div> <nav class="_pagination_tc8st_522" aria-label="文章导航"> <a class="_pageLink_tc8st_529" href="/article/a696e8fe.html" data-atom> <span class="_pageLabel_tc8st_556">上一篇</span> <strong>C语言单链表菜品管理系统</strong> <span class="_pageArrow_tc8st_561" aria-hidden="true">←</span> </a> <span></span> </nav>  <section id="comments" class="_comments_1v81l_1" aria-label="评论"> <h2 class="_title_1v81l_9">评论</h2> <div class="_container_1v81l_17" data-waline data-waline-path="/article/13675369.html"></div> </section> </article>  </div> <aside class="_right_vnlu0_156" aria-label="右侧栏" data-rail="right"> <nav class="_toc_kec3t_128" aria-label="文章目录" data-toc> <div class="_head_kec3t_137" data-atom> <span class="_kicker_kec3t_146">目录</span> <span class="_count_kec3t_55">59</span> </div> <div class="_scroll_kec3t_160" data-toc-scroll> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#整数运算" data-toc-link> <span class="_linkText_kec3t_264">整数运算</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#所表达的数的范围" data-toc-link> <span class="_linkText_kec3t_264">所表达的数的范围</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#sizeof" data-toc-link> <span class="_linkText_kec3t_264">sizeof()</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#unsigned" data-toc-link> <span class="_linkText_kec3t_264">unsigned</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#整数的输入输出" data-toc-link> <span class="_linkText_kec3t_264">整数的输入输出</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#选搔整数类型" data-toc-link> <span class="_linkText_kec3t_264">选搔整数类型</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#选浮点类型" data-toc-link> <span class="_linkText_kec3t_264">选浮点类型</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#自动类型转换" data-toc-link> <span class="_linkText_kec3t_264">自动类型转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#强制类型转换" data-toc-link> <span class="_linkText_kec3t_264">强制类型转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#逻辑运算符优先级" data-toc-link> <span class="_linkText_kec3t_264">逻辑运算符优先级:</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#短路" data-toc-link> <span class="_linkText_kec3t_264">短路</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#tip1" data-toc-link> <span class="_linkText_kec3t_264">tip1</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#数组的大小" data-toc-link> <span class="_linkText_kec3t_264">数组的大小</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#数组的操作" data-toc-link> <span class="_linkText_kec3t_264">数组的操作</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#作为参数的指针" data-toc-link> <span class="_linkText_kec3t_264">作为参数的指针</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#指针是const" data-toc-link> <span class="_linkText_kec3t_264">指针是const</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#所指是-const" data-toc-link> <span class="_linkText_kec3t_264">所指是 const</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#const" data-toc-link> <span class="_linkText_kec3t_264">const</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#转换" data-toc-link> <span class="_linkText_kec3t_264">转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#const数组" data-toc-link> <span class="_linkText_kec3t_264">const数组</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#保护数组值" data-toc-link> <span class="_linkText_kec3t_264">保护数组值</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#指针" data-toc-link> <span class="_linkText_kec3t_264">指针</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针遍历数组方法" data-toc-link> <span class="_linkText_kec3t_264">指针遍历数组方法</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针比較" data-toc-link> <span class="_linkText_kec3t_264">指针比較</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#0地址" data-toc-link> <span class="_linkText_kec3t_264">0地址</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针的类型" data-toc-link> <span class="_linkText_kec3t_264">指针的类型</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指针的类型转换" data-toc-link> <span class="_linkText_kec3t_264">指针的类型转换</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#用指针来做什么" data-toc-link> <span class="_linkText_kec3t_264">用指针来做什么</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#内存操作" data-toc-link> <span class="_linkText_kec3t_264">内存操作</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#malloc跟系统要一块内存" data-toc-link> <span class="_linkText_kec3t_264">malloc(跟系统要一块内存)</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#free" data-toc-link> <span class="_linkText_kec3t_264">free()</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#free常见问题" data-toc-link> <span class="_linkText_kec3t_264">free常见问题</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#字符串" data-toc-link> <span class="_linkText_kec3t_264">字符串</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#字符串常量" data-toc-link> <span class="_linkText_kec3t_264">字符串常量</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#字符串输入输出" data-toc-link> <span class="_linkText_kec3t_264">字符串输入输出</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#空字符串" data-toc-link> <span class="_linkText_kec3t_264">空字符串</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#复制一个字符串" data-toc-link> <span class="_linkText_kec3t_264">复制一个字符串</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#枚挙" data-toc-link> <span class="_linkText_kec3t_264">枚挙</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#结构" data-toc-link> <span class="_linkText_kec3t_264">结构</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#声明结构的形式" data-toc-link> <span class="_linkText_kec3t_264">声明结构的形式</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#结构指针" data-toc-link> <span class="_linkText_kec3t_264">结构指针</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#结构作为函数参数" data-toc-link> <span class="_linkText_kec3t_264">结构作为函数参数</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#指向结构的指针" data-toc-link> <span class="_linkText_kec3t_264">指向结构的指针</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#全局变量初始化" data-toc-link> <span class="_linkText_kec3t_264">全局变量初始化</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#静态本地变量全局生存期本地作用域" data-toc-link> <span class="_linkText_kec3t_264">静态本地变量（全局生存期，本地作用域）</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#返回指针的函数" data-toc-link> <span class="_linkText_kec3t_264">返回指针的函数</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#编译预处理指令" data-toc-link> <span class="_linkText_kec3t_264">编译预处理指令</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#define纯文本替换" data-toc-link> <span class="_linkText_kec3t_264">#define(纯文本替换)</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#宏" data-toc-link> <span class="_linkText_kec3t_264">宏</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#预定义的宏" data-toc-link> <span class="_linkText_kec3t_264">预定义的宏</span> </a>  </li><li class="_item_kec3t_205" data-depth="4" data-atom> <a class="_link_kec3t_163" href="#带参数的宏" data-toc-link> <span class="_linkText_kec3t_264">带参数的宏</span> </a>  </li> </ol> </ol> </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#变量的声明" data-toc-link> <span class="_linkText_kec3t_264">变量的声明</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#声明和定义" data-toc-link> <span class="_linkText_kec3t_264">声明和定义</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#重复声明" data-toc-link> <span class="_linkText_kec3t_264">重复声明</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#标准头文件结构宏的if" data-toc-link> <span class="_linkText_kec3t_264">标准头文件结构(宏的if)</span> </a>  </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#链表" data-toc-link> <span class="_linkText_kec3t_264">链表</span> </a> <ol class="_list_kec3t_193 _nested_kec3t_199"> <ol class="_list_kec3t_193"> <li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#遍历链表" data-toc-link> <span class="_linkText_kec3t_264">遍历链表</span> </a>  </li><li class="_item_kec3t_205" data-depth="3" data-atom> <a class="_link_kec3t_163" href="#清除整个链表" data-toc-link> <span class="_linkText_kec3t_264">清除整个链表</span> </a>  </li> </ol> </ol> </li><li class="_item_kec3t_205" data-depth="2" data-atom> <a class="_link_kec3t_163" href="#main" data-toc-link> <span class="_linkText_kec3t_264">main()</span> </a>  </li> </ol> </div> <div class="_foot_kec3t_283" data-atom> <a class="_top_kec3t_293" href="#main" data-nudge="up"> <span class="_arrow_kec3t_313 nudge" aria-hidden="true"> <span class="nudge-glyph">↑</span> </span>
+回到顶部
+</a> <a class="_top_kec3t_293 undefined" href="#comments" data-nudge="down"> <span class="_arrow_kec3t_313 nudge" aria-hidden="true"> <span class="nudge-glyph">↓</span> </span>
+评论区
+</a> </div> </nav> </aside> </div>  <dialog class="_railDialog_vnlu0_307 _railDialogLeft_vnlu0_331" data-rail-dialog="left" aria-labelledby="rail-dialog-left-title"> <div class="_railPanel_vnlu0_339"> <header class="_railHead_vnlu0_355"> <h2 id="rail-dialog-left-title">站点</h2> <button type="button" class="_railClose_vnlu0_371" data-rail-close aria-label="关闭">
+关闭
+</button> </header> <div class="_railBody_vnlu0_394">  <a class="_link_bndhu_128" href="/" data-atom> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="m14 6-6 6 6 6" /></svg> 返回文章 </a> <div class="_progress_tc8st_186" data-atom> <span class="_progressRing_tc8st_193" data-reading-ring></span> <span class="_progressValue_tc8st_212" data-reading-percent>0%</span> <span class="_progressLabel_tc8st_219">阅读进度</span> </div> <section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">同系列</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/13675369.html" class="_item_1te21_180" data-active="true" aria-current="page"> <span class="_number_1te21_234">01</span> <span class="_label_1te21_241">C语言学习笔记</span>    </a> </li><li data-atom> <a href="/article/a696e8fe.html" class="_item_1te21_180"> <span class="_number_1te21_234">02</span> <span class="_label_1te21_241">C语言单链表菜品管理系统</span>    </a> </li> </ol> <a class="_seriesAll_tc8st_224" href="/series/c-language/" data-nudge="right">
+系列首页
+<span class="nudge" aria-hidden="true"><span class="nudge-glyph">→</span></span> </a>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">标签</p>  </div>   <div class="_tags_1te21_260" data-dense-order> <a href="/tags/700b19ab/" data-atom>
+#C语言  </a> </div>  </section><section class="_section_1te21_128"> <div class="_kickerRow_1te21_139" data-atom> <p class="_kicker_1te21_139">相关阅读</p>  </div>   <ol class="_list_1te21_173"> <li data-atom> <a href="/article/a696e8fe.html" class="_item_1te21_180">  <span class="_label_1te21_241">C语言单链表菜品管理系统</span>  <span class="_meta_1te21_55">04-01</span>  </a> </li><li data-atom> <a href="/article/1be64a8d.html" class="_item_1te21_180">  <span class="_label_1te21_241">NestJS实践杂记</span>  <span class="_meta_1te21_55">12-09</span>  </a> </li><li data-atom> <a href="/article/55cefeb1.html" class="_item_1te21_180">  <span class="_label_1te21_241">React-记-3</span>  <span class="_meta_1te21_55">10-13</span>  </a> </li> </ol>  </section> </div> </div> </dialog>  </div> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"C语言学习笔记","description":"我的C语言学习笔记","datePublished":"2022-03-27T14:08:09.000Z","dateModified":"2022-03-30T10:13:21.000Z","author":{"@type":"Person","name":"轻笑Chuckle","url":"https://www.qcqx.cn"},"image":["https://www.qcqx.cn/assets/posts/119568aec9b68b33.webp"],"mainEntityOfPage":"https://www.qcqx.cn/article/13675369.html","keywords":"C语言","inLanguage":"zh-CN"}</script> </main> <footer class="_footer_x6azg_128"> <div class="container _inner_x6azg_133"> <div class="_brand_x6azg_143" data-reveal> <span class="_mark_x6azg_149" aria-hidden="true"></span> <div> <strong>轻笑Chuckle</strong> <p>漫天倾尘，风中轻笑。</p> </div> </div> <div class="_meta_x6azg_55" data-reveal> <p class="_copy_x6azg_176"> <span class="_rights_x6azg_224">© 2021–2026 轻笑Chuckle</span> <span class="_filing_x6azg_228"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备2022076449号</a><span class="_dot_x6azg_236" aria-hidden="true">·</span><a href="https://icp.gov.moe/?keyword=20220160" target="_blank" rel="noreferrer">萌ICP备20220160号</a> </span> </p> <p class="_build_x6azg_177">Astro · Swup · Pagefind · Waline</p> </div> <nav class="_links_x6azg_189" aria-label="页脚导航" data-reveal> <a href="/atom.xml" data-no-swup>
+RSS
+</a> <a href="/sitemap.xml" data-no-swup>
+Sitemap
+</a> <a href="https://github.com/qxchuckle" target="_blank" rel="noreferrer">
+GitHub
+</a> </nav> </div> </footer>  <dialog class="_dialog_1bp20_136" aria-label="站点搜索与快捷导航" data-command-dialog> <div class="_searchRow_1bp20_162"> <span class="_searchIcon_1bp20_170" aria-hidden="true"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"> <circle cx="11" cy="11" r="6.5"></circle> <path d="m20 20-3.3-3.3"></path> </svg> </span> <input class="_input_1bp20_184" id="command-palette-input" name="q" placeholder="搜索文章，或输入页面名称…" aria-label="搜索文章" autocomplete="off" spellcheck="false" data-command-input> <button type="button" class="_close_1bp20_198" aria-label="关闭搜索" data-command-close>
+esc
+</button> </div> <div class="_list_1bp20_218" role="listbox" aria-label="搜索结果" data-command-list> <div data-command-quick> <div data-group-heading>快速前往</div> <div class="_quickGrid_1bp20_254"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">首页</span> <span class="_itemMeta_1bp20_334">/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/archives/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">归档</span> <span class="_itemMeta_1bp20_334">/archives/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/series/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">系列</span> <span class="_itemMeta_1bp20_334">/series/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/categories/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">分类</span> <span class="_itemMeta_1bp20_334">/categories/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/tags/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">标签</span> <span class="_itemMeta_1bp20_334">/tags/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/link/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">友链</span> <span class="_itemMeta_1bp20_334">/link/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/messageboard/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">留言板</span> <span class="_itemMeta_1bp20_334">/messageboard/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/about/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">关于</span> <span class="_itemMeta_1bp20_334">/about/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/charts/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">统计</span> <span class="_itemMeta_1bp20_334">/charts/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/update/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">日志</span> <span class="_itemMeta_1bp20_334">/update/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/agreement/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">协议</span> <span class="_itemMeta_1bp20_334">/agreement/</span> </span> </button><button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-url="/search/"> <span class="_itemMarker_1bp20_296" aria-hidden="true">
+↗
+</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">搜索全部文章</span> <span class="_itemMeta_1bp20_334">/search/</span> </span> </button> </div> </div> <div data-command-loading hidden> <div class="_loading_1bp20_344"> <span class="_spinner_1bp20_363" aria-hidden="true"></span>
+正在查找…
+</div> </div> <div data-command-results hidden></div> <div data-command-empty hidden> <div class="_empty_1bp20_345"> <span data-command-empty-text></span> <button type="button" data-command-search-all>打开完整搜索页 →</button> </div> </div> </div> <footer class="_footer_1bp20_372"> <span> <kbd>↑</kbd> <kbd>↓</kbd> 选择
+</span> <span> <kbd>↵</kbd> 打开
+</span> <span> <kbd>esc</kbd> 关闭
+</span> <span class="_footerBrand_1bp20_398">轻笑 / 索引</span> </footer> </dialog>  <template data-command-tpl="post"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item> <span class="_itemMarker_1bp20_296" aria-hidden="true">¶</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314" data-field="title"></span> <span class="_itemExcerpt_1bp20_324" data-field="excerpt"></span> <span class="_itemMeta_1bp20_334" data-field="url"></span> </span> </button> </template>  <template data-command-tpl="search-all"> <button type="button" role="option" aria-selected="false" class="_item_1bp20_260" data-command-item data-command-search-all> <span class="_itemMarker_1bp20_296" aria-hidden="true">↗</span> <span class="_itemMain_1bp20_306"> <span class="_itemTitle_1bp20_314">在搜索页继续</span> <span class="_itemMeta_1bp20_334">Pagefind 全文搜索</span> </span> </button> </template> <span hidden data-command-dev-search="0"></span><script type="module" src="/_static/CommandPalette.astro_astro_type_script_index_0_lang.DRN8DVBH.js"></script>  <script>(function(){try{var v=document.getElementById("main");if(!v)return;var F=window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!F){for(var e={step:24,stepMin:6,stepBudget:220,section:60,sectionMin:24,sectionBudget:240,max:400},y=v.querySelectorAll("[data-atom],[data-module]"),a=[],u=0;u<y.length;u++){var r=y[u];if(!r.closest("[data-rail-dialog]")&&!r.hasAttribute("data-enter")){var A=r.closest("[data-rail],[data-column]")||r.parentElement||v,t=r.closest("section");if(!t)for(t=r;t.parentElement&&t.parentElement!==A;)t=t.parentElement;a.push([r,A,t])}}for(var M=new Map,p=new Map,w=new Map,i=0;i<a.length;i++){var l=a[i][2];M.set(l,(M.get(l)||0)+1);var h=p.get(a[i][1]);h||(h=[],p.set(a[i][1],h)),h.indexOf(l)<0&&h.push(l)}for(var d=0;d<a.length;d++){var n=a[d],f=p.get(n[1]),I=f.indexOf(n[2]),E=w.get(n[2])||0;w.set(n[2],E+1);var L=Math.max(e.sectionMin,Math.min(e.section,Math.floor(e.sectionBudget/Math.max(1,f.length)))),T=Math.max(1,M.get(n[2])||1),c=Math.max(e.stepMin,Math.min(e.step,Math.floor(e.stepBudget/T))),j=Math.min(I*L+E*c,e.max);n[0].style.setProperty("--enter-delay",j+"ms"),n[0].setAttribute("data-enter","")}for(var q=v.querySelectorAll(".prose"),B=window.innerHeight*1.2,P=0,c=0,m=0;m<q.length;m++)for(var f=q[m].children,t=0;t<f.length&&P<B;t++){var o=f[t];if(!(!(o instanceof HTMLElement)||o.hasAttribute("data-enter"))){var H=o.offsetHeight;H&&(o.style.setProperty("--enter-delay",Math.min(c*24,240)+"ms"),o.setAttribute("data-enter","near"),P+=H,c++)}}}for(var O=["var(--color-accent)","var(--color-accent-soft)","var(--color-border-strong)"],S=v.querySelectorAll("[data-friend-board]"),x=0;x<S.length;x++){var C=S[x];if(C.getClientRects().length){var g=Array.prototype.slice.call(C.querySelectorAll("[data-friend-card]"));if(g.length)for(var s=0;s<g.length;s++)g[s].style.setProperty("--cell-mix",(2+Math.random()*8).toFixed(1)+"%"),g[s].style.setProperty("--cell-tint",O[Math.floor(Math.random()*O.length)])}}}catch{}})();</script><script type="module" src="/_static/BaseLayout.astro_astro_type_script_index_0_lang.DhVNVGr_.js"></script> </body> </html>

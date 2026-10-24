@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.qcqx.cn</id>
+    <title>轻笑Chuckle</title>
+    <updated>2024-12-09T15:10:08.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>轻笑Chuckle</name>
+        <uri>https://www.qcqx.cn/</uri>
+    </author>
+    <link rel="alternate" href="https://www.qcqx.cn/"/>
+    <link rel="self" href="https://www.qcqx.cn/atom.xml"/>
+    <subtitle>漫天倾尘，风中轻笑。记录前端、后端、折腾与生活。</subtitle>
+    <logo>https://www.qcqx.cn/assets/site/f7dd0fa9498d4b6f-384.webp</logo>
+    <icon>https://www.qcqx.cn/favicon.ico</icon>
+    <rights>© 2021-2026 轻笑Chuckle</rights>
+    <entry>
+        <title type="html"><![CDATA[NestJS实践杂记]]></title>
+        <id>https://www.qcqx.cn/article/1be64a8d.html</id>
+        <link href="https://www.qcqx.cn/article/1be64a8d.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/a9b0a3250c9da41c.webp" type="image/webp"/>
+        <updated>2024-12-09T15:10:08.000Z</updated>
+        <summary type="html"><![CDATA[毕设后端用的NestJS，记录下实践中的问题、技巧]]></summary>
+        <content type="html"><![CDATA[毕设后端用的NestJS，记录下实践中的问题、技巧]]></content>
+        <category label="学习笔记"/>
+        <category label="NestJS"/>
+        <category label="后端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React-记-3]]></title>
+        <id>https://www.qcqx.cn/article/55cefeb1.html</id>
+        <link href="https://www.qcqx.cn/article/55cefeb1.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/98f2579530e8c902.webp" type="image/webp"/>
+        <updated>2024-10-13T01:26:31.000Z</updated>
+        <summary type="html"><![CDATA[React 常见的优化手段、Hook]]></summary>
+        <content type="html"><![CDATA[React 常见的优化手段、Hook]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="React"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React-记-2]]></title>
+        <id>https://www.qcqx.cn/article/f17dfea3.html</id>
+        <link href="https://www.qcqx.cn/article/f17dfea3.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/98f2579530e8c902.webp" type="image/webp"/>
+        <updated>2024-09-26T19:26:24.000Z</updated>
+        <summary type="html"><![CDATA[继续学习 React 的核心概念]]></summary>
+        <content type="html"><![CDATA[继续学习 React 的核心概念]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="React"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React-记-1]]></title>
+        <id>https://www.qcqx.cn/article/cb488cbf.html</id>
+        <link href="https://www.qcqx.cn/article/cb488cbf.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/98f2579530e8c902.webp" type="image/webp"/>
+        <updated>2024-09-23T21:15:26.000Z</updated>
+        <summary type="html"><![CDATA[写 tsx 有些爽的，学一学这 React]]></summary>
+        <content type="html"><![CDATA[写 tsx 有些爽的，学一学这 React]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="React"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[闭包与内存泄漏]]></title>
+        <id>https://www.qcqx.cn/article/d186ebdd.html</id>
+        <link href="https://www.qcqx.cn/article/d186ebdd.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/bea046292062dbb0.webp" type="image/webp"/>
+        <updated>2024-09-12T20:04:03.000Z</updated>
+        <summary type="html"><![CDATA[研究下闭包和内存泄露的关系]]></summary>
+        <content type="html"><![CDATA[研究下闭包和内存泄露的关系]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="JS"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vue3.5 更新了啥]]></title>
+        <id>https://www.qcqx.cn/article/d22c87fc.html</id>
+        <link href="https://www.qcqx.cn/article/d22c87fc.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/fb98a0a47d82ddfb.webp" type="image/webp"/>
+        <updated>2024-09-12T14:33:20.000Z</updated>
+        <summary type="html"><![CDATA[看看 Vue 3.5 更新了啥好东西]]></summary>
+        <content type="html"><![CDATA[看看 Vue 3.5 更新了啥好东西]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="Vue"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git lint 相关]]></title>
+        <id>https://www.qcqx.cn/article/93c63660.html</id>
+        <link href="https://www.qcqx.cn/article/93c63660.html"/>
+        <updated>2024-09-10T10:09:48.000Z</updated>
+        <summary type="html"><![CDATA[对 Git 也作一些限制，并集成一些辅助工具]]></summary>
+        <content type="html"><![CDATA[对 Git 也作一些限制，并集成一些辅助工具]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="Git"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[集成 lint 代码规范工具]]></title>
+        <id>https://www.qcqx.cn/article/b2086eb9.html</id>
+        <link href="https://www.qcqx.cn/article/b2086eb9.html"/>
+        <updated>2024-09-08T09:45:51.000Z</updated>
+        <summary type="html"><![CDATA[lint 代码规范工具配置好后非常方便]]></summary>
+        <content type="html"><![CDATA[lint 代码规范工具配置好后非常方便]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Monorepo 单仓库多应用]]></title>
+        <id>https://www.qcqx.cn/article/65df4aa6.html</id>
+        <link href="https://www.qcqx.cn/article/65df4aa6.html"/>
+        <updated>2024-08-05T19:32:42.000Z</updated>
+        <summary type="html"><![CDATA[学习这种先进的管理代码的策略模式]]></summary>
+        <content type="html"><![CDATA[学习这种先进的管理代码的策略模式]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vue+TS 实现虚拟列表]]></title>
+        <id>https://www.qcqx.cn/article/6ae8614b.html</id>
+        <link href="https://www.qcqx.cn/article/6ae8614b.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/02964c3a925d55eb.webp" type="image/webp"/>
+        <updated>2024-07-04T14:41:03.000Z</updated>
+        <summary type="html"><![CDATA[前端各种各样的虚拟列表实现]]></summary>
+        <content type="html"><![CDATA[前端各种各样的虚拟列表实现]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="TS"/>
+        <category label="Vue"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[开发了一个 Canvas 2D 渲染引擎]]></title>
+        <id>https://www.qcqx.cn/article/8275f29.html</id>
+        <link href="https://www.qcqx.cn/article/8275f29.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/c32b0fb82dfc8e58.webp" type="image/webp"/>
+        <updated>2024-05-23T22:15:42.000Z</updated>
+        <summary type="html"><![CDATA[从 0 开始的 Canvas 2D 渲染引擎开发]]></summary>
+        <content type="html"><![CDATA[从 0 开始的 Canvas 2D 渲染引擎开发]]></content>
+        <category label="项目"/>
+        <category label="前端"/>
+        <category label="canvas"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Canvas 2D 事件]]></title>
+        <id>https://www.qcqx.cn/article/5b168750.html</id>
+        <link href="https://www.qcqx.cn/article/5b168750.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/c32b0fb82dfc8e58.webp" type="image/webp"/>
+        <updated>2024-05-23T18:52:54.000Z</updated>
+        <summary type="html"><![CDATA[想要实现 canvas 交互，事件必不可少]]></summary>
+        <content type="html"><![CDATA[想要实现 canvas 交互，事件必不可少]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="canvas"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Canvas 2D 贝塞尔曲线]]></title>
+        <id>https://www.qcqx.cn/article/ba04fd32.html</id>
+        <link href="https://www.qcqx.cn/article/ba04fd32.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/c32b0fb82dfc8e58.webp" type="image/webp"/>
+        <updated>2024-05-22T10:27:05.000Z</updated>
+        <summary type="html"><![CDATA[从公式到手写贝塞尔曲线]]></summary>
+        <content type="html"><![CDATA[从公式到手写贝塞尔曲线]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="canvas"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Canvas 2D 进阶]]></title>
+        <id>https://www.qcqx.cn/article/995d74ec.html</id>
+        <link href="https://www.qcqx.cn/article/995d74ec.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/c32b0fb82dfc8e58.webp" type="image/webp"/>
+        <updated>2024-05-19T14:52:35.000Z</updated>
+        <summary type="html"><![CDATA[变形、合成、填充规则、控制像素、动画、优化]]></summary>
+        <content type="html"><![CDATA[变形、合成、填充规则、控制像素、动画、优化]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="canvas"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Canvas 2D 基础]]></title>
+        <id>https://www.qcqx.cn/article/8c1c45d8.html</id>
+        <link href="https://www.qcqx.cn/article/8c1c45d8.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/c32b0fb82dfc8e58.webp" type="image/webp"/>
+        <updated>2024-05-18T20:53:00.000Z</updated>
+        <summary type="html"><![CDATA[一直很想玩玩 Canvas 这种随意画图的 API]]></summary>
+        <content type="html"><![CDATA[一直很想玩玩 Canvas 这种随意画图的 API]]></content>
+        <category label="学习笔记"/>
+        <category label="前端"/>
+        <category label="canvas"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git 规范与实践]]></title>
+        <id>https://www.qcqx.cn/article/7f942cef.html</id>
+        <link href="https://www.qcqx.cn/article/7f942cef.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/46a4a7dc159336a0.webp" type="image/webp"/>
+        <updated>2024-05-12T15:13:33.000Z</updated>
+        <summary type="html"><![CDATA[Git 的规范、工作流、常见场景与实践。]]></summary>
+        <content type="html"><![CDATA[Git 的规范、工作流、常见场景与实践。]]></content>
+        <category label="学习笔记"/>
+        <category label="Git"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git 熟知熟用]]></title>
+        <id>https://www.qcqx.cn/article/120u7a12.html</id>
+        <link href="https://www.qcqx.cn/article/120u7a12.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/46a4a7dc159336a0.webp" type="image/webp"/>
+        <updated>2024-05-13T21:07:32.000Z</updated>
+        <summary type="html"><![CDATA[详细学习下Git的各种操作]]></summary>
+        <content type="html"><![CDATA[详细学习下Git的各种操作]]></content>
+        <category label="学习笔记"/>
+        <category label="Git"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决System占CPU过高]]></title>
+        <id>https://www.qcqx.cn/article/11072a12.html</id>
+        <link href="https://www.qcqx.cn/article/11072a12.html"/>
+        <updated>2024-04-05T13:46:19.000Z</updated>
+        <summary type="html"><![CDATA[鹅子的ACE又在开机扫内存了]]></summary>
+        <content type="html"><![CDATA[鹅子的ACE又在开机扫内存了]]></content>
+        <category label="其它"/>
+        <category label="其它"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[浏览器HTTP缓存]]></title>
+        <id>https://www.qcqx.cn/article/7343d222.html</id>
+        <link href="https://www.qcqx.cn/article/7343d222.html"/>
+        <updated>2024-03-20T15:44:50.000Z</updated>
+        <summary type="html"><![CDATA[了解下浏览器的缓存机制]]></summary>
+        <content type="html"><![CDATA[了解下浏览器的缓存机制]]></content>
+        <category label="学习笔记"/>
+        <category label="浏览器"/>
+        <category label="前端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[浏览器渲染流程]]></title>
+        <id>https://www.qcqx.cn/article/4aea0348.html</id>
+        <link href="https://www.qcqx.cn/article/4aea0348.html"/>
+        <updated>2024-03-15T16:46:17.000Z</updated>
+        <summary type="html"><![CDATA[它埋下了种子，于是参天大树屹立于这片空间。]]></summary>
+        <content type="html"><![CDATA[它埋下了种子，于是参天大树屹立于这片空间。]]></content>
+        <category label="学习笔记"/>
+        <category label="浏览器"/>
+        <category label="前端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据类型与拷贝]]></title>
+        <id>https://www.qcqx.cn/article/6e8f8c6c.html</id>
+        <link href="https://www.qcqx.cn/article/6e8f8c6c.html"/>
+        <updated>2024-03-12T13:20:17.000Z</updated>
+        <summary type="html"><![CDATA[JS八种数据类型与引用类型的拷贝]]></summary>
+        <content type="html"><![CDATA[JS八种数据类型与引用类型的拷贝]]></content>
+        <category label="学习笔记"/>
+        <category label="JS"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一点点网络知识]]></title>
+        <id>https://www.qcqx.cn/article/1e4e2709.html</id>
+        <link href="https://www.qcqx.cn/article/1e4e2709.html"/>
+        <updated>2024-03-11T23:20:29.000Z</updated>
+        <summary type="html"><![CDATA[当计算机网络与前端相遇]]></summary>
+        <content type="html"><![CDATA[当计算机网络与前端相遇]]></content>
+        <category label="学习笔记"/>
+        <category label="网络"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NestJS[四]-数据库]]></title>
+        <id>https://www.qcqx.cn/article/e18aeaaa.html</id>
+        <link href="https://www.qcqx.cn/article/e18aeaaa.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/a9b0a3250c9da41c.webp" type="image/webp"/>
+        <updated>2024-02-19T11:33:52.000Z</updated>
+        <summary type="html"><![CDATA[TypeORM、实体、CURD、关系、事务]]></summary>
+        <content type="html"><![CDATA[TypeORM、实体、CURD、关系、事务]]></content>
+        <category label="学习笔记"/>
+        <category label="NestJS"/>
+        <category label="后端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NestJS[三]-进阶]]></title>
+        <id>https://www.qcqx.cn/article/73b2ab6d.html</id>
+        <link href="https://www.qcqx.cn/article/73b2ab6d.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/a9b0a3250c9da41c.webp" type="image/webp"/>
+        <updated>2024-02-17T00:47:16.000Z</updated>
+        <summary type="html"><![CDATA[Logger、ModuleRef、生命周期、Swagger、JWT、config]]></summary>
+        <content type="html"><![CDATA[Logger、ModuleRef、生命周期、Swagger、JWT、config]]></content>
+        <category label="学习笔记"/>
+        <category label="NestJS"/>
+        <category label="后端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NestJS[二]-核心]]></title>
+        <id>https://www.qcqx.cn/article/c81f9b65.html</id>
+        <link href="https://www.qcqx.cn/article/c81f9b65.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/a9b0a3250c9da41c.webp" type="image/webp"/>
+        <updated>2024-02-04T22:00:23.000Z</updated>
+        <summary type="html"><![CDATA[上传/下载文件、RxJS、拦截器、过滤器、管道、守卫]]></summary>
+        <content type="html"><![CDATA[上传/下载文件、RxJS、拦截器、过滤器、管道、守卫]]></content>
+        <category label="学习笔记"/>
+        <category label="NestJS"/>
+        <category label="后端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RxJS]]></title>
+        <id>https://www.qcqx.cn/article/c79e1541.html</id>
+        <link href="https://www.qcqx.cn/article/c79e1541.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/60378160996efa3b.webp" type="image/webp"/>
+        <updated>2024-02-03T17:34:51.000Z</updated>
+        <summary type="html"><![CDATA[Nest中大量使用了RxJS，这下不得不学了。]]></summary>
+        <content type="html"><![CDATA[Nest中大量使用了RxJS，这下不得不学了。]]></content>
+        <category label="学习笔记"/>
+        <category label="NestJS"/>
+        <category label="前端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NestJS[一]-基础]]></title>
+        <id>https://www.qcqx.cn/article/7c45abd.html</id>
+        <link href="https://www.qcqx.cn/article/7c45abd.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/a9b0a3250c9da41c.webp" type="image/webp"/>
+        <updated>2024-01-22T15:26:49.000Z</updated>
+        <summary type="html"><![CDATA[IOC/DI、cli、RESTful、控制器、提供者、作用域、模块、中间件]]></summary>
+        <content type="html"><![CDATA[IOC/DI、cli、RESTful、控制器、提供者、作用域、模块、中间件]]></content>
+        <category label="学习笔记"/>
+        <category label="NestJS"/>
+        <category label="后端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[qx-tracker]]></title>
+        <id>https://www.qcqx.cn/article/31416cf6.html</id>
+        <link href="https://www.qcqx.cn/article/31416cf6.html"/>
+        <updated>2024-01-18T21:54:59.000Z</updated>
+        <summary type="html"><![CDATA[一个前端监控和埋点SDK]]></summary>
+        <content type="html"><![CDATA[一个前端监控和埋点SDK]]></content>
+        <category label="项目"/>
+        <category label="TS"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Node-回眸[三]]]></title>
+        <id>https://www.qcqx.cn/article/9b01fd71.html</id>
+        <link href="https://www.qcqx.cn/article/9b01fd71.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/ab969e4d08a1d324.webp" type="image/webp"/>
+        <updated>2024-01-16T13:35:52.000Z</updated>
+        <summary type="html"><![CDATA[http、express、log4js、HTTP标头、SSE]]></summary>
+        <content type="html"><![CDATA[http、express、log4js、HTTP标头、SSE]]></content>
+        <category label="学习笔记"/>
+        <category label="NodeJS"/>
+        <category label="前端"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Node-回眸[二]]]></title>
+        <id>https://www.qcqx.cn/article/9b981f17.html</id>
+        <link href="https://www.qcqx.cn/article/9b981f17.html"/>
+        <link rel="enclosure" href="https://www.qcqx.cn/assets/posts/ab969e4d08a1d324.webp" type="image/webp"/>
+        <updated>2024-01-11T17:39:15.000Z</updated>
+        <summary type="html"><![CDATA[events、util、fs、stream、crypto、zlib]]></summary>
+        <content type="html"><![CDATA[events、util、fs、stream、crypto、zlib]]></content>
+        <category label="学习笔记"/>
+        <category label="NodeJS"/>
+        <category label="前端"/>
+    </entry>
+</feed>

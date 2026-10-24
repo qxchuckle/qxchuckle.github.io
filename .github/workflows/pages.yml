@@ -27,9 +27,9 @@
 
 name: Pages
 
-run-name: >-
-  Pages · ${{ github.event.inputs.source_sha || github.event_name }}${{
-    github.event.inputs.products_ref && format(" ← {0}", github.event.inputs.products_ref) || '' }}
+# 表达式里的字符串必须用单引号：写成 format("…") 会让整个 workflow 解析失败，
+# 而且失败不产生任何 job 日志，只能从 run 的 jobs 为空这一反常现象倒推。
+run-name: Pages · ${{ github.event.inputs.products_ref && '本地产物投递' || '源码重建' }}（${{ github.event_name }}）
 
 on:
   # 自身改动（含首次上线）走 push

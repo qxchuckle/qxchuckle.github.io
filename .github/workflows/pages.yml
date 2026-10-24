@@ -19,16 +19,25 @@
 
 name: Pages
 
+run-name: Pages · ${{ github.event.inputs.source_sha || github.event_name }}
+
 on:
   # 自身改动（含首次上线）走 push
   push:
     branches: [master]
     paths: [".github/workflows/pages.yml"]
-  # 兜底同步：源码仓 push 无法直接触发别的仓库，最多滞后 6 小时
+  # 兜底，不是主链路：源码仓 push 后由 deploy.yml 的「触发 GitHub Pages 构建」
+  # 步骤 dispatch 过来（需要 secret PAGES_DISPATCH_TOKEN）。这里只防那个 PAT
+  # 失效或被吊销：每天 UTC 18:00（北京 02:00）对齐一次。
+  # 注意 GitHub 会在公开仓 60 天无提交后停用 schedule，但那时主链路（dispatch）
+  # 仍然有效，不必为此保留高频定时。
   schedule:
-    - cron: "0 */6 * * *"
-  # 源码仓发布后由 `pnpm release:pages` 调用（需要跨仓 token）
+    - cron: "0 18 * * *"
   workflow_dispatch:
+    inputs:
+      source_sha:
+        description: "源码仓本次发布的 commit（仅用于日志对账）"
+        required: false
 
 concurrency:
   group: pages

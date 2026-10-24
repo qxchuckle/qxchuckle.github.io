@@ -1,0 +1,126 @@
+# GitHub Pages 轨（轨 C）：境外线路的源站
+#
+# 真源在本文件；它必须被同步到产物仓才能生效：
+#   qxchuckle/qxchuckle.github.io:.github/workflows/pages.yml
+# 改这里之后要重建产物仓那份副本（两处内容须逐字一致）。
+#
+# 为什么构建放在产物仓而不是源码仓：
+#   - qxchuckle.github.io 这个域只能由同名仓库提供 Pages，而它是纯产物仓
+#   - 走行内构建 + upload-pages-artifact，产物不进 git 历史（46MB × 每次发布
+#     的孤儿提交会把仓库撑爆），也不需要跨仓推送凭据
+#
+# 为什么这里的产物必须是「空前缀自包含」：
+#   轨 B（腾讯云）的 HTML 资源走 cdn.qcqx.cn，那是 EdgeOne 且只放行 Referer
+#   属于 *.qcqx.cn 的请求；本轨页面在 GitHub 侧，跨域取资源既慢又可能 403。
+#   所以这里**不设** PUBLIC_ASSET_PREFIX，与 Vercel 轨（轨 A）同形。
+#
+# _static 是下划线目录：legacy（Jekyll）模式会整目录丢弃，因此 Pages 的
+# build_type 必须是 workflow，产物另带 .nojekyll 兜底。
+
+name: Pages
+
+on:
+  # 自身改动（含首次上线）走 push
+  push:
+    branches: [master]
+    paths: [".github/workflows/pages.yml"]
+  # 兜底同步：源码仓 push 无法直接触发别的仓库，最多滞后 6 小时
+  schedule:
+    - cron: "0 */6 * * *"
+  # 源码仓发布后由 `pnpm release:pages` 调用（需要跨仓 token）
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出源码仓
+        uses: actions/checkout@v4
+        with:
+          repository: qxchuckle/qcqx-blog-next
+          path: src
+          fetch-depth: 1
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.30.3
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: src/pnpm-lock.yaml
+
+      - name: 安装依赖
+        working-directory: src
+        run: pnpm install --frozen-lockfile
+
+      # 只设站点地址与评论服务。PUBLIC_ASSET_PREFIX 必须缺省为空：
+      # 设了它就是把整站资源推去 CDN，这条轨就失去意义了。
+      - name: 构建（自包含）
+        working-directory: src
+        env:
+          PUBLIC_SITE_URL: https://www.qcqx.cn
+          PUBLIC_WALINE_URL: https://waline.qcqx.cn
+        run: pnpm build
+
+      # CNAME 必须随产物走：Actions 部署不读仓库根目录的 CNAME，
+      # artifact 里没有它，GitHub 会把 Pages 的自定义域清空 → 境外全线 404。
+      - name: 产物适配 Pages
+        working-directory: src
+        run: |
+          printf 'www.qcqx.cn\n' > out/CNAME
+          : > out/.nojekyll
+
+      - name: 门禁
+        working-directory: src
+        run: |
+          set -eu
+          cname="$(cat out/CNAME)"
+          if [ "$cname" != "www.qcqx.cn" ]; then
+            echo "::error::CNAME 必须是单行 www.qcqx.cn，实际为「$cname」"
+            exit 1
+          fi
+
+          # 自包含：任何绝对资源域都会在境外变成跨域慢路径
+          if grep -rl --include='*.html' 'cdn\.qcqx\.cn' out | head -n 1 | grep -q .; then
+            echo "::error::产物仍引用 cdn.qcqx.cn，本轨必须同源"
+            grep -rl --include='*.html' 'cdn\.qcqx\.cn' out | head -n 3
+            exit 1
+          fi
+
+          grep -q '"/_static/' out/index.html \
+            || { echo "::error::/_static 未同源"; exit 1; }
+          test -n "$(find out/_static -maxdepth 1 -name '*.js' -print -quit)" \
+            || { echo "::error::缺少 _static 脚本产物"; exit 1; }
+          test -d out/pagefind \
+            || { echo "::error::缺少 Pagefind 索引"; exit 1; }
+          test -n "$(find out/article -maxdepth 1 -name '*.html' -print -quit)" \
+            || { echo "::error::文章未扁平化为 /article/<slug>.html"; exit 1; }
+          test -f out/404.html \
+            || { echo "::error::缺少 404.html"; exit 1; }
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: src/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

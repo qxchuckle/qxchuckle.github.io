@@ -96,10 +96,14 @@ jobs:
             exit 1
           fi
 
-          # 自包含：任何绝对资源域都会在境外变成跨域慢路径
-          if grep -rl --include='*.html' 'cdn\.qcqx\.cn' out | head -n 1 | grep -q .; then
-            echo "::error::产物仍引用 cdn.qcqx.cn，本轨必须同源"
-            grep -rl --include='*.html' 'cdn\.qcqx\.cn' out | head -n 3
+          # 自包含：构建注入的资源（_static / assets / pagefind / favicon）必须同源。
+          # 正文里作者手写的历史 cdn.qcqx.cn 链接不算——那是内容事实，改它得动 Markdown。
+          if grep -rlE --include='*.html' \
+               'https://cdn\.qcqx\.cn/(_static|assets|pagefind|favicon\.ico)' out \
+               | head -n 1 | grep -q .; then
+            echo "::error::构建注入的资源仍带 cdn.qcqx.cn 前缀，本轨必须同源"
+            grep -rlE --include='*.html' \
+              'https://cdn\.qcqx\.cn/(_static|assets|pagefind|favicon\.ico)' out | head -n 3
             exit 1
           fi
 

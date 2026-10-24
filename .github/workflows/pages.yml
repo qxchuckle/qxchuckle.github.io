@@ -43,12 +43,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 源码仓是 private，本仓的 GITHUB_TOKEN 读不到，所以走一个只读 deploy key
+      # （已加到 qxchuckle/qcqx-blog-next 的 Deploy keys，私钥在本仓 secret
+      # SOURCE_DEPLOY_KEY）。轮换：重新生成密钥对，换掉两边即可。
       - name: 检出源码仓
         uses: actions/checkout@v4
         with:
           repository: qxchuckle/qcqx-blog-next
           path: src
           fetch-depth: 1
+          ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
+          persist-credentials: false
 
       - uses: pnpm/action-setup@v4
         with:
